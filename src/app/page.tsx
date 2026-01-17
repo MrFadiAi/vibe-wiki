@@ -1,65 +1,165 @@
-import Image from "next/image";
+import Link from "next/link";
+import { ArrowLeft, Sparkles, Zap, Terminal, GitBranch, Cpu, Rocket, ArrowRight } from "lucide-react";
+import { wikiContent, allArticles } from "@/data/wiki-content";
+import { Button } from "@/components/ui/button";
+
+const sectionIcons: Record<string, React.ReactNode> = {
+  "التحول الكبير (The Vibe Shift)": <Sparkles className="w-6 h-6" />,
+  "الأجهزة والبيئة (Hardware & Environment)": <Terminal className="w-6 h-6" />,
+  "التحكم في الإصدارات (Version Control)": <GitBranch className="w-6 h-6" />,
+  "حقيبة أدوات الذكاء الاصطناعي (The AI Toolbelt)": <Cpu className="w-6 h-6" />,
+  "البناء والشحن (Building & Shipping)": <Rocket className="w-6 h-6" />,
+};
 
 export default function Home() {
+  const firstArticle = allArticles[0];
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="max-w-5xl mx-auto space-y-24 pb-20">
+      {/* Hero Section */}
+      <section className="relative pt-10 text-center">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-neon-cyan/10 blur-[120px] -z-10 rounded-full" />
+        
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-neon-cyan/20 mb-8 animate-float">
+          <Zap className="w-4 h-4 text-neon-cyan" />
+          <span className="text-sm font-medium text-neon-cyan">مستقبل البرمجة يبدأ هنا</span>
+        </div>
+
+        <h1 className="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight leading-tight">
+          <span className="gradient-text">مانيفستو</span>
+          <br />
+          <span className="text-foreground">البرمجة بالإحساس</span>
+        </h1>
+
+        <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed font-light">
+          تعلم كيف تبني أفكارك باستخدام <span className="text-neon-cyan font-semibold">الذكاء الاصطناعي</span>، 
+          ثق بـ <span className="text-neon-purple font-semibold">حدسك</span>، 
+          واستمتع بـ <span className="text-neon-pink font-semibold">التدفق الإبداعي</span>. 
+          توقف عن حفظ الأكواد، وابدأ في بناء المنتجات.
+        </p>
+
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+          <Button asChild size="xl" className="h-14 px-10 rounded-2xl bg-gradient-to-r from-neon-cyan to-neon-purple text-white font-bold hover:scale-105 transition-all glow-cyan border-0">
+            <Link href={`/wiki/${firstArticle.slug}`} className="flex items-center gap-2">
+              ابدأ التعلم الآن
+              <ArrowLeft className="w-5 h-5" />
+            </Link>
+          </Button>
+          <Button asChild variant="outline" size="xl" className="h-14 px-10 rounded-2xl border-white/10 glass hover:border-neon-pink/50 text-foreground font-semibold">
+            <Link href="/wiki/the-vibe-stack">
+              اكتشف الحزمة التقنية
+            </Link>
+          </Button>
+        </div>
+      </section>
+
+      {/* Stats / Features Grid */}
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="p-8 rounded-3xl glass border border-border group hover:border-neon-cyan/30 transition-all card-hover">
+          <div className="w-12 h-12 rounded-2xl bg-neon-cyan/10 flex items-center justify-center mb-6 text-neon-cyan group-hover:scale-110 transition-transform">
+            <Cpu className="w-6 h-6" />
+          </div>
+          <h3 className="text-xl font-bold mb-3">سرعة خارقة</h3>
+          <p className="text-muted-foreground leading-relaxed">
+            استغل قدرات الذكاء الاصطناعي لإنتاج أكواد تعمل في ثوانٍ بدلاً من ساعات.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="p-8 rounded-3xl glass border border-border group hover:border-neon-purple/30 transition-all card-hover">
+          <div className="w-12 h-12 rounded-2xl bg-neon-purple/10 flex items-center justify-center mb-6 text-neon-purple group-hover:scale-110 transition-transform">
+            <Sparkles className="w-6 h-6" />
+          </div>
+          <h3 className="text-xl font-bold mb-3">تركيز إبداعي</h3>
+          <p className="text-muted-foreground leading-relaxed">
+            اترك العمل الروتيني للآلة وركز طاقتك على حل المشكلات والابتكار.
+          </p>
         </div>
-      </main>
+        <div className="p-8 rounded-3xl glass border border-border group hover:border-neon-pink/30 transition-all card-hover">
+          <div className="w-12 h-12 rounded-2xl bg-neon-pink/10 flex items-center justify-center mb-6 text-neon-pink group-hover:scale-110 transition-transform">
+            <Rocket className="w-6 h-6" />
+          </div>
+          <h3 className="text-xl font-bold mb-3">شحن فوري</h3>
+          <p className="text-muted-foreground leading-relaxed">
+            حوّل أفكارك إلى منتجات حقيقية منشورة على الإنترنت بضغطة واحدة.
+          </p>
+        </div>
+      </section>
+
+      {/* Sections List */}
+      <section>
+        <div className="flex items-center justify-between mb-10">
+          <h2 className="text-3xl font-bold tracking-tight">محتويات الدليل</h2>
+          <div className="h-px flex-1 bg-gradient-to-r from-border to-transparent mr-8" />
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {wikiContent.map((section) => (
+            <Link
+              key={section.name}
+              href={`/wiki/${section.articles[0].slug}`}
+              className="group relative p-8 rounded-3xl glass border border-border hover:border-neon-cyan/50 transition-all overflow-hidden"
+            >
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-neon-cyan to-neon-purple opacity-0 group-hover:opacity-100 transition-opacity" />
+              
+              <div className="flex items-start gap-6">
+                <div className="p-4 rounded-2xl bg-secondary text-neon-cyan group-hover:glow-cyan transition-all">
+                  {sectionIcons[section.name] || <Sparkles className="w-6 h-6" />}
+                </div>
+                <div className="flex-1 space-y-4">
+                  <div>
+                    <h3 className="text-2xl font-bold group-hover:text-neon-cyan transition-colors mb-1">
+                      {section.name}
+                    </h3>
+                    <p className="text-muted-foreground text-sm">
+                      {section.articles.length} مقالات تعليمية
+                    </p>
+                  </div>
+                  <ul className="space-y-2">
+                    {section.articles.slice(0, 2).map((article) => (
+                      <li key={article.slug} className="text-sm flex items-center gap-2 text-muted-foreground group-hover:text-foreground transition-colors">
+                        <ArrowLeft className="w-3 h-3 text-neon-purple" />
+                        {article.title}
+                      </li>
+                    ))}
+                    {section.articles.length > 2 && (
+                      <li className="text-xs text-neon-cyan font-medium">
+                        +{section.articles.length - 2} مقالات أخرى...
+                      </li>
+                    )}
+                  </ul>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Philosophy Banner */}
+      <section className="relative p-12 rounded-[40px] overflow-hidden border border-white/5">
+        <div className="absolute inset-0 bg-gradient-to-br from-neon-purple/20 via-background to-neon-cyan/10 -z-10" />
+        <div className="absolute top-0 right-0 w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none -z-10" />
+        
+        <div className="max-w-3xl mx-auto text-center space-y-8">
+          <Sparkles className="w-12 h-12 text-neon-purple mx-auto animate-pulse-glow" />
+          <h2 className="text-3xl md:text-4xl font-bold leading-tight">
+            &ldquo;البرمجة بالإحساس ليست مجرد طريقة جديدة لكتابة الكود، بل هي فلسفة لتمكين المبدعين من بناء المستقبل.&rdquo;
+          </h2>
+          <div className="flex items-center justify-center gap-4 text-muted-foreground">
+            <div className="h-px w-12 bg-border" />
+            <span className="text-sm font-medium tracking-widest uppercase">فريق Vibe Coding</span>
+            <div className="h-px w-12 bg-border" />
+          </div>
+        </div>
+      </section>
+
+      {/* Footer / Call to Action */}
+      <section className="text-center py-10">
+        <h3 className="text-2xl font-bold mb-6">جاهز للانضمام إلى الثورة؟</h3>
+        <Button asChild size="lg" className="rounded-2xl px-12 bg-white text-black hover:bg-white/90 font-bold h-14">
+          <Link href={`/wiki/${firstArticle.slug}`}>
+            ابدأ رحلتك الآن
+          </Link>
+        </Button>
+      </section>
     </div>
   );
 }
