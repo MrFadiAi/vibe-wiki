@@ -1,7 +1,9 @@
 import Link from "next/link";
-import { ArrowLeft, Sparkles, Zap, Terminal, GitBranch, Cpu, Rocket, ArrowRight } from "lucide-react";
+import { ArrowLeft, Sparkles, Terminal, GitBranch, Cpu, Rocket } from "lucide-react";
 import { wikiContent, allArticles } from "@/data/wiki-content";
 import { Button } from "@/components/ui/button";
+import Hero from "@/components/home/Hero";
+import LearningPaths from "@/components/home/LearningPaths";
 
 const sectionIcons: Record<string, React.ReactNode> = {
   "التحول الكبير (The Vibe Shift)": <Sparkles className="w-6 h-6" />,
@@ -15,46 +17,15 @@ export default function Home() {
   const firstArticle = allArticles[0];
 
   return (
-    <div className="max-w-5xl mx-auto space-y-24 pb-20">
-      {/* Hero Section */}
-      <section className="relative pt-10 text-center">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-neon-cyan/10 blur-[120px] -z-10 rounded-full" />
-        
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-neon-cyan/20 mb-8 animate-float">
-          <Zap className="w-4 h-4 text-neon-cyan" />
-          <span className="text-sm font-medium text-neon-cyan">مستقبل البرمجة يبدأ هنا</span>
-        </div>
+    <div className="max-w-6xl mx-auto space-y-16 pb-20">
+      {/* Animated Hero Section */}
+      <Hero />
 
-        <h1 className="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight leading-tight">
-          <span className="gradient-text">مانيفستو</span>
-          <br />
-          <span className="text-foreground">البرمجة بالإحساس</span>
-        </h1>
-
-        <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed font-light">
-          تعلم كيف تبني أفكارك باستخدام <span className="text-neon-cyan font-semibold">الذكاء الاصطناعي</span>، 
-          ثق بـ <span className="text-neon-purple font-semibold">حدسك</span>، 
-          واستمتع بـ <span className="text-neon-pink font-semibold">التدفق الإبداعي</span>. 
-          توقف عن حفظ الأكواد، وابدأ في بناء المنتجات.
-        </p>
-
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-          <Button asChild size="xl" className="h-14 px-10 rounded-2xl bg-gradient-to-r from-neon-cyan to-neon-purple text-white font-bold hover:scale-105 transition-all glow-cyan border-0">
-            <Link href={`/wiki/${firstArticle.slug}`} className="flex items-center gap-2">
-              ابدأ التعلم الآن
-              <ArrowLeft className="w-5 h-5" />
-            </Link>
-          </Button>
-          <Button asChild variant="outline" size="xl" className="h-14 px-10 rounded-2xl border-white/10 glass hover:border-neon-pink/50 text-foreground font-semibold">
-            <Link href="/wiki/the-vibe-stack">
-              اكتشف الحزمة التقنية
-            </Link>
-          </Button>
-        </div>
-      </section>
+      {/* Learning Paths Grid */}
+      <LearningPaths />
 
       {/* Stats / Features Grid */}
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
         <div className="p-8 rounded-3xl glass border border-border group hover:border-neon-cyan/30 transition-all card-hover">
           <div className="w-12 h-12 rounded-2xl bg-neon-cyan/10 flex items-center justify-center mb-6 text-neon-cyan group-hover:scale-110 transition-transform">
             <Cpu className="w-6 h-6" />
@@ -85,7 +56,7 @@ export default function Home() {
       </section>
 
       {/* Sections List */}
-      <section>
+      <section className="px-4">
         <div className="flex items-center justify-between mb-10">
           <h2 className="text-3xl font-bold tracking-tight">محتويات الدليل</h2>
           <div className="h-px flex-1 bg-gradient-to-r from-border to-transparent mr-8" />
@@ -134,25 +105,27 @@ export default function Home() {
       </section>
 
       {/* Philosophy Banner */}
-      <section className="relative p-12 rounded-[40px] overflow-hidden border border-white/5">
-        <div className="absolute inset-0 bg-gradient-to-br from-neon-purple/20 via-background to-neon-cyan/10 -z-10" />
-        <div className="absolute top-0 right-0 w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none -z-10" />
-        
-        <div className="max-w-3xl mx-auto text-center space-y-8">
-          <Sparkles className="w-12 h-12 text-neon-purple mx-auto animate-pulse-glow" />
-          <h2 className="text-3xl md:text-4xl font-bold leading-tight">
-            &ldquo;البرمجة بالإحساس ليست مجرد طريقة جديدة لكتابة الكود، بل هي فلسفة لتمكين المبدعين من بناء المستقبل.&rdquo;
-          </h2>
-          <div className="flex items-center justify-center gap-4 text-muted-foreground">
-            <div className="h-px w-12 bg-border" />
-            <span className="text-sm font-medium tracking-widest uppercase">فريق Vibe Coding</span>
-            <div className="h-px w-12 bg-border" />
+      <section className="px-4">
+        <div className="relative p-12 rounded-[40px] overflow-hidden border border-white/5">
+          <div className="absolute inset-0 bg-gradient-to-br from-neon-purple/20 via-background to-neon-cyan/10 -z-10" />
+          <div className="absolute top-0 right-0 w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none -z-10" />
+          
+          <div className="max-w-3xl mx-auto text-center space-y-8">
+            <Sparkles className="w-12 h-12 text-neon-purple mx-auto animate-pulse-glow" />
+            <h2 className="text-3xl md:text-4xl font-bold leading-tight">
+              &ldquo;البرمجة بالإحساس ليست مجرد طريقة جديدة لكتابة الكود، بل هي فلسفة لتمكين المبدعين من بناء المستقبل.&rdquo;
+            </h2>
+            <div className="flex items-center justify-center gap-4 text-muted-foreground">
+              <div className="h-px w-12 bg-border" />
+              <span className="text-sm font-medium tracking-widest uppercase">فريق Vibe Coding</span>
+              <div className="h-px w-12 bg-border" />
+            </div>
           </div>
         </div>
       </section>
 
       {/* Footer / Call to Action */}
-      <section className="text-center py-10">
+      <section className="text-center py-10 px-4">
         <h3 className="text-2xl font-bold mb-6">جاهز للانضمام إلى الثورة؟</h3>
         <Button asChild size="lg" className="rounded-2xl px-12 bg-white text-black hover:bg-white/90 font-bold h-14">
           <Link href={`/wiki/${firstArticle.slug}`}>

@@ -2,131 +2,328 @@
 
 import { WikiArticle, getAdjacentArticles } from "@/data/wiki-content";
 import { PrevNextNavigation } from "@/components/PrevNextNavigation";
+import { CodeBlock } from "@/components/mdx/CodeBlock";
+import React from "react";
 
 interface ArticleContentProps {
   article: WikiArticle;
 }
 
+// Custom component wrapper types
+interface ElementProps {
+  children?: React.ReactNode;
+  className?: string;
+}
+
+// Parse markdown content into structured elements and render with custom components
 export function ArticleContent({ article }: ArticleContentProps) {
   const { prev, next } = getAdjacentArticles(article.slug);
 
-  // Parse markdown-like content to HTML
-  const parseContent = (content: string): string => {
-    let html = content;
+  const renderContent = (content: string) => {
+    const elements: React.ReactNode[] = [];
+    let key = 0;
 
-    // Headers
-    html = html.replace(/^### (.*$)/gim, '<h3 class="text-xl font-semibold mt-10 mb-4 text-foreground">$1</h3>');
-    html = html.replace(/^## (.*$)/gim, '<h2 class="text-2xl font-bold mt-12 mb-5 gradient-text">$1</h2>');
-    html = html.replace(/^# (.*$)/gim, '<h1 class="text-4xl md:text-5xl font-bold mb-8 gradient-text leading-tight">$1</h1>');
+    // Split content into blocks for better parsing
+    const lines = content.split("\n");
+    let currentIndex = 0;
 
-    // Bold and italic
-    html = html.replace(/\*\*\*(.*?)\*\*\*/g, '<strong class="italic text-foreground">$1</strong>');
-    html = html.replace(/\*\*(.*?)\*\*/g, '<strong class="text-foreground font-semibold">$1</strong>');
-    html = html.replace(/\*(.*?)\*/g, '<em class="text-neon-cyan not-italic">$1</em>');
+    while (currentIndex < lines.length) {
+      const line = lines[currentIndex];
 
-    // Inline code
-    html = html.replace(/`([^`]+)`/g, '<code class="px-2 py-1 rounded-lg bg-neon-cyan/10 text-neon-cyan text-sm font-mono border border-neon-cyan/20" dir="ltr">$1</code>');
-
-    // Code blocks with language
-    html = html.replace(
-      /```(\w+)?\n([\s\S]*?)```/g,
-      (_, lang, code) => {
-        const trimmedCode = code.trim();
-        const escapedCode = trimmedCode
-          .replace(/&/g, "&amp;")
-          .replace(/</g, "&lt;")
-          .replace(/>/g, "&gt;");
-        return `<div class="group relative my-8" dir="ltr">
-          ${lang ? `<div class="absolute top-0 right-0 px-4 py-2 text-xs text-neon-purple bg-neon-purple/10 rounded-tr-xl rounded-bl-xl font-mono border-b border-l border-neon-purple/20">${lang}</div>` : ''}
-          <pre class="p-6 ${lang ? 'pt-12' : ''} rounded-2xl glass border border-border overflow-x-auto"><code class="text-sm font-mono text-foreground leading-relaxed block">${escapedCode}</code></pre>
-          <button 
-            onclick="navigator.clipboard.writeText(this.dataset.code).then(() => { this.innerHTML = '<svg class=\\'w-4 h-4 text-neon-green\\' fill=\\'none\\' stroke=\\'currentColor\\' viewBox=\\'0 0 24 24\\'><path stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\' stroke-width=\\'2\\' d=\\'M5 13l4 4L19 7\\'></path></svg>'; setTimeout(() => this.innerHTML = '<svg class=\\'w-4 h-4\\' fill=\\'none\\' stroke=\\'currentColor\\' viewBox=\\'0 0 24 24\\'><path stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\' stroke-width=\\'2\\' d=\\'M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z\\'></path></svg>', 2000) })"
-            data-code="${trimmedCode.replace(/"/g, '&quot;')}"
-            class="absolute top-3 left-3 p-2.5 rounded-xl glass border border-border opacity-0 group-hover:opacity-100 hover:border-neon-cyan/50 hover:bg-neon-cyan/10 transition-all duration-300"
-            aria-label="نسخ الكود"
-          >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-            </svg>
-          </button>
-        </div>`;
+      // Skip empty lines
+      if (!line.trim()) {
+        currentIndex++;
+        continue;
       }
-    );
 
-    // Tables
-    html = html.replace(
-      /\|(.+)\|\n\|[-|]+\|\n((?:\|.+\|\n?)+)/g,
-      (_, headerRow, bodyRows) => {
-        const headers = headerRow.split('|').filter((h: string) => h.trim());
-        const rows = bodyRows.trim().split('\n').map((row: string) => 
-          row.split('|').filter((cell: string) => cell.trim())
+      // Code blocks (```language ... ```)
+      if (line.trim().startsWith("```")) {
+        const langMatch = line.trim().match(/^```(\w+)?/);
+        const language = langMatch?.[1] || "plaintext";
+        const codeLines: string[] = [];
+        currentIndex++;
+
+        while (currentIndex < lines.length && !lines[currentIndex].trim().startsWith("```")) {
+          codeLines.push(lines[currentIndex]);
+          currentIndex++;
+        }
+        currentIndex++; // Skip closing ```
+
+        elements.push(
+          <CodeBlock
+            key={key++}
+            code={codeLines.join("\n")}
+            language={language}
+          />
         );
-        
-        return `<div class="my-8 overflow-x-auto rounded-2xl glass border border-border">
-          <table class="w-full border-collapse">
-            <thead>
-              <tr class="border-b border-border bg-white/5">
-                ${headers.map((h: string) => `<th class="px-6 py-4 text-right text-sm font-semibold text-neon-cyan">${h.trim()}</th>`).join('')}
-              </tr>
-            </thead>
-            <tbody>
-              ${rows.map((row: string[]) => `
-                <tr class="border-b border-border/50 hover:bg-white/5 transition-colors">
-                  ${row.map((cell: string) => `<td class="px-6 py-4 text-sm text-right">${cell.trim()}</td>`).join('')}
+        continue;
+      }
+
+      // Headers
+      if (line.startsWith("### ")) {
+        const text = line.slice(4);
+        const id = text.replace(/\s+/g, "-").toLowerCase();
+        elements.push(
+          <h3 key={key++} id={id} className="text-xl md:text-2xl font-semibold mb-4 mt-10 text-foreground scroll-mt-24">
+            {parseInlineElements(text)}
+          </h3>
+        );
+        currentIndex++;
+        continue;
+      }
+
+      if (line.startsWith("## ")) {
+        const text = line.slice(3);
+        const id = text.replace(/\s+/g, "-").toLowerCase();
+        elements.push(
+          <h2 key={key++} id={id} className="text-2xl md:text-3xl font-bold mb-5 mt-12 gradient-text scroll-mt-24">
+            {parseInlineElements(text)}
+          </h2>
+        );
+        currentIndex++;
+        continue;
+      }
+
+      if (line.startsWith("# ")) {
+        const text = line.slice(2);
+        elements.push(
+          <h1 key={key++} className="text-4xl md:text-5xl font-bold mb-8 gradient-text leading-tight scroll-mt-24">
+            {parseInlineElements(text)}
+          </h1>
+        );
+        currentIndex++;
+        continue;
+      }
+
+      // Blockquote
+      if (line.startsWith("> ")) {
+        const text = line.slice(2);
+        elements.push(
+          <blockquote key={key++} className="my-6 pr-6 border-r-4 border-neon-purple bg-neon-purple/5 py-4 pl-4 rounded-l-xl text-muted-foreground italic">
+            {parseInlineElements(text)}
+          </blockquote>
+        );
+        currentIndex++;
+        continue;
+      }
+
+      // Horizontal rule
+      if (line.trim() === "---") {
+        elements.push(
+          <hr key={key++} className="my-12 border-0 h-px bg-gradient-to-l from-transparent via-border to-transparent" />
+        );
+        currentIndex++;
+        continue;
+      }
+
+      // Unordered list (collect consecutive list items)
+      if (line.startsWith("- ")) {
+        const listItems: React.ReactNode[] = [];
+        while (currentIndex < lines.length && lines[currentIndex].startsWith("- ")) {
+          const itemText = lines[currentIndex].slice(2);
+          listItems.push(
+            <li key={listItems.length} className="flex items-start gap-3 py-2 text-muted-foreground">
+              <span className="mt-2.5 w-2 h-2 rounded-full bg-gradient-to-r from-neon-cyan to-neon-purple flex-shrink-0" />
+              <span className="flex-1">{parseInlineElements(itemText)}</span>
+            </li>
+          );
+          currentIndex++;
+        }
+        elements.push(
+          <ul key={key++} className="my-6 space-y-1 mr-6">
+            {listItems}
+          </ul>
+        );
+        continue;
+      }
+
+      // Ordered list
+      if (/^\d+\.\s/.test(line)) {
+        const listItems: React.ReactNode[] = [];
+        while (currentIndex < lines.length && /^\d+\.\s/.test(lines[currentIndex])) {
+          const itemText = lines[currentIndex].replace(/^\d+\.\s/, "");
+          listItems.push(
+            <li key={listItems.length} className="py-2 text-muted-foreground list-decimal mr-6">
+              {parseInlineElements(itemText)}
+            </li>
+          );
+          currentIndex++;
+        }
+        elements.push(
+          <ol key={key++} className="my-6 space-y-1 marker:text-neon-cyan">
+            {listItems}
+          </ol>
+        );
+        continue;
+      }
+
+      // Table detection
+      if (line.includes("|") && lines[currentIndex + 1]?.includes("---")) {
+        const tableRows: string[][] = [];
+        let headerRow: string[] = [];
+
+        // Parse header
+        headerRow = line.split("|").map((cell) => cell.trim()).filter(Boolean);
+        currentIndex++; // Skip header row
+        currentIndex++; // Skip separator row
+
+        // Parse body rows
+        while (currentIndex < lines.length && lines[currentIndex].includes("|")) {
+          const row = lines[currentIndex].split("|").map((cell) => cell.trim()).filter(Boolean);
+          tableRows.push(row);
+          currentIndex++;
+        }
+
+        elements.push(
+          <div key={key++} className="my-8 overflow-x-auto rounded-2xl glass border border-border">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="border-b border-border bg-white/5">
+                  {headerRow.map((cell, i) => (
+                    <th key={i} className="px-6 py-4 text-right text-sm font-semibold text-neon-cyan">
+                      {parseInlineElements(cell)}
+                    </th>
+                  ))}
                 </tr>
-              `).join('')}
-            </tbody>
-          </table>
-        </div>`;
+              </thead>
+              <tbody>
+                {tableRows.map((row, rowIndex) => (
+                  <tr key={rowIndex} className="border-b border-border/50 hover:bg-white/5 transition-colors">
+                    {row.map((cell, cellIndex) => (
+                      <td key={cellIndex} className="px-6 py-4 text-sm text-right">
+                        {parseInlineElements(cell)}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        );
+        continue;
       }
-    );
 
-    // Unordered lists
-    html = html.replace(/^- (.*$)/gim, '<li class="flex items-start gap-3 py-2 text-muted-foreground"><span class="mt-2 w-2 h-2 rounded-full bg-gradient-to-r from-neon-cyan to-neon-purple flex-shrink-0"></span><span>$1</span></li>');
-    html = html.replace(/(<li.*<\/li>\n?)+/g, '<ul class="my-6 space-y-1">$&</ul>');
-
-    // Ordered lists
-    html = html.replace(/^\d+\. (.*$)/gim, '<li class="py-2 text-muted-foreground list-decimal mr-6">$1</li>');
-
-    // Blockquotes
-    html = html.replace(/^> (.*$)/gim, '<blockquote class="my-6 pr-6 border-r-4 border-neon-purple bg-neon-purple/5 py-4 pl-4 rounded-l-xl text-muted-foreground">$1</blockquote>');
-
-    // Horizontal rules
-    html = html.replace(/^---$/gim, '<hr class="my-12 border-0 h-px bg-gradient-to-l from-transparent via-border to-transparent" />');
-
-    // Links
-    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-neon-cyan hover:text-neon-purple underline underline-offset-4 decoration-neon-cyan/30 hover:decoration-neon-purple/50 transition-colors" target="_blank" rel="noopener noreferrer">$1</a>');
-
-    // Paragraphs (wrap remaining text)
-    html = html.replace(/^(?!<[a-z])(.*[^\n])$/gim, (match) => {
-      if (match.trim() && !match.startsWith('<')) {
-        return `<p class="my-5 text-muted-foreground leading-relaxed text-lg">${match}</p>`;
+      // Regular paragraph
+      if (line.trim()) {
+        elements.push(
+          <p key={key++} className="my-5 text-lg leading-relaxed text-muted-foreground">
+            {parseInlineElements(line)}
+          </p>
+        );
       }
-      return match;
-    });
+      currentIndex++;
+    }
 
-    return html;
+    return elements;
+  };
+
+  // Parse inline elements (bold, italic, code, links)
+  const parseInlineElements = (text: string): React.ReactNode => {
+    const parts: React.ReactNode[] = [];
+    let remaining = text;
+    let key = 0;
+
+    while (remaining.length > 0) {
+      // Inline code `code`
+      const codeMatch = remaining.match(/^`([^`]+)`/);
+      if (codeMatch) {
+        parts.push(
+          <code
+            key={key++}
+            className="px-2 py-1 rounded-lg bg-neon-cyan/10 text-neon-cyan text-sm font-mono border border-neon-cyan/20"
+            dir="ltr"
+          >
+            {codeMatch[1]}
+          </code>
+        );
+        remaining = remaining.slice(codeMatch[0].length);
+        continue;
+      }
+
+      // Bold + Italic ***text***
+      const boldItalicMatch = remaining.match(/^\*\*\*(.+?)\*\*\*/);
+      if (boldItalicMatch) {
+        parts.push(
+          <strong key={key++} className="italic text-foreground font-semibold">
+            {boldItalicMatch[1]}
+          </strong>
+        );
+        remaining = remaining.slice(boldItalicMatch[0].length);
+        continue;
+      }
+
+      // Bold **text**
+      const boldMatch = remaining.match(/^\*\*(.+?)\*\*/);
+      if (boldMatch) {
+        parts.push(
+          <strong key={key++} className="text-foreground font-semibold">
+            {boldMatch[1]}
+          </strong>
+        );
+        remaining = remaining.slice(boldMatch[0].length);
+        continue;
+      }
+
+      // Italic *text*
+      const italicMatch = remaining.match(/^\*(.+?)\*/);
+      if (italicMatch) {
+        parts.push(
+          <em key={key++} className="text-neon-cyan not-italic">
+            {italicMatch[1]}
+          </em>
+        );
+        remaining = remaining.slice(italicMatch[0].length);
+        continue;
+      }
+
+      // Links [text](url)
+      const linkMatch = remaining.match(/^\[([^\]]+)\]\(([^)]+)\)/);
+      if (linkMatch) {
+        const isExternal = linkMatch[2].startsWith("http");
+        parts.push(
+          <a
+            key={key++}
+            href={linkMatch[2]}
+            className="text-neon-cyan hover:text-neon-purple underline underline-offset-4 decoration-neon-cyan/30 hover:decoration-neon-purple/50 transition-colors"
+            target={isExternal ? "_blank" : undefined}
+            rel={isExternal ? "noopener noreferrer" : undefined}
+          >
+            {linkMatch[1]}
+          </a>
+        );
+        remaining = remaining.slice(linkMatch[0].length);
+        continue;
+      }
+
+      // Regular text - find next special character or take all
+      const nextSpecial = remaining.search(/[`*\[]/);
+      if (nextSpecial === -1) {
+        parts.push(remaining);
+        break;
+      } else if (nextSpecial === 0) {
+        // If special char at start but no match, take one char and continue
+        parts.push(remaining[0]);
+        remaining = remaining.slice(1);
+      } else {
+        parts.push(remaining.slice(0, nextSpecial));
+        remaining = remaining.slice(nextSpecial);
+      }
+    }
+
+    return parts.length === 1 ? parts[0] : parts;
   };
 
   return (
     <article className="max-w-4xl mx-auto">
-      {/* Breadcrumb */}
-      <div className="flex items-center gap-3 mb-10 text-sm">
-        <span className="px-3 py-1.5 rounded-full bg-neon-purple/10 text-neon-purple border border-neon-purple/20">
-          {article.section}
-        </span>
-        <span className="text-muted-foreground">/</span>
-        <span className="text-foreground font-medium">{article.title}</span>
-      </div>
-
       {/* Content */}
-      <div
-        className="prose prose-invert max-w-none"
-        dangerouslySetInnerHTML={{ __html: parseContent(article.content) }}
-      />
+      <div className="prose prose-invert max-w-none">
+        {renderContent(article.content)}
+      </div>
 
       {/* Navigation */}
       <PrevNextNavigation prev={prev} next={next} />
     </article>
   );
 }
+
+export default ArticleContent;
