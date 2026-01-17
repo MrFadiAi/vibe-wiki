@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* Modern Arabic RTL Dark Theme */
 :root {
   --background: #030712;
@@ -69,6 +71,56 @@
   --radius-md: var(--radius);
   --radius-lg: calc(var(--radius) + 4px);
   --radius-xl: calc(var(--radius) + 8px);
+
+  /* Ocean Palette */
+  --color-ocean-50: oklch(0.97 0.02 240);
+  --color-ocean-100: oklch(0.92 0.05 240);
+  --color-ocean-200: oklch(0.85 0.08 240);
+  --color-ocean-300: oklch(0.75 0.12 240);
+  --color-ocean-400: oklch(0.65 0.18 240);
+  --color-ocean-500: oklch(0.55 0.22 240);
+  --color-ocean-600: oklch(0.45 0.20 240);
+  --color-ocean-700: oklch(0.35 0.15 240);
+  --color-ocean-800: oklch(0.25 0.10 240);
+  --color-ocean-900: oklch(0.15 0.05 240);
+  --color-ocean-950: oklch(0.10 0.03 240);
+
+  /* Forest Palette */
+  --color-forest-50: oklch(0.97 0.02 145);
+  --color-forest-100: oklch(0.92 0.05 145);
+  --color-forest-200: oklch(0.85 0.08 145);
+  --color-forest-300: oklch(0.75 0.12 145);
+  --color-forest-400: oklch(0.65 0.18 145);
+  --color-forest-500: oklch(0.55 0.22 145);
+  --color-forest-600: oklch(0.45 0.20 145);
+  --color-forest-700: oklch(0.35 0.15 145);
+  --color-forest-800: oklch(0.25 0.10 145);
+  --color-forest-900: oklch(0.15 0.05 145);
+  --color-forest-950: oklch(0.10 0.03 145);
+
+  /* Sunset Palette */
+  --color-sunset-50: oklch(0.97 0.02 35);
+  --color-sunset-100: oklch(0.92 0.05 35);
+  --color-sunset-200: oklch(0.85 0.08 35);
+  --color-sunset-300: oklch(0.75 0.12 35);
+  --color-sunset-400: oklch(0.65 0.18 35);
+  --color-sunset-500: oklch(0.55 0.22 35);
+  --color-sunset-600: oklch(0.45 0.20 35);
+  --color-sunset-700: oklch(0.35 0.15 35);
+  --color-sunset-800: oklch(0.25 0.10 35);
+  --color-sunset-900: oklch(0.15 0.05 35);
+  --color-sunset-950: oklch(0.10 0.03 35);
+
+  /* Animations */
+  --animate-slide-in-right: slide-in-from-right 0.4s ease-out forwards;
+  --animate-fade-in: fade-in 0.5s ease-out forwards;
+  --animate-scale-up: scale-up 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+
+  /* Typography Enhancements */
+  --leading-tighter: 1.15;
+  --leading-relaxed: 1.625;
+  --tracking-wide: 0.05em;
+  --tracking-widest: 0.1em;
 }
 
 * {
@@ -327,4 +379,20 @@ code {
   opacity: 0.02;
   pointer-events: none;
   mix-blend-mode: overlay;
+}
+
+/* Enhanced Animations */
+@keyframes slide-in-from-right {
+  0% { transform: translateX(20px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes scale-up {
+  0% { transform: scale(0.95); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
 }
