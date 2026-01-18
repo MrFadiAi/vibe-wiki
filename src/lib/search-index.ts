@@ -1,4 +1,4 @@
-import { allArticles } from '@/data/wiki-content';
+import { allArticles } from '@/lib/article-utils';
 import Fuse from 'fuse.js';
 
 // Define types manually if namespace import fails or use inferred types

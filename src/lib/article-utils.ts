@@ -4,7 +4,13 @@ import { wikiContent, WikiArticle } from "@/data/wiki-content";
 export const allArticles: WikiArticle[] = wikiContent.flatMap((section) => section.articles);
 
 export function getArticleBySlug(slug: string): WikiArticle | undefined {
-  return allArticles.find((article) => article.slug === slug);
+  const article = allArticles.find((article) => article.slug === slug);
+  if (article) {
+    // Clean content to remove duplicate H1 titles if they exist
+    const cleanContent = article.content.replace(/^#\s+.+\n+/, "");
+    return { ...article, content: cleanContent };
+  }
+  return undefined;
 }
 
 export function getPrevNextArticles(currentSlug: string) {
