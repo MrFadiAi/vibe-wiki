@@ -61,7 +61,7 @@ export const wikiContent: WikiSection[] = [
       },
       {
         slug: "the-vibe-stack",
-        title: "حزمة الإحساس (The Vibe Stack)",
+        title: "Vibe Stack (The Vibe Stack)",
         section: "المقدمة",
         content: `
 يحتاج كل "مبرمج إحساس" إلى مجموعة موثوقة من الأدوات التي تعمل معاً بسلاسة. إليك الحزمة الحديثة التي توازن بين القوة، البساطة، والتوافق مع الذكاء الاصطناعي.

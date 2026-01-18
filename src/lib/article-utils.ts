@@ -6,8 +6,8 @@ export const allArticles: WikiArticle[] = wikiContent.flatMap((section) => secti
 export function getArticleBySlug(slug: string): WikiArticle | undefined {
   const article = allArticles.find((article) => article.slug === slug);
   if (article) {
-    // Clean content to remove duplicate H1 titles if they exist
-    const cleanContent = article.content.replace(/^#\s+.+\n+/, "");
+    // Clean content to remove duplicate H1 titles if they exist (handling leading whitespace)
+    const cleanContent = article.content.trim().replace(/^#\s+[^\n]+\n+/, "").trim();
     return { ...article, content: cleanContent };
   }
   return undefined;
