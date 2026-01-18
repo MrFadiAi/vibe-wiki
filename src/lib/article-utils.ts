@@ -1,4 +1,22 @@
-// Utility functions for article processing - can be used in both server and client
+import { wikiContent, WikiArticle } from "@/data/wiki-content";
+
+// Flatten all articles for easy access
+export const allArticles: WikiArticle[] = wikiContent.flatMap((section) => section.articles);
+
+export function getArticleBySlug(slug: string): WikiArticle | undefined {
+  return allArticles.find((article) => article.slug === slug);
+}
+
+export function getPrevNextArticles(currentSlug: string) {
+  const currentIndex = allArticles.findIndex((a) => a.slug === currentSlug);
+  
+  if (currentIndex === -1) return { prev: null, next: null };
+  
+  const prev = currentIndex > 0 ? allArticles[currentIndex - 1] : null;
+  const next = currentIndex < allArticles.length - 1 ? allArticles[currentIndex + 1] : null;
+  
+  return { prev, next };
+}
 
 export interface TocHeading {
   id: string;

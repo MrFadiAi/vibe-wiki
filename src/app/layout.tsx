@@ -11,11 +11,13 @@ const cairo = Cairo({
   variable: "--font-arabic",
   subsets: ["arabic", "latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const viewport: Viewport = {
@@ -26,41 +28,12 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://vibe-wiki.vercel.app"),
   title: {
     default: "دليل البرمجة بالإحساس | Vibe Coding",
     template: "%s | Vibe Coding",
   },
-  description: "تعلم البرمجة مع الذكاء الاصطناعي والحدس والتدفق الإبداعي. الدليل الشامل للبرمجة العصرية.",
-  keywords: ["برمجة", "ذكاء اصطناعي", "تطوير ويب", "Next.js", "كيرسر", "هندسة البرومبت"],
-  authors: [{ name: "مجتمع Vibe Coding" }],
-  manifest: "/manifest.webmanifest",
-  icons: {
-    icon: "/icon-192.svg",
-    shortcut: "/icon-192.svg",
-    apple: "/icon-192.svg",
-  },
-  openGraph: {
-    title: "دليل البرمجة بالإحساس",
-    description: "تعلم البرمجة مع الذكاء الاصطناعي والحدس والتدفق الإبداعي.",
-    type: "website",
-    locale: "ar_SA",
-    siteName: "Vibe Coding Wiki",
-    images: [
-      {
-        url: "/icon-512.svg",
-        width: 512,
-        height: 512,
-        alt: "Vibe Coding Logo",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary",
-    title: "دليل البرمجة بالإحساس",
-    description: "تعلم البرمجة مع الذكاء الاصطناعي والحدس والتدفق الإبداعي.",
-    images: ["/icon-512.svg"],
-  },
+  description: "الدليل الشامل للبرمجة مع الذكاء الاصطناعي والتدفق الإبداعي.",
+  keywords: ["برمجة", "ذكاء اصطناعي", "Next.js", "Cursor", "Windsurf"],
 };
 
 export default function RootLayout({
@@ -71,24 +44,35 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl" suppressHydrationWarning>
       <body
-        className={`${cairo.variable} ${geistMono.variable} antialiased bg-background text-foreground font-[family-name:var(--font-arabic)]`}
+        className={`${cairo.variable} ${geistMono.variable} antialiased bg-background text-foreground font-[family-name:var(--font-arabic)] min-h-screen selection:bg-neon-cyan/30 selection:text-neon-cyan`}
       >
-        <ThemeProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
           <CommandMenu />
-          <div className="flex min-h-screen">
-            {/* Sidebar - Right side for RTL */}
+          
+          <div className="relative min-h-screen">
+            {/* Sidebar - Fixed on Right */}
             <Sidebar />
+            
+            {/* Main Content Area */}
+            <div className="lg:mr-80 min-h-screen flex flex-col transition-[margin] duration-300 ease-in-out">
+              {/* Background Effects */}
+              <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-neon-purple/10 rounded-full blur-[120px] mix-blend-screen" />
+                <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-neon-cyan/10 rounded-full blur-[120px] mix-blend-screen" />
+                <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-20 mix-blend-overlay" />
+              </div>
 
-            {/* Main content area */}
-            <div className="flex-1 lg:pr-80">
-              {/* Page content */}
-              <main className="px-6 py-10 lg:px-16 pb-24 lg:pb-10">
+              <main className="relative z-10 flex-1 px-4 py-8 md:px-8 lg:px-12 max-w-7xl mx-auto w-full">
                 {children}
               </main>
             </div>
           </div>
 
-          {/* Mobile Bottom Navigation */}
           <MobileNav />
         </ThemeProvider>
       </body>

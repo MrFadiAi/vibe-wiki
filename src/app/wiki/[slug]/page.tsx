@@ -1,11 +1,9 @@
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
-import { getArticleBySlug, allArticles } from "@/data/wiki-content";
-import { ArticleContent } from "@/components/ArticleContent";
-import { ScrollProgress } from "@/components/ui/ScrollProgress";
-import { ArticleHeader } from "@/components/article/ArticleHeader";
-import { TableOfContents } from "@/components/article/TableOfContents";
-import { extractHeadings } from "@/lib/article-utils";
+import { getArticleBySlug, allArticles, calculateReadingTime, getPrevNextArticles } from "@/lib/article-utils";
+import { MarkdownRenderer } from "@/components/wiki/MarkdownRenderer";
+import { PrevNextNav } from "@/components/wiki/PrevNextNav";
+import { Clock, Calendar } from "lucide-react";
 
 interface WikiPageProps {
   params: Promise<{
@@ -25,41 +23,13 @@ export async function generateMetadata({ params }: WikiPageProps): Promise<Metad
   
   if (!article) {
     return {
-      title: "الصفحة غير موجودة | Vibe Wiki",
+      title: "الصفحة غير موجودة",
     };
   }
 
-  const title = `${article.title} | Vibe Wiki`;
-  // Create a clean description from content (strip markdown chars if possible, or just take substring)
-  const description = article.content
-    .replace(/[#*`]/g, '') // Basic markdown stripping
-    .substring(0, 160)
-    .trim() + '...';
-
   return {
-    title,
-    description,
-    openGraph: {
-      title,
-      description,
-      type: "article",
-      url: `https://vibe-wiki.vercel.app/wiki/${slug}`,
-      publishedTime: new Date().toISOString(), // In a real app, use article date
-      images: [
-        {
-          url: '/icon-512.svg', // Using SVG as placeholder or generic image
-          width: 512,
-          height: 512,
-          alt: article.title,
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary',
-      title,
-      description,
-      images: ['/icon-512.svg'],
-    },
+    title: article.title,
+    description: article.content.substring(0, 160).replace(/[#*`]/g, ""),
   };
 }
 
@@ -71,30 +41,32 @@ export default async function WikiPage({ params }: WikiPageProps) {
     notFound();
   }
 
-  // Extract headings for ToC (now using server-side utility)
-  const headings = extractHeadings(article.content);
+  const readingTime = calculateReadingTime(article.content);
+  const { prev, next } = getPrevNextArticles(slug);
 
   return (
-    <>
-      {/* Scroll progress bar at top */}
-      <ScrollProgress />
+    <article className="max-w-4xl mx-auto pb-20">
+      {/* Header */}
+      <header className="mb-12 border-b border-white/10 pb-8">
+        <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
+          <span className="px-3 py-1 rounded-full bg-neon-cyan/10 text-neon-cyan border border-neon-cyan/20">
+            {article.section}
+          </span>
+          <div className="flex items-center gap-1">
+            <Clock className="h-4 w-4" />
+            <span>{readingTime} دقيقة للقراءة</span>
+          </div>
+        </div>
+        <h1 className="text-4xl md:text-5xl font-bold gradient-text leading-tight mb-6">
+          {article.title}
+        </h1>
+      </header>
 
-      {/* Table of Contents - fixed on desktop, hidden on mobile */}
-      <TableOfContents headings={headings} />
-
-      {/* Main content area with margin for ToC on large screens */}
-      <div className="lg:mr-72">
-        {/* Article Header with breadcrumbs, title, reading time */}
-        <ArticleHeader
-          title={article.title}
-          section={article.section}
-          content={article.content}
-          slug={article.slug}
-        />
-
-        {/* Article Content */}
-        <ArticleContent article={article} />
-      </div>
-    </>
+      {/* Content */}
+      <MarkdownRenderer content={article.content} />
+      
+      {/* Navigation */}
+      <PrevNextNav prev={prev} next={next} />
+    </article>
   );
 }

@@ -1,77 +1,78 @@
-'use client';
+"use client";
 
-import { Sprout, Rocket, Gem, Palette } from 'lucide-react';
-import PathCard from './PathCard';
-import { allArticles } from '@/data/wiki-content';
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { Cpu, Terminal, Rocket, PenTool } from "lucide-react";
 
-export default function LearningPaths() {
-  // Helper to find articles by slug
-  const getArticles = (slugs: string[]) => {
-    return slugs
-      .map(slug => allArticles.find(a => a.slug === slug))
-      .filter((a): a is typeof allArticles[0] => !!a);
-  };
+const paths = [
+  {
+    title: "للمبتدئين (Beginner)",
+    description: "ابدأ رحلتك. افهم الفلسفة والأدوات الأساسية.",
+    icon: <Rocket className="h-6 w-6 text-neon-green" />,
+    href: "/wiki/what-is-vibe-coding",
+    color: "from-neon-green/20 to-transparent",
+  },
+  {
+    title: "المتوسط (Intermediate)",
+    description: "ابنِ مشاريع حقيقية. أتقن Git و Next.js.",
+    icon: <Terminal className="h-6 w-6 text-neon-cyan" />,
+    href: "/wiki/prep-your-machine",
+    color: "from-neon-cyan/20 to-transparent",
+  },
+  {
+    title: "المتقدم (Advanced)",
+    description: "هندسة البرومبت، نماذج اللغة، والأنظمة المعقدة.",
+    icon: <Cpu className="h-6 w-6 text-neon-purple" />,
+    href: "/wiki/llms-explained",
+    color: "from-neon-purple/20 to-transparent",
+  },
+  {
+    title: "للمصممين (Designers)",
+    description: "حول تصاميمك إلى كود حي باستخدام الذكاء الاصطناعي.",
+    icon: <PenTool className="h-6 w-6 text-neon-pink" />,
+    href: "/wiki/the-vibe-stack",
+    color: "from-neon-pink/20 to-transparent",
+  },
+];
 
-  const paths = [
-    {
-      title: "للمبتدئين (Beginner)",
-      description: "ابدأ رحلتك في عالم البرمجة بالإحساس. تعلم الأساسيات وكيفية التفكير كمطور في عصر الذكاء الاصطناعي.",
-      level: "مبتدئ 🌱",
-      estimatedTime: "30 دقيقة",
-      icon: <Sprout className="w-6 h-6" />,
-      color: "green" as const,
-      articles: getArticles(['what-is-vibe-coding', 'prep-your-machine', 'the-terminal']),
-    },
-    {
-      title: "المتوسط (Intermediate)",
-      description: "انتقل إلى بناء المشاريع الحقيقية. أتقن الأدوات الأساسية والتحكم في الإصدارات.",
-      level: "متوسط 🚀",
-      estimatedTime: "45 دقيقة",
-      icon: <Rocket className="w-6 h-6" />,
-      color: "cyan" as const,
-      articles: getArticles(['nodejs-setup', 'what-is-git', 'github-basics']),
-    },
-    {
-      title: "المتقدم (Advanced)",
-      description: "تعمق في هندسة البرومبت، وفهم نماذج اللغة الكبيرة، وبناء الأنظمة المعقدة.",
-      level: "متقدم 💎",
-      estimatedTime: "60 دقيقة",
-      icon: <Gem className="w-6 h-6" />,
-      color: "purple" as const,
-      articles: getArticles(['llms-explained', 'prompt-engineering', 'the-editor']),
-    },
-    {
-      title: "للمصممين (Designers)",
-      description: "مسار خاص للمبدعين. كيف تحول تصاميمك إلى كود حي باستخدام أدوات Vibe Coding.",
-      level: "مصمم 🎨",
-      estimatedTime: "40 دقيقة",
-      icon: <Palette className="w-6 h-6" />,
-      color: "pink" as const,
-      articles: getArticles(['the-vibe-stack', 'hello-world-with-ai', 'deployment']),
-    },
-  ];
-
+export function LearningPaths() {
   return (
-    <section className="py-20 relative">
-      <div className="container px-4 mx-auto max-w-6xl">
-        <div className="flex flex-col md:flex-row items-end justify-between mb-12 gap-4">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
-              مسارات التعلم المقترحة
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl">
-              اختر المسار الذي يناسب مستواك واهتماماتك. تم تصميم كل مسار ليأخذك من نقطة إلى أخرى بأسرع وقت.
-            </p>
-          </div>
+    <section className="py-24">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl text-center mb-16">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">مسارات التعلم</h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            اختر المسار الذي يناسب مستواك واهتماماتك.
+          </p>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {paths.map((path, index) => (
-            <PathCard
+            <motion.div
               key={path.title}
-              {...path}
-              delay={index * 0.1}
-            />
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+            >
+              <Link
+                href={path.href}
+                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 hover:border-white/20 hover:bg-white/10 transition-all"
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${path.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                <div className="relative flex flex-col gap-4">
+                  <div className="rounded-lg bg-white/5 p-3 w-fit ring-1 ring-white/10 group-hover:scale-110 transition-transform duration-300">
+                    {path.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold leading-7">{path.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-muted-foreground group-hover:text-foreground transition-colors">
+                      {path.description}
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
           ))}
         </div>
       </div>
