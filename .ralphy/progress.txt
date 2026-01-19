@@ -426,3 +426,147 @@ Implemented a comprehensive personalized recommendation engine with content-base
 ### Next Priority Task
 **Phase 3, Task 2**: Community contribution platform
 
+---
+
+## 2025-01-19: Phase 3 - Community Contribution Platform
+
+### Completed Task
+**Phase 3, Task 2**: Community contribution platform
+
+### What Was Done
+Implemented a complete community contribution platform with submission workflow, validation, review system, reputation tracking, and badge/achievement system.
+
+1. **Added comprehensive types** (`src/types/index.ts`):
+   - `ContributionType` - "article" | "tutorial" | "example" | "path"
+   - `ContributionStatus` - "draft" | "submitted" | "under_review" | "approved" | "rejected" | "published"
+   - `ReviewDecision` - "approve" | "reject" | "request_changes"
+   - `ReviewStatusType` - "pending" | "in_review" | "approved" | "rejected" | "changes_requested"
+   - `Contribution` - Complete contribution structure with id, type, title, description, content, authorId, status, dates, review info, tags, category, difficulty, estimatedMinutes, learning-specific fields
+   - `CreateContributionInput` - Input type for creating contributions
+   - `UpdateContributionInput` - Partial update type for contributions
+   - `Review` - Review structure with id, contributionId, reviewerId, decision, comments, status, dates
+   - `ReviewComment` - Inline comment with location, content, resolved status
+   - `ContributorProfile` - Complete profile with reputation, stats, badges, expertise, preferred categories
+   - `ContributorBadge` - Badge with id, name, description, icon, criteria, earnedAt
+   - `Draft` - Draft structure with auto-save and versioning
+   - `DraftVersion` - Individual draft version with content and timestamp
+   - `ContributionFilterOptions` - Filtering options for contributions
+   - `ContributionStats` - Statistics for contribution tracking
+
+2. **Created comprehensive contribution utilities** (`src/lib/contribution-utils.ts`):
+   - **Validation Functions**:
+     - `validateContribution()` - Validates contribution objects (all required fields, title/description/content length constraints, valid types/statuses)
+     - `validateCreateContributionInput()` - Validates contribution creation input
+     - `validateReview()` - Validates review objects
+     - `validateContributorProfile()` - Validates contributor profiles
+     - `validateDraft()` - Validates draft objects
+
+   - **Factory Functions**:
+     - `createContribution()` - Creates contribution with required fields, defaults to draft status, auto-generates id, sets createdAt/updatedAt
+     - `createReview()` - Creates review with pending status, auto-generates id, sets createdAt
+     - `createReviewComment()` - Creates inline comment with resolved=false
+     - `createContributorProfile()` - Creates profile with zero reputation, empty badges/expertise/categories, createdAt/updatedAt
+     - `createDraft()` - Creates draft with initial version, auto-save support
+
+   - **Status Management**:
+     - `submitContribution()` - Transitions draft→submitted, sets submittedAt
+     - `startReview()` - Transitions submitted→under_review, assigns reviewer, sets reviewedAt
+     - `completeReview()` - Transitions under_review→approved/rejected based on decision
+     - `publishContribution()` - Transitions approved→published
+     - `resubmitContribution()` - Transitions rejected→submitted for reconsideration
+     - `updateContribution()` - Updates fields and updates updatedAt timestamp
+
+   - **Filtering & Sorting**:
+     - `filterContributions()` - Filters by status, type, author, category, difficulty, date range, tags
+     - `searchContributions()` - Full-text search across title, description, tags, content
+     - `getContributionsByStatus()` - Convenience filter by status
+     - `getContributionsByType()` - Convenience filter by type
+     - `getContributionsByAuthor()` - Get all contributions by author
+     - `getPendingContributions()` - Get submitted + under_review
+
+   - **Contributor Management**:
+     - `calculateReputation()` - Calculates reputation (10 pts per approved submission + bonus for fast review times)
+     - `updateContributorStats()` - Updates stats when contribution status changes
+     - `checkAndAwardBadges()` - Awards badges based on contributions and stats
+     - `addExpertiseTag()` - Adds expertise tag to profile (max 10)
+     - `addPreferredCategory()` - Adds preferred category to profile
+     - `awardBadge()` - Awards badge if not already earned
+     - `getTopContributors()` - Sorts profiles by reputation
+
+   - **Review Management**:
+     - `addReviewComment()` - Adds comment to review
+     - `updateReviewStatus()` - Updates review status
+     - `getReviewByContribution()` - Finds review by contributionId
+     - `getPendingReviews()` - Gets pending + in_review reviews
+     - `getReviewsByReviewer()` - Gets all reviews by reviewer
+
+   - **Draft Management**:
+     - `saveDraftVersion()` - Saves new version (max 10 versions, removes oldest)
+     - `getDraftsByAuthor()` - Gets all drafts by author
+     - `getLatestDraftVersion()` - Gets most recent version
+
+   - **Statistics**:
+     - `getContributionStats()` - Calculates stats (total, by status, by type, pending, avg review time)
+
+   - **Badge System** (`CONTRIBUTION_BADGES`):
+     - 7 predefined badges: First Steps (1 submission), Published Author (1 published), Rising Star (3 published), Expert Contributor (10 published), Quality Focus (100% approval rate), Helpful Reviewer (5 reviews), Dedicated Contributor (30 days streak)
+
+3. **Created comprehensive test suite** (`src/lib/contribution-utils.test.ts`):
+   - **121 tests** covering:
+     - Validation (33 tests) - valid/invalid contributions, inputs, reviews, profiles, drafts, missing fields, invalid types, length constraints
+     - Factory functions (22 tests) - createContribution, createReview, createReviewComment, createContributorProfile, createDraft, field defaults
+     - Status management (16 tests) - submitContribution, startReview, completeReview, publishContribution, resubmitContribution, updateContribution, status transitions
+     - Filtering & sorting (18 tests) - filterContributions (by status, type, author, category, difficulty, date range, tags), searchContributions, getContributionsByStatus/Type/Author, getPendingContributions
+     - Contributor profiles (14 tests) - calculateReputation, updateContributorStats (various status transitions), checkAndAwardBadges (various badges), addExpertiseTag, addPreferredCategory, awardBadge, getTopContributors
+     - Review management (8 tests) - addReviewComment, updateReviewStatus, getReviewByContribution, getPendingReviews, getReviewsByReviewer
+     - Draft management (5 tests) - saveDraftVersion (under limit, at limit, over limit), getDraftsByAuthor, getLatestDraftVersion
+     - Statistics (2 tests) - getContributionStats (with data, empty)
+     - Badge system (3 tests) - badge count, badge properties, first-submission badge
+
+### Technical Details
+- **Validation Rules**:
+  - Title: 5-200 characters
+  - Description: 10-500 characters
+  - Content: Minimum 50 characters for all content types
+  - Required fields: id, type, title, description, content, authorId, status, createdAt, updatedAt
+  - Valid types: article, tutorial, example, path
+  - Valid statuses: draft, submitted, under_review, approved, rejected, published
+
+- **Status Workflow**:
+  - draft → submitted (user submits)
+  - submitted → under_review (reviewer assigned)
+  - under_review → approved/rejected (reviewer decision)
+  - approved → published (published by admin)
+  - rejected → submitted (user resubmits with changes)
+
+- **Reputation Calculation**:
+  - Base: 10 points per approved submission
+  - Bonus: Up to 5 bonus points for fast review times (under 48 hours)
+  - Total: approvedSubmissions × 10 + (fastReviewBonus / 2)
+
+- **Badge System**:
+  - 7 predefined badges with icons (🌱, 📝, ⭐, 🏆, 🎯, 👥, 🔥)
+  - Automatic awarding based on contributions and stats
+  - Badges track earnedAt timestamp
+  - Prevents duplicate awards
+
+- **Draft Management**:
+  - Auto-save support with versioning
+  - Maximum 10 versions per draft (removes oldest when exceeded)
+  - Each version tracks content and timestamp
+  - Retrieves latest version for editing
+
+### All Tests Passing
+Total: 559 tests ✓ (438 existing + 121 new)
+- src/lib/contribution-utils.test.ts: 121 tests ✓
+- All existing tests continue to pass
+
+### Linting Status
+0 errors, 0 warnings - All linting issues resolved
+
+### PRD Update
+- Marked Phase 3, Task 2 as complete: `[x] Community contribution platform`
+
+### Next Priority Task
+**Phase 3, Task 3**: Advanced analytics implementation
+

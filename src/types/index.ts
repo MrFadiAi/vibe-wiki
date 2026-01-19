@@ -166,3 +166,162 @@ export interface ProgressActivity {
   timestamp: Date;
   points?: number;
 }
+
+// Community Contribution types
+export type ContributionType = 'article' | 'tutorial' | 'example' | 'path';
+export type ContributionStatus = 'draft' | 'submitted' | 'under_review' | 'approved' | 'rejected' | 'published';
+export type ReviewDecision = 'approve' | 'reject' | 'request_changes';
+export type ReviewStatusType = 'pending' | 'in_progress' | 'completed';
+
+export interface Contribution {
+  id: string;
+  type: ContributionType;
+  title: string;
+  description: string;
+  content: string;
+  authorId: string;
+  status: ContributionStatus;
+  createdAt: Date;
+  updatedAt: Date;
+  submittedAt?: Date;
+  reviewedAt?: Date;
+  reviewerId?: string;
+  reviewNotes?: string[];
+  rejectionReason?: string;
+  tags?: string[];
+  categoryId?: string;
+  difficulty?: DifficultyLevel;
+  estimatedMinutes?: number;
+  // Tutorial-specific fields
+  steps?: TutorialStep[];
+  learningObjectives?: string[];
+  prerequisites?: string[];
+  // Path-specific fields
+  targetAudience?: string[];
+  items?: PathItem[];
+}
+
+export interface CreateContributionInput {
+  type: ContributionType;
+  title: string;
+  description: string;
+  content: string;
+  authorId: string;
+  tags?: string[];
+  categoryId?: string;
+  difficulty?: DifficultyLevel;
+  estimatedMinutes?: number;
+  steps?: Omit<TutorialStep, 'id'>[];
+  learningObjectives?: string[];
+  prerequisites?: string[];
+  targetAudience?: string[];
+  items?: Omit<PathItem, 'id'>[];
+}
+
+export interface UpdateContributionInput {
+  title?: string;
+  description?: string;
+  content?: string;
+  tags?: string[];
+  categoryId?: string;
+  difficulty?: DifficultyLevel;
+  estimatedMinutes?: number;
+  steps?: TutorialStep[];
+  learningObjectives?: string[];
+  prerequisites?: string[];
+  targetAudience?: string[];
+  items?: PathItem[];
+}
+
+export interface Review {
+  id: string;
+  contributionId: string;
+  reviewerId: string;
+  status: ReviewStatusType;
+  decision?: ReviewDecision;
+  comments: ReviewComment[];
+  createdAt: Date;
+  completedAt?: Date;
+}
+
+export interface ReviewComment {
+  id: string;
+  reviewerId: string;
+  content: string;
+  line?: number;
+  type: 'suggestion' | 'issue' | 'question';
+  createdAt: Date;
+}
+
+export interface ContributorProfile {
+  userId: string;
+  username: string;
+  displayName: string;
+  bio: string;
+  avatar?: string;
+  social?: {
+    github?: string;
+    twitter?: string;
+    linkedin?: string;
+  };
+  reputation: number;
+  contributionsCount: number;
+  approvedSubmissions: number;
+  pendingSubmissions: number;
+  averageReviewTime?: number;
+  badges: ContributorBadge[];
+  expertise: string[];
+  preferredCategories: string[];
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface ContributorBadge {
+  id: string;
+  name: string;
+  description: string;
+  icon: string;
+  criteria: string;
+  earnedAt: Date;
+}
+
+export interface Draft {
+  id: string;
+  authorId: string;
+  type: ContributionType;
+  title: string;
+  content: string;
+  lastSavedAt: Date;
+  autoSaved: boolean;
+  versions: DraftVersion[];
+}
+
+export interface DraftVersion {
+  id: string;
+  content: string;
+  savedAt: Date;
+  changeSummary?: string;
+}
+
+export interface ContributionFilterOptions {
+  status?: ContributionStatus[];
+  type?: ContributionType[];
+  authorId?: string;
+  tags?: string[];
+  categoryId?: string;
+  difficulty?: DifficultyLevel[];
+  searchQuery?: string;
+  sortBy?: 'recent' | 'oldest' | 'title' | 'reputation';
+  limit?: number;
+  offset?: number;
+}
+
+export interface ContributionStats {
+  totalContributions: number;
+  pendingReview: number;
+  approvedContributions: number;
+  rejectedContributions: number;
+  draftContributions: number;
+  averageReviewTime: number;
+  topContributors: ContributorProfile[];
+}
