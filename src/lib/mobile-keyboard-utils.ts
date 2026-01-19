@@ -204,7 +204,7 @@ export function createKeyboardListener(callback: KeyboardCallback): () => void {
   };
 
   // Use visual viewport API for more accurate keyboard detection
-  const visualViewport = (window as any).visualViewport;
+  const visualViewport = (window as unknown as { visualViewport?: { addEventListener: (event: string, handler: () => void) => void; removeEventListener: (event: string, handler: () => void) => void } }).visualViewport;
   if (visualViewport) {
     visualViewport.addEventListener('resize', handleResize);
   }

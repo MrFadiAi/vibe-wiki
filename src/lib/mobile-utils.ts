@@ -152,7 +152,6 @@ export function getDeviceInfo(): DeviceInfo {
   }
 
   const userAgent = navigator.userAgent || '';
-  const maxWidth = Math.max(window.screen.width, window.screen.height);
   const touchPoints = navigator.maxTouchPoints || 0;
 
   return {
@@ -165,7 +164,7 @@ export function getDeviceInfo(): DeviceInfo {
     pixelRatio: window.devicePixelRatio || 1,
     isIOS: /iPad|iPhone|iPod/.test(userAgent) || (navigator.platform === 'MacIntel' && touchPoints > 1),
     isAndroid: /Android/.test(userAgent),
-    isStandalone: (window as any).matchMedia?.('(display-mode: standalone)').matches || false,
+    isStandalone: window.matchMedia?.('(display-mode: standalone)').matches || false,
   };
 }
 
@@ -226,7 +225,7 @@ export function isStandaloneMode(): boolean {
     return false;
   }
 
-  return (window as any).matchMedia?.('(display-mode: standalone)').matches || false;
+  return window.matchMedia?.('(display-mode: standalone)').matches || false;
 }
 
 /**
@@ -242,7 +241,21 @@ export function getPerformanceHints(): PerformanceHints {
     };
   }
 
-  const connection = (navigator as any).connection || (navigator as any).mozConnection || (navigator as any).webkitConnection;
+  const connection = (navigator as unknown as {
+    connection?: { saveData?: boolean; effectiveType?: string };
+    mozConnection?: { saveData?: boolean; effectiveType?: string };
+    webkitConnection?: { saveData?: boolean; effectiveType?: string };
+  }).connection ||
+    (navigator as unknown as {
+      connection?: { saveData?: boolean; effectiveType?: string };
+      mozConnection?: { saveData?: boolean; effectiveType?: string };
+      webkitConnection?: { saveData?: boolean; effectiveType?: string };
+    }).mozConnection ||
+    (navigator as unknown as {
+      connection?: { saveData?: boolean; effectiveType?: string };
+      mozConnection?: { saveData?: boolean; effectiveType?: string };
+      webkitConnection?: { saveData?: boolean; effectiveType?: string };
+    }).webkitConnection;
 
   return {
     reducedMotion: window.matchMedia('(prefers-reduced-motion: reduce)').matches,
@@ -481,7 +494,6 @@ export function meetsSwipeThreshold(
   const direction = getSwipeDirection(state.deltaX, state.deltaY);
 
   const isHorizontalSwipe = direction === 'left' || direction === 'right';
-  const isVerticalSwipe = direction === 'up' || direction === 'down';
 
   const validDistance = isHorizontalSwipe
     ? Math.abs(state.deltaX) > threshold && Math.abs(state.deltaY) < restraint

@@ -110,7 +110,21 @@ export function useMobileDetection(): UseMobileDetectionReturn {
     }
 
     // Listen for connection changes (network status)
-    const connection = (navigator as any).connection || (navigator as any).mozConnection || (navigator as any).webkitConnection;
+    const connection = (navigator as unknown as {
+      connection?: EventTarget;
+      mozConnection?: EventTarget;
+      webkitConnection?: EventTarget;
+    }).connection ||
+      (navigator as unknown as {
+        connection?: EventTarget;
+        mozConnection?: EventTarget;
+        webkitConnection?: EventTarget;
+      }).mozConnection ||
+      (navigator as unknown as {
+        connection?: EventTarget;
+        mozConnection?: EventTarget;
+        webkitConnection?: EventTarget;
+      }).webkitConnection;
     let connectionChangeListener: (() => void) | null = null;
 
     if (connection) {

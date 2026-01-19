@@ -56,7 +56,7 @@ describe('mobile-keyboard-utils', () => {
     // Mock getComputedStyle
     vi.spyOn(window, 'getComputedStyle').mockReturnValue({
       getPropertyValue: vi.fn().mockReturnValue('0px'),
-    } as any);
+    } as CSSStyleDeclaration);
   });
 
   afterEach(() => {
@@ -253,7 +253,7 @@ describe('mobile-keyboard-utils', () => {
 
       getInitialViewportHeight();
 
-      const mockStyle = document.documentElement.style as any;
+      const mockStyle = document.documentElement.style;
 
       adjustViewportForKeyboard();
 
@@ -264,7 +264,7 @@ describe('mobile-keyboard-utils', () => {
     });
 
     it('removes CSS variables when keyboard hidden', () => {
-      const mockStyle = document.documentElement.style as any;
+      const mockStyle = document.documentElement.style;
 
       adjustViewportForKeyboard();
 
@@ -309,7 +309,7 @@ describe('mobile-keyboard-utils', () => {
         setAttribute: vi.fn(),
       };
 
-      showKeyboard(mockElement as any);
+      showKeyboard(mockElement as HTMLInputElement);
 
       expect(mockElement.focus).toHaveBeenCalled();
     });
@@ -321,7 +321,7 @@ describe('mobile-keyboard-utils', () => {
         setAttribute: vi.fn(),
       };
 
-      showKeyboard(mockElement as any);
+      showKeyboard(mockElement as HTMLInputElement);
 
       expect(mockElement.setAttribute).toHaveBeenCalledWith('inputmode', 'text');
     });
@@ -333,7 +333,7 @@ describe('mobile-keyboard-utils', () => {
         setAttribute: vi.fn(),
       };
 
-      showKeyboard(mockElement as any);
+      showKeyboard(mockElement as HTMLInputElement);
 
       expect(mockElement.setAttribute).not.toHaveBeenCalled();
     });
@@ -345,7 +345,7 @@ describe('mobile-keyboard-utils', () => {
         setAttribute: vi.fn(),
       };
 
-      setInputMode(mockElement as any, 'numeric');
+      setInputMode(mockElement as HTMLInputElement, 'numeric');
 
       expect(mockElement.setAttribute).toHaveBeenCalledWith('inputmode', 'numeric');
     });

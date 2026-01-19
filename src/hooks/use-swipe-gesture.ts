@@ -4,8 +4,8 @@
 
 'use client';
 
-import { useRef, useCallback, useEffect } from 'react';
-import type { TouchGestureState, SwipeEventData, SwipeOptions } from '@/lib/mobile-utils';
+import { useRef, useCallback, useEffect, useMemo, useState } from 'react';
+import type { TouchGestureState, SwipeOptions } from '@/lib/mobile-utils';
 import {
   createTouchGestureState,
   startTouchGesture,
@@ -51,11 +51,14 @@ const DEFAULT_SWIPE_OPTIONS: Required<Omit<SwipeOptions, 'onSwipe' | 'onSwipeLef
  * ```
  */
 export function useSwipeGesture(options: SwipeOptions = {}): UseSwipeGestureReturn {
-  const mergedOptions = { ...DEFAULT_SWIPE_OPTIONS, ...options };
+  const mergedOptions = useMemo(
+    () => ({ ...DEFAULT_SWIPE_OPTIONS, ...options }),
+    [options]
+  );
 
   const nodeRef = useRef<HTMLElement | null>(null);
   const gestureStateRef = useRef<TouchGestureState>(createTouchGestureState());
-  const isSwipingRef = useRef(false);
+  const [isSwiping, setIsSwiping] = useState(false);
 
   // Set up event listeners
   const setRef = useCallback(
@@ -71,7 +74,7 @@ export function useSwipeGesture(options: SwipeOptions = {}): UseSwipeGestureRetu
 
     const touch = event.touches[0];
     gestureStateRef.current = startTouchGesture(touch.clientX, touch.clientY);
-    isSwipingRef.current = false;
+    setIsSwiping(false);
   }, []);
 
   // Handle touch move
@@ -84,12 +87,12 @@ export function useSwipeGesture(options: SwipeOptions = {}): UseSwipeGestureRetu
       touch.clientX,
       touch.clientY
     );
-    isSwipingRef.current = true;
+    setIsSwiping(true);
   }, []);
 
   // Handle touch end
   const handleTouchEnd = useCallback(
-    (event: TouchEvent) => {
+    () => {
       if (!nodeRef.current) return;
 
       // Check if swipe meets threshold criteria
@@ -128,7 +131,7 @@ export function useSwipeGesture(options: SwipeOptions = {}): UseSwipeGestureRetu
 
       // Reset gesture state
       gestureStateRef.current = createTouchGestureState();
-      isSwipingRef.current = false;
+      setIsSwiping(false);
     },
     [mergedOptions]
   );
@@ -158,6 +161,6 @@ export function useSwipeGesture(options: SwipeOptions = {}): UseSwipeGestureRetu
 
   return {
     ref: setRef,
-    isSwiping: isSwipingRef.current,
+    isSwiping,
   };
 }

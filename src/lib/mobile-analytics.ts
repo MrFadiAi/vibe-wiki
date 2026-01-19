@@ -70,7 +70,21 @@ export interface MobileBatteryInfo {
  */
 export function getMobileAnalyticsData(): MobileAnalyticsData {
   const deviceInfo = getDeviceInfo();
-  const connection = (navigator as any).connection || (navigator as any).mozConnection || (navigator as any).webkitConnection;
+  const connection = (navigator as unknown as {
+    connection?: { type?: string; effectiveType?: string; saveData?: boolean; downlink?: number; rtt?: number };
+    mozConnection?: { type?: string; effectiveType?: string; saveData?: boolean; downlink?: number; rtt?: number };
+    webkitConnection?: { type?: string; effectiveType?: string; saveData?: boolean; downlink?: number; rtt?: number };
+  }).connection ||
+    (navigator as unknown as {
+      connection?: { type?: string; effectiveType?: string; saveData?: boolean; downlink?: number; rtt?: number };
+      mozConnection?: { type?: string; effectiveType?: string; saveData?: boolean; downlink?: number; rtt?: number };
+      webkitConnection?: { type?: string; effectiveType?: string; saveData?: boolean; downlink?: number; rtt?: number };
+    }).mozConnection ||
+    (navigator as unknown as {
+      connection?: { type?: string; effectiveType?: string; saveData?: boolean; downlink?: number; rtt?: number };
+      mozConnection?: { type?: string; effectiveType?: string; saveData?: boolean; downlink?: number; rtt?: number };
+      webkitConnection?: { type?: string; effectiveType?: string; saveData?: boolean; downlink?: number; rtt?: number };
+    }).webkitConnection;
 
   return {
     deviceInfo,
@@ -118,12 +132,15 @@ export function getMobilePerformanceMetrics(): MobilePerformanceMetrics | null {
     return null;
   }
 
-  const performance = window.performance as any;
+  const performance = window.performance as unknown as {
+    timing?: PerformanceTiming;
+    getEntriesByType?: (type: string) => Array<{ name: string; startTime: number; [key: string]: unknown }>;
+  };
   const navigationTiming = performance.timing || performance.getEntriesByType?.('navigation')?.[0];
   const paintEntries = performance.getEntriesByType?.('paint') || [];
   const lcpEntry = performance.getEntriesByType?.('largest-contentful-content')?.[0];
 
-  const fcp = paintEntries.find((entry: any) => entry.name === 'first-contentful-paint')?.startTime;
+  const fcp = paintEntries.find((entry: { name: string; startTime: number }) => entry.name === 'first-contentful-paint')?.startTime;
   const lcp = lcpEntry?.startTime;
 
   // Calculate navigation timing metrics
@@ -144,13 +161,13 @@ export function getMobilePerformanceMetrics(): MobilePerformanceMetrics | null {
  * Get battery information (if available)
  */
 export function getBatteryInfo(): Promise<MobileBatteryInfo | null> {
-  if (typeof navigator === 'undefined' || !(navigator as any).getBattery) {
+  if (typeof navigator === 'undefined' || !(navigator as unknown as { getBattery?: () => Promise<MobileBatteryInfo> }).getBattery) {
     return Promise.resolve(null);
   }
 
-  return (navigator as any)
+  return (navigator as unknown as { getBattery: () => Promise<MobileBatteryInfo> })
     .getBattery()
-    .then((battery: any) => ({
+    .then((battery) => ({
       level: battery.level,
       charging: battery.charging,
       chargingTime: battery.chargingTime,

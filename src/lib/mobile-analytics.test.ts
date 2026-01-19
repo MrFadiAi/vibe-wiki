@@ -73,7 +73,7 @@ describe('mobile-analytics', () => {
     // Mock window.getComputedStyle
     vi.spyOn(window, 'getComputedStyle').mockReturnValue({
       getPropertyValue: vi.fn().mockReturnValue('0px'),
-    } as any);
+    } as CSSStyleDeclaration);
 
     // Mock matchMedia for standalone mode
     window.matchMedia = vi.fn().mockReturnValue({
@@ -170,7 +170,7 @@ describe('mobile-analytics', () => {
     it('returns null when battery API not available', async () => {
       const batteryInfo = getBatteryInfo();
       // Most test environments don't have battery API
-      await expect(batteryInfo).resolves.toBeTruthy();
+      await expect(batteryInfo).resolves.toBeNull();
     });
 
     it('returns battery info when available', async () => {
@@ -307,7 +307,7 @@ describe('mobile-analytics', () => {
           if (prop === 'env(safe-area-inset-top)') return '44px';
           return '0px';
         }),
-      } as any);
+      } as CSSStyleDeclaration);
 
       expect(hasNotch()).toBe(true);
     });
