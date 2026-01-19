@@ -10,8 +10,6 @@ import {
   Tutorial,
   LearningPath,
   UserProgress,
-  PathProgress,
-  TutorialProgress,
 } from '@/types';
 import { calculatePathProgress } from './learning-path-utils';
 import { calculateTutorialTime } from './tutorial-utils';
@@ -619,7 +617,7 @@ function applyDiversity<T>(
     // Reduce scores of similar items
     remaining.forEach((r) => {
       const similarity = 'tags' in best.item && 'tags' in r.item
-        ? calculateContentSimilarity(best.item as any, r.item as any)
+        ? calculateContentSimilarity(best.item as WikiArticle, r.item as WikiArticle)
         : 0;
       if (similarity > 0.3) {
         r.score *= (1 - diversityFactor * similarity);

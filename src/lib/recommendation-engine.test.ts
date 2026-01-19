@@ -662,9 +662,9 @@ describe('validateUserProfile', () => {
   });
 
   it('should reject invalid profiles', () => {
-    expect(validateUserProfile(null as any)).toBe(false);
-    expect(validateUserProfile({} as any)).toBe(false);
-    expect(validateUserProfile({ skillLevel: 'beginner' } as any)).toBe(false);
+    expect(validateUserProfile(null as unknown as UserProfile)).toBe(false);
+    expect(validateUserProfile({} as unknown as UserProfile)).toBe(false);
+    expect(validateUserProfile({ skillLevel: 'beginner' } as unknown as UserProfile)).toBe(false);
   });
 
   it('should require all profile fields', () => {
@@ -673,7 +673,7 @@ describe('validateUserProfile', () => {
       averageCompletionTime: { articles: 10, tutorials: 30 },
       interests: [],
       skillLevel: 'beginner' as const,
-    } as any;
+    } as unknown as UserProfile;
 
     expect(validateUserProfile(incompleteProfile)).toBe(false);
   });
