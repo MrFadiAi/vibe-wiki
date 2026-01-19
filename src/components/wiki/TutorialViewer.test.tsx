@@ -23,7 +23,7 @@ vi.mock("./MarkdownRenderer", () => ({
 
 // Mock the ExerciseBlock component
 vi.mock("./ExerciseBlock", () => ({
-  ExerciseBlock: ({ exercise, onComplete }: {
+  ExerciseBlock: ({ exercise }: {
     exercise: Exercise;
     onComplete?: () => void;
   }) =>
@@ -215,7 +215,7 @@ describe("TutorialViewer", () => {
     };
 
     // Manually set up completed state
-    const { rerender } = render(
+    render(
       <TutorialViewer tutorial={tutorialWithAllCompleted} onComplete={onComplete} />
     );
 

@@ -113,3 +113,56 @@ export interface PathProgress {
   startedAt?: Date;
   completedAt?: Date;
 }
+
+// User Progress Tracking types
+export interface UserProgress {
+  userId: string;
+  completedArticles: string[]; // article slugs
+  completedTutorials: string[]; // tutorial ids
+  completedPaths: string[]; // path ids
+  currentPathProgress: Record<string, PathProgress>; // pathId -> progress
+  currentTutorialProgress: Record<string, TutorialProgress>; // tutorialId -> progress
+  achievements: Achievement[];
+  totalPoints: number;
+  streakDays: number;
+  lastActivity: Date;
+  createdAt: Date;
+}
+
+export interface TutorialProgress {
+  tutorialId: string;
+  completedSteps: string[]; // step ids
+  currentStepId?: string;
+  startedAt?: Date;
+  completedAt?: Date;
+}
+
+export interface Achievement {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+  unlockedAt: Date;
+  category: 'tutorial' | 'path' | 'article' | 'streak' | 'skill';
+  points?: number;
+}
+
+export interface ProgressStats {
+  totalArticlesRead: number;
+  totalTutorialsCompleted: number;
+  totalPathsCompleted: number;
+  totalTimeSpent: number; // in minutes
+  currentStreak: number;
+  achievementsCount: number;
+  totalPoints: number;
+  completionRate: number; // percentage
+}
+
+export interface ProgressActivity {
+  id: string;
+  type: 'article_completed' | 'tutorial_completed' | 'path_completed' | 'step_completed' | 'achievement_unlocked';
+  contentId: string;
+  contentTitle: string;
+  timestamp: Date;
+  points?: number;
+}

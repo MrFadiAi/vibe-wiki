@@ -9,10 +9,10 @@ import type { Exercise } from "@/types";
 
 interface ExerciseBlockProps {
   exercise: Exercise;
-  onComplete?: (success: boolean) => void;
+  onComplete?: (_success: boolean) => void;
 }
 
-export function ExerciseBlock({ exercise, onComplete }: ExerciseBlockProps) {
+export function ExerciseBlock({ exercise }: ExerciseBlockProps) {
   const [code, setCode] = React.useState(exercise.starterCode);
   const [showSolution, setShowSolution] = React.useState(false);
   const [hintLevel, setHintLevel] = React.useState(0);

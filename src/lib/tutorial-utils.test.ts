@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import type { Exercise, Tutorial, TutorialStep, DifficultyLevel } from "@/types";
+import type { Exercise, Tutorial, DifficultyLevel } from "@/types";
 import {
   validateTutorial,
   validateExercise,

@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { getArticleBySlug, allArticles, calculateReadingTime, getPrevNextArticles } from "@/lib/article-utils";
 import { MarkdownRenderer } from "@/components/wiki/MarkdownRenderer";
 import { PrevNextNav } from "@/components/wiki/PrevNextNav";
-import { Clock, Calendar } from "lucide-react";
+import { Clock } from "lucide-react";
 
 interface WikiPageProps {
   params: Promise<{
