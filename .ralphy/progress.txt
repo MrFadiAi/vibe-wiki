@@ -329,3 +329,100 @@ Total: 383 tests ✓
 ### Next Priority Task
 **Phase 3, Task 1**: Personalized recommendation engine
 
+---
+
+## 2025-01-19: Phase 3 - Personalized Recommendation Engine
+
+### Completed Task
+**Phase 3, Task 1**: Personalized recommendation engine
+
+### What Was Done
+Implemented a comprehensive personalized recommendation engine with content-based and collaborative filtering algorithms.
+
+1. **Created recommendation-engine.ts** (`src/lib/recommendation-engine.ts`):
+   - **Type Definitions**:
+     - `RecommendationReason` - 10 recommendation reason types (continues_learning_path, builds_on_completed, matches_interest, popular_choice, suitable_for_level, quick_win, prerequisite_for_goal, similar_to_liked, fills_skill_gap, maintains_streak)
+     - `RecommendationScore<T>` - Generic recommendation score with item, score, confidence, reason, and explanation
+     - `UserProfile` - Complete user profile with content type preferences, completion times, difficulty preferences, interests, skill level, and learning patterns
+     - `RecommendationOptions` - Configurable options (maxResults, minConfidence, includeCompleted, diversityFactor, timeConstraint, focusOnPrerequisites)
+
+   - **Core Functions**:
+     - `buildUserProfile()` - Analyzes user progress to build comprehensive profile (skill level, interests, learning patterns, preferences)
+     - `getRecommendedArticles()` - Personalized article recommendations with scoring based on interests, similarity, section continuation, time constraints
+     - `getRecommendedTutorials()` - Tutorial recommendations with priority for in-progress content, difficulty alignment, prerequisite checking, time constraints
+     - `getRecommendedPaths()` - Learning path recommendations with strong priority for in-progress paths, difficulty matching, prerequisite validation, streak maintenance
+     - `getAllRecommendations()` - Combined recommendations across all content types
+     - `getNextRecommendation()` - Single best recommendation across all types
+     - `getRecommendationsByTime()` - Time-constrained recommendations (quick, moderate, long)
+     - `explainRecommendation()` - User-facing explanation with reason, confidence label, and details
+     - `validateUserProfile()` - Profile validation with null safety
+     - `updateProfileWithActivity()` - Dynamic profile updates based on user behavior
+
+   - **Helper Functions**:
+     - `calculateContentSimilarity()` - Similarity scoring based on tags, sections, and title keywords
+     - `scoreArticle()` - Multi-factor article scoring (interests, similarity, section continuation, time constraints, content type preferences)
+     - `scoreTutorial()` - Tutorial scoring with in-progress priority, difficulty alignment, prerequisite checking, interactive content preference
+     - `scoreLearningPath()` - Path scoring with in-progress priority, difficulty matching, target audience alignment, streak maintenance
+     - `applyDiversity()` - Diversity algorithm to avoid repetitive recommendations
+
+2. **Created comprehensive test suite** (`src/lib/recommendation-engine.test.ts`):
+   - **55 tests** covering:
+     - User profile building (5 tests) - skill level detection, interest extraction, learning pattern detection, content type preferences
+     - Article recommendations (8 tests) - filtering, completion status, max results, min confidence, interest matching, time constraints, empty handling
+     - Tutorial recommendations (6 tests) - in-progress priority, completion filtering, prerequisite penalties, difficulty matching, time constraints
+     - Path recommendations (6 tests) - in-progress priority, completion filtering, prerequisite penalties, streak maintenance, difficulty matching
+     - Combined recommendations (2 tests) - all content types, options application
+     - Next recommendation (3 tests) - single best, null handling, in-progress priority
+     - Time-based recommendations (2 tests) - categorization by time, different categories
+     - Recommendation explanations (3 tests) - explanation generation, confidence labels, all reasons
+     - Profile validation (3 tests) - valid profiles, invalid profiles, required fields
+     - Profile updates (6 tests) - article activity, tutorial activity, completion times, interests, existing interest boosting, interest limiting
+     - Diversity (2 tests) - diversity factor application, zero diversity handling
+     - Edge cases (10 tests) - empty arrays, no progress, high maxResults, min confidence extremes, negative time, focus on prerequisites
+     - Score structure (2 tests) - required fields, valid reasons
+
+3. **All tests passing**: 438 tests total (383 existing + 55 new)
+   - src/lib/recommendation-engine.test.ts: 55 tests ✓
+   - All existing tests continue to pass
+
+### Technical Details
+- **Algorithm Types**:
+  - Content-Based Filtering: Analyzes content metadata (tags, sections, difficulty) to match user interests and preferences
+  - Collaborative Patterns: Uses user behavior history (completion patterns, time spent, content type preferences) to personalize
+  - Hybrid Approach: Combines multiple signals with weighted scoring
+
+- **User Profile Components**:
+  - Content Type Preferences: Tracks ratio of articles vs tutorials vs paths completed
+  - Average Completion Times: Estimates reading/learning speed for time-based recommendations
+  - Difficulty Preferences: Counts completions by difficulty level
+  - Interest Extraction: Top 5 tags from completed content
+  - Skill Level: Beginner (0-500 pts) → Intermediate (500-2000 pts) → Advanced (2000+ pts)
+  - Learning Patterns: Prefers short content, prefers interactive content, likes prerequisites
+
+- **Scoring Factors**:
+  - **Base score**: 0.3 for new content, 0.5+ for in-progress content
+  - **Interest match**: +0.15-0.2 per matching interest
+  - **Content similarity**: +0.2-0.3 based on similarity to completed content
+  - **Difficulty alignment**: +0.25 for appropriate difficulty, penalty for mismatched difficulty
+  - **Prerequisites**: +0.15-0.2 for having prerequisites, -0.3 to -0.4 for missing them
+  - **Time constraints**: +0.15-0.2 for fitting available time, penalty for exceeding
+  - **Content type preference**: +0.15 based on historical preferences
+  - **Streak maintenance**: +0.1 for quick content when streak is active
+  - **Confidence calculation**: Based on number of matching factors and profile depth
+
+- **Diversity Algorithm**:
+  - Reduces scores of items similar to already-selected items
+  - Uses content similarity calculation with configurable diversity factor (0-1)
+  - Prevents repetitive recommendations while maintaining relevance
+
+- **Recommendation Transparency**:
+  - 10 distinct recommendation reasons for user understanding
+  - Confidence levels: Suggestion, Likely Match, Good Match, Strong Match, Excellent Match
+  - Detailed explanations for each recommendation
+
+### PRD Update
+- Marked Phase 3, Task 1 as complete: `[x] Personalized recommendation engine`
+
+### Next Priority Task
+**Phase 3, Task 2**: Community contribution platform
+
