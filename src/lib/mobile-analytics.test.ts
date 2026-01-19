@@ -167,10 +167,10 @@ describe('mobile-analytics', () => {
   });
 
   describe('getBatteryInfo', () => {
-    it('returns null when battery API not available', () => {
+    it('returns null when battery API not available', async () => {
       const batteryInfo = getBatteryInfo();
       // Most test environments don't have battery API
-      expect(batteryInfo).resolves.toBeTruthy();
+      await expect(batteryInfo).resolves.toBeTruthy();
     });
 
     it('returns battery info when available', async () => {

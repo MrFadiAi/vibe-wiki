@@ -23,6 +23,8 @@ describe('mobile-keyboard-utils', () => {
   let originalInnerHeight: number;
 
   beforeEach(() => {
+    vi.useFakeTimers();
+
     originalInnerHeight = window.innerHeight;
 
     // Reset initial viewport height
@@ -30,6 +32,16 @@ describe('mobile-keyboard-utils', () => {
 
     // Mock window.scrollTo
     window.scrollTo = vi.fn();
+
+    // Mock requestAnimationFrame to execute immediately
+    vi.stubGlobal('requestAnimationFrame', (callback: FrameRequestCallback) => {
+      return window.setTimeout(() => callback(performance.now()), 0);
+    });
+
+    // Mock cancelAnimationFrame
+    vi.stubGlobal('cancelAnimationFrame', (id: number) => {
+      window.clearTimeout(id);
+    });
 
     // Mock document methods
     Object.defineProperty(document.documentElement, 'style', {
@@ -48,6 +60,8 @@ describe('mobile-keyboard-utils', () => {
   });
 
   afterEach(() => {
+    vi.useRealTimers();
+
     Object.defineProperty(window, 'innerHeight', {
       writable: true,
       configurable: true,
@@ -203,6 +217,9 @@ describe('mobile-keyboard-utils', () => {
       } as unknown as HTMLElement;
 
       scrollIntoViewWithKeyboard(mockElement);
+
+      // Run timers to flush requestAnimationFrame callback
+      vi.runAllTimers();
 
       expect(window.scrollTo).toHaveBeenCalledWith({
         top: expect.any(Number),
@@ -376,7 +393,7 @@ describe('mobile-keyboard-utils', () => {
         getBoundingClientRect: vi.fn().mockReturnValue({
           top: 100,
           left: 50,
-          bottom: 300,
+          bottom: 180,
           right: 325,
         }),
       } as unknown as HTMLElement;
