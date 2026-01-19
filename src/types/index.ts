@@ -325,3 +325,36 @@ export interface ContributionStats {
   averageReviewTime: number;
   topContributors: ContributorProfile[];
 }
+
+// Analytics types - re-exported from analytics.ts
+export type {
+  AnalyticsEvent,
+  AnalyticsSession,
+  AnalyticsEventType,
+  AnalyticsContentType,
+  EventMetadata,
+  DeviceInfo,
+  UserBehaviorMetrics,
+  ContentPerformanceMetrics,
+  PlatformAnalytics,
+  AnalyticsTimeframe,
+  AnalyticsQuery,
+  AnalyticsReport,
+  AnalyticsInsight,
+  RealTimeAnalytics,
+  RealTimePage,
+  TopSearchItem,
+  ErrorMetric,
+  ConversionMetrics,
+  EngagementMetrics,
+  ContentTypeMetrics,
+  ContentTypeStats,
+  RetentionMetrics,
+  SectionVisit,
+  ContentTypePreference,
+  TimePeriod,
+  DayOfWeek,
+  TimeSeriesData,
+  TimeSeriesPoint,
+  AggregationPeriod,
+} from './analytics';
