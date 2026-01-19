@@ -75,3 +75,41 @@ export interface InteractiveExample {
   explanation?: string;
   category?: string;
 }
+
+// Learning Path types
+export type PathItemType = "article" | "tutorial" | "exercise";
+
+export interface PathItem {
+  id: string;
+  type: PathItemType;
+  slug: string;
+  title: string;
+  description?: string;
+  estimatedMinutes: number;
+  isOptional?: boolean;
+  order: number;
+}
+
+export interface LearningPath {
+  id: string;
+  slug: string;
+  title: string;
+  description: string;
+  difficulty: DifficultyLevel;
+  estimatedMinutes: number;
+  targetAudience: string[];
+  prerequisites?: string[]; // path slugs or skills
+  learningObjectives: string[];
+  items: PathItem[];
+  tags?: string[];
+  category?: string;
+  author?: string;
+}
+
+export interface PathProgress {
+  pathId: string;
+  completedItems: string[]; // item ids
+  currentItemId?: string;
+  startedAt?: Date;
+  completedAt?: Date;
+}

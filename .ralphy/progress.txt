@@ -146,3 +146,105 @@ Total: 202 tests ✓
 
 ### Next Priority Task
 **Phase 2, Task 3**: Implement learning path structure
+- [✓] 2026-01-19 22:52 - Create a tutorials page at /app/tutorials/page.tsx with a grid of tutorial cards
+
+---
+
+## 2025-01-19: Phase 2 - Learning Path Structure
+
+### Completed Task
+**Phase 2, Task 3**: Implement learning path structure
+
+### What Was Done
+Implemented a complete learning path system for organizing content into structured curriculum for different skill levels.
+
+1. **Added TypeScript types** (`src/types/index.ts`):
+   - `PathItemType` - "article" | "tutorial" | "exercise"
+   - `PathItem` - Individual path item with id, type, slug, title, description, estimatedMinutes, isOptional, order
+   - `LearningPath` - Complete path structure with id, slug, title, description, difficulty, estimatedMinutes, targetAudience, prerequisites, learningObjectives, items, tags, category, author
+   - `PathProgress` - Progress tracking with pathId, completedItems, currentItemId, startedAt, completedAt
+
+2. **Created learning path utilities** (`src/lib/learning-path-utils.ts`):
+   - `validateLearningPath()` - Validates learning path objects (all required fields, slug format, difficulty, estimated time, learning objectives, items)
+   - `validatePathItem()` - Validates path item objects
+   - `createLearningPath()` - Factory function for creating learning paths
+   - `createPathItem()` - Factory function for creating path items
+   - `calculatePathTime()` - Calculates total estimated time for a learning path
+   - `getRequiredItems()` - Gets required items (excluding optional ones)
+   - `getOptionalItems()` - Gets optional items
+   - `getItemsByType()` - Gets items by type (article, tutorial, exercise)
+   - `getNextItem()` - Gets the next item in the path
+   - `getPreviousItem()` - Gets the previous item in the path
+   - `getFirstItem()` - Gets the first item in the path
+   - `getLastItem()` - Gets the last item in the path
+   - `hasPrerequisite()` - Checks if a path has a specific prerequisite
+   - `getPathsByDifficulty()` - Filters paths by difficulty level
+   - `getPathsByCategory()` - Filters paths by category
+   - `getPathsByTag()` - Filters paths by tag
+   - `calculatePathProgress()` - Calculates progress percentage for a path
+   - `isPathCompleted()` - Checks if a path is completed
+   - `isItemCompleted()` - Checks if an item is completed
+   - `markItemCompleted()` - Marks an item as completed
+   - `getCurrentItem()` - Gets the current item (next uncompleted item)
+   - `getPathStats()` - Gets path statistics
+   - `generatePathSummary()` - Generates a progress summary for a path
+   - `searchPaths()` - Searches paths by query string (title, description, tags, category, learning objectives)
+   - `sortPaths()` - Sorts paths by various criteria (title, difficulty, duration, recent)
+
+3. **Created LearningPathViewer component** (`src/components/wiki/LearningPathViewer.tsx`):
+   - Path header with title, description, difficulty badge, category, and tags
+   - Target audience display with badges
+   - Learning objectives list
+   - Prerequisites display with warning styling
+   - Progress bar with percentage completion
+   - Path items sidebar with:
+     - Item type icons (Article, Tutorial, Exercise)
+     - Completion status (check icon for completed, circle for incomplete, lock for locked)
+     - Optional item labels
+     - Item descriptions and estimated time
+     - Clickable item buttons with selection highlighting
+   - Selected item content display with:
+     - Item header with title, type badge, optional badge
+     - Item metadata (estimated time, type)
+     - Navigation buttons (previous/next)
+     - Mark Complete button (for required items)
+     - Next/Finish Path button
+   - Path completion message when all required items are done
+   - Locking mechanism for items with uncompleted prerequisites
+   - Responsive two-column layout (sidebar + main content)
+
+4. **Created comprehensive test suites**:
+   - `src/lib/learning-path-utils.test.ts`: 70 tests covering validation, creation, filtering, progress tracking, search, and sort
+   - `src/components/wiki/LearningPathViewer.test.tsx`: 32 tests covering rendering, navigation, progress, completion, and edge cases
+
+### Technical Details
+- **Type Safety**: All components and utilities use TypeScript with proper type definitions
+- **Progress Tracking**: Progress is calculated based on required items only (optional items don't affect completion)
+- **Item Locking**: Items are locked until all previous required items are completed
+- **Flexible Path Structure**: Paths can include articles, tutorials, and exercises in any order
+- **Optional Items**: Paths can have optional items that don't affect completion status
+- **Search Functionality**: Full-text search across title, description, tags, category, and learning objectives
+- **Sorting Support**: Sort by title, difficulty, duration, or recency
+- **Responsive Design**: Two-column layout that stacks on mobile
+
+### All Tests Passing
+Total: 304 tests ✓
+- src/lib/cms/validation.test.ts: 25 tests ✓
+- src/lib/cms/content-service.test.ts: 24 tests ✓
+- src/lib/enhanced-search.test.ts: 28 tests ✓
+- src/lib/article-utils.test.ts: 42 tests ✓
+- src/lib/tutorial-utils.test.ts: 34 tests ✓
+- src/lib/learning-path-utils.test.ts: 70 tests ✓
+- src/components/wiki/ExerciseBlock.test.tsx: 14 tests ✓
+- src/components/wiki/TutorialViewer.test.tsx: 16 tests ✓
+- src/components/wiki/InteractiveCodeBlock.test.tsx: 19 tests ✓
+- src/components/wiki/LearningPathViewer.test.tsx: 32 tests ✓
+
+### Linting Status
+0 errors, 5 warnings (pre-existing warnings in unrelated files)
+
+### PRD Update
+- Marked Phase 2, Task 3 as complete: `[x] Implement learning path structure`
+
+### Next Priority Task
+**Phase 2, Task 4**: Design user progress tracking system
