@@ -7,16 +7,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
-import CommandMenu from "@/components/search/CommandMenu";
 
 export function MobileNav() {
-  const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
 
-  // Close menu on path change
+  // Close menu when pathname changes
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   // Lock body scroll when menu is open
   useEffect(() => {
@@ -45,7 +46,7 @@ export function MobileNav() {
             <Home className="h-5 w-5" />
             <span>الرئيسية</span>
           </Link>
-          
+
           <button
             onClick={() => document.dispatchEvent(new KeyboardEvent('keydown', {'key': 'k', 'metaKey': true}))}
             className="flex flex-col items-center gap-1 p-2 text-xs text-muted-foreground hover:text-neon-cyan transition-colors"

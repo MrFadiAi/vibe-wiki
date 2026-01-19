@@ -5,23 +5,20 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { wikiContent } from "@/data/wiki-content";
-import { ChevronDown, BookOpen, Hash, Sparkles } from "lucide-react";
-import { useState, useEffect } from "react";
+import { ChevronDown, Sparkles } from "lucide-react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function SidebarContent({ onLinkClick }: { onLinkClick?: () => void }) {
   const pathname = usePathname();
   // Default all sections to open for better discovery, or keep specific ones open
-  const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
-
-  // Initialize with all sections open effectively or just specific logic
-  useEffect(() => {
+  const [openSections, setOpenSections] = useState<Record<string, boolean>>(() => {
     const initialState: Record<string, boolean> = {};
     wikiContent.forEach(section => {
       initialState[section.name] = true;
     });
-    setOpenSections(initialState);
-  }, []);
+    return initialState;
+  });
 
   const toggleSection = (title: string) => {
     setOpenSections((prev) => ({ ...prev, [title]: !prev[title] }));
