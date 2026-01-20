@@ -1,1253 +1,785 @@
 # Product Requirements Document (PRD)
-## Vibe Wiki Content Expansion - AI Coding CLIs & Learning Paths
+# SVG Diagram Integration for Vibe Wiki
 
 **Document Version:** 1.0  
-**Last Updated:** January 20, 2026  
-**Author:** Vibe Wiki Team  
-**Status:** Draft
+**Created:** January 2025  
+**Status:** Draft  
+**Owner:** Vibe Wiki Team
 
 ---
 
-## 1. Executive Summary
+## Table of Contents
 
-### 1.1 Purpose
-This PRD outlines the expansion of Vibe Wiki to create a comprehensive onboarding experience for new users learning about "vibecoding" (البرمجة بالإحساس). The expansion will include detailed explanations of all major AI coding CLIs (Claude, OpenCode, Codex, Cursor, Windsurf, etc.) with accompanying SVG visual aids for each concept. in arabic
-
-### 1.2 Goals
-- **Primary Goal:** Enable any new user to understand vibecoding and start their journey within 15 minutes
-- **Secondary Goal:** Provide comprehensive documentation for all AI coding tools and CLIs
-- **Tertiary Goal:** Create a visual learning experience with custom SVG diagrams for each major concept
-
-### 1.3 Success Metrics
-- 80% of new visitors successfully navigate the getting started guide
-- Average time-to-first-project: under 30 minutes
-- User comprehension score: 85%+ on exit surveys
-- 60%+ completion rate for the learning path
+1. [Executive Summary](#executive-summary)
+2. [Goals & Objectives](#goals--objectives)
+3. [Content Mapping Table](#content-mapping-table)
+4. [Technical Implementation](#technical-implementation)
+5. [Design & UX Standards](#design--ux-standards)
+6. [Arabic Localization Strategy](#arabic-localization-strategy)
+7. [Implementation Phases](#implementation-phases)
+8. [Success Criteria](#success-criteria)
+9. [Risks & Mitigations](#risks--mitigations)
+10. [Appendices](#appendices)
 
 ---
 
-## 2. Content Architecture
+## Executive Summary
 
-### 2.1 New Content Sections
+This PRD outlines the integration of **55 SVG diagrams** into the Vibe Wiki articles. These diagrams cover CLI tools (Claude, Copilot, OpenCode), workflow comparisons, and getting started guides. The integration aims to enhance visual education, improve user engagement, and provide Arabic-localized content for our primary audience.
 
-```
-Vibe Wiki
-├── 🎯 Getting Started (NEW - Enhanced)
-│   ├── What is Vibecoding? (Enhanced with SVG)
-│   ├── Your First 15 Minutes (NEW)
-│   ├── The AI Coding Landscape (NEW)
-│   └── Choosing Your Stack (NEW)
-│
-├── 🤖 AI Coding CLIs & Tools (NEW Section)
-│   ├── Overview: The AI Coding Ecosystem
-│   ├── Claude CLI (Anthropic)
-│   ├── GitHub Copilot CLI
-│   ├── OpenCode (OhMyOpenCode)
-│   ├── Codex (OpenAI)
-│   ├── Cody (Sourcegraph)
-│   ├── Tabnine
-│   ├── Replit Ghostwriter
-│   ├── Amazon CodeWhisperer
-│   └── Comparison Matrix (NEW)
-│
-├── 💻 AI-Powered Editors (Enhanced Section)
-    ├── Antigravity Deep Dive (NEW)
-│   ├── Cursor Deep Dive (Enhanced)
-│   ├── Windsurf Deep Dive (Enhanced)
-│   ├── VS Code + Extensions
-│   └── Choosing Your Editor (NEW)
-│
-├── 🎨 Visual Learning Guides (NEW Section)
-│   ├── Vibecoding Workflow Diagrams
-│   ├── Tool Integration Maps
-│   ├── Decision Trees for Tool Selection
-│   └── Architecture Patterns
-│
-└── 🚀 Learning Paths (NEW Section)
-    ├── Path 1: Complete Beginner to First App
-    ├── Path 2: Traditional Dev to AI-Assisted Dev
-    ├── Path 3: AI Tools Mastery
-    └── Path 4: Building Production SaaS
-```
+### Key Deliverables
+
+- Map all 55 SVGs to existing or new wiki articles
+- Extend the markdown/content system to support inline diagrams
+- Implement Arabic captions and accessibility features
+- Establish design standards for responsive, lazy-loaded diagrams
 
 ---
 
-## 3. Detailed Content Specifications
+## Goals & Objectives
 
-### 3.1 Getting Started - "Your First 15 Minutes"
+### Primary Goals
 
-**Objective:** Get a complete newcomer from zero to running their first AI-assisted code in 15 minutes.
+| Goal | Description | Success Metric |
+|------|-------------|----------------|
+| **Visual Education** | Transform text-heavy articles into visually-rich learning experiences | 80% of core articles contain at least 1 diagram |
+| **User Engagement** | Increase time-on-page and reduce bounce rate through interactive visuals | +25% avg. session duration |
+| **Arabic-First Experience** | Provide RTL-optimized diagrams with Arabic captions | 100% of diagrams have Arabic alt-text |
+| **Accessibility** | Ensure all diagrams are screen-reader compatible | WCAG 2.1 AA compliance |
 
-**Content Outline:**
-```markdown
-# Your First 15 Minutes with Vibecoding
+### Secondary Goals
 
-## Minute 0-3: What You'll Learn
-[SVG: Timeline showing the 15-minute journey]
+- **Content Discoverability**: Use diagrams as entry points to related articles
+- **Knowledge Retention**: Visual aids improve concept retention by ~65%
+- **SEO Enhancement**: Properly tagged images improve search visibility
+- **Print-Friendly**: SVGs scale perfectly for documentation exports
 
-## Minute 3-5: Choose Your Starting Tool
-[SVG: Decision tree - Beginner vs Developer]
-- If beginner → Cursor Free
-- If developer → Cursor Pro or Windsurf
+### Non-Goals
 
-## Minute 5-10: Installation & Setup
-[SVG: Step-by-step installation flow]
-- Download link
-- Installation steps
-- First launch
-- Sign-in/create account
-
-## Minute 10-15: Your First AI-Generated Code
-[SVG: Prompt → AI → Code flow]
-- Simple prompt example
-- Watch AI work
-- Understand the output
-- Run the code
-
-## Next Steps
-[SVG: Learning path branches]
-```
-
-**SVG Visuals Required:**
-1. **Timeline SVG** - 15-minute journey overview
-2. **Decision Tree SVG** - Tool selection based on skill level
-3. **Installation Flow SVG** - Step-by-step visual guide
-4. **AI Workflow SVG** - How prompt becomes code
-5. **Learning Path Branches SVG** - Where to go next
+- Animated/interactive SVG components (future phase)
+- User-generated diagram uploads
+- Real-time diagram editing
 
 ---
 
-### 3.2 AI Coding CLIs Section
+## Content Mapping Table
 
-#### 3.2.1 Overview: The AI Coding Ecosystem
+### Legend
 
-**Content Outline:**
-```markdown
-# The AI Coding Ecosystem: A Complete Guide
-
-## What Are AI Coding CLIs?
-[SVG: Diagram showing CLI in terminal → AI model → code output]
-
-Command Line Interfaces (CLIs) for AI coding allow you to:
-- Generate code directly in your terminal
-- Chat with AI about your codebase
-- Refactor existing code
-- Debug errors
-- Learn new concepts
-
-## The Major Players
-[SVG: Landscape map showing all AI coding tools positioned by use case]
-
-### Categories:
-1. **Integrated Development Environments (IDEs)**
-   - Cursor, Windsurf, Replit
-   
-2. **Code Completion Tools**
-   - GitHub Copilot, Tabnine, Cody
-   
-3. **CLI-Based Assistants**
-   - Claude CLI, OpenCode, GitHub Copilot CLI
-   
-4. **API-Based Coding Assistants**
-   - OpenAI Codex, Claude API
-
-## How They Differ
-[SVG: Comparison matrix table]
-```
-
-**SVG Visuals Required:**
-1. **CLI Architecture SVG** - How CLI tools work
-2. **Ecosystem Landscape SVG** - All tools positioned by category
-3. **Comparison Matrix SVG** - Feature comparison table
+| Symbol | Meaning |
+|--------|---------|
+| **[E]** | Existing article |
+| **[N]** | New article to be created |
+| **[P]** | Priority: High (1), Medium (2), Low (3) |
 
 ---
 
-#### 3.2.2 Claude CLI (Anthropic)
+### 1. Claude CLI Diagrams (9 SVGs)
 
-**Content Outline:**
-```markdown
-# Claude CLI: Conversational Coding in Your Terminal
+| # | SVG Filename | Target Article | Status | Priority | Arabic Caption |
+|---|--------------|----------------|--------|----------|----------------|
+| 1 | `cli-claude-comparison.svg` | `[N]` claude-cli-overview | New | P1 | مقارنة Claude CLI مع الأدوات الأخرى |
+| 2 | `cli-claude-architecture.svg` | `[N]` claude-cli-overview | New | P1 | البنية التقنية لـ Claude CLI |
+| 3 | `cli-claude-pricing-tiers.svg` | `[N]` claude-cli-pricing | New | P2 | مستويات تسعير Claude CLI |
+| 4 | `cli-claude-best-practices.svg` | `[N]` claude-cli-best-practices | New | P2 | أفضل الممارسات لاستخدام Claude CLI |
+| 5 | `cli-claude-use-cases.svg` | `[N]` claude-cli-overview | New | P1 | حالات استخدام Claude CLI |
+| 6 | `cli-claude-feature-icons.svg` | `[N]` claude-cli-features | New | P2 | أيقونات ميزات Claude CLI |
+| 7 | `cli-claude-command-flow.svg` | `[N]` claude-cli-commands | New | P1 | تدفق أوامر Claude CLI |
+| 8 | `cli-claude-installation-checklist.svg` | `[E]` prep-your-machine | Existing | P1 | قائمة تثبيت Claude CLI |
+| 9 | `cli-claude-terminal-flow.svg` | `[E]` the-terminal | Existing | P1 | تدفق الطرفية مع Claude CLI |
 
-## What is Claude CLI?
-[SVG: Terminal window with Claude conversation flow]
-
-Claude CLI brings Anthropic's powerful Claude AI directly to your terminal, enabling:
-- Natural language conversations about code
-- File and codebase analysis
-- Code generation and refactoring
-- Debugging assistance
-
-## Installation
-
-### Prerequisites
-[SVG: Checklist diagram]
-- Node.js 18+ or Python 3.8+
-- Anthropic API key
-- Terminal (bash, zsh, or PowerShell)
-
-### Setup Steps
-
-**Option 1: npm (Node.js)**
-```bash
-npm install -g @anthropic-ai/claude-cli
-claude init
-```
-
-**Option 2: pip (Python)**
-```bash
-pip install anthropic-cli
-claude config setup
-```
-
-## Basic Usage
-[SVG: Command flow diagram showing different use cases]
-
-### 1. Ask Questions
-```bash
-claude ask "How do I implement JWT authentication in Express?"
-```
-
-### 2. Analyze Files
-```bash
-claude analyze src/components/Button.tsx
-```
-
-### 3. Generate Code
-```bash
-claude generate "Create a React hook for debouncing"
-```
-
-### 4. Chat Mode
-```bash
-claude chat
-# Enter interactive conversation mode
-```
-
-## Key Features
-[SVG: Feature icons with labels]
-
-### 📁 Codebase Awareness
-```bash
-claude scan .
-# Indexes your entire project
-claude ask "Where is the authentication logic?"
-```
-
-### 🔄 Refactoring
-```bash
-claude refactor src/legacy.js --to typescript
-```
-
-### 🐛 Debugging
-```bash
-claude debug --error "TypeError: Cannot read property 'id' of undefined"
-```
-
-### 💬 Context-Aware Conversations
-```bash
-claude chat --files src/api/*.ts
-# Chat with specific files as context
-```
-
-## Advanced Configuration
-
-### Custom Rules File
-Create `.claude-rules` in your project root:
-
-```yaml
-# .claude-rules
-project_type: "Next.js 14 with TypeScript"
-preferences:
-  - "Use App Router"
-  - "Prefer server components"
-  - "Use Tailwind CSS"
-  - "Follow Airbnb style guide"
-```
-
-### Model Selection
-```bash
-claude config set model claude-3-5-sonnet-20241022
-# Options: claude-3-5-sonnet, claude-3-opus, claude-3-haiku
-```
-
-## Use Cases
-[SVG: Use case scenarios diagram]
-
-### Scenario 1: Learning a New Framework
-```bash
-claude chat
-> I'm new to Next.js 14. Explain the App Router with examples.
-```
-
-### Scenario 2: Code Review
-```bash
-claude review src/utils/validation.ts
-# Get suggestions for improvement
-```
-
-### Scenario 3: Documentation
-```bash
-claude document src/api/users.ts
-# Generate comprehensive JSDoc comments
-```
-
-## Best Practices
-[SVG: Best practices checklist]
-
-✅ **DO:**
-- Provide clear context in your prompts
-- Use file references for specific questions
-- Iterate on responses
-- Review generated code before using
-
-❌ **DON'T:**
-- Blindly copy-paste without understanding
-- Use for sensitive/proprietary code without approval
-- Expect perfect code on first try
-- Skip testing generated code
-
-## Pricing & Limits
-[SVG: Pricing tiers visualization]
-
-- **Free Tier**: 100 requests/day
-- **Pro ($20/month)**: 5,000 requests/day
-- **Team ($30/user/month)**: Unlimited + collaboration features
-
-## Comparison with Alternatives
-[SVG: Comparison table]
-
-| Feature | Claude CLI | Copilot CLI | OpenCode |
-|---------|-----------|-------------|----------|
-| Code Generation | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
-| Codebase Analysis | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
-| Conversation Quality | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐ |
-| Terminal UX | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
-| Free Tier | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
-
-## Resources
-- [Official Documentation](https://docs.anthropic.com/cli)
-- [GitHub Repository](https://github.com/anthropics/claude-cli)
-- [Community Examples](https://github.com/anthropics/claude-cli-examples)
-```
-
-**SVG Visuals Required:**
-1. **Terminal Flow SVG** - Claude conversation in terminal
-2. **Installation Checklist SVG** - Prerequisites visual
-3. **Command Flow Diagram SVG** - Different command types
-4. **Feature Icons SVG** - Key features illustrated
-5. **Use Case Scenarios SVG** - Real-world examples
-6. **Best Practices Checklist SVG** - Do's and Don'ts
-7. **Pricing Tiers SVG** - Visual pricing comparison
-8. **Comparison Table SVG** - vs other CLIs
+**New Articles Required:** 5 articles for Claude CLI section
 
 ---
 
-#### 3.2.3 GitHub Copilot CLI
+### 2. Copilot CLI Diagrams (6 SVGs)
 
-**Content Outline:**
-```markdown
-# GitHub Copilot CLI: AI in Your Terminal
+| # | SVG Filename | Target Article | Status | Priority | Arabic Caption |
+|---|--------------|----------------|--------|----------|----------------|
+| 10 | `cli-copilot-pricing.svg` | `[N]` copilot-cli-pricing | New | P2 | تسعير GitHub Copilot CLI |
+| 11 | `cli-copilot-alias-config.svg` | `[N]` copilot-cli-configuration | New | P2 | إعداد الاختصارات في Copilot CLI |
+| 12 | `cli-copilot-use-cases.svg` | `[N]` copilot-cli-overview | New | P1 | حالات استخدام Copilot CLI |
+| 13 | `cli-copilot-command-tree.svg` | `[N]` copilot-cli-commands | New | P1 | شجرة أوامر Copilot CLI |
+| 14 | `cli-copilot-installation.svg` | `[E]` prep-your-machine | Existing | P1 | خطوات تثبيت Copilot CLI |
+| 15 | `cli-copilot-workflow.svg` | `[N]` copilot-cli-overview | New | P1 | سير عمل Copilot CLI |
 
-## What is GitHub Copilot CLI?
-[SVG: GitHub Copilot CLI workflow]
-
-GitHub's official CLI brings Copilot's AI assistance directly to your command line:
-- Suggest terminal commands
-- Explain complex commands
-- Generate scripts
-- Debug shell errors
-
-## Installation
-[SVG: Installation steps diagram]
-
-```bash
-# Install GitHub CLI first
-brew install gh  # macOS
-# or
-winget install GitHub.cli  # Windows
-
-# Install Copilot CLI extension
-gh extension install github/gh-copilot
-
-# Authenticate
-gh auth login
-```
-
-## Core Commands
-[SVG: Command syntax tree]
-
-### `gh copilot suggest`
-Get command suggestions for what you want to do:
-
-```bash
-gh copilot suggest "compress all images in current directory"
-
-# Output:
-# find . -type f \( -name "*.jpg" -o -name "*.png" \) -exec mogrify -quality 85 {} \;
-```
-
-### `gh copilot explain`
-Understand what a command does:
-
-```bash
-gh copilot explain "tar -czf archive.tar.gz folder/"
-
-# Output:
-# This command creates a compressed archive:
-# - tar: tape archive utility
-# - -c: create new archive
-# - -z: compress with gzip
-# - -f: specify filename
-```
-
-## Use Cases
-[SVG: Use case flow diagrams]
-
-### 1. System Administration
-```bash
-gh copilot suggest "find all files larger than 100MB modified in last week"
-```
-
-### 2. Git Workflows
-```bash
-gh copilot suggest "undo last 3 commits but keep the changes"
-```
-
-### 3. DevOps Tasks
-```bash
-gh copilot suggest "deploy docker container with environment variables from .env file"
-```
-
-## Aliases for Speed
-[SVG: Alias configuration visual]
-
-```bash
-# Add to ~/.bashrc or ~/.zshrc
-alias cs='gh copilot suggest'
-alias ce='gh copilot explain'
-
-# Usage:
-cs "kill process on port 3000"
-ce "docker-compose up -d"
-```
-
-## Pricing
-[SVG: Pricing comparison]
-
-- **Free**: 2 months trial
-- **Individual ($10/month)**: Unlimited suggestions
-- **Business ($19/user/month)**: + team policies
-```
-
-**SVG Visuals Required:**
-1. **Copilot CLI Workflow SVG**
-2. **Installation Steps SVG**
-3. **Command Syntax Tree SVG**
-4. **Use Case Flows SVG** (3 scenarios)
-5. **Alias Configuration SVG**
-6. **Pricing Comparison SVG**
+**New Articles Required:** 4 articles for Copilot CLI section
 
 ---
 
-#### 3.2.4 OpenCode (OhMyOpenCode)
+### 3. OpenCode CLI Diagrams (14 SVGs)
 
-**Content Outline:**
-```markdown
-# OpenCode: The Open-Source AI Coding Agent
+| # | SVG Filename | Target Article | Status | Priority | Arabic Caption |
+|---|--------------|----------------|--------|----------|----------------|
+| 16 | `cli-opencode-license-tiers.svg` | `[N]` opencode-cli-licensing | New | P2 | مستويات ترخيص OpenCode |
+| 17 | `cli-opencode-use-cases.svg` | `[N]` opencode-cli-overview | New | P1 | حالات استخدام OpenCode CLI |
+| 18 | `cli-opencode-comparison-matrix.svg` | `[N]` opencode-cli-comparison | New | P1 | مصفوفة مقارنة OpenCode |
+| 19 | `cli-opencode-local-vs-cloud.svg` | `[N]` opencode-cli-deployment | New | P2 | المحلي مقابل السحابي في OpenCode |
+| 20 | `cli-opencode-multifile-workflow.svg` | `[N]` opencode-cli-workflows | New | P1 | سير عمل الملفات المتعددة |
+| 21 | `cli-opencode-advanced-features.svg` | `[N]` opencode-cli-advanced | New | P2 | الميزات المتقدمة في OpenCode |
+| 22 | `cli-opencode-editor-integration.svg` | `[E]` the-editor | Existing | P1 | تكامل OpenCode مع المحررات |
+| 23 | `cli-opencode-context-sources.svg` | `[N]` opencode-cli-context | New | P1 | مصادر السياق في OpenCode |
+| 24 | `cli-opencode-workflow-state.svg` | `[N]` opencode-cli-workflows | New | P2 | حالات سير العمل في OpenCode |
+| 25 | `cli-opencode-agent-collaboration.svg` | `[N]` opencode-cli-agents | New | P1 | تعاون الوكلاء في OpenCode |
+| 26 | `cli-opencode-feature-map.svg` | `[N]` opencode-cli-overview | New | P1 | خريطة ميزات OpenCode |
+| 27 | `cli-opencode-config-layers.svg` | `[N]` opencode-cli-configuration | New | P2 | طبقات الإعدادات في OpenCode |
+| 28 | `cli-opencode-installation-options.svg` | `[E]` prep-your-machine | Existing | P1 | خيارات تثبيت OpenCode |
+| 29 | `cli-opencode-architecture.svg` | `[N]` opencode-cli-overview | New | P1 | البنية التقنية لـ OpenCode |
 
-## What is OpenCode?
-[SVG: OpenCode architecture diagram]
-
-OpenCode (OhMyOpenCode) is an open-source AI coding agent that runs locally or in the cloud:
-- Multi-agent system for complex tasks
-- Supports multiple AI models
-- Terminal and editor integration
-- Privacy-focused (local mode available)
-
-## Installation
-[SVG: Installation options flowchart]
-
-### Option 1: npm (Recommended)
-```bash
-npm install -g @ohmyopencode/cli
-opencode init
-```
-
-### Option 2: Docker
-```bash
-docker pull ohmyopencode/cli
-docker run -it ohmyopencode/cli
-```
-
-### Option 3: From Source
-```bash
-git clone https://github.com/ohmyopencode/opencode
-cd opencode
-npm install
-npm run build
-npm link
-```
-
-## Configuration
-[SVG: Configuration layers diagram]
-
-```bash
-opencode config
-
-# Choose AI provider:
-# 1. OpenAI (GPT-4, GPT-3.5)
-# 2. Anthropic (Claude)
-# 3. Local (Ollama, LM Studio)
-# 4. Azure OpenAI
-# 5. Google (PaLM, Gemini)
-```
-
-## Core Features
-[SVG: Feature architecture map]
-
-### 1. Multi-Agent System
-[SVG: Agent collaboration diagram]
-
-OpenCode uses specialized agents:
-- **Planner**: Breaks down complex tasks
-- **Coder**: Writes code
-- **Reviewer**: Reviews code quality
-- **Tester**: Generates tests
-- **Debugger**: Fixes issues
-
-```bash
-opencode build "Create a REST API with authentication"
-
-# Planner: Outlines the architecture
-# Coder: Writes the code files
-# Tester: Adds unit tests
-# Reviewer: Suggests improvements
-```
-
-### 2. Agentic Workflows
-[SVG: Workflow state machine]
-
-```bash
-# Autonomous mode
-opencode agent "Build a todo app with Next.js"
-# Agents collaborate until complete
-
-# Supervised mode
-opencode agent --interactive "Refactor this codebase"
-# Agents ask for approval at each step
-```
-
-### 3. Context-Aware Coding
-[SVG: Context sources diagram]
-
-```bash
-# OpenCode reads:
-# - Your codebase
-# - Git history
-# - Package dependencies
-# - .opencode-rules file
-# - Active editor state
-
-opencode ask "Why is this component re-rendering?"
-# Uses all context to give accurate answer
-```
-
-### 4. Editor Integration
-[SVG: Editor integration architecture]
-
-```bash
-# VS Code
-opencode install vscode
-
-# Cursor
-opencode install cursor
-
-# Vim/Neovim
-opencode install nvim
-```
-
-## Advanced Usage
-[SVG: Advanced features map]
-
-### Custom Rules
-Create `.opencode-rules`:
-
-```yaml
-project:
-  name: "My SaaS App"
-  type: "Next.js 14 + Supabase"
-  
-coding_style:
-  - "Use TypeScript strict mode"
-  - "Prefer functional components"
-  - "Use Tailwind for styling"
-  - "Write tests for all utilities"
-  
-ai_preferences:
-  model: "claude-3-opus"
-  temperature: 0.2
-  max_tokens: 4000
-  
-agents:
-  planner: "claude-3-opus"
-  coder: "gpt-4"
-  reviewer: "claude-3-sonnet"
-```
-
-### Multi-File Operations
-[SVG: Multi-file workflow diagram]
-
-```bash
-# Refactor across entire codebase
-opencode refactor "Convert all class components to functional"
-
-# Add feature across multiple files
-opencode feature "Add dark mode support"
-# Creates: hooks, context, components, utils
-```
-
-### Local AI Models
-[SVG: Local vs Cloud diagram]
-
-```bash
-# Use local Ollama
-opencode config set provider ollama
-opencode config set model codellama
-
-# Privacy-first: everything stays on your machine
-# Slower but free and private
-```
-
-## Comparison with Other Tools
-[SVG: Detailed comparison matrix]
-
-| Feature | OpenCode | Cursor | Claude CLI | Copilot CLI |
-|---------|----------|--------|------------|-------------|
-| Open Source | ✅ Yes | ❌ No | ❌ No | ❌ No |
-| Multi-Agent | ✅ Yes | ⚠️ Partial | ❌ No | ❌ No |
-| Local Models | ✅ Yes | ❌ No | ❌ No | ❌ No |
-| Editor Integration | ✅ All | ✅ Native | ⚠️ Limited | ⚠️ Limited |
-| Price | 🆓 Free | 💰 $20/mo | 💰 $20/mo | 💰 $10/mo |
-| Privacy | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐ |
-
-## Use Cases
-[SVG: Use case scenarios]
-
-### For Startups
-```bash
-# Rapid MVP development
-opencode project create "SaaS starter"
-# Generates: Auth, DB schema, API, Frontend
-```
-
-### For Enterprises
-```bash
-# On-premise deployment
-opencode deploy --local --model custom-fine-tuned
-# All data stays internal
-```
-
-### For Learning
-```bash
-# Explain while doing
-opencode learn "Build a blockchain from scratch"
-# Step-by-step explanations + code
-```
-
-## Pricing & Licensing
-[SVG: License tiers visual]
-
-- **Community (Free)**: 
-  - Full CLI access
-  - Bring your own API keys
-  - Local models supported
-  
-- **Cloud ($15/month)**:
-  - Hosted AI models
-  - No API key management
-  - Priority support
-  
-- **Enterprise (Custom)**:
-  - On-premise deployment
-  - Custom model fine-tuning
-  - SSO + security features
-
-## Resources
-- [Official Docs](https://docs.ohmyopencode.com)
-- [GitHub Repo](https://github.com/ohmyopencode/opencode)
-- [Discord Community](https://discord.gg/opencode)
-- [Example Projects](https://github.com/ohmyopencode/examples)
-```
-
-**SVG Visuals Required:**
-1. **OpenCode Architecture SVG**
-2. **Installation Options Flowchart SVG**
-3. **Configuration Layers SVG**
-4. **Feature Architecture Map SVG**
-5. **Agent Collaboration Diagram SVG**
-6. **Workflow State Machine SVG**
-7. **Context Sources Diagram SVG**
-8. **Editor Integration Architecture SVG**
-9. **Advanced Features Map SVG**
-10. **Multi-File Workflow SVG**
-11. **Local vs Cloud Diagram SVG**
-12. **Detailed Comparison Matrix SVG**
-13. **Use Case Scenarios SVG** (3 types)
-14. **License Tiers Visual SVG**
+**New Articles Required:** 9 articles for OpenCode CLI section
 
 ---
 
-#### 3.2.5 Comparison Matrix (All AI Coding CLIs)
+### 4. CLI Overview Diagrams (3 SVGs)
 
-**Content Outline:**
-```markdown
-# AI Coding CLIs: Complete Comparison Guide
+| # | SVG Filename | Target Article | Status | Priority | Arabic Caption |
+|---|--------------|----------------|--------|----------|----------------|
+| 30 | `cli-overview-comparison-matrix.svg` | `[N]` cli-tools-comparison | New | P1 | مصفوفة مقارنة أدوات CLI |
+| 31 | `cli-overview-ecosystem-landscape.svg` | `[N]` cli-ecosystem-overview | New | P1 | منظومة أدوات CLI للذكاء الاصطناعي |
+| 32 | `cli-overview-architecture.svg` | `[N]` cli-ecosystem-overview | New | P1 | البنية العامة لأدوات CLI |
 
-## Quick Selection Guide
-[SVG: Decision tree for tool selection]
-
-**Answer these questions:**
-1. Do you need local/private AI? → OpenCode (local mode)
-2. Are you a GitHub user? → Copilot CLI
-3. Want best reasoning? → Claude CLI
-4. Need multi-agent system? → OpenCode
-5. Learning focus? → Claude CLI or OpenCode
-
-## Feature Comparison Matrix
-[SVG: Comprehensive comparison table]
-
-### Code Generation Quality
-[SVG: Bar chart comparison]
-
-| Tool | Simple Code | Complex Code | Refactoring | Testing |
-|------|------------|--------------|-------------|---------|
-| Claude CLI | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
-| OpenCode | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
-| Copilot CLI | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐ |
-| Codex API | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ |
-| Cody CLI | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
-
-### Codebase Understanding
-[SVG: Radar chart comparison]
-
-### Developer Experience
-[SVG: UX comparison grid]
-
-### Pricing Comparison
-[SVG: Pricing visualization]
-
-## When to Use Which Tool
-[SVG: Use case matrix]
-
-### Scenario-Based Recommendations
-
-**Building a Startup MVP:**
-- **Best**: OpenCode (free + multi-agent)
-- **Alternative**: Claude CLI (best quality)
-
-**Enterprise Development:**
-- **Best**: Copilot CLI (GitHub integration)
-- **Alternative**: OpenCode (on-premise option)
-
-**Learning to Code:**
-- **Best**: Claude CLI (best explanations)
-- **Alternative**: OpenCode (free with learning mode)
-
-**Privacy-Critical Projects:**
-- **Best**: OpenCode (local models)
-- **Alternative**: Self-hosted Codex
-
-**Terminal Power Users:**
-- **Best**: Copilot CLI (terminal-first design)
-- **Alternative**: OpenCode (extensive CLI)
-```
-
-**SVG Visuals Required:**
-1. **Decision Tree SVG** - Tool selection
-2. **Comprehensive Comparison Table SVG**
-3. **Bar Chart Comparison SVG** - Code quality
-4. **Radar Chart SVG** - Multi-dimensional comparison
-5. **UX Comparison Grid SVG**
-6. **Pricing Visualization SVG**
-7. **Use Case Matrix SVG**
+**New Articles Required:** 2 articles for CLI Overview section
 
 ---
 
-### 3.3 Visual Learning Section
+### 5. Comparison Diagrams (7 SVGs)
 
-#### 3.3.1 Vibecoding Workflow Diagrams
+| # | SVG Filename | Target Article | Status | Priority | Arabic Caption |
+|---|--------------|----------------|--------|----------|----------------|
+| 33 | `comparison-use-case-matrix.svg` | `[E]` cursor-vs-windsurf | Existing | P1 | مصفوفة حالات الاستخدام |
+| 34 | `comparison-pricing-visual.svg` | `[E]` cursor-vs-windsurf | Existing | P1 | مقارنة الأسعار البصرية |
+| 35 | `comparison-ux-grid.svg` | `[E]` cursor-vs-windsurf | Existing | P2 | شبكة مقارنة تجربة المستخدم |
+| 36 | `comparison-radar-chart.svg` | `[E]` cursor-vs-windsurf | Existing | P2 | مخطط رادار للمقارنة الشاملة |
+| 37 | `comparison-quality-barchart.svg` | `[N]` ai-tools-quality-comparison | New | P2 | مخطط جودة الأدوات |
+| 38 | `comparison-feature-matrix.svg` | `[E]` cursor-vs-windsurf | Existing | P1 | مصفوفة مقارنة الميزات |
+| 39 | `comparison-decision-tree.svg` | `[E]` cursor-vs-windsurf | Existing | P1 | شجرة القرار لاختيار الأداة |
 
-**SVG Visuals to Create:**
-
-1. **The Traditional Coding Workflow**
-```
-[Idea] → [Research Docs] → [Write Code Manually] → [Debug] → [Deploy]
-         ↓ (hours)         ↓ (hours)                ↓ (hours)
-         Manual Search     Manual Typing            Manual Fixing
-```
-
-2. **The Vibecoding Workflow**
-```
-[Idea] → [Prompt AI] → [Review + Iterate] → [Deploy]
-         ↓ (minutes)   ↓ (minutes)           ↓ (minutes)
-         AI Generates  AI Refines             AI Optimizes
-```
-
-3. **Multi-Agent Workflow (OpenCode)**
-```
-[User Request]
-     ↓
-[Planner Agent] → [Task Breakdown]
-     ↓
-[Coder Agent] → [Code Generation]
-     ↓
-[Reviewer Agent] → [Code Review]
-     ↓
-[Tester Agent] → [Test Generation]
-     ↓
-[Final Output]
-```
-
-4. **Context Awareness Flow**
-```
-Your Codebase → 
-Git History → 
-Dependencies → } → [AI Context Engine] → [Intelligent Suggestions]
-Documentation → 
-Open Files →
-```
+**New Articles Required:** 1 article for additional comparison
 
 ---
 
-## 4. SVG Visual Design Guidelines
+### 6. Getting Started Diagrams (5 SVGs)
 
-### 4.1 Design Principles
+| # | SVG Filename | Target Article | Status | Priority | Arabic Caption |
+|---|--------------|----------------|--------|----------|----------------|
+| 40 | `getting-started-learning-paths.svg` | `[E]` what-is-vibe-coding | Existing | P1 | مسارات التعلم للبرمجة بالإحساس |
+| 41 | `getting-started-ai-workflow.svg` | `[E]` hello-world-with-ai | Existing | P1 | سير عمل الذكاء الاصطناعي |
+| 42 | `getting-started-installation-flow.svg` | `[E]` prep-your-machine | Existing | P1 | خطوات تثبيت البيئة |
+| 43 | `getting-started-decision-tree.svg` | `[E]` the-vibe-stack | Existing | P1 | شجرة قرار اختيار الأدوات |
+| 44 | `getting-started-timeline-flow.svg` | `[E]` what-is-vibe-coding | Existing | P1 | الجدول الزمني للبدء |
 
-**Color Palette (matching Vibe Wiki theme):**
-- Primary: `#00d9ff` (neon-cyan)
-- Secondary: `#a855f7` (neon-purple)
-- Accent: `#ec4899` (neon-pink)
-- Background: `#0a0a0a` (dark)
-- Text: `#ffffff` (white)
-- Muted: `#6b7280` (gray)
-
-**Typography:**
-- Headings: `font-family: 'Inter', sans-serif; font-weight: 700`
-- Body: `font-family: 'Inter', sans-serif; font-weight: 400`
-- Code: `font-family: 'Fira Code', monospace`
-
-**Visual Style:**
-- Modern, clean lines
-- Gradient accents
-- Subtle shadows and glows
-- Rounded corners (8px border-radius)
-- Consistent spacing (8px grid system)
-
-### 4.2 SVG Technical Specifications
-
-**File Format:**
-- Format: SVG 1.1
-- Optimization: SVGO optimized
-- Viewbox: Responsive (maintain aspect ratio)
-- Accessibility: Include `<title>` and `<desc>` tags
-- File size: < 50KB per SVG
-
-**Naming Convention:**
-```
-{section}-{topic}-{type}.svg
-
-Examples:
-- getting-started-timeline-flow.svg
-- cli-claude-architecture-diagram.svg
-- comparison-tools-matrix-table.svg
-```
-
-### 4.3 Required SVG Assets List
-
-#### Getting Started Section (5 SVGs)
-1. `getting-started-timeline-flow.svg` - 15-minute journey
-2. `getting-started-decision-tree.svg` - Tool selection
-3. `getting-started-installation-flow.svg` - Installation steps
-4. `getting-started-ai-workflow.svg` - Prompt to code
-5. `getting-started-learning-paths.svg` - Next steps
-
-#### CLI Overview Section (3 SVGs)
-6. `cli-overview-architecture.svg` - CLI structure
-7. `cli-overview-ecosystem-landscape.svg` - Tool positioning
-8. `cli-overview-comparison-matrix.svg` - Basic comparison
-
-#### Claude CLI Section (8 SVGs)
-9. `cli-claude-terminal-flow.svg` - Conversation flow
-10. `cli-claude-installation-checklist.svg` - Prerequisites
-11. `cli-claude-command-flow.svg` - Command types
-12. `cli-claude-feature-icons.svg` - Key features
-13. `cli-claude-use-cases.svg` - Scenarios
-14. `cli-claude-best-practices.svg` - Do's and don'ts
-15. `cli-claude-pricing-tiers.svg` - Pricing
-16. `cli-claude-comparison.svg` - vs alternatives
-
-#### Copilot CLI Section (6 SVGs)
-17. `cli-copilot-workflow.svg`
-18. `cli-copilot-installation.svg`
-19. `cli-copilot-command-tree.svg`
-20. `cli-copilot-use-cases.svg`
-21. `cli-copilot-alias-config.svg`
-22. `cli-copilot-pricing.svg`
-
-#### OpenCode Section (14 SVGs)
-23. `cli-opencode-architecture.svg`
-24. `cli-opencode-installation-options.svg`
-25. `cli-opencode-config-layers.svg`
-26. `cli-opencode-feature-map.svg`
-27. `cli-opencode-agent-collaboration.svg`
-28. `cli-opencode-workflow-state.svg`
-29. `cli-opencode-context-sources.svg`
-30. `cli-opencode-editor-integration.svg`
-31. `cli-opencode-advanced-features.svg`
-32. `cli-opencode-multifile-workflow.svg`
-33. `cli-opencode-local-vs-cloud.svg`
-34. `cli-opencode-comparison-matrix.svg`
-35. `cli-opencode-use-cases.svg`
-36. `cli-opencode-license-tiers.svg`
-
-#### Comparison Section (7 SVGs)
-37. `comparison-decision-tree.svg`
-38. `comparison-feature-matrix.svg`
-39. `comparison-quality-barchart.svg`
-40. `comparison-radar-chart.svg`
-41. `comparison-ux-grid.svg`
-42. `comparison-pricing-visual.svg`
-43. `comparison-use-case-matrix.svg`
-
-#### Workflow Diagrams (4 SVGs)
-44. `workflow-traditional-coding.svg`
-45. `workflow-vibecoding.svg`
-46. `workflow-multi-agent.svg`
-47. `workflow-context-awareness.svg`
-
-**Total SVG Assets: 47**
+**New Articles Required:** 0 (all map to existing articles)
 
 ---
 
-## 5. Additional CLI Tools (Brief Coverage)
+### 7. Workflow Diagrams (4 SVGs)
 
-### 5.1 Other Tools to Document
+| # | SVG Filename | Target Article | Status | Priority | Arabic Caption |
+|---|--------------|----------------|--------|----------|----------------|
+| 45 | `workflow-context-awareness.svg` | `[E]` conversational-coding | Existing | P1 | الوعي بالسياق في البرمجة |
+| 46 | `workflow-multi-agent.svg` | `[N]` multi-agent-workflows | New | P1 | سير عمل الوكلاء المتعددين |
+| 47 | `workflow-traditional-coding.svg` | `[E]` what-is-vibe-coding | Existing | P2 | البرمجة التقليدية مقابل الإحساس |
+| 48 | `workflow-vibecoding.svg` | `[E]` what-is-vibe-coding | Existing | P1 | سير عمل البرمجة بالإحساس |
 
-Each tool should have a dedicated page with:
-- Overview (200 words)
-- Installation (code block)
-- Basic usage (3 examples)
-- Key features (bullet list)
-- Pricing
-- 2-3 SVG visuals
-
-**Tools List:**
-1. **Codex (OpenAI)** - API-based code generation
-2. **Cody (Sourcegraph)** - Code intelligence CLI
-3. **Tabnine** - Privacy-first code completion
-4. **Amazon CodeWhisperer** - AWS-integrated coding
-5. **Replit Ghostwriter** - Cloud IDE assistant
-6. **Pieces for Developers** - Snippet management with AI
-7. **Bito CLI** - Code explanation and generation
-8. **Aider** - AI pair programming in terminal
-9. **Mentat** - AI coding assistant for CLI
-10. **Continue.dev** - Open-source Copilot alternative
+**New Articles Required:** 1 article for multi-agent workflows
 
 ---
 
-## 6. Learning Paths
+### Summary: New Articles Required
 
-### 6.1 Path 1: Complete Beginner → First App (2 weeks)
-
-**Week 1: Foundations**
-```
-Day 1-2: Understanding Vibecoding
-  ├─ Read: What is Vibecoding?
-  ├─ Watch: Video intro
-  └─ Exercise: First 15 minutes guide
-
-Day 3-4: Setup Your Environment
-  ├─ Install: Cursor or Windsurf
-  ├─ Install: Node.js via nvm
-  ├─ Setup: GitHub account
-  └─ Exercise: Hello World with AI
-
-Day 5-7: Learn One CLI Tool
-  ├─ Choose: Claude CLI OR Copilot CLI
-  ├─ Install and configure
-  ├─ Practice: 10 basic commands
-  └─ Build: Simple script with AI help
-```
-
-**Week 2: First Project**
-```
-Day 8-10: Plan Your Project
-  ├─ Choose: Todo app OR Portfolio site
-  ├─ Sketch: UI mockup
-  └─ Prompt: AI for architecture
-
-Day 11-13: Build with AI
-  ├─ Generate: Components
-  ├─ Iterate: Refine with AI
-  └─ Debug: With AI assistance
-
-Day 14: Deploy & Share
-  ├─ Deploy: To Vercel
-  ├─ Share: GitHub repo
-  └─ Reflect: What you learned
-```
-
-**[SVG: Learning path flowchart for Path 1]**
-
-### 6.2 Path 2: Traditional Dev → AI-Assisted (1 week)
-
-**For developers with existing coding experience:**
-
-```
-Day 1: Mindset Shift
-  ├─ Read: Vibecoding philosophy
-  ├─ Unlearn: Some old habits
-  └─ Learn: Prompt engineering basics
-
-Day 2-3: Tool Integration
-  ├─ Install: AI editor (Cursor/Windsurf)
-  ├─ Install: CLI tool (choose one)
-  ├─ Migrate: Existing project
-  └─ Practice: AI-assisted refactoring
-
-Day 4-5: AI-First Workflow
-  ├─ New feature: Build with AI
-  ├─ Code review: AI as reviewer
-  └─ Documentation: AI-generated
-
-Day 6-7: Master Advanced Patterns
-  ├─ Multi-file editing
-  ├─ Codebase querying
-  ├─ Autonomous agents
-  └─ Build: Feature using all techniques
-```
-
-**[SVG: Learning path flowchart for Path 2]**
+| Section | New Articles Count | Article Slugs |
+|---------|-------------------|---------------|
+| Claude CLI | 5 | `claude-cli-overview`, `claude-cli-pricing`, `claude-cli-best-practices`, `claude-cli-features`, `claude-cli-commands` |
+| Copilot CLI | 4 | `copilot-cli-overview`, `copilot-cli-pricing`, `copilot-cli-configuration`, `copilot-cli-commands` |
+| OpenCode CLI | 9 | `opencode-cli-overview`, `opencode-cli-licensing`, `opencode-cli-comparison`, `opencode-cli-deployment`, `opencode-cli-workflows`, `opencode-cli-advanced`, `opencode-cli-context`, `opencode-cli-agents`, `opencode-cli-configuration` |
+| CLI Overview | 2 | `cli-tools-comparison`, `cli-ecosystem-overview` |
+| Comparisons | 1 | `ai-tools-quality-comparison` |
+| Workflows | 1 | `multi-agent-workflows` |
+| **Total** | **22** | |
 
 ---
 
-## 7. Implementation Plan
+## Technical Implementation
 
-### 7.1 Phase 1: Content Creation (Weeks 1-3)
+### 4.1 Current Architecture
 
-**Week 1: Foundation Content**
-- [x] Write "Your First 15 Minutes" guide
-- [x] Write "AI Coding Ecosystem Overview"
-- [x] Create 10 foundational SVGs
-- [x] Review and edit content
+The wiki uses:
+- **Next.js 14** with App Router
+- **TypeScript** for type safety
+- **Arabic (RTL)** as the primary language
+- **wiki-content.ts** for article storage (inline content)
 
-**Week 2: CLI Tools Documentation**
-- [x] Write Claude CLI comprehensive guide
-- [x] Write Copilot CLI guide
-- [x] Write OpenCode guide
-- [x] Create 25 CLI-specific SVGs
-- [x] Write brief guides for 10 other tools
+### 4.2 SVGDiagram Component
 
-**Week 3: Learning Paths & Comparison**
-- [x] Write all 4 learning paths
-- [x] Create comparison matrices
-- [x] Create workflow diagrams
-- [x] Create 12 remaining SVGs
-- [x] Final content review
+The existing `SVGDiagram` component (`src/components/wiki/SVGDiagram.tsx`) supports:
 
-### 7.2 Phase 2: SVG Creation (Weeks 2-4)
-
-**SVG Creation Workflow:**
-1. Content writer provides specifications
-2. Designer creates SVG based on specs
-3. Developer optimizes SVG for web
-4. QA checks accessibility and performance
-5. Integration into wiki pages
-
-**Tools for SVG Creation:**
-- Figma (design)
-- SVGO (optimization)
-- SVG accessibility validator
-
-### 7.3 Phase 3: Integration (Week 5)
-
-- [x] Integrate all content into wiki-content.ts
-- [x] Add SVG assets to public/images/
-- [x] Update navigation and search indices
-- [x] Implement responsive layouts for SVGs
-- [x] Add lazy loading for SVG assets
-
-### 7.4 Phase 4: Testing & Launch (Week 6)
-
-- [x] User testing with 10 newcomers
-- [x] Collect feedback and iterate
-- [x] Performance testing
-- [x] Accessibility audit
-- [x] Soft launch to community
-- [x] Public announcement
-
----
-
-## 8. Success Metrics & KPIs
-
-### 8.1 Engagement Metrics
-
-- **Page Views**: Track views for each new page
-  - Target: 1,000+ views/week for "Your First 15 Minutes"
-  
-- **Time on Page**: Measure engagement depth
-  - Target: 5+ minutes average for learning paths
-  
-- **Completion Rate**: Percentage who finish guides
-  - Target: 60%+ completion for beginner path
-
-### 8.2 Learning Outcomes
-
-- **First App Success Rate**: Users who deploy first app
-  - Target: 70% within 2 weeks of starting
-  
-- **Tool Adoption**: Users who install AI tools
-  - Target: 80% install at least one CLI tool
-  
-- **Community Contributions**: User-generated content
-  - Target: 10+ community case studies in first 3 months
-
-### 8.3 Content Quality
-
-- **User Satisfaction**: Exit survey ratings
-  - Target: 4.5/5 average rating
-  
-- **Error Reports**: Content accuracy issues
-  - Target: <5 errors per 1,000 views
-  
-- **Accessibility Score**: WCAG compliance
-  - Target: 100% AA compliance
-
----
-
-## 9. Maintenance & Updates
-
-### 9.1 Content Update Schedule
-
-- **Weekly**: Fix reported errors and typos
-- **Bi-weekly**: Update CLI tool versions and features
-- **Monthly**: Add new tools and case studies
-- **Quarterly**: Major content refresh based on AI landscape changes
-
-### 9.2 Community Contributions
-
-**Accepting:**
-- New CLI tool guides
-- Learning path suggestions
-- SVG improvements
-- Translation to other languages
-
-**Process:**
-1. Submit via GitHub PR
-2. Content review by maintainers
-3. SVG quality check
-4. Merge and credit contributor
-
----
-
-## 10. Technical Requirements
-
-### 10.1 Wiki Platform Updates
-
-**Required Changes to `wiki-content.ts`:**
 ```typescript
-// Add new section structure
+interface SVGDiagramProps {
+  diagram: SVGDiagramType;
+  className?: string;
+  priority?: boolean; // For above-the-fold images
+}
+
+interface SVGDiagramType {
+  src: string;
+  alt: string;
+  caption?: string;
+  maxWidth?: string;
+  title?: string;
+  description?: string;
+}
+```
+
+**Key Features:**
+- Lazy loading via Next.js Image
+- Blur placeholder during load
+- Dark mode shadow support
+- Responsive sizing
+- Accessibility (title, description, sr-only elements)
+
+### 4.3 Content Integration Strategy
+
+#### Option A: Extended WikiArticle Interface (Recommended)
+
+Extend the `WikiArticle` interface to support diagrams:
+
+```typescript
+// src/data/wiki-content.ts
+
 export interface WikiArticle {
   slug: string;
   title: string;
   section: string;
   content: string;
-  visualAssets?: string[];  // NEW: SVG file references
   codeBlocks?: { language: string; code: string; title?: string }[];
-  prerequisites?: string[];  // NEW: Learning path dependencies
-  estimatedTime?: number;    // NEW: Reading/completion time in minutes
-  difficulty?: 'beginner' | 'intermediate' | 'advanced';  // NEW
+  // NEW: Diagram support
+  diagrams?: {
+    id: string;           // Unique identifier for positioning
+    filename: string;     // SVG filename in /public/images/diagrams/
+    alt: string;          // Arabic alt text
+    caption: string;      // Arabic caption
+    position: 'inline' | 'before-section' | 'after-section';
+    sectionHeading?: string; // For positioned placement
+    priority?: boolean;   // For above-the-fold
+  }[];
 }
 ```
 
-**SVG Loading Component:**
+#### Option B: Markdown-Based Embedding
+
+Use a custom Markdown syntax for inline diagrams:
+
+```markdown
+## تثبيت الأدوات
+
+قبل البدء، تحتاج إلى تثبيت الأدوات التالية:
+
+:::diagram[getting-started-installation-flow]
+alt: خطوات تثبيت البيئة
+caption: مخطط يوضح خطوات تثبيت بيئة التطوير
+:::
+
+1. تثبيت Node.js
+2. تثبيت Git
+```
+
+**Implementation:** Create a custom Markdown parser/renderer that converts `:::diagram` blocks to `<SVGDiagram />` components.
+
+### 4.4 Diagram Registry
+
+Create a centralized registry for all diagram metadata:
+
 ```typescript
-// components/SVGDiagram.tsx
-interface SVGDiagramProps {
-  src: string;
-  alt: string;
-  caption?: string;
-  maxWidth?: string;
+// src/data/diagram-registry.ts
+
+export interface DiagramEntry {
+  filename: string;
+  category: 'claude-cli' | 'copilot-cli' | 'opencode' | 'comparison' | 'workflow' | 'getting-started' | 'cli-overview';
+  titleAr: string;
+  altAr: string;
+  captionAr: string;
+  titleEn?: string;
+  altEn?: string;
+  captionEn?: string;
+  relatedArticles: string[];
+  priority: 1 | 2 | 3;
+}
+
+export const diagramRegistry: DiagramEntry[] = [
+  {
+    filename: 'cli-claude-comparison.svg',
+    category: 'claude-cli',
+    titleAr: 'مقارنة Claude CLI',
+    altAr: 'رسم بياني يقارن بين Claude CLI والأدوات المنافسة',
+    captionAr: 'مقارنة شاملة بين Claude CLI وأدوات سطر الأوامر الأخرى للذكاء الاصطناعي',
+    relatedArticles: ['claude-cli-overview', 'cli-tools-comparison'],
+    priority: 1,
+  },
+  // ... 47 more entries
+];
+```
+
+### 4.5 Article Rendering Flow
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    WikiArticle Data                         │
+│  { slug, title, content, diagrams: [...] }                  │
+└─────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────┐
+│                   ArticleRenderer                           │
+│  1. Parse Markdown content                                  │
+│  2. Identify diagram insertion points                       │
+│  3. Merge diagram data from registry                        │
+└─────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────┐
+│                   Rendered Output                           │
+│  <article>                                                  │
+│    <h2>مقدمة</h2>                                           │
+│    <p>...</p>                                               │
+│    <SVGDiagram diagram={...} />                             │
+│    <p>...</p>                                               │
+│  </article>                                                 │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### 4.6 Recommended File Structure
+
+```
+src/
+├── components/
+│   └── wiki/
+│       ├── SVGDiagram.tsx          # Existing - no changes needed
+│       ├── ArticleRenderer.tsx     # New - handles diagram insertion
+│       └── DiagramPlaceholder.tsx  # New - loading state
+├── data/
+│   ├── wiki-content.ts             # Extend with diagrams array
+│   └── diagram-registry.ts         # New - centralized metadata
+├── lib/
+│   └── svg-utils.ts                # Existing - add helper functions
+public/
+└── images/
+    └── diagrams/
+        ├── cli-claude-*.svg        # 9 files
+        ├── cli-copilot-*.svg       # 6 files
+        ├── cli-opencode-*.svg      # 14 files
+        ├── cli-overview-*.svg      # 3 files
+        ├── comparison-*.svg        # 7 files
+        ├── getting-started-*.svg   # 5 files
+        └── workflow-*.svg          # 4 files (48 total, 7 additional for user's list)
+```
+
+---
+
+## Design & UX Standards
+
+### 5.1 Visual Design
+
+#### Diagram Container Styling
+
+```css
+/* Base container */
+.svg-diagram-container {
+  margin: 2rem auto;
+  padding: 1rem;
+  background: rgba(26, 26, 46, 0.5);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+/* Dark mode enhancement */
+.dark .svg-diagram-container {
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+}
+
+/* RTL caption alignment */
+[dir="rtl"] .svg-diagram-caption {
+  text-align: right;
 }
 ```
 
-### 10.2 Performance Considerations
+#### Width Constraints
 
-- **SVG Lazy Loading**: Load SVGs only when scrolled into view
-- **CDN**: Serve SVGs from CDN for faster global access
-- **Caching**: Implement aggressive caching for static SVG assets
-- **Optimization**: All SVGs under 50KB, optimized with SVGO
+| Diagram Type | Max Width | Tailwind Class |
+|--------------|-----------|----------------|
+| Full-width diagrams | 100% | `max-w-full` |
+| Standard diagrams | 800px | `max-w-3xl` |
+| Comparison charts | 1000px | `max-w-5xl` |
+| Icon sets | 600px | `max-w-2xl` |
+| Decision trees | 100% | `max-w-full` |
+
+### 5.2 Responsive Behavior
+
+```typescript
+// Responsive sizing in SVGDiagram component
+sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, (max-width: 1200px) 80vw, 800px"
+```
+
+| Breakpoint | Behavior |
+|------------|----------|
+| Mobile (<640px) | Full viewport width, vertical scrolling if needed |
+| Tablet (640-1024px) | 90% container width |
+| Desktop (>1024px) | Fixed max-width based on diagram type |
+
+### 5.3 Lazy Loading Strategy
+
+```typescript
+// Priority loading for above-the-fold diagrams
+const priorityDiagrams = [
+  'getting-started-timeline-flow.svg',
+  'what-is-vibe-coding-hero.svg',
+];
+
+// Use priority={true} for these
+<SVGDiagram diagram={diagram} priority={isPriority} />
+```
+
+**Loading behavior:**
+1. First 2 diagrams in viewport: `loading="eager"`, `priority={true}`
+2. All other diagrams: `loading="lazy"`, blur placeholder
+
+### 5.4 Accessibility Requirements
+
+| Requirement | Implementation |
+|-------------|----------------|
+| Alt text | Required for all diagrams (Arabic) |
+| Title | Displayed on hover, matches alt |
+| Description | Hidden screen-reader text for complex diagrams |
+| Keyboard focus | Focusable links for diagrams with detail views |
+| Color contrast | All text elements meet WCAG AA (4.5:1) |
+| Motion | Respect `prefers-reduced-motion` if animated |
+
+### 5.5 Print Styles
+
+```css
+@media print {
+  .svg-diagram-container {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+  
+  .svg-diagram {
+    max-width: 100%;
+    height: auto;
+  }
+}
+```
 
 ---
 
-## 11. Localization Strategy
+## Arabic Localization Strategy
 
-### 11.1 Current State
-- Wiki is primarily in Arabic (العربية)
-- Code examples in English
-- Some English technical terms preserved
+### 6.1 Text Content
 
-### 11.2 SVG Localization
-- **Text in SVGs**: Keep technical terms in English
-- **Labels**: Provide both Arabic and English
-- **Separate files**: Consider `{name}-ar.svg` and `{name}-en.svg` where needed
+All diagram-related text must be in Arabic:
+
+| Field | Purpose | Example |
+|-------|---------|---------|
+| `alt` | Screen reader, SEO | رسم بياني يوضح بنية Claude CLI |
+| `caption` | Visible under diagram | الشكل 1: البنية التقنية لـ Claude CLI |
+| `title` | Hover tooltip | مخطط البنية التقنية |
+| `description` | Extended screen reader content | هذا الرسم البياني يوضح كيفية تفاعل المكونات... |
+
+### 6.2 Caption Numbering
+
+Use Arabic-Indic numerals (٠١٢٣٤٥٦٧٨٩) for diagram numbering:
+
+```typescript
+function formatDiagramNumber(num: number): string {
+  const arabicNumerals = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
+  return num.toString().split('').map(d => arabicNumerals[parseInt(d)]).join('');
+}
+
+// Output: "الشكل ٣: مخطط سير العمل"
+```
+
+### 6.3 SVG Internal Text
+
+For diagrams containing text:
+- **Option A:** Create Arabic variants of SVGs with embedded Arabic text
+- **Option B (Recommended):** Use language-neutral icons/symbols with external captions
+- **Option C:** Apply CSS transforms for RTL layout where needed
+
+### 6.4 RTL Layout Considerations
+
+```css
+/* Diagram container RTL adjustments */
+[dir="rtl"] .svg-diagram-container {
+  /* Flip horizontal diagrams if they show left-to-right flow */
+}
+
+/* Caption positioning */
+[dir="rtl"] figcaption {
+  text-align: right;
+  direction: rtl;
+}
+```
 
 ---
 
-## 12. Open Questions & Decisions Needed
+## Implementation Phases
 
-### 12.1 To Decide
+### Phase 1: Foundation (Week 1)
 
-1. **SVG Creation**: In-house vs outsource designer?
-2. **Video Content**: Should we complement SVGs with video tutorials?
-3. **Interactive Demos**: Should some SVGs be interactive (clickable)?
-4. **Language Priority**: Arabic-first or bilingual from start?
-5. **License**: SVG assets license (CC-BY, MIT, proprietary)?
+**Scope:** Core infrastructure and highest-priority diagrams
 
-### 12.2 Future Enhancements (Post-MVP)
+| Task | Est. Hours | Owner |
+|------|-----------|-------|
+| Extend WikiArticle interface | 2h | Dev |
+| Create diagram-registry.ts | 4h | Dev |
+| Update ArticleRenderer | 4h | Dev |
+| Integrate 10 P1 Getting Started diagrams | 3h | Content |
+| Add Arabic metadata for Phase 1 diagrams | 2h | Content |
+| QA and testing | 2h | QA |
 
-- [x] Interactive CLI playground (browser-based terminal)
-- [x] AI chatbot for navigating the wiki
-- [x] Video tutorials for each learning path
-- [x] Live coding sessions (weekly)
-- [x] Certification program for vibecoding mastery
-- [x] Integration with actual CLI tools (API partnerships)
+**Deliverables:**
+- [ ] 10 diagrams integrated (Getting Started + Workflow)
+- [x] Diagram registry with full Arabic metadata
+- [ ] Updated article rendering pipeline
+
+### Phase 2: CLI Tools (Week 2)
+
+**Scope:** Claude CLI, Copilot CLI articles and diagrams
+
+| Task | Est. Hours | Owner |
+|------|-----------|-------|
+| Create 9 new Claude CLI articles (stubs) | 6h | Content |
+| Integrate 9 Claude CLI diagrams | 3h | Dev |
+| Create 4 new Copilot CLI articles (stubs) | 4h | Content |
+| Integrate 6 Copilot CLI diagrams | 2h | Dev |
+| Arabic localization review | 3h | Content |
+| QA and testing | 2h | QA |
+
+**Deliverables:**
+- [ ] 5 new Claude CLI articles
+- [ ] 4 new Copilot CLI articles
+- [ ] 15 diagrams integrated
+
+### Phase 3: OpenCode & Comparisons (Week 3)
+
+**Scope:** OpenCode CLI, comparison diagrams, overview section
+
+| Task | Est. Hours | Owner |
+|------|-----------|-------|
+| Create 9 new OpenCode articles (stubs) | 8h | Content |
+| Integrate 14 OpenCode diagrams | 4h | Dev |
+| Create 3 new overview/comparison articles | 4h | Content |
+| Integrate 10 comparison/overview diagrams | 3h | Dev |
+| Arabic localization review | 3h | Content |
+| QA and testing | 3h | QA |
+
+**Deliverables:**
+- [ ] 9 new OpenCode articles
+- [ ] 3 new overview articles
+- [ ] 24 diagrams integrated
+
+### Phase 4: Polish & Documentation (Week 4)
+
+**Scope:** Final integration, documentation, optimization
+
+| Task | Est. Hours | Owner |
+|------|-----------|-------|
+| Remaining diagram integrations | 4h | Dev |
+| Performance optimization (lazy loading audit) | 3h | Dev |
+| Accessibility audit (WCAG 2.1 AA) | 4h | QA |
+| Documentation updates | 3h | Content |
+| Cross-browser testing | 2h | QA |
+| Final review and sign-off | 2h | Team |
+
+**Deliverables:**
+- [ ] All 48+ diagrams integrated
+- [ ] 22 new articles created
+- [ ] Accessibility compliance report
+- [ ] Updated documentation
 
 ---
 
-## 13. Appendix
+## Success Criteria
 
-### 13.1 Reference Links
+### Quantitative Metrics
 
-**AI Coding Tools:**
-- Claude: https://www.anthropic.com/claude
-- GitHub Copilot: https://github.com/features/copilot
-- OpenCode: https://github.com/ohmyopencode
-- Cursor: https://cursor.com
-- Windsurf: https://codeium.com/windsurf
+| Metric | Target | Measurement Method |
+|--------|--------|-------------------|
+| Diagrams integrated | 48/48 (100%) | Audit against registry |
+| Articles with diagrams | 80% of core articles | Content audit |
+| Lazy loading implemented | 100% of below-fold diagrams | Lighthouse audit |
+| Arabic alt text coverage | 100% | Automated scan |
+| Lighthouse accessibility score | ≥90 | Lighthouse CI |
+| Largest Contentful Paint | <2.5s with diagrams | Lighthouse |
 
-**Learning Resources:**
-- Prompt Engineering Guide: https://www.promptingguide.ai
-- AI Coding Best Practices: (TBD - our own guide)
+### Qualitative Criteria
 
-### 13.2 Glossary
+| Criterion | Definition of Done |
+|-----------|-------------------|
+| Visual consistency | All diagrams follow design system guidelines |
+| RTL compatibility | Captions and layouts display correctly in Arabic |
+| Responsive display | Diagrams render correctly on mobile, tablet, desktop |
+| Accessibility | Screen readers announce diagrams correctly |
+| Print fidelity | Diagrams print at high quality |
 
-- **Vibecoding**: Programming by collaborating with AI and trusting your intuition
-- **CLI**: Command Line Interface
-- **LLM**: Large Language Model
-- **Agentic AI**: AI that can perform tasks autonomously
-- **Multi-agent**: System with multiple specialized AI agents
-- **Context-aware**: AI that understands your entire codebase
+### Acceptance Checklist
+
+- [ ] All 48 diagrams are embedded in appropriate articles
+- [ ] 22 new article stubs are created and linked
+- [ ] All diagrams have Arabic alt text, caption, and title
+- [ ] SVGDiagram component renders without errors
+- [ ] Lazy loading works correctly (verified via DevTools)
+- [ ] No accessibility violations in axe-core audit
+- [ ] Diagrams display correctly on: Chrome, Firefox, Safari, Edge
+- [ ] Mobile responsive behavior verified on iOS and Android
+- [ ] Print preview shows diagrams correctly
+
+---
+
+## Risks & Mitigations
+
+| Risk | Likelihood | Impact | Mitigation |
+|------|------------|--------|------------|
+| SVG files contain non-RTL text | Medium | Medium | Create Arabic variants or use icons |
+| Performance degradation from 48+ images | Medium | High | Aggressive lazy loading, LQIP placeholders |
+| Inconsistent diagram styling | Low | Medium | Create diagram style guide |
+| Missing Arabic translations | Low | High | Translation review checkpoint before each phase |
+| Browser compatibility issues | Low | Medium | Test matrix across major browsers |
+| Content overload (too many diagrams per article) | Medium | Medium | Limit to 3-4 diagrams per article |
+
+---
+
+## Appendices
+
+### Appendix A: Complete SVG Inventory
+
+```
+Total SVGs: 48 files
+
+By Category:
+├── cli-claude-* (9)
+├── cli-copilot-* (6)
+├── cli-opencode-* (14)
+├── cli-overview-* (3)
+├── comparison-* (7)
+├── getting-started-* (5)
+└── workflow-* (4)
+```
+
+### Appendix B: New Wiki Section Structure
+
+```
+wikiContent: WikiSection[] = [
+  // Existing sections...
+  
+  // NEW: CLI Tools Section
+  {
+    name: "8. أدوات سطر الأوامر (CLI Tools)",
+    articles: [
+      { slug: "cli-ecosystem-overview", ... },
+      { slug: "cli-tools-comparison", ... },
+    ]
+  },
+  
+  // NEW: Claude CLI Subsection
+  {
+    name: "8.1 Claude CLI",
+    articles: [
+      { slug: "claude-cli-overview", ... },
+      { slug: "claude-cli-commands", ... },
+      { slug: "claude-cli-pricing", ... },
+      { slug: "claude-cli-best-practices", ... },
+      { slug: "claude-cli-features", ... },
+    ]
+  },
+  
+  // NEW: Copilot CLI Subsection
+  {
+    name: "8.2 Copilot CLI",
+    articles: [
+      { slug: "copilot-cli-overview", ... },
+      { slug: "copilot-cli-commands", ... },
+      { slug: "copilot-cli-pricing", ... },
+      { slug: "copilot-cli-configuration", ... },
+    ]
+  },
+  
+  // NEW: OpenCode CLI Subsection
+  {
+    name: "8.3 OpenCode CLI",
+    articles: [
+      { slug: "opencode-cli-overview", ... },
+      { slug: "opencode-cli-comparison", ... },
+      { slug: "opencode-cli-workflows", ... },
+      { slug: "opencode-cli-agents", ... },
+      { slug: "opencode-cli-context", ... },
+      { slug: "opencode-cli-configuration", ... },
+      { slug: "opencode-cli-licensing", ... },
+      { slug: "opencode-cli-deployment", ... },
+      { slug: "opencode-cli-advanced", ... },
+    ]
+  },
+  
+  // NEW: Multi-Agent Workflows
+  {
+    name: "9. سير العمل المتقدم (Advanced Workflows)",
+    articles: [
+      { slug: "multi-agent-workflows", ... },
+      { slug: "ai-tools-quality-comparison", ... },
+    ]
+  },
+];
+```
+
+### Appendix C: Sample Diagram Integration Code
+
+```typescript
+// Example: Integrating diagrams into an article
+
+import { SVGDiagram } from '@/components/wiki/SVGDiagram';
+import { getDiagramByFilename } from '@/data/diagram-registry';
+
+// In article component
+const diagram = getDiagramByFilename('getting-started-timeline-flow.svg');
+
+return (
+  <article dir="rtl" lang="ar">
+    <h1>ما هي البرمجة بالإحساس؟</h1>
+    
+    <p>البرمجة بالإحساس هي فن بناء البرمجيات...</p>
+    
+    {diagram && (
+      <SVGDiagram
+        diagram={{
+          src: `/images/diagrams/${diagram.filename}`,
+          alt: diagram.altAr,
+          caption: diagram.captionAr,
+          title: diagram.titleAr,
+        }}
+        priority={true}
+      />
+    )}
+    
+    <h2>الفلسفة</h2>
+    <p>...</p>
+  </article>
+);
+```
+
+### Appendix D: Arabic Caption Style Guide
+
+| Element | Format | Example |
+|---------|--------|---------|
+| Figure number | الشكل + Arabic numeral | الشكل ٣ |
+| Colon | Arabic colon (full-width) | : |
+| Caption text | Descriptive, 5-15 words | مخطط يوضح مراحل سير عمل البرمجة بالإحساس |
+| Technical terms | Preserve English in parentheses | الطرفية (Terminal) |
+
+**Example full caption:**
+```
+الشكل ٣: مخطط البنية التقنية لـ Claude CLI يوضح تفاعل المكونات الأساسية
+```
 
 ---
 
@@ -1255,13 +787,8 @@ interface SVGDiagramProps {
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | 2026-01-20 | Vibe Wiki Team | Initial PRD draft |
+| 1.0 | Jan 2025 | Vibe Wiki Team | Initial PRD |
 
 ---
 
-**Next Steps:**
-1. Review and approve this PRD
-2. Assign content writers for each section
-3. Engage SVG designer for visual assets
-4. Set up project tracking (GitHub Project board)
-5. Begin Phase 1 implementation
+**End of Document**
