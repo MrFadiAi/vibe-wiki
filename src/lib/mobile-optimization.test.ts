@@ -3,7 +3,6 @@
  */
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unused-expressions */
 
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import {
@@ -74,23 +73,41 @@ const mockWindow = {
 
 const mockDocument = {
   head: {
-    appendChild: vi.fn(),
-    removeChild: vi.fn(),
+    children: [] as any[],
+    appendChild: vi.fn(function(this: any, child: any) {
+      this.children.push(child);
+      child.parentNode = this;
+      return child;
+    }),
+    removeChild: vi.fn(function(this: any, child: any) {
+      const index = this.children.indexOf(child);
+      if (index > -1) {
+        this.children.splice(index, 1);
+        child.parentNode = null;
+      }
+      return child;
+    }),
   },
   querySelector: vi.fn(() => null),
-  createElement: vi.fn(() => ({
-    name: '',
-    content: '',
-    textContent: '',
-    style: {},
-    addEventListener: vi.fn(),
-    removeEventListener: vi.fn(),
-  })),
+  querySelectorAll: vi.fn(() => []),
+  createElement: vi.fn(() => {
+    const el: any = {
+      name: '',
+      content: '',
+      textContent: '',
+      style: {},
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
+      parentNode: null,
+    };
+    return el;
+  }),
   documentElement: {
     style: {
       setProperty: vi.fn(),
       removeProperty: vi.fn(),
     },
+    manifest: {}, // Add manifest for PWA support check
   },
   body: {
     style: {},
@@ -103,6 +120,10 @@ describe('mobile-optimization', () => {
     global.window = mockWindow as any;
     global.navigator = mockWindow.navigator as any;
     global.document = mockDocument as any;
+    // Clear mock call history
+    vi.clearAllMocks();
+    // Reset head children array
+    mockDocument.head.children = [];
   });
 
   afterEach(() => {
@@ -119,18 +140,29 @@ describe('mobile-optimization', () => {
     });
 
     it('should return false when service worker is not available', () => {
-      global.window = { ...mockWindow, navigator: { ...mockWindow.navigator, serviceWorker: undefined } } as any;
+      const navWithoutSW: any = { ...mockWindow.navigator };
+      delete navWithoutSW.serviceWorker;
+      const docElementWithoutManifest: any = { ...mockDocument.documentElement };
+      delete docElementWithoutManifest.manifest;
+      const docWithoutManifest = { ...mockDocument, documentElement: docElementWithoutManifest };
+      global.window = { ...mockWindow, navigator: navWithoutSW } as any;
+      global.navigator = navWithoutSW as any;
+      global.document = docWithoutManifest as any;
       expect(isPWASupported()).toBe(false);
     });
 
     it('should return true when running in standalone mode', () => {
-      mockWindow.matchMedia = vi.fn((query: string) => ({
-        matches: query === '(display-mode: standalone)' ? true : false,
-        addEventListener: vi.fn(),
-        removeEventListener: vi.fn(),
-        addListener: vi.fn(),
-        removeListener: vi.fn(),
-      }));
+      const standaloneWindow = {
+        ...mockWindow,
+        matchMedia: vi.fn((query: string) => ({
+          matches: query === '(display-mode: standalone)' ? true : false,
+          addEventListener: vi.fn(),
+          removeEventListener: vi.fn(),
+          addListener: vi.fn(),
+          removeListener: vi.fn(),
+        })),
+      };
+      global.window = standaloneWindow as any;
       expect(isRunningAsPWA()).toBe(true);
     });
   });
@@ -147,39 +179,39 @@ describe('mobile-optimization', () => {
     });
 
     it('should return null when connection API is not available', () => {
-      global.window = { ...mockWindow, navigator: { ...mockWindow.navigator, connection: undefined } } as any;
+      const navWithoutConn = { ...mockWindow.navigator, connection: undefined };
+      global.window = { ...mockWindow, navigator: navWithoutConn } as any;
+      global.navigator = navWithoutConn as any;
       expect(getConnectionInfo()).toBeNull();
     });
 
     it('should detect slow connection', () => {
-      global.window = {
-        ...mockWindow,
-        navigator: {
-          ...mockWindow.navigator,
-          connection: {
-            effectiveType: '2g',
-            downlink: 0.5,
-            rtt: 300,
-            saveData: false,
-          },
+      const navSlowConn = {
+        ...mockWindow.navigator,
+        connection: {
+          effectiveType: '2g',
+          downlink: 0.5,
+          rtt: 300,
+          saveData: false,
         },
-      } as any;
+      };
+      global.window = { ...mockWindow, navigator: navSlowConn } as any;
+      global.navigator = navSlowConn as any;
       expect(isSlowConnection()).toBe(true);
     });
 
     it('should detect slow connection when saveData is true', () => {
-      global.window = {
-        ...mockWindow,
-        navigator: {
-          ...mockWindow.navigator,
-          connection: {
-            effectiveType: '4g',
-            downlink: 10,
-            rtt: 100,
-            saveData: true,
-          },
+      const navSaveData = {
+        ...mockWindow.navigator,
+        connection: {
+          effectiveType: '4g',
+          downlink: 10,
+          rtt: 100,
+          saveData: true,
         },
-      } as any;
+      };
+      global.window = { ...mockWindow, navigator: navSaveData } as any;
+      global.navigator = navSaveData as any;
       expect(isSlowConnection()).toBe(true);
     });
 
@@ -256,18 +288,17 @@ describe('mobile-optimization', () => {
     });
 
     it('should get loading strategy for slow connection', () => {
-      global.window = {
-        ...mockWindow,
-        navigator: {
-          ...mockWindow.navigator,
-          connection: {
-            effectiveType: '2g',
-            downlink: 0.5,
-            rtt: 300,
-            saveData: false,
-          },
+      const navSlowConn = {
+        ...mockWindow.navigator,
+        connection: {
+          effectiveType: '2g',
+          downlink: 0.5,
+          rtt: 300,
+          saveData: false,
         },
-      } as any;
+      };
+      global.window = { ...mockWindow, navigator: navSlowConn } as any;
+      global.navigator = navSlowConn as any;
       const strategy = getLoadingStrategy();
       expect(strategy).toEqual({
         lazyLoadImages: true,
@@ -279,18 +310,17 @@ describe('mobile-optimization', () => {
     });
 
     it('should get loading strategy with saveData enabled', () => {
-      global.window = {
-        ...mockWindow,
-        navigator: {
-          ...mockWindow.navigator,
-          connection: {
-            effectiveType: '4g',
-            downlink: 10,
-            rtt: 100,
-            saveData: true,
-          },
+      const navSaveData = {
+        ...mockWindow.navigator,
+        connection: {
+          effectiveType: '4g',
+          downlink: 10,
+          rtt: 100,
+          saveData: true,
         },
-      } as any;
+      };
+      global.window = { ...mockWindow, navigator: navSaveData } as any;
+      global.navigator = navSaveData as any;
       const strategy = getLoadingStrategy();
       expect(strategy.lazyLoadImages).toBe(true);
       expect(strategy.useLowResImages).toBe(true);
@@ -306,18 +336,17 @@ describe('mobile-optimization', () => {
     });
 
     it('should adjust image settings for slow connection', () => {
-      global.window = {
-        ...mockWindow,
-        navigator: {
-          ...mockWindow.navigator,
-          connection: {
-            effectiveType: '2g',
-            downlink: 0.5,
-            rtt: 300,
-            saveData: false,
-          },
+      const navSlowConn = {
+        ...mockWindow.navigator,
+        connection: {
+          effectiveType: '2g',
+          downlink: 0.5,
+          rtt: 300,
+          saveData: false,
         },
-      } as any;
+      };
+      global.window = { ...mockWindow, navigator: navSlowConn } as any;
+      global.navigator = navSlowConn as any;
       const settings = getOptimalImageSettings();
       expect(settings.quality).toBe(70);
       expect(settings.lazy).toBe(true);
@@ -436,7 +465,9 @@ describe('mobile-optimization', () => {
     });
 
     it('should return false when vibrate is not supported', () => {
-      global.window = { ...mockWindow, navigator: { ...mockWindow.navigator, vibrate: undefined } } as any;
+      const navNoVibrate = { ...mockWindow.navigator, vibrate: undefined };
+      global.window = { ...mockWindow, navigator: navNoVibrate } as any;
+      global.navigator = navNoVibrate as any;
       const result = vibrate(100);
       expect(result).toBe(false);
     });
@@ -460,14 +491,14 @@ describe('mobile-optimization', () => {
     it('should prevent input zoom', () => {
       preventInputZoom();
       expect(mockDocument.head.appendChild).toHaveBeenCalled();
-      const style = mockDocument.createElement();
+      const style = (mockDocument.head.appendChild as any).mock.calls[0][0];
       expect(style.textContent).toContain('font-size: 16px !important');
     });
 
     it('should prevent scroll bounce', () => {
       preventScrollBounce();
       expect(mockDocument.head.appendChild).toHaveBeenCalled();
-      const style = mockDocument.createElement();
+      const style = (mockDocument.head.appendChild as any).mock.calls[0][0];
       expect(style.textContent).toContain('overscroll-behavior: none');
     });
 

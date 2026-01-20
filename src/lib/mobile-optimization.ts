@@ -181,8 +181,7 @@ export const DEFAULT_IMAGE_OPTIMIZATION: ImageOptimizationSettings = {
 export function isPWASupported(): boolean {
   if (typeof window === 'undefined') return false;
 
-  return 'serviceWorker' in navigator &&
-    'manifest' in document.documentElement ||
+  return ('serviceWorker' in navigator && 'manifest' in document.documentElement) ||
     ('onbeforeinstallprompt' in window);
 }
 
@@ -279,13 +278,23 @@ export async function showPWAInstallPrompt(): Promise<{ outcome: 'accepted' | 'd
  */
 export function getOptimalViewportConfig(customConfig?: Partial<ViewportConfig>): ViewportConfig {
   const deviceInfo = getDeviceInfo();
-  const config = { ...DEFAULT_VIEWPORT_CONFIG, ...customConfig };
+  const config: ViewportConfig = {
+    width: customConfig?.width ?? (typeof window !== 'undefined' ? window.innerWidth : 375),
+    height: customConfig?.height ?? (typeof window !== 'undefined' ? window.innerHeight : 667),
+    scale: customConfig?.scale ?? 1,
+    minScale: customConfig?.minScale ?? 1,
+    maxScale: customConfig?.maxScale ?? 5,
+    userScalable: customConfig?.userScalable ?? true,
+  };
 
-  // Adjust for mobile devices
+  // Adjust for mobile devices (only if not explicitly provided)
   if (deviceInfo.type === 'mobile') {
-    // Prevent zoom on input focus for iOS
-    config.maxScale = 5;
-    config.userScalable = true;
+    if (customConfig?.maxScale === undefined) {
+      config.maxScale = 5;
+    }
+    if (customConfig?.userScalable === undefined) {
+      config.userScalable = true;
+    }
   }
 
   return config;
@@ -429,7 +438,7 @@ export function setupTouchOptimization(): void {
  * Add haptic feedback (if supported)
  */
 export function vibrate(pattern: number | number[]): boolean {
-  if (typeof navigator === 'undefined' || !('vibrate' in navigator)) {
+  if (typeof navigator === 'undefined' || !('vibrate' in navigator) || typeof navigator.vibrate !== 'function') {
     return false;
   }
 
@@ -948,7 +957,7 @@ export function preventScrollBounce(): void {
 /**
  * Setup mobile-specific optimizations
  */
-export function setupMobileOptimizations(options: MobileOptimizationOptions = {}): void {
+export function setupMobileOptimizations(options: MobileOptimizationOptions = {}): () => void {
   const {
     enablePWA = true,
     enableTouchOptimization = true,
@@ -958,12 +967,17 @@ export function setupMobileOptimizations(options: MobileOptimizationOptions = {}
     customTouchTargetConfig,
   } = options;
 
+  const cleanupFunctions: (() => void)[] = [];
+
   // Apply viewport configuration
   const viewportConfig = getOptimalViewportConfig(customViewportConfig);
   applyViewportConfig(viewportConfig);
 
   // Setup dynamic viewport height
-  setupDynamicViewportHeight();
+  const cleanupViewportHeight = setupDynamicViewportHeight();
+  if (cleanupViewportHeight) {
+    cleanupFunctions.push(cleanupViewportHeight);
+  }
 
   // Prevent input zoom on iOS
   preventInputZoom();
@@ -997,6 +1011,11 @@ export function setupMobileOptimizations(options: MobileOptimizationOptions = {}
     // Setup network listener if needed
     // setupNetworkListener(callback);
   }
+
+  // Return combined cleanup function
+  return () => {
+    cleanupFunctions.forEach(cleanup => cleanup());
+  };
 }
 
 /**

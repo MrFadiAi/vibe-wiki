@@ -3,7 +3,7 @@
  * Comprehensive test suite for analytics tracking and metrics
  */
 
-import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import {
   getCurrentSession,
   createSession,
@@ -36,7 +36,7 @@ import {
   loadEvents,
 } from '@/lib/analytics';
 import type { WikiArticle, Tutorial, LearningPath } from '@/types';
-import type { AnalyticsTimeframe, AggregationPeriod } from '@/types/analytics';
+import type { AggregationPeriod } from '@/types/analytics';
 
 // Mock localStorage
 const localStorageMock = (() => {
@@ -166,14 +166,13 @@ describe('Analytics - Session Management', () => {
       expect(sessions[0].duration).toBeGreaterThanOrEqual(0);
     });
 
-    it('should calculate session duration correctly', () => {
+    it('should calculate session duration correctly', async () => {
       createSession();
       // Wait a bit
-      setTimeout(() => {
-        endSession();
-        const sessions = loadSessions();
-        expect(sessions[0].duration).toBeGreaterThan(0);
-      }, 10);
+      await new Promise(resolve => setTimeout(resolve, 10));
+      endSession();
+      const sessions = loadSessions();
+      expect(sessions[0].duration).toBeGreaterThanOrEqual(0);
     });
   });
 

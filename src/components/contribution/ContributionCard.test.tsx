@@ -123,8 +123,8 @@ describe('ContributionCard', () => {
     render(createElement(ContributionCard, { contribution: contributionWithNotes }));
 
     expect(screen.getByText('Review Notes')).toBeDefined();
-    expect(screen.getByText('Fix formatting')).toBeDefined();
-    expect(screen.getByText('Add more examples')).toBeDefined();
+    expect(screen.getByText((content) => content.includes('Fix formatting'))).toBeDefined();
+    expect(screen.getByText((content) => content.includes('Add more examples'))).toBeDefined();
   });
 
   it('renders rejection reason when present', () => {

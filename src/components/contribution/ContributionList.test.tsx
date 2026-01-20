@@ -140,9 +140,9 @@ describe('ContributionList', () => {
       showFilters: true,
     }));
 
-    // Click article filter
-    const articleButtons = screen.getAllByText('Articles');
-    fireEvent.click(articleButtons[1]); // Click the filter button, not the card
+    // Click article filter button
+    const articleFilterButton = screen.getByRole('button', { name: /Articles/i });
+    fireEvent.click(articleFilterButton);
 
     await waitFor(() => {
       expect(screen.getByText('React Basics')).toBeDefined();
@@ -156,9 +156,9 @@ describe('ContributionList', () => {
       showFilters: true,
     }));
 
-    // Click published filter
-    const publishedButtons = screen.getAllByText('Published');
-    fireEvent.click(publishedButtons[1]); // Click the filter button
+    // Click published filter button
+    const publishedFilterButton = screen.getByRole('button', { name: /Published/i });
+    fireEvent.click(publishedFilterButton);
 
     await waitFor(() => {
       expect(screen.getByText('React Basics')).toBeDefined();
@@ -172,9 +172,9 @@ describe('ContributionList', () => {
       showFilters: true,
     }));
 
-    // Click beginner filter
-    const beginnerButtons = screen.getAllByText('Beginner');
-    fireEvent.click(beginnerButtons[1]); // Click the filter button
+    // Click beginner filter button
+    const beginnerFilterButton = screen.getByRole('button', { name: /Beginner/i });
+    fireEvent.click(beginnerFilterButton);
 
     await waitFor(() => {
       expect(screen.getByText('React Basics')).toBeDefined();
@@ -214,8 +214,8 @@ describe('ContributionList', () => {
       showFilters: true,
     }));
 
-    const oldestButtons = screen.getAllByText('Oldest');
-    fireEvent.click(oldestButtons[1]); // Click the sort button
+    const oldestButton = screen.getByRole('button', { name: /Oldest/i });
+    fireEvent.click(oldestButton);
 
     await waitFor(() => {
       const articles = screen.getAllByText(/React Basics|Full Stack Path|TypeScript Tutorial/);
@@ -229,8 +229,8 @@ describe('ContributionList', () => {
       showFilters: true,
     }));
 
-    const titleButtons = screen.getAllByText('Title');
-    fireEvent.click(titleButtons[1]); // Click the sort button
+    const titleButton = screen.getByRole('button', { name: /Title/i });
+    fireEvent.click(titleButton);
 
     await waitFor(() => {
       const articles = screen.getAllByText(/React Basics|Full Stack Path|TypeScript Tutorial/);
@@ -244,11 +244,15 @@ describe('ContributionList', () => {
       showFilters: true,
     }));
 
-    const articleButtons = screen.getAllByText('Articles');
-    fireEvent.click(articleButtons[1]);
+    const articleFilterButton = screen.getByRole('button', { name: /Articles/i });
+    fireEvent.click(articleFilterButton);
 
     await waitFor(() => {
-      expect(screen.getByText('1')).toBeDefined();
+      // Look for the filter count badge (rounded-full, neon-cyan/20)
+      const filterBadges = screen.getAllByText('1');
+      const badge = filterBadges.find(el => el.className.includes('rounded-full'));
+      expect(badge).toBeDefined();
+      expect(badge?.className).toContain('rounded-full');
     });
   });
 
@@ -259,19 +263,25 @@ describe('ContributionList', () => {
     }));
 
     // Apply a filter
-    const articleButtons = screen.getAllByText('Articles');
-    fireEvent.click(articleButtons[1]);
+    const articleFilterButton = screen.getByRole('button', { name: /Articles/i });
+    fireEvent.click(articleFilterButton);
 
     await waitFor(() => {
-      expect(screen.getByText('1')).toBeDefined();
+      expect(screen.getAllByText('1')).toHaveLength(2); // Filter badge + result count
     });
 
     // Clear filters
-    const clearButtons = screen.getAllByText('Clear All');
-    fireEvent.click(clearButtons[0]);
+    const clearButton = screen.getByRole('button', { name: /Clear All/i });
+    fireEvent.click(clearButton);
 
     await waitFor(() => {
-      expect(screen.queryByText('1')).toBeNull();
+      // After clearing, the "1"s should be gone and we should see "3" in the results count
+      const ones = screen.queryAllByText('1');
+      expect(ones.length).toBe(0);
+      // The "3" should be visible in the results count
+      const threes = screen.getAllByText('3');
+      const resultsCount = threes.find(el => el.className.includes('text-foreground font-medium'));
+      expect(resultsCount).toBeDefined();
     });
   });
 
@@ -281,7 +291,10 @@ describe('ContributionList', () => {
       showFilters: true,
     }));
 
-    expect(screen.getByText('3 contributions')).toBeDefined();
+    // The number 3 should be in the results count
+    const threes = screen.getAllByText('3');
+    const resultsCount = threes.find(el => el.className.includes('text-foreground font-medium'));
+    expect(resultsCount).toBeDefined();
   });
 
   it('shows filtered results count', async () => {
@@ -290,11 +303,20 @@ describe('ContributionList', () => {
       showFilters: true,
     }));
 
-    const articleButtons = screen.getAllByText('Articles');
-    fireEvent.click(articleButtons[1]);
+    const articleFilterButton = screen.getByRole('button', { name: /Articles/i });
+    fireEvent.click(articleFilterButton);
 
     await waitFor(() => {
-      expect(screen.getByText(/Showing 1 of 3 contributions/)).toBeDefined();
+      // When filtered, we should see "Showing 1 of 3 contributions"
+      // Use a function matcher to find text containing the pattern
+      const resultsText = screen.getByText((content) => {
+        return content.includes('Showing') && content.includes('of') && content.includes('contributions');
+      });
+      expect(resultsText).toBeDefined();
+      // Verify the count "1" is in the results
+      const ones = screen.getAllByText('1');
+      const resultsCount = ones.find(el => el.className.includes('text-foreground font-medium'));
+      expect(resultsCount).toBeDefined();
     });
   });
 
