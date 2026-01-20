@@ -24,8 +24,8 @@ import {
 
 describe('diagram-registry', () => {
   describe('diagramRegistry', () => {
-    it('should contain 55 diagram entries', () => {
-      expect(diagramRegistry).toHaveLength(55);
+    it('should contain 58 diagram entries', () => {
+      expect(diagramRegistry).toHaveLength(58);
     });
 
     it('should have all required fields for each entry', () => {
@@ -282,7 +282,7 @@ describe('diagram-registry', () => {
     it('should return correct total count', () => {
       const stats = getDiagramStatistics();
 
-      expect(stats.total).toBe(55);
+      expect(stats.total).toBe(58);
     });
 
     it('should return category breakdown', () => {
@@ -344,10 +344,10 @@ describe('diagram-registry', () => {
   });
 
   describe('getAllDiagramFilenames', () => {
-    it('should return all 55 filenames', () => {
+    it('should return all 58 filenames', () => {
       const filenames = getAllDiagramFilenames();
 
-      expect(filenames).toHaveLength(55);
+      expect(filenames).toHaveLength(58);
     });
 
     it('should return all filenames ending with .svg', () => {

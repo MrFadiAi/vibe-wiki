@@ -198,7 +198,7 @@ npm run dev`,
 **Homebrew** هو مدير الحزم المفقود لنظام macOS. يتيح لك تثبيت كل شيء من Git إلى Node.js بأوامر بسيطة.
 
 \`\`\`bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "\$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 \`\`\`
 
 بعد التثبيت، اتبع التعليمات في الشاشة لإضافة Homebrew إلى مسار النظام (PATH).
@@ -2131,7 +2131,7 @@ for (let i = 0; i < array.length; i++) {
                     break;
             }
 
-            document.getElementById('result').textContent = \`النتيجة: \${result}\`;
+            document.getElementById('result').textContent = \`النتيجة: \\${result}\`;
         }
 
         function clearResult() {
@@ -2729,7 +2729,7 @@ claude refactor src/ --add-error-boundaries
 # قبل: JavaScript
 // src/utils/api.js
 export async function fetchUser(id) {
-  const res = await fetch(\`/api/users/\${id}\`);
+  const res = await fetch(\`/api/users/\\${id}\`);
   return res.json();
 }
 
@@ -2745,9 +2745,9 @@ interface User {
 }
 
 export async function fetchUser(id: number): Promise<User> {
-  const res = await fetch(\`/api/users/\${id}\`);
+  const res = await fetch(\`/api/users/\\${id}\`);
   if (!res.ok) {
-    throw new Error(\`Failed to fetch user: \${res.statusText}\`);
+    throw new Error(\`Failed to fetch user: \\${res.statusText}\`);
   }
   return res.json();
 }
@@ -7268,7 +7268,7 @@ exports.handler = async (event) => {
   for (const record of event.Records) {
     const bucket = record.s3.bucket.name;
     const key = record.s3.object.key;
-    console.log(\`Processing \${key} from \${bucket}\`);
+    console.log(\`Processing \\${key} from \\${bucket}\`);
     // Your processing logic here
   }
   return { statusCode: 200 };
@@ -7605,7 +7605,7 @@ def greet(name):
 \`\`\`javascript
 // يكمل الكود بناءً على السياق
 function fetchUser(id) {
-  return fetch(\`/api/users/\${id}\`)
+  return fetch(\`/api/users/\\${id}\`)
     .then(res => res.json())
     // Ghostwriter يكمل الباقي
 }
@@ -8839,7 +8839,7 @@ def greet(name):
 
 // يتحول إلى JavaScript:
 function greet(name) {
-  return \`Hello, \${name}!\`;
+  return \`Hello, \\${name}!\`;
 }
 \`\`\`
 
@@ -11784,7 +11784,7 @@ export async function generateCode(
     messages: [
       {
         role: 'system',
-        content: \`You are an expert \${language} developer.
+        content: \`You are an expert \\${language} developer.
         Generate clean, well-documented code.\`
       },
       {
@@ -11834,10 +11834,10 @@ export async function refactorCode(
         role: 'user',
         content: \`Refactor this code:
 \`\`\`
-\${code}
+\\${code}
 \`\`\`
 
-Instructions: \${instructions}\`
+Instructions: \\${instructions}\`
       }
     ],
     response_format: { type: "json_object" },
@@ -11898,7 +11898,7 @@ Instructions: \${instructions}\`
      messages: [{
        role: 'user',
        content: \`Analyze this entire project:
-\${projectContext}
+\\${projectContext}
 
 Provide:
 1. Architecture overview
@@ -11946,7 +11946,7 @@ class AIAssistant {
     if (context) {
       messages.push({
         role: 'user',
-        content: \`Context:\\n\${context}\`,
+        content: \`Context:\\n\\${context}\`,
       });
     }
 
@@ -11969,7 +11969,7 @@ class AIAssistant {
     language: string
   ): Promise<string> {
     return this.chat(
-      \`Generate \${language} code for: \${description}\`,
+      \`Generate \\${language} code for: \\${description}\`,
       undefined
     );
   }
@@ -11980,7 +11980,7 @@ class AIAssistant {
     rating: number;
   }> {
     const response = await this.chat(
-      \`Review this code:\\n\`\`\`\\n\${code}\\n\`\`\`
+      \`Review this code:\\n\`\`\`\\n\\${code}\\n\`\`\`
       Respond in JSON format with issues, suggestions, and rating (1-10).\`,
       undefined
     );
@@ -12680,10 +12680,10 @@ export async function generateTaskSuggestions(
       },
       {
         role: 'user',
-        content: \`Project context: \${projectContext}
+        content: \`Project context: \\${projectContext}
 
 Existing tasks:
-\${existingTasks.map(t => \`- \${t}\`).join('\\n')}
+\\${existingTasks.map(t => '- ' + t).join('\\n')}
 
 Generate 5 new, specific, actionable tasks that would be valuable next steps.\`
       }
@@ -15341,9 +15341,9 @@ gh copilot suggest "deploy app" --interactive
 gh copilot suggest "backup mysql database with date in filename"
 
 # الاقتراحات:
-# 1. mysqldump -u root -p dbname > backup_$(date +%Y%m%d).sql
-# 2. mysqldump --user=root --password dbname > "backup_$(date +%F).sql"
-# 3. docker exec mysql mysqldump -u root -p dbname > backup_$(date +%Y%m%d_%H%M%S).sql
+# 1. mysqldump -u root -p dbname > backup_\$(date +%Y%m%d).sql
+# 2. mysqldump --user=root --password dbname > "backup_\$(date +%F).sql"
+# 3. docker exec mysql mysqldump -u root -p dbname > backup_\$(date +%Y%m%d_%H%M%S).sql
 \`\`\`
 
 ---
@@ -15438,7 +15438,7 @@ gh copilot suggest "delete all merged branches except main"
 gh copilot suggest "stop all running docker containers"
 
 # الناتج:
-# docker stop $(docker ps -q)
+# docker stop \$(docker ps -q)
 
 # Docker cleanup
 gh copilot suggest "remove all unused docker images and volumes"
@@ -16291,27 +16291,27 @@ source ~/.bashrc
 # Function للاقتراحات مع التنفيذ التلقائي
 cs-run() {
     local suggestion
-    suggestion=$(gh copilot suggest "$*" | head -1)
-    echo "Running: $suggestion"
-    eval "$suggestion"
+    suggestion=\$(gh copilot suggest "\$*" | head -1)
+    echo "Running: \$suggestion"
+    eval "\$suggestion"
 }
 
 # Function لشرح وتنفيذ
 ce-run() {
     local explanation
     local command
-    explanation=$(gh copilot explain "$*")
-    echo "$explanation"
+    explanation=\$(gh copilot explain "\$*")
+    echo "\$explanation"
     echo "Run this command? (y/n)"
     read -r answer
-    if [ "$answer" = "y" ]; then
-        eval "$*"
+    if [ "\$answer" = "y" ]; then
+        eval "\$*"
     fi
 }
 
 # Function للاقتراحات المتعددة
 cs-multi() {
-    gh copilot suggest "$*" --suggestions 3
+    gh copilot suggest "\$*" --suggestions 3
 }
 
 # الاستخدام
@@ -16325,13 +16325,13 @@ cs-multi "compress folder"
 \`\`\`bash
 # Function لاختيار تفاعلي
 cs-interactive() {
-    local prompt="$*"
+    local prompt="\$*"
     local suggestions
 
-    suggestions=$(gh copilot suggest "$prompt" --suggestions 3)
+    suggestions=\$(gh copilot suggest "\$prompt" --suggestions 3)
 
-    echo "Suggestions for: $prompt"
-    echo "$suggestions" | nl -w2 -s'. '
+    echo "Suggestions for: \$prompt"
+    echo "\$suggestions" | nl -w2 -s'. '
 
     echo "Choose (1-3):"
     read -r choice
@@ -16343,8 +16343,8 @@ cs-interactive() {
     echo "Run? (y/n)"
     read -r confirm
 
-    if [ "$confirm" = "y" ]; then
-        eval "$selected"
+    if [ "\$confirm" = "y" ]; then
+        eval "\$selected"
     fi
 }
 
@@ -16533,13 +16533,13 @@ check-copilot-config() {
     echo "Checking Copilot CLI configuration..."
 
     # GitHub CLI version
-    echo "GitHub CLI: $(gh --version)"
+    echo "GitHub CLI: \$(gh --version)"
 
     # Copilot version
-    echo "Copilot: $(gh copilot --version)"
+    echo "Copilot: \$(gh copilot --version)"
 
     # Auth status
-    echo "Auth status: $(gh auth status)"
+    echo "Auth status: \$(gh auth status)"
 
     # Aliases
     echo "Aliases:"
@@ -16549,7 +16549,7 @@ check-copilot-config() {
     # Environment variables
     echo "Environment:"
     echo "  GH_TOKEN: \$\{GH_TOKEN:+✅ set\}"
-    echo "  LANG: $LANG"
+    echo "  LANG: \$LANG"
 
     # Test connection
     echo "Testing connection..."
@@ -16662,19 +16662,19 @@ export LANG="ar_SA.UTF-8"
 # Shell Functions
 cs-run() {
     local suggestion
-    suggestion=$(gh copilot suggest "$*" | head -1)
-    echo "Running: $suggestion"
-    eval "$suggestion"
+    suggestion=\$(gh copilot suggest "\$*" | head -1)
+    echo "Running: \$suggestion"
+    eval "\$suggestion"
 }
 
 cs-interactive() {
-    local prompt="$*"
+    local prompt="\$*"
     local suggestions
 
-    suggestions=$(gh copilot suggest "$prompt" --suggestions 3)
+    suggestions=\$(gh copilot suggest "\$prompt" --suggestions 3)
 
-    echo "Suggestions for: $prompt"
-    echo "$suggestions" | nl -w2 -s'. '
+    echo "Suggestions for: \$prompt"
+    echo "\$suggestions" | nl -w2 -s'. '
 
     echo "Choose (1-3):"
     read -r choice
@@ -16686,8 +16686,8 @@ cs-interactive() {
     echo "Run? (y/n)"
     read -r confirm
 
-    if [ "$confirm" = "y" ]; then
-        eval "$selected"
+    if [ "\$confirm" = "y" ]; then
+        eval "\$selected"
     fi
 }
 
@@ -16701,7 +16701,7 @@ k8s-help() {
 
 # Completion
 if command -v gh &>/dev/null; then
-    eval "$(gh completion -s bash)"
+    eval "\$(gh completion -s bash)"
 fi
 \`\`\`
 
@@ -18864,8 +18864,8 @@ echo "🚀 بدء سير العمل الآلي..."
 git pull
 
 # 2. فحص الأخطاء
-ERRORS=$(npm run lint 2>&1 | grep "error")
-if [ -n "$ERRORS" ]; then
+ERRORS=\$(npm run lint 2>&1 | grep "error")
+if [ -n "\$ERRORS" ]; then
   echo "🐛 إصلاح الأخطاء..."
   opencode fix --auto
 fi
@@ -18880,7 +18880,7 @@ npm test
 
 # 5. مراجعة التغييرات
 echo "🔍 مراجعة التغييرات..."
-opencode review $(git diff --name-only)
+opencode review \$(git diff --name-only)
 
 # 6. commit
 echo "💾 حفظ التغييرات..."
@@ -18912,7 +18912,7 @@ jobs:
 
       - name: Review PR
         run: |
-          opencode review ${{ github.event.pull_request.diff_url }} \\
+          opencode review \${{ github.event.pull_request.diff_url }} \\
             --output pr-review.md
 
       - name: Comment on PR
@@ -18956,7 +18956,7 @@ opencode analyze --bundle
 opencode secrets set API_KEY "sk-..."
 
 # استخدام السر في الكود
-opencode generate "API client using $API_KEY"
+opencode generate "API client using \$API_KEY"
 
 # سر不会被إرسال إلى السحابة!
 # OpenCode يستبدل المتغير محلياً فقط
@@ -21521,6 +21521,434 @@ React hook لتخزين الدوال. يُستخدم لتحسين الأداء.
 3. **Cursor CLI** - لتطوير JavaScript/TypeScript
 
 **تذكر**: الأداة هي مساعد، ليس بديلاً عن فهمك البرمجي. استخدم الأداة لتسريع عملك، لكن دائماً راجع الكود وفهمه.
+        `,
+      },
+      {
+        slug: "multi-agent-workflows",
+        title: "سير عمل الوكلاء المتعددين (Multi-Agent Workflows)",
+        section: "9. سير العمل المتقدم (Advanced Workflows)",
+        description: "فهم سير عمل الوكلاء المتعددين في أدوات البرمجة بالذكاء الاصطناعي - كيف تعمل الفرق من الذكاء الاصطناعي معاً لإنجاز المهام المعقدة",
+        diagrams: [
+          {
+            id: "multi-agent-workflows-diagram",
+            filename: "workflow-multi-agent.svg",
+            alt: "رسم بياني يوضح سير عمل الوكلاء المتعددين في أدوات البرمجة بالذكاء الاصطناعي",
+            caption: "الشكل ١: سير عمل الوكلاء المتعددين",
+            position: "inline",
+            priority: true,
+          },
+        ],
+        content: `
+# سير عمل الوكلاء المتعددين
+# Multi-Agent Workflows
+
+## 🤖 مقدمة
+
+**سير عمل الوكلاء المتعددين** (Multi-Agent Workflows) هو نمط متقدم في أدوات البرمجة بالذكاء الاصطناعي، حيث تعمل **عدة نماذج ذكاء اصطناعي معاً كفريق** لإنجاز مهمة معقدة. كل وكيل يتخصص في جانب معين، ويتعاونون معاً لتحقيق هدف مشترك.
+
+---
+
+## 🎯 لماذا الوكلاء المتعددون؟
+
+### المشكلة: نموذج واحد مقابل فريق من النماذج
+
+\`\`\`
+┌─────────────────────────────────────────────────────────────┐
+│              نموذج واحد (Single Model)                      │
+├─────────────────────────────────────────────────────────────┤
+│ ❌ محدودية السياق                                          │
+│ ❌ صعوبة multitasking                                      │
+│ ❌ لا تخصص                                                  │
+│ ❌ أخطاء في المهام المعقدة                                │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│              فريق من الوكلاء (Multi-Agent)                  │
+├─────────────────────────────────────────────────────────────┤
+│ ✅ تخصص كل وكيل في مجال                                   │
+│ ✅ موازنة الأعباء                                          │
+│ ✅ مراجعة متبادلة                                          │
+│ ✅ جودة أعلى                                               │
+└─────────────────────────────────────────────────────────────┘
+\`\`\`
+
+---
+
+## 🏗️ أنواع سير عمل الوكلاء المتعددين
+
+### 1. السير المتسلسل (Sequential Workflow)
+
+**الوصف**: الوكلاء يعملون واحداً تلو الآخر، حيث يمرر كل وكيل النتيجة للوكيل التالي.
+
+\`\`\`
+┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐
+│الوكيل 1│───▶│الوكيل 2│───▶│الوكيل 3│───▶│الوكيل 4│
+│: تحليل │    │: تصميم │    │: كود   │    │: اختبار│
+└─────────┘    └─────────┘    └─────────┘    └─────────┘
+
+مثال:
+1. وكيل التحليل: يفهم المتطلبات
+2. وكيل التصميم: يصمم architecture
+3. وكيل الكود: يكتب الكود
+4. وكيل الاختبار: يكتب tests
+\`\`\`
+
+**متى تستخدمه؟**
+- المهام ذات المراحل الواضحة
+- عندما تحتاج تسلسل منطقي
+- عندما تعتمد كل مرحلة على السابقة
+
+---
+
+### 2. السير المتوازي (Parallel Workflow)
+
+**الوصف**: الوكلاء يعملون بشكل متزامن على مهام مختلفة، ثم تُجمع النتائج.
+
+\`\`\`
+                    ┌─────────┐
+                ┌──▶│الوكيل A│──┐
+                │   │: كود   │  │
+                │   └─────────┘  │
+                │                │
+┌─────────┐    │   ┌─────────┐  │    ┌─────────┐
+│  المهمة │───▶───▶│الوكيل B│──▶───▶│  النتيجة│
+│ الرئيسية│    │   │: اختبار│  │    │  النهائية│
+└─────────┘    │   └─────────┘  │    └─────────┘
+                │                │
+                │   ┌─────────┐  │
+                └──▶│الوكيل C│──┘
+                    │: توثيق │
+                    └─────────┘
+
+مثال:
+- وكيل A: يكتب الكود
+- وكيل B: يكتب tests
+- وكيل C: يكتب التوثيق
+الجميع يعملون في نفس الوقت!
+\`\`\`
+
+**متى تستخدمه؟**
+- المهام المستقلة
+- عندما تريد تسريع العمل
+- عندما لا توجد اعتماديات بين المهام
+
+---
+
+### 3. السير الهرمي (Hierarchical Workflow)
+
+**الوصف**: وكيل رئيسي (Manager) يوزع المهام على وكلاء فرعيين، ويراقب عملهم.
+
+\`\`\`
+              ┌──────────────┐
+              │ وكيل المدير │
+              │  (Manager)   │
+              └───────┬──────┘
+                      │
+        ┌─────────────┼─────────────┐
+        │             │             │
+   ┌────▼────┐   ┌────▼────┐   ┌────▼────┐
+   │ الوكيل │   │ الوكيل │   │ الوكيل │
+   │   1    │   │   2     │   │   3    │
+   └────┬────┘   └────┬────┘   └────┬────┘
+        │             │             │
+        └─────────────┼─────────────┘
+                      │
+              ┌───────▼──────┐
+              │ جمع النتائج │
+              └──────────────┘
+
+مثال:
+- المدير: "أنشئ API للمستخدمين"
+- الوكيل 1: يصمم database schema
+- الوكيل 2: يكتب endpoints
+- الوكيل 3: يضيف authentication
+- المدير: يجمع ويراجع الكود
+\`\`\`
+
+**متى تستخدمه؟**
+- المشاريع الكبيرة
+- المهام المعقدة
+- عندما تحتاج تنسيق مركزي
+
+---
+
+### 4. السير التعاوني (Collaborative Workflow)
+
+**الوصف**: الوكلاء يتواصلون بشكل مستمر، ويقترح كل وكيل تحسينات على عمل الآخرين.
+
+\`\`\`
+    ┌─────────┐         ┌─────────┐
+    │الوكيل A│◀────────│الوكيل B│
+    │: كود   │  ردود   │: مراجعة│
+    └────┬────│         │        │
+         │    │         └────┬───┘
+         │    │              │
+         │    └──────────────┘
+         │         مراجعة متبادلة
+         │
+    ┌────▼────┐
+    │النتيجة │
+    │المحسنة │
+    └─────────┘
+
+مثال:
+1. وكيل A: يكتب function
+2. وكيل B: يراجع ويقترح تحسينات
+3. وكيل A: يُطبق التحسينات
+4. وكيل B: يراجع مرة أخرى
+5. التكرار يستمر حتى الرضا
+\`\`\`
+
+**متى تستخدمه؟**
+- عندما تحتاج جودة عالية
+- للمهام الحساسة
+- عند وجود وقت للتكرار
+
+---
+
+## 🛠️ أدوات تدعم الوكلاء المتعددين
+
+### OpenCode - المتقدم في هذا المجال
+
+\`\`\`
+┌─────────────────────────────────────────────────────────────┐
+│                  OpenCode Multi-Agent                       │
+├─────────────────────────────────────────────────────────────┤
+│ ✅ نظام وكلاء متقدم                                       │
+│ ✅ تخصص: Planner, Coder, Reviewer, Tester                  │
+│ ✅ تنسيق تلقائي                                           │
+│ ✅ مراجعة متبادلة                                         │
+│ ✅ دعم النماذج المحلية                                     │
+└─────────────────────────────────────────────────────────────┘
+\`\`\`
+
+**كيف يعمل OpenCode؟**
+
+1. **Planner Agent**: يُخطط للمهمة
+   \`\`\`
+   المهمة: "أنشئ API للمستخدمين"
+
+   Planner:
+   1. صمم database schema
+   2. أنشئ endpoints (CRUD)
+   3. أضف authentication
+   4. اكتب tests
+   5. أضف error handling
+   \`\`\`
+
+2. **Coder Agent**: يكتب الكود
+   \`\`\`
+   Coder:
+   ✅ يكتب models
+   ✅ يكتب controllers
+   ✅ يكتب middleware
+   \`\`\`
+
+3. **Reviewer Agent**: يراجع الكود
+   \`\`\`
+   Reviewer:
+   ✅ يتحقق من security
+   ✅ يتحقق من best practices
+   ✅ يقترح تحسينات
+   \`\`\`
+
+4. **Tester Agent**: يكتب ويشغل tests
+   \`\`\`
+   Tester:
+   ✅ يكتب unit tests
+   ✅ يكتب integration tests
+   ✅ يشغل ويصلح bugs
+   \`\`\`
+
+---
+
+### أدوات أخرى
+
+**Cursor CLI**: لديه شكل من أشكال الوكلاء
+\`\`\`
+- Context Agent: يدير السياق
+- Code Agent: يكتب الكود
+\`\`\`
+
+**Claude CLI**: يمكن محاكاة الوكلاء المتعددين
+\`\`\`
+- بـ iterative conversations
+- وبتغيير "roles" في prompts
+\`\`\`
+
+---
+
+## 📊 مقارنة: Single Agent vs Multi-Agent
+
+| الميزة | Single Agent | Multi-Agent |
+|--------|-------------|-------------|
+| **السرعة** | أسرع | أبطأ (لكن أفضل جودة) |
+| **الجودة** | جيدة | ممتازة |
+| **التخصص** | لا | نعم |
+| **المراجعة** | ذاتية | متبادلة |
+| **التعقيد** | مهام بسيطة | مهام معقدة |
+| **التكلفة** | أقل | أعلى (عدة calls) |
+
+---
+
+## 🎓 أمثلة عملية
+
+### المثال 1: إنشاء REST API
+
+**بـ Single Agent:**
+\`\`\`
+You: "أنشئ REST API للمستخدمين"
+
+AI: (يكتب الكود كله)
+✅ سريع
+⚠️ قد يحتوي على أخطاء
+⚠️ لا يوجد مراجعة
+\`\`\`
+
+**بـ Multi-Agent (OpenCode):**
+\`\`\`
+You: "أنشئ REST API للمستخدمين"
+
+[Planner Agent]
+1. صمم schema
+2. أنشئ endpoints
+3. أضف auth
+4. اكتب tests
+
+[Coder Agent]
+✅ يكتب User model
+✅ يكتب UserController
+✅ يكتب routes
+
+[Reviewer Agent]
+✅ يراجع: "أضف input validation"
+✅ يراجع: "استخدم bcrypt للكلمات السرية"
+
+[Coder Agent]
+✅ يُطبق التعديلات
+
+[Tester Agent]
+✅ يكتب tests
+✅ يشغلها
+✅ يصلح الأخطاء
+
+✅ جودة عالية جداً
+\`\`\`
+
+---
+
+### المثال 2: Refactor كبير
+
+**المهمة**: تحويل مشروع من JavaScript إلى TypeScript
+
+**بـ Multi-Agent:**
+\`\`\`
+[Planner Agent]
+✅ يُحلل المشروع
+✅ يُقسم إلى modules
+✅ يُحدد الأولويات
+
+[Coder Agent 1]
+✅ يحول models
+✅ يضيف types
+
+[Coder Agent 2]
+✅ يحول controllers
+✅ يضيف interfaces
+
+[Reviewer Agent]
+✅ يراجع الـ types
+✅ يضمن consistency
+
+[Tester Agent]
+✅ يشغل tests
+✅ يتأكد من عدم انكسار شيء
+\`\`\`
+
+---
+
+## 💡 نصائح لاستخدام سير عمل الوكلاء المتعددين
+
+### 1. اختر الأداة المناسبة
+\`\`\`
+✅ OpenCode: أفضل للمشاريع الكبيرة
+✅ Cursor CLI: جيد لـ JS/TS
+✅ Claude CLI: جيد للـ iterative improvement
+\`\`\`
+
+### 2. ابدأ بـ Single Agent
+\`\`\`
+- للمهام البسيطة، استخدم agent واحد
+- الوكلاء المتعددون = للمهام المعقدة فقط
+\`\`\`
+
+### 3. راجع الكود بنفسك
+\`\`\`
+⚠️ الوكلاء ليسوا مثاليين
+✅ دائماً راجع الكود
+✅ افهم ما يكتبونه
+\`\`\`
+
+### 4. حدد الأدوار بوضوح
+\`\`\`
+✅ "أنت وكيلاً للتخطيط"
+✅ "أنت وكيلاً للمراجعة"
+✅ "أنت وكيلاً للاختبار"
+\`\`\`
+
+---
+
+## 🔮 مستقبل الوكلاء المتعددين
+
+### الاتجاهات الحالية
+
+1. **تخصص أكبر**: وكلاء متخصصون في مجالات محددة
+   - وكلاء للـ security
+   - وكلاء للـ performance
+   - وكلاء للـ UI/UX
+
+2. **تعاون أفضل**: بروتوكولات تواصل موحدة
+   - لغة مشتركة بين الوكلاء
+   - format موحد للنتائج
+
+3. **autonomia أكبر**: وكلاء يقررون بأنفسهم
+   - self-improving agents
+   - auto-debugging
+
+---
+
+## 📚 موارد إضافية
+
+### أدلة شاملة
+- [دليل OpenCode الشامل](/wiki/opencode-comprehensive-guide)
+- [دليل Claude CLI](/wiki/claude-cli-comprehensive-guide)
+
+### مقالات ذات صلة
+- [مقارنة أدوات CLI](/wiki/cli-tools-comparison)
+- [نظرة عامة على المنظومة](/wiki/cli-ecosystem-overview)
+
+---
+
+## الخلاصة
+
+**سير عمل الوكلاء المتعددين** هو المستقبل في أدوات البرمجة بالذكاء الاصطناعي.
+
+**المزايا:**
+✅ جودة أعلى
+✅ تخصص أفضل
+✅ مراجعة متبادلة
+
+**العيوب:**
+⚠️ أبطأ
+⚠️ أكثر تكلفة
+⚠️ قد يحتاج إعداد
+
+**متى تستخدمه:**
+- للمشاريع الكبيرة
+- للمهام المعقدة
+- عندما تكون الجودة أهم من السرعة
+
+**تذكر**: الوكلاء هم مساعدون، ليسوا بديلاً عنك. دائماً راجع الكود وفهمه.
         `,
       },
     ],

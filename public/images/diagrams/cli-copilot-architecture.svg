@@ -1,0 +1,232 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="cli-copilot-architecture-title cli-copilot-architecture-desc">
+  <title id="cli-copilot-architecture-title">GitHub Copilot CLI Architecture</title>
+  <desc id="cli-copilot-architecture-desc">Technical architecture showing how GitHub Copilot CLI works: User Terminal → Copilot CLI → GitHub API → OpenAI/Codex → Response</desc>
+
+  <!-- Background -->
+  <rect width="1400" height="900" fill="#0a0a0a"/>
+
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="cyan-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d9ff"/>
+      <stop offset="100%" stop-color="#0891b2"/>
+    </linearGradient>
+    <linearGradient id="purple-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="green-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="orange-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="pink-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#db2777"/>
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Title -->
+  <text x="700" y="60" font-family="Inter, sans-serif" font-size="42" font-weight="700" fill="#ffffff" text-anchor="middle">GitHub Copilot CLI Architecture</text>
+  <text x="700" y="95" font-family="Inter, sans-serif" font-size="18" fill="#6b7280" text-anchor="middle">How Copilot CLI connects your terminal to GitHub's AI</text>
+
+  <!-- Flow Arrow Line Background -->
+  <line x1="200" y1="450" x2="1200" y2="450" stroke="#1f2937" stroke-width="4" stroke-dasharray="8 4"/>
+
+  <!-- Component 1: User Terminal -->
+  <g transform="translate(80, 350)">
+    <rect x="0" y="0" width="240" height="200" rx="15" fill="#1a1a2e" stroke="url(#cyan-gradient)" stroke-width="3"/>
+    <!-- Terminal Window -->
+    <rect x="20" y="30" width="200" height="140" rx="8" fill="#0a0a0a" stroke="#374151" stroke-width="2"/>
+    <!-- Terminal Header -->
+    <circle cx="40" cy="50" r="6" fill="#ef4444"/>
+    <circle cx="60" cy="50" r="6" fill="#f59e0b"/>
+    <circle cx="80" cy="50" r="6" fill="#10b981"/>
+    <!-- Terminal Content -->
+    <text x="35" y="90" font-family="Fira Code, monospace" font-size="14" fill="#10b981">$ gh copilot suggest</text>
+    <text x="35" y="115" font-family="Fira Code, monospace" font-size="14" fill="#6b7280">"git undo last"</text>
+    <text x="35" y="135" font-family="Fira Code, monospace" font-size="14" fill="#6b7280">"commit"</text>
+    <!-- Label -->
+    <text x="120" y="-20" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#00d9ff" text-anchor="middle" filter="url(#glow)">Your Terminal</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <g transform="translate(330, 440)">
+    <line x1="0" y1="0" x2="60" y2="0" stroke="url(#cyan-gradient)" stroke-width="3"/>
+    <polygon points="60,0 50,-6 50,6" fill="#00d9ff"/>
+    <text x="30" y="-15" font-family="Inter, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Command</text>
+  </g>
+
+  <!-- Component 2: Copilot CLI -->
+  <g transform="translate(400, 350)">
+    <rect x="0" y="0" width="240" height="200" rx="15" fill="#1a1a2e" stroke="url(#purple-gradient)" stroke-width="3"/>
+    <!-- CLI Interface -->
+    <text x="120" y="60" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#a855f7" text-anchor="middle">Copilot CLI</text>
+    <text x="120" y="85" font-family="Inter, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">GitHub CLI extension</text>
+
+    <!-- Features List -->
+    <g transform="translate(30, 110)">
+      <circle cx="0" cy="0" r="4" fill="#a855f7"/>
+      <text x="15" y="4" font-family="Inter, sans-serif" font-size="13" fill="#e5e7eb">Parses your intent</text>
+
+      <circle cx="0" cy="25" r="4" fill="#a855f7"/>
+      <text x="15" y="29" font-family="Inter, sans-serif" font-size="13" fill="#e5e7eb">Loads shell context</text>
+
+      <circle cx="0" cy="50" r="4" fill="#a855f7"/>
+      <text x="15" y="54" font-family="Inter, sans-serif" font-size="13" fill="#e5e7eb">Formats AI request</text>
+
+      <circle cx="0" cy="75" r="4" fill="#a855f7"/>
+      <text x="15" y="79" font-family="Inter, sans-serif" font-size="13" fill="#e5e7eb">Handles OAuth auth</text>
+    </g>
+    <!-- Label -->
+    <text x="120" y="-20" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#a855f7" text-anchor="middle" filter="url(#glow)">CLI Tool</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <g transform="translate(650, 440)">
+    <line x1="0" y1="0" x2="60" y2="0" stroke="url(#purple-gradient)" stroke-width="3"/>
+    <polygon points="60,0 50,-6 50,6" fill="#a855f7"/>
+    <text x="30" y="-15" font-family="Inter, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">API Request</text>
+  </g>
+
+  <!-- Component 3: GitHub API -->
+  <g transform="translate(720, 350)">
+    <rect x="0" y="0" width="240" height="200" rx="15" fill="#1a1a2e" stroke="url(#green-gradient)" stroke-width="3"/>
+    <!-- API Gateway -->
+    <text x="120" y="60" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#10b981" text-anchor="middle">GitHub API</text>
+    <text x="120" y="85" font-family="Inter, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">api.github.com</text>
+
+    <!-- API Functions -->
+    <g transform="translate(30, 110)">
+      <rect x="0" y="-8" width="180" height="22" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+      <text x="90" y="6" font-family="Fira Code, monospace" font-size="12" fill="#10b981" text-anchor="middle">POST /copilot</text>
+
+      <rect x="0" y="22" width="180" height="22" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+      <text x="90" y="36" font-family="Fira Code, monospace" font-size="12" fill="#10b981" text-anchor="middle">Auth: Bearer ghu_...</text>
+
+      <rect x="0" y="52" width="180" height="22" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+      <text x="90" y="66" font-family="Fira Code, monospace" font-size="12" fill="#10b981" text-anchor="middle">Model: OpenAI Codex</text>
+    </g>
+    <!-- Label -->
+    <text x="120" y="-20" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#10b981" text-anchor="middle" filter="url(#glow)">API Gateway</text>
+  </g>
+
+  <!-- Arrow 3 -->
+  <g transform="translate(970, 440)">
+    <line x1="0" y1="0" x2="60" y2="0" stroke="url(#green-gradient)" stroke-width="3"/>
+    <polygon points="60,0 50,-6 50,6" fill="#10b981"/>
+    <text x="30" y="-15" font-family="Inter, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Processes</text>
+  </g>
+
+  <!-- Component 4: OpenAI Codex -->
+  <g transform="translate(1040, 330)">
+    <rect x="0" y="0" width="280" height="240" rx="15" fill="#1a1a2e" stroke="url(#orange-gradient)" stroke-width="3"/>
+    <!-- AI Brain Icon -->
+    <circle cx="140" cy="70" r="35" fill="none" stroke="#f59e0b" stroke-width="2"/>
+    <path d="M120 55 Q140 35 160 55" fill="none" stroke="#f59e0b" stroke-width="2"/>
+    <path d="M120 85 Q140 105 160 85" fill="none" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="125" cy="65" r="3" fill="#f59e0b"/>
+    <circle cx="155" cy="65" r="3" fill="#f59e0b"/>
+    <circle cx="140" cy="80" r="3" fill="#f59e0b"/>
+
+    <text x="140" y="130" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#f59e0b" text-anchor="middle">OpenAI Codex</text>
+    <text x="140" y="155" font-family="Inter, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Code-specialized LLM</text>
+
+    <!-- Model Capabilities -->
+    <g transform="translate(40, 175)">
+      <text x="0" y="0" font-family="Inter, sans-serif" font-size="13" fill="#e5e7eb">• Understands shell commands</text>
+      <text x="0" y="20" font-family="Inter, sans-serif" font-size="13" fill="#e5e7eb">• Generates command options</text>
+      <text x="0" y="40" font-family="Inter, sans-serif" font-size="13" fill="#e5e7eb">• Explains operations</text>
+    </g>
+    <!-- Label -->
+    <text x="140" y="-20" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#f59e0b" text-anchor="middle" filter="url(#glow)">AI Model</text>
+  </g>
+
+  <!-- Return Path (Bottom) -->
+  <g transform="translate(0, 620)">
+    <!-- Return Line -->
+    <line x1="1180" y1="0" x2="200" y2="0" stroke="#374151" stroke-width="3" stroke-dasharray="8 4"/>
+    <polygon points="200,0 210,-6 210,6" fill="#6b7280"/>
+
+    <!-- Response Steps -->
+    <g transform="translate(1040, -30)">
+      <rect x="0" y="0" width="280" height="60" rx="8" fill="#1a1a2e" stroke="#10b981" stroke-width="2"/>
+      <text x="140" y="25" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#10b981" text-anchor="middle">API Response</text>
+      <text x="140" y="45" font-family="Inter, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">JSON with command suggestions</text>
+    </g>
+
+    <g transform="translate(720, -30)">
+      <rect x="0" y="0" width="240" height="60" rx="8" fill="#1a1a2e" stroke="#a855f7" stroke-width="2"/>
+      <text x="120" y="25" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#a855f7" text-anchor="middle">CLI Formats Output</text>
+      <text x="120" y="45" font-family="Inter, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Interactive selection</text>
+    </g>
+
+    <g transform="translate(400, -30)">
+      <rect x="0" y="0" width="240" height="60" rx="8" fill="#1a1a2e" stroke="#00d9ff" stroke-width="2"/>
+      <text x="120" y="25" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#00d9ff" text-anchor="middle">Display in Terminal</text>
+      <text x="120" y="45" font-family="Inter, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">User selects command</text>
+    </g>
+
+    <text x="700" y="60" font-family="Inter, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Response flows back through the chain</text>
+  </g>
+
+  <!-- Key Features Panel (Bottom) -->
+  <g transform="translate(100, 720)">
+    <rect x="0" y="0" width="1200" height="140" rx="15" fill="#1a1a2e" stroke="#374151" stroke-width="2"/>
+    <text x="600" y="35" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle">Key Features of Copilot CLI</text>
+
+    <g transform="translate(80, 60)">
+      <!-- Feature 1 -->
+      <g transform="translate(0, 0)">
+        <circle cx="15" cy="15" r="15" fill="#0891b2"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+        <text x="40" y="12" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#00d9ff">Natural Language</text>
+        <text x="40" y="30" font-family="Inter, sans-serif" font-size="12" fill="#9ca3af">Describe what you want</text>
+      </g>
+
+      <!-- Feature 2 -->
+      <g transform="translate(280, 0)">
+        <circle cx="15" cy="15" r="15" fill="#7c3aed"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
+        <text x="40" y="12" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#a855f7">Shell Awareness</text>
+        <text x="40" y="30" font-family="Inter, sans-serif" font-size="12" fill="#9ca3af">Knows your environment</text>
+      </g>
+
+      <!-- Feature 3 -->
+      <g transform="translate(560, 0)">
+        <circle cx="15" cy="15" r="15" fill="#059669"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
+        <text x="40" y="12" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#10b981">Interactive Selection</text>
+        <text x="40" y="30" font-family="Inter, sans-serif" font-size="12" fill="#9ca3af">Choose from suggestions</text>
+      </g>
+
+      <!-- Feature 4 -->
+      <g transform="translate(840, 0)">
+        <circle cx="15" cy="15" r="15" fill="#d97706"/>
+        <text x="15" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">4</text>
+        <text x="40" y="12" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#f59e0b">Explain Mode</text>
+        <text x="40" y="30" font-family="Inter, sans-serif" font-size="12" fill="#9ca3af">Learn what commands do</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Installation Command (Top Right) -->
+  <g transform="translate(1000, 50)">
+    <rect x="0" y="0" width="350" height="80" rx="10" fill="#0a0a0a" stroke="#00d9ff" stroke-width="2"/>
+    <text x="175" y="25" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#00d9ff" text-anchor="middle">Quick Install</text>
+    <rect x="20" y="38" width="310" height="30" rx="5" fill="#1a1a2e"/>
+    <text x="30" y="58" font-family="Fira Code, monospace" font-size="13" fill="#10b981">gh extension install github/gh-copilot</text>
+  </g>
+</svg>

@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" role="img" aria-labelledby="comparison-cursor-windsurf-feature-title comparison-cursor-windsurf-feature-desc">
+  <title id="comparison-cursor-windsurf-feature-title">Cursor vs Windsurf Feature Comparison</title>
+  <desc id="comparison-cursor-windsurf-feature-desc">Side-by-side feature comparison of Cursor IDE and Windsurf AI editor showing their key differences and capabilities.</desc>
+
+  <!-- Background -->
+  <rect width="1400" height="800" fill="#0a0a0a"/>
+
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="cursor-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d9ff"/>
+      <stop offset="100%" stop-color="#0891b2"/>
+    </linearGradient>
+    <linearGradient id="windsurf-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="green-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="orange-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Title -->
+  <text x="700" y="60" font-family="Inter, sans-serif" font-size="42" font-weight="700" fill="#ffffff" text-anchor="middle">Cursor vs Windsurf</text>
+  <text x="700" y="95" font-family="Inter, sans-serif" font-size="18" fill="#6b7280" text-anchor="middle">Feature comparison of next-gen AI code editors</text>
+
+  <!-- Cursor Side -->
+  <g transform="translate(80, 150)">
+    <rect x="0" y="0" width="580" height="580" rx="20" fill="#1a1a2e" stroke="url(#cursor-gradient)" stroke-width="3"/>
+
+    <!-- Header -->
+    <rect x="0" y="0" width="580" height="80" rx="20" fill="url(#cursor-gradient)" opacity="0.2"/>
+    <text x="290" y="50" font-family="Inter, sans-serif" font-size="32" font-weight="700" fill="#00d9ff" text-anchor="middle">Cursor</text>
+
+    <!-- Features List -->
+    <g transform="translate(40, 110)">
+      <!-- Feature 1 -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="500" height="70" rx="10" fill="#0a0a0a" stroke="#374151" stroke-width="1"/>
+        <circle cx="30" cy="35" r="18" fill="#00d9ff"/>
+        <text x="30" y="41" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">✓</text>
+        <text x="65" y="28" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#e5e7eb">VS Code Fork</text>
+        <text x="65" y="48" font-family="Inter, sans-serif" font-size="13" fill="#9ca3af">Built on VS Code, full extension support</text>
+      </g>
+
+      <!-- Feature 2 -->
+      <g transform="translate(0, 85)">
+        <rect x="0" y="0" width="500" height="70" rx="10" fill="#0a0a0a" stroke="#374151" stroke-width="1"/>
+        <circle cx="30" cy="35" r="18" fill="#00d9ff"/>
+        <text x="30" y="41" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">✓</text>
+        <text x="65" y="28" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#e5e7eb">Claude Native Integration</text>
+        <text x="65" y="48" font-family="Inter, sans-serif" font-size="13" fill="#9ca3af">Deep Anthropic Claude AI integration</text>
+      </g>
+
+      <!-- Feature 3 -->
+      <g transform="translate(0, 170)">
+        <rect x="0" y="0" width="500" height="70" rx="10" fill="#0a0a0a" stroke="#374151" stroke-width="1"/>
+        <circle cx="30" cy="35" r="18" fill="#00d9ff"/>
+        <text x="30" y="41" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">✓</text>
+        <text x="65" y="28" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#e5e7eb">Composer Feature</text>
+        <text x="65" y="48" font-family="Inter, sans-serif" font-size="13" fill="#9ca3af">Multi-file editing with AI assistance</text>
+      </g>
+
+      <!-- Feature 4 -->
+      <g transform="translate(0, 255)">
+        <rect x="0" y="0" width="500" height="70" rx="10" fill="#0a0a0a" stroke="#374151" stroke-width="1"/>
+        <circle cx="30" cy="35" r="18" fill="#00d9ff"/>
+        <text x="30" y="41" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">✓</text>
+        <text x="65" y="28" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#e5e7eb">Tab Autocomplete</text>
+        <text x="65" y="48" font-family="Inter, sans-serif" font-size="13" fill="#9ca3af">AI-powered code completion</text>
+      </g>
+
+      <!-- Feature 5 -->
+      <g transform="translate(0, 340)">
+        <rect x="0" y="0" width="500" height="70" rx="10" fill="#0a0a0a" stroke="#374151" stroke-width="1"/>
+        <circle cx="30" cy="35" r="18" fill="#00d9ff"/>
+        <text x="30" y="41" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">✓</text>
+        <text x="65" y="28" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#e5e7eb">Chat with Codebase</text>
+        <text x="65" y="48" font-family="Inter, sans-serif" font-size="13" fill="#9ca3af">Context-aware codebase Q&amp;A</text>
+      </g>
+    </g>
+
+    <!-- Pricing -->
+    <g transform="translate(40, 500)">
+      <rect x="0" y="0" width="500" height="60" rx="10" fill="url(#cursor-gradient)" opacity="0.2"/>
+      <text x="250" y="25" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#00d9ff" text-anchor="middle">Pricing</text>
+      <text x="250" y="45" font-family="Inter, sans-serif" font-size="14" fill="#e5e7eb" text-anchor="middle">Free tier available • Pro: $20/month • Business: $40/user</text>
+    </g>
+  </g>
+
+  <!-- Windsurf Side -->
+  <g transform="translate(740, 150)">
+    <rect x="0" y="0" width="580" height="580" rx="20" fill="#1a1a2e" stroke="url(#windsurf-gradient)" stroke-width="3"/>
+
+    <!-- Header -->
+    <rect x="0" y="0" width="580" height="80" rx="20" fill="url(#windsurf-gradient)" opacity="0.2"/>
+    <text x="290" y="50" font-family="Inter, sans-serif" font-size="32" font-weight="700" fill="#a855f7" text-anchor="middle">Windsurf</text>
+
+    <!-- Features List -->
+    <g transform="translate(40, 110)">
+      <!-- Feature 1 -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="500" height="70" rx="10" fill="#0a0a0a" stroke="#374151" stroke-width="1"/>
+        <circle cx="30" cy="35" r="18" fill="#a855f7"/>
+        <text x="30" y="41" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">✓</text>
+        <text x="65" y="28" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#e5e7eb">Standalone IDE</text>
+        <text x="65" y="48" font-family="Inter, sans-serif" font-size="13" fill="#9ca3af">Built from scratch, unique architecture</text>
+      </g>
+
+      <!-- Feature 2 -->
+      <g transform="translate(0, 85)">
+        <rect x="0" y="0" width="500" height="70" rx="10" fill="#0a0a0a" stroke="#374151" stroke-width="1"/>
+        <circle cx="30" cy="35" r="18" fill="#a855f7"/>
+        <text x="30" y="41" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">✓</text>
+        <text x="65" y="28" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#e5e7eb">Flow State Mode</text>
+        <text x="65" y="48" font-family="Inter, sans-serif" font-size="13" fill="#9ca3af">AI-first development experience</text>
+      </g>
+
+      <!-- Feature 3 -->
+      <g transform="translate(0, 170)">
+        <rect x="0" y="0" width="500" height="70" rx="10" fill="#0a0a0a" stroke="#374151" stroke-width="1"/>
+        <circle cx="30" cy="35" r="18" fill="#a855f7"/>
+        <text x="30" y="41" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">✓</text>
+        <text x="65" y="28" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#e5e7eb">Multiple AI Models</text>
+        <text x="65" y="48" font-family="Inter, sans-serif" font-size="13" fill="#9ca3af">Claude, GPT-4, Gemini support</text>
+      </g>
+
+      <!-- Feature 4 -->
+      <g transform="translate(0, 255)">
+        <rect x="0" y="0" width="500" height="70" rx="10" fill="#0a0a0a" stroke="#374151" stroke-width="1"/>
+        <circle cx="30" cy="35" r="18" fill="#a855f7"/>
+        <text x="30" y="41" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">✓</text>
+        <text x="65" y="28" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#e5e7eb">Predictive Editing</text>
+        <text x="65" y="48" font-family="Inter, sans-serif" font-size="13" fill="#9ca3af">AI suggests edits before you type</text>
+      </g>
+
+      <!-- Feature 5 -->
+      <g transform="translate(0, 340)">
+        <rect x="0" y="0" width="500" height="70" rx="10" fill="#0a0a0a" stroke="#374151" stroke-width="1"/>
+        <circle cx="30" cy="35" r="18" fill="#a855f7"/>
+        <text x="30" y="41" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">✓</text>
+        <text x="65" y="28" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#e5e7eb">Native Collaboration</text>
+        <text x="65" y="48" font-family="Inter, sans-serif" font-size="13" fill="#9ca3af">Real-time pair programming</text>
+      </g>
+    </g>
+
+    <!-- Pricing -->
+    <g transform="translate(40, 500)">
+      <rect x="0" y="0" width="500" height="60" rx="10" fill="url(#windsurf-gradient)" opacity="0.2"/>
+      <text x="250" y="25" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#a855f7" text-anchor="middle">Pricing</text>
+      <text x="250" y="45" font-family="Inter, sans-serif" font-size="14" fill="#e5e7eb" text-anchor="middle">Free tier available • Pro: $15/month • Team: $30/user</text>
+    </g>
+  </g>
+
+  <!-- Bottom Comparison Note -->
+  <g transform="translate(100, 760)">
+    <rect x="0" y="0" width="1200" height="30" rx="10" fill="#1a1a2e" stroke="#374151" stroke-width="1"/>
+    <text x="600" y="21" font-family="Inter, sans-serif" font-size="13" fill="#9ca3af" text-anchor="middle">
+      <tspan fill="#00d9ff" font-weight="700">Cursor</tspan> = Best for VS Code users wanting AI •
+      <tspan fill="#a855f7" font-weight="700">Windsurf</tspan> = Best for AI-first development experience
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,202 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" role="img" aria-labelledby="cli-opencode-features-grid-title cli-opencode-features-grid-desc">
+  <title id="cli-opencode-features-grid-title">OpenCode CLI Features Grid</title>
+  <desc id="cli-opencode-features-grid-desc">Visual grid representation of OpenCode CLI's key features: Multi-Agent System, Context Sources, Workflow States, Editor Integration, Agent Collaboration, and Advanced Features.</desc>
+
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a2e;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Cyan Gradient -->
+    <linearGradient id="cyan-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0099cc;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Purple Gradient -->
+    <linearGradient id="purple-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Pink Gradient -->
+    <linearGradient id="pink-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#be185d;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Green Gradient -->
+    <linearGradient id="green-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Orange Gradient -->
+    <linearGradient id="orange-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="800" fill="url(#bg-gradient)"/>
+
+  <!-- Title -->
+  <text x="700" y="60" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="36" fill="#ffffff">
+    OpenCode CLI Features
+  </text>
+  <text x="700" y="90" text-anchor="middle" font-family="'Inter', sans-serif" font-size="16" fill="#9ca3af">
+    Core capabilities that make OpenCode CLI powerful
+  </text>
+
+  <!-- Row 1, Col 1: Multi-Agent System -->
+  <g transform="translate(200, 200)">
+    <rect x="0" y="0" width="350" height="180" rx="15" fill="#1a1a2e" stroke="url(#cyan-gradient)" stroke-width="3" filter="url(#glow)"/>
+    <text x="175" y="40" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="22" fill="#00d9ff">
+      Multi-Agent System
+    </text>
+    <g transform="translate(40, 70)">
+      <circle cx="0" cy="0" r="4" fill="#00d9ff"/>
+      <text x="20" y="4" font-family="'Inter', sans-serif" font-size="14" fill="#e5e7eb">Specialized AI agents</text>
+
+      <circle cx="0" cy="25" r="4" fill="#00d9ff"/>
+      <text x="20" y="29" font-family="'Inter', sans-serif" font-size="14" fill="#e5e7eb">Agent collaboration</text>
+
+      <circle cx="0" cy="50" r="4" fill="#00d9ff"/>
+      <text x="20" y="54" font-family="'Inter', sans-serif" font-size="14" fill="#e5e7eb">Parallel task execution</text>
+
+      <circle cx="0" cy="75" r="4" fill="#00d9ff"/>
+      <text x="20" y="79" font-family="'Inter', sans-serif" font-size="14" fill="#e5e7eb">Orchestrated workflows</text>
+    </g>
+  </g>
+
+  <!-- Row 1, Col 2: Context Sources -->
+  <g transform="translate(580, 200)">
+    <rect x="0" y="0" width="350" height="180" rx="15" fill="#1a1a2e" stroke="url(#purple-gradient)" stroke-width="3" filter="url(#glow)"/>
+    <text x="175" y="40" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="22" fill="#a855f7">
+      Context Sources
+    </text>
+    <g transform="translate(40, 70)">
+      <circle cx="0" cy="0" r="4" fill="#a855f7"/>
+      <text x="20" y="4" font-family="'Inter', sans-serif" font-size="14" fill="#e5e7eb">Files & directories</text>
+
+      <circle cx="0" cy="25" r="4" fill="#a855f7"/>
+      <text x="20" y="29" font-family="'Inter', sans-serif" font-size="14" fill="#e5e7eb">Web search & URLs</text>
+
+      <circle cx="0" cy="50" r="4" fill="#a855f7"/>
+      <text x="20" y="54" font-family="'Inter', sans-serif" font-size="14" fill="#e5e7eb">Documentation</text>
+
+      <circle cx="0" cy="75" r="4" fill="#a855f7"/>
+      <text x="20" y="79" font-family="'Inter', sans-serif" font-size="14" fill="#e5e7eb">Git history</text>
+    </g>
+  </g>
+
+  <!-- Row 1, Col 3: Workflow States -->
+  <g transform="translate(960, 200)">
+    <rect x="0" y="0" width="350" height="180" rx="15" fill="#1a1a2e" stroke="url(#pink-gradient)" stroke-width="3" filter="url(#glow)"/>
+    <text x="175" y="40" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="22" fill="#ec4899">
+      Workflow States
+    </text>
+    <g transform="translate(40, 70)">
+      <circle cx="0" cy="0" r="4" fill="#ec4899"/>
+      <text x="20" y="4" font-family="'Inter', sans-serif" font-size="14" fill="#e5e7eb">Stateful conversations</text>
+
+      <circle cx="0" cy="25" r="4" fill="#ec4899"/>
+      <text x="20" y="29" font-family="'Inter', sans-serif" font-size="14" fill="#e5e7eb">Resume previous tasks</text>
+
+      <circle cx="0" cy="50" r="4" fill="#ec4899"/>
+      <text x="20" y="54" font-family="'Inter', sans-serif" font-size="14" fill="#e5e7eb">Task history tracking</text>
+
+      <circle cx="0" cy="75" r="4" fill="#ec4899"/>
+      <text x="20" y="79" font-family="'Inter', sans-serif" font-size="14" fill="#e5e7eb">Checkpoint & restore</text>
+    </g>
+  </g>
+
+  <!-- Row 2, Col 1: Editor Integration -->
+  <g transform="translate(200, 410)">
+    <rect x="0" y="0" width="350" height="180" rx="15" fill="#1a1a2e" stroke="url(#green-gradient)" stroke-width="3" filter="url(#glow)"/>
+    <text x="175" y="40" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="22" fill="#10b981">
+      Editor Integration
+    </text>
+    <g transform="translate(40, 70)">
+      <circle cx="0" cy="0" r="4" fill="#10b981"/>
+      <text x="20" y="4" font-family="'Inter', sans-serif" font-size="14" fill="#e5e7eb">VS Code extension</text>
+
+      <circle cx="0" cy="25" r="4" fill="#10b981"/>
+      <text x="20" y="29" font-family="'Inter', sans-serif" font-size="14" fill="#e5e7eb">JetBrains IDE support</text>
+
+      <circle cx="0" cy="50" r="4" fill="#10b981"/>
+      <text x="20" y="54" font-family="'Inter', sans-serif" font-size="14" fill="#e5e7eb">Neovim plugin</text>
+
+      <circle cx="0" cy="75" r="4" fill="#10b981"/>
+      <text x="20" y="79" font-family="'Inter', sans-serif" font-size="14" fill="#e5e7eb">Terminal-based UI</text>
+    </g>
+  </g>
+
+  <!-- Row 2, Col 2: Agent Collaboration -->
+  <g transform="translate(580, 410)">
+    <rect x="0" y="0" width="350" height="180" rx="15" fill="#1a1a2e" stroke="url(#orange-gradient)" stroke-width="3" filter="url(#glow)"/>
+    <text x="175" y="40" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="22" fill="#f59e0b">
+      Agent Collaboration
+    </text>
+    <g transform="translate(40, 70)">
+      <circle cx="0" cy="0" r="4" fill="#f59e0b"/>
+      <text x="20" y="4" font-family="'Inter', sans-serif" font-size="14" fill="#e5e7eb">Multi-agent tasks</text>
+
+      <circle cx="0" cy="25" r="4" fill="#f59e0b"/>
+      <text x="20" y="29" font-family="'Inter', sans-serif" font-size="14" fill="#e5e7eb">Shared context</text>
+
+      <circle cx="0" cy="50" r="4" fill="#f59e0b"/>
+      <text x="20" y="54" font-family="'Inter', sans-serif" font-size="14" fill="#e5e7eb">Delegation patterns</text>
+
+      <circle cx="0" cy="75" r="4" fill="#f59e0b"/>
+      <text x="20" y="79" font-family="'Inter', sans-serif" font-size="14" fill="#e5e7eb">Consensus building</text>
+    </g>
+  </g>
+
+  <!-- Row 2, Col 3: Advanced Features -->
+  <g transform="translate(960, 410)">
+    <rect x="0" y="0" width="350" height="180" rx="15" fill="#1a1a2e" stroke="url(#cyan-gradient)" stroke-width="3" filter="url(#glow)"/>
+    <text x="175" y="40" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="22" fill="#00d9ff">
+      Advanced Features
+    </text>
+    <g transform="translate(40, 70)">
+      <circle cx="0" cy="0" r="4" fill="#00d9ff"/>
+      <text x="20" y="4" font-family="'Inter', sans-serif" font-size="14" fill="#e5e7eb">Local & cloud modes</text>
+
+      <circle cx="0" cy="25" r="4" fill="#00d9ff"/>
+      <text x="20" y="29" font-family="'Inter', sans-serif" font-size="14" fill="#e5e7eb">Custom configuration</text>
+
+      <circle cx="0" cy="50" r="4" fill="#00d9ff"/>
+      <text x="20" y="54" font-family="'Inter', sans-serif" font-size="14" fill="#e5e7eb">Plugin architecture</text>
+
+      <circle cx="0" cy="75" r="4" fill="#00d9ff"/>
+      <text x="20" y="79" font-family="'Inter', sans-serif" font-size="14" fill="#e5e7eb">Open source & extensible</text>
+    </g>
+  </g>
+
+  <!-- Bottom Command Examples -->
+  <g transform="translate(100, 650)">
+    <rect x="0" y="0" width="1200" height="100" rx="12" fill="#1a1a2e" stroke="#374151" stroke-width="2"/>
+    <text x="600" y="30" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="600" font-size="16" fill="#ffffff">
+      Quick Start Commands
+    </text>
+    <g transform="translate(50, 50)">
+      <text x="0" y="0" font-family="'Fira Code', monospace" font-size="13" fill="#00d9ff">opencode chat</text>
+      <text x="150" y="0" font-family="'Fira Code', monospace" font-size="13" fill="#a855f7">opencode add-context src/</text>
+      <text x="420" y="0" font-family="'Fira Code', monospace" font-size="13" fill="#ec4899">opcode agent run</text>
+      <text x="620" y="0" font-family="'Fira Code', monospace" font-size="13" fill="#10b981">opencode workflow resume</text>
+    </g>
+  </g>
+</svg>

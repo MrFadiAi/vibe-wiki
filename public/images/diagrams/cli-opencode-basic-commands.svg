@@ -1,0 +1,250 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="cli-opencode-basic-commands-title cli-opencode-basic-commands-desc">
+  <title id="cli-opencode-basic-commands-title">OpenCode Basic Commands</title>
+  <desc id="cli-opencode-basic-commands-desc">Basic commands reference for OpenCode CLI: chat, add-context, agent, workflow, config, and help commands with examples.</desc>
+
+  <!-- Background -->
+  <rect width="1400" height="900" fill="#0a0a0a"/>
+
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="cyan-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d9ff"/>
+      <stop offset="100%" stop-color="#0891b2"/>
+    </linearGradient>
+    <linearGradient id="purple-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="green-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="orange-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="pink-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#db2777"/>
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Title -->
+  <text x="700" y="60" font-family="Inter, sans-serif" font-size="42" font-weight="700" fill="#ffffff" text-anchor="middle">OpenCode Basic Commands</text>
+  <text x="700" y="95" font-family="Inter, sans-serif" font-size="18" fill="#6b7280" text-anchor="middle">Essential commands for your daily workflow</text>
+
+  <!-- Command 1: chat -->
+  <g transform="translate(80, 150)">
+    <rect x="0" y="0" width="400" height="320" rx="15" fill="#1a1a2e" stroke="url(#cyan-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <!-- Command Header -->
+    <rect x="0" y="0" width="400" height="60" rx="15" fill="url(#cyan-gradient)" opacity="0.2"/>
+    <text x="200" y="40" font-family="Fira Code, monospace" font-size="22" font-weight="700" fill="#00d9ff" text-anchor="middle">opencode chat</text>
+
+    <!-- Description -->
+    <g transform="translate(25, 85)">
+      <text x="0" y="0" font-family="Inter, sans-serif" font-size="14" fill="#9ca3af">Start an interactive chat session</text>
+
+      <text x="0" y="40" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#e5e7eb">Options:</text>
+      <text x="0" y="65" font-family="Fira Code, monospace" font-size="12" fill="#a855f7">--files &lt;path&gt;</text>
+      <text x="120" y="65" font-family="Inter, sans-serif" font-size="12" fill="#9ca3af">Add files to context</text>
+
+      <text x="0" y="90" font-family="Fira Code, monospace" font-size="12" fill="#a855f7">--model &lt;name&gt;</text>
+      <text x="120" y="90" font-family="Inter, sans-serif" font-size="12" fill="#9ca3af">Select AI model</text>
+
+      <text x="0" y="115" font-family="Fira Code, monospace" font-size="12" fill="#a855f7">--continue</text>
+      <text x="120" y="115" font-family="Inter, sans-serif" font-size="12" fill="#9ca3af">Resume last session</text>
+    </g>
+
+    <!-- Example -->
+    <g transform="translate(25, 220)">
+      <text x="0" y="0" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#10b981">Example:</text>
+      <rect x="0" y="15" width="350" height="65" rx="8" fill="#0a0a0a" stroke="#374151" stroke-width="1"/>
+      <text x="10" y="38" font-family="Fira Code, monospace" font-size="11" fill="#10b981">$ opencode chat --files src/</text>
+      <text x="10" y="55" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">→ Starts chat with src/ as context</text>
+      <text x="10" y="70" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">→ Ask questions about your code</text>
+    </g>
+  </g>
+
+  <!-- Command 2: add-context -->
+  <g transform="translate(510, 150)">
+    <rect x="0" y="0" width="400" height="320" rx="15" fill="#1a1a2e" stroke="url(#purple-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <!-- Command Header -->
+    <rect x="0" y="0" width="400" height="60" rx="15" fill="url(#purple-gradient)" opacity="0.2"/>
+    <text x="200" y="40" font-family="Fira Code, monospace" font-size="22" font-weight="700" fill="#a855f7" text-anchor="middle">add-context</text>
+
+    <!-- Description -->
+    <g transform="translate(25, 85)">
+      <text x="0" y="0" font-family="Inter, sans-serif" font-size="14" fill="#9ca3af">Add context sources to your session</text>
+
+      <text x="0" y="40" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#e5e7eb">Sources:</text>
+      <text x="0" y="65" font-family="Fira Code, monospace" font-size="12" fill="#a855f7">&lt;file&gt;</text>
+      <text x="120" y="65" font-family="Inter, sans-serif" font-size="12" fill="#9ca3af">Add specific file</text>
+
+      <text x="0" y="90" font-family="Fira Code, monospace" font-size="12" fill="#a855f7">&lt;directory&gt;</text>
+      <text x="120" y="90" font-family="Inter, sans-serif" font-size="12" fill="#9ca3af">Add all files in dir</text>
+
+      <text x="0" y="115" font-family="Fira Code, monospace" font-size="12" fill="#a855f7">--url &lt;url&gt;</text>
+      <text x="120" y="115" font-family="Inter, sans-serif" font-size="12" fill="#9ca3af">Add webpage content</text>
+    </g>
+
+    <!-- Example -->
+    <g transform="translate(25, 220)">
+      <text x="0" y="0" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#10b981">Example:</text>
+      <rect x="0" y="15" width="350" height="65" rx="8" fill="#0a0a0a" stroke="#374151" stroke-width="1"/>
+      <text x="10" y="38" font-family="Fira Code, monospace" font-size="11" fill="#10b981">$ opencode add-context README.md</text>
+      <text x="10" y="55" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">→ Adds README.md to context</text>
+      <text x="10" y="70" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">→ AI can now reference it</text>
+    </g>
+  </g>
+
+  <!-- Command 3: agent -->
+  <g transform="translate(940, 150)">
+    <rect x="0" y="0" width="400" height="320" rx="15" fill="#1a1a2e" stroke="url(#green-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <!-- Command Header -->
+    <rect x="0" y="0" width="400" height="60" rx="15" fill="url(#green-gradient)" opacity="0.2"/>
+    <text x="200" y="40" font-family="Fira Code, monospace" font-size="22" font-weight="700" fill="#10b981" text-anchor="middle">agent</text>
+
+    <!-- Description -->
+    <g transform="translate(25, 85)">
+      <text x="0" y="0" font-family="Inter, sans-serif" font-size="14" fill="#9ca3af">Manage and run specialized agents</text>
+
+      <text x="0" y="40" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#e5e7eb">Subcommands:</text>
+      <text x="0" y="65" font-family="Fira Code, monospace" font-size="12" fill="#a855f7">run &lt;agent&gt;</text>
+      <text x="120" y="65" font-family="Inter, sans-serif" font-size="12" fill="#9ca3af">Execute specific agent</text>
+
+      <text x="0" y="90" font-family="Fira Code, monospace" font-size="12" fill="#a855f7">list</text>
+      <text x="120" y="90" font-family="Inter, sans-serif" font-size="12" fill="#9ca3af">Show available agents</text>
+
+      <text x="0" y="115" font-family="Fira Code, monospace" font-size="12" fill="#a855f7">collaborate</text>
+      <text x="120" y="115" font-family="Inter, sans-serif" font-size="12" fill="#9ca3af">Multi-agent task</text>
+    </g>
+
+    <!-- Example -->
+    <g transform="translate(25, 220)">
+      <text x="0" y="0" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#10b981">Example:</text>
+      <rect x="0" y="15" width="350" height="65" rx="8" fill="#0a0a0a" stroke="#374151" stroke-width="1"/>
+      <text x="10" y="38" font-family="Fira Code, monospace" font-size="11" fill="#10b981">$ opencode agent run refactor</text>
+      <text x="10" y="55" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">→ Runs refactor agent</text>
+      <text x="10" y="70" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">→ Optimizes code structure</text>
+    </g>
+  </g>
+
+  <!-- Command 4: workflow -->
+  <g transform="translate(80, 490)">
+    <rect x="0" y="0" width="400" height="320" rx="15" fill="#1a1a2e" stroke="url(#orange-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <!-- Command Header -->
+    <rect x="0" y="0" width="400" height="60" rx="15" fill="url(#orange-gradient)" opacity="0.2"/>
+    <text x="200" y="40" font-family="Fira Code, monospace" font-size="22" font-weight="700" fill="#f59e0b" text-anchor="middle">workflow</text>
+
+    <!-- Description -->
+    <g transform="translate(25, 85)">
+      <text x="0" y="0" font-family="Inter, sans-serif" font-size="14" fill="#9ca3af">Manage stateful workflows</text>
+
+      <text x="0" y="40" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#e5e7eb">Subcommands:</text>
+      <text x="0" y="65" font-family="Fira Code, monospace" font-size="12" fill="#a855f7">start &lt;name&gt;</text>
+      <text x="120" y="65" font-family="Inter, sans-serif" font-size="12" fill="#9ca3af">Create new workflow</text>
+
+      <text x="0" y="90" font-family="Fira Code, monospace" font-size="12" fill="#a855f7">resume</text>
+      <text x="120" y="90" font-family="Inter, sans-serif" font-size="12" fill="#9ca3af">Continue last workflow</text>
+
+      <text x="0" y="115" font-family="Fira Code, monospace" font-size="12" fill="#a855f7">list</text>
+      <text x="120" y="115" font-family="Inter, sans-serif" font-size="12" fill="#9ca3af">Show all workflows</text>
+    </g>
+
+    <!-- Example -->
+    <g transform="translate(25, 220)">
+      <text x="0" y="0" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#10b981">Example:</text>
+      <rect x="0" y="15" width="350" height="65" rx="8" fill="#0a0a0a" stroke="#374151" stroke-width="1"/>
+      <text x="10" y="38" font-family="Fira Code, monospace" font-size="11" fill="#10b981">$ opencode workflow resume</text>
+      <text x="10" y="55" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">→ Resumes previous session</text>
+      <text x="10" y="70" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">→ Maintains full context</text>
+    </g>
+  </g>
+
+  <!-- Command 5: config -->
+  <g transform="translate(510, 490)">
+    <rect x="0" y="0" width="400" height="320" rx="15" fill="#1a1a2e" stroke="url(#pink-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <!-- Command Header -->
+    <rect x="0" y="0" width="400" height="60" rx="15" fill="url(#pink-gradient)" opacity="0.2"/>
+    <text x="200" y="40" font-family="Fira Code, monospace" font-size="22" font-weight="700" fill="#ec4899" text-anchor="middle">config</text>
+
+    <!-- Description -->
+    <g transform="translate(25, 85)">
+      <text x="0" y="0" font-family="Inter, sans-serif" font-size="14" fill="#9ca3af">Configure OpenCode settings</text>
+
+      <text x="0" y="40" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#e5e7eb">Actions:</text>
+      <text x="0" y="65" font-family="Fira Code, monospace" font-size="12" fill="#a855f7">set &lt;key&gt; &lt;value&gt;</text>
+      <text x="150" y="65" font-family="Inter, sans-serif" font-size="12" fill="#9ca3af">Set config value</text>
+
+      <text x="0" y="90" font-family="Fira Code, monospace" font-size="12" fill="#a855f7">get &lt;key&gt;</text>
+      <text x="150" y="90" font-family="Inter, sans-serif" font-size="12" fill="#9ca3af">Get config value</text>
+
+      <text x="0" y="115" font-family="Fira Code, monospace" font-size="12" fill="#a855f7">list</text>
+      <text x="150" y="115" font-family="Inter, sans-serif" font-size="12" fill="#9ca3af">Show all config</text>
+    </g>
+
+    <!-- Example -->
+    <g transform="translate(25, 220)">
+      <text x="0" y="0" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#10b981">Example:</text>
+      <rect x="0" y="15" width="350" height="65" rx="8" fill="#0a0a0a" stroke="#374151" stroke-width="1"/>
+      <text x="10" y="38" font-family="Fira Code, monospace" font-size="11" fill="#10b981">$ opencode config set model gpt-4</text>
+      <text x="10" y="55" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">→ Sets default model to GPT-4</text>
+      <text x="10" y="70" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">→ Persists across sessions</text>
+    </g>
+  </g>
+
+  <!-- Command 6: help -->
+  <g transform="translate(940, 490)">
+    <rect x="0" y="0" width="400" height="320" rx="15" fill="#1a1a2e" stroke="url(#cyan-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <!-- Command Header -->
+    <rect x="0" y="0" width="400" height="60" rx="15" fill="url(#cyan-gradient)" opacity="0.2"/>
+    <text x="200" y="40" font-family="Fira Code, monospace" font-size="22" font-weight="700" fill="#00d9ff" text-anchor="middle">help</text>
+
+    <!-- Description -->
+    <g transform="translate(25, 85)">
+      <text x="0" y="0" font-family="Inter, sans-serif" font-size="14" fill="#9ca3af">Get help and documentation</text>
+
+      <text x="0" y="40" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#e5e7eb">Usage:</text>
+      <text x="0" y="65" font-family="Fira Code, monospace" font-size="12" fill="#a855f7">opencode help</text>
+      <text x="120" y="65" font-family="Inter, sans-serif" font-size="12" fill="#9ca3af">Show general help</text>
+
+      <text x="0" y="90" font-family="Fira Code, monospace" font-size="12" fill="#a855f7">opencode &lt;cmd&gt; --help</text>
+      <text x="170" y="90" font-family="Inter, sans-serif" font-size="12" fill="#9ca3af">Cmd specific help</text>
+
+      <text x="0" y="115" font-family="Fira Code, monospace" font-size="12" fill="#a855f7">--verbose</text>
+      <text x="120" y="115" font-family="Inter, sans-serif" font-size="12" fill="#9ca3af">Detailed output</text>
+    </g>
+
+    <!-- Example -->
+    <g transform="translate(25, 220)">
+      <text x="0" y="0" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#10b981">Example:</text>
+      <rect x="0" y="15" width="350" height="65" rx="8" fill="#0a0a0a" stroke="#374151" stroke-width="1"/>
+      <text x="10" y="38" font-family="Fira Code, monospace" font-size="11" fill="#10b981">$ opencode chat --help</text>
+      <text x="10" y="55" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">→ Shows chat command options</text>
+      <text x="10" y="70" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">→ Lists all available flags</text>
+    </g>
+  </g>
+
+  <!-- Quick Reference Footer -->
+  <g transform="translate(100, 840)">
+    <rect x="0" y="0" width="1200" height="40" rx="10" fill="#1a1a2e" stroke="#374151" stroke-width="1"/>
+    <text x="600" y="26" font-family="Inter, sans-serif" font-size="14" fill="#9ca3af" text-anchor="middle">
+      Quick Tip: Use <tspan font-family="Fira Code, monospace" fill="#00d9ff">opencode --help</tspan> to see all available commands
+    </text>
+  </g>
+</svg>

@@ -39,7 +39,7 @@ export const PRIORITY_DIAGRAMS = new Set<string>([
 ]);
 
 /**
- * Complete diagram registry with all 55 SVGs from PRD
+ * Complete diagram registry with all 58 SVGs from PRD
  * Each entry includes Arabic metadata for accessibility and localization
  */
 export const diagramRegistry: DiagramEntry[] = [
@@ -353,7 +353,7 @@ export const diagramRegistry: DiagramEntry[] = [
     priority: 2,
   },
   {
-    filename: 'cli-opencentode-installation-flow.svg',
+    filename: 'cli-opencode-installation-flow.svg',
     category: 'opencode',
     titleAr: 'تثبيت OpenCode',
     altAr: 'رسم بياني يوضح طرق تثبيت OpenCode',
@@ -365,7 +365,7 @@ export const diagramRegistry: DiagramEntry[] = [
     priority: 2,
   },
   {
-    filename: 'cli-opencentode-initial-setup.svg',
+    filename: 'cli-opencode-initial-setup.svg',
     category: 'opencode',
     titleAr: 'الإعداد الأولي لـ OpenCode',
     altAr: 'رسم بياني يوضح خطوات الإعداد الأولي لـ OpenCode',
@@ -377,7 +377,7 @@ export const diagramRegistry: DiagramEntry[] = [
     priority: 2,
   },
   {
-    filename: 'cli-opencentode-basic-commands.svg',
+    filename: 'cli-opencode-basic-commands.svg',
     category: 'opencode',
     titleAr: 'أوامر OpenCode الأساسية',
     altAr: 'رسم بياني يوضح الأوامر الأساسية في OpenCode',
@@ -389,7 +389,7 @@ export const diagramRegistry: DiagramEntry[] = [
     priority: 1,
   },
   {
-    filename: 'cli-opencentode-multifile-workflow.svg',
+    filename: 'cli-opencode-multifile-workflow.svg',
     category: 'opencode',
     titleAr: 'سير عمل الملفات المتعددة',
     altAr: 'رسم بياني يوضح سير عمل OpenCode مع الملفات المتعددة',
@@ -401,7 +401,7 @@ export const diagramRegistry: DiagramEntry[] = [
     priority: 1,
   },
   {
-    filename: 'cli-opencentode-local-vs-cloud.svg',
+    filename: 'cli-opencode-local-vs-cloud.svg',
     category: 'opencode',
     titleAr: 'المحلي مقابل السحابي في OpenCode',
     altAr: 'رسم بياني يقارن بين التنفيذ المحلي والسحابي في OpenCode',
@@ -413,7 +413,7 @@ export const diagramRegistry: DiagramEntry[] = [
     priority: 2,
   },
   {
-    filename: 'cli-opencentode-comparison-matrix.svg',
+    filename: 'cli-opencode-comparison-matrix.svg',
     category: 'opencode',
     titleAr: 'مصفوفة مقارنة OpenCode',
     altAr: 'رسم بياني يقارن OpenCode مع أدوات CLI الأخرى',
@@ -425,7 +425,7 @@ export const diagramRegistry: DiagramEntry[] = [
     priority: 1,
   },
   {
-    filename: 'cli-opencentode-use-cases.svg',
+    filename: 'cli-opencode-use-cases.svg',
     category: 'opencode',
     titleAr: 'حالات استخدام OpenCode',
     altAr: 'رسم بياني يوضح حالات استخدام OpenCode',
@@ -437,7 +437,7 @@ export const diagramRegistry: DiagramEntry[] = [
     priority: 1,
   },
   {
-    filename: 'cli-opencentode-license-tiers.svg',
+    filename: 'cli-opencode-license-tiers.svg',
     category: 'opencode',
     titleAr: 'مستويات ترخيص OpenCode',
     altAr: 'رسم بياني يوضح مستويات الترخيص المختلفة لـ OpenCode',
@@ -449,7 +449,7 @@ export const diagramRegistry: DiagramEntry[] = [
     priority: 2,
   },
   {
-    filename: 'cli-opencentode-advanced-features.svg',
+    filename: 'cli-opencode-advanced-features.svg',
     category: 'opencode',
     titleAr: 'الميزات المتقدمة في OpenCode',
     altAr: 'رسم بياني يوضح الميزات المتقدمة في OpenCode',

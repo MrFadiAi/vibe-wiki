@@ -1234,4 +1234,67 @@ describe('wiki-content Article Validation', () => {
       });
     });
   });
+
+  describe('multi-agent-workflows article', () => {
+    let article: WikiArticle;
+
+    beforeAll(() => {
+      article = findArticle('multi-agent-workflows');
+    });
+
+    it('should exist in wiki-content', () => {
+      expect(article).toBeDefined();
+      expect(article).not.toBeNull();
+    });
+
+    it('should have required fields', () => {
+      expect(article.slug).toBe('multi-agent-workflows');
+      expect(article.title).toContain('الوكلاء المتعددين');
+      expect(article.title).toMatch(/Multi-Agent/);
+      expect(article.section).toBeDefined();
+      expect(article.content).toBeDefined();
+    });
+
+    it('should pass article validation', () => {
+      const validationResult = validateArticle(article);
+      expect(validationResult).toHaveLength(0);
+    });
+
+    it('should include workflow diagram', () => {
+      expect(article.diagrams).toBeDefined();
+      expect(article.diagrams.length).toBeGreaterThan(0);
+      const workflowDiagram = article.diagrams.find(d => d.filename === 'workflow-multi-agent.svg');
+      expect(workflowDiagram).toBeDefined();
+    });
+
+    it('should include multi-agent workflow types', () => {
+      expect(article.content.toLowerCase()).toMatch(/sequential|parallel|hierarchical|collaborative/);
+    });
+
+    it('should include agent roles explanation', () => {
+      expect(article.content.toLowerCase()).toMatch(/planner|coder|reviewer|tester|manager/);
+    });
+
+    it('should include tool comparisons', () => {
+      expect(article.content.toLowerCase()).toMatch(/opencode|cursor|claude/);
+    });
+
+    it('should include practical examples', () => {
+      expect(article.content).toContain('```');
+      expect(article.content.toLowerCase()).toMatch(/api|rest|refactor|typescript/);
+    });
+
+    it('should contain Arabic content', () => {
+      const arabicPattern = /[\u0600-\u06FF]/;
+      expect(article.content).toMatch(arabicPattern);
+    });
+
+    it('should include benefits and drawbacks', () => {
+      expect(article.content.toLowerCase()).toMatch(/مزايا|عيوب|benefits|drawbacks|advantages|disadvantages/);
+    });
+
+    it('should link to related articles', () => {
+      expect(article.content).toMatch(/\[.*\]\(\/wiki\/.*\)/);
+    });
+  });
 });

@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="getting-started-tool-selection-title getting-started-tool-selection-desc">
+  <title id="getting-started-tool-selection-title">AI Tool Selection Guide</title>
+  <desc id="getting-started-tool-selection-desc">Decision tree diagram for choosing the right AI coding tool based on use case: CLI tools, IDE integration, or standalone editors.</desc>
+
+  <!-- Background -->
+  <rect width="1400" height="900" fill="#0a0a0a"/>
+
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="cyan-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d9ff"/>
+      <stop offset="100%" stop-color="#0891b2"/>
+    </linearGradient>
+    <linearGradient id="purple-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="green-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="orange-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Title -->
+  <text x="700" y="60" font-family="Inter, sans-serif" font-size="42" font-weight="700" fill="#ffffff" text-anchor="middle">Choose Your AI Tool</text>
+  <text x="700" y="95" font-family="Inter, sans-serif" font-size="18" fill="#6b7280" text-anchor="middle">Decision guide for finding the right AI coding assistant</text>
+
+  <!-- Start Node -->
+  <g transform="translate(500, 150)">
+    <rect x="0" y="0" width="400" height="80" rx="40" fill="url(#orange-gradient)" filter="url(#glow)"/>
+    <text x="200" y="35" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">Start</text>
+    <text x="200" y="58" font-family="Inter, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">What's your primary workflow?</text>
+  </g>
+
+  <!-- Decision Lines -->
+  <line x1="700" y1="230" x2="200" y2="320" stroke="#374151" stroke-width="3"/>
+  <line x1="700" y1="230" x2="700" y2="320" stroke="#374151" stroke-width="3"/>
+  <line x1="700" y1="230" x2="1200" y2="320" stroke="#374151" stroke-width="3"/>
+
+  <!-- Branch Labels -->
+  <g transform="translate(250, 270)">
+    <rect x="0" y="0" width="140" height="30" rx="15" fill="#1a1a2e" stroke="#00d9ff" stroke-width="2"/>
+    <text x="70" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#00d9ff" text-anchor="middle">Terminal / CLI</text>
+  </g>
+
+  <g transform="translate(630, 270)">
+    <rect x="0" y="0" width="140" height="30" rx="15" fill="#1a1a2e" stroke="#a855f7" stroke-width="2"/>
+    <text x="70" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#a855f7" text-anchor="middle">IDE Integration</text>
+  </g>
+
+  <g transform="translate(1010, 270)">
+    <rect x="0" y="0" width="140" height="30" rx="15" fill="#1a1a2e" stroke="#10b981" stroke-width="2"/>
+    <text x="70" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#10b981" text-anchor="middle">Standalone Editor</text>
+  </g>
+
+  <!-- Branch 1: CLI Tools -->
+  <g transform="translate(50, 320)">
+    <rect x="0" y="0" width="300" height="400" rx="15" fill="#1a1a2e" stroke="url(#cyan-gradient)" stroke-width="3"/>
+
+    <!-- Header -->
+    <rect x="0" y="0" width="300" height="50" rx="15" fill="url(#cyan-gradient)" opacity="0.2"/>
+    <text x="150" y="35" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#00d9ff" text-anchor="middle">CLI Tools</text>
+
+    <!-- Tools -->
+    <g transform="translate(20, 70)">
+      <text x="0" y="0" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#e5e7eb">Choose based on needs:</text>
+
+      <!-- Claude CLI -->
+      <g transform="translate(0, 30)">
+        <rect x="0" y="0" width="260" height="70" rx="8" fill="#0a0a0a" stroke="#374151" stroke-width="1"/>
+        <text x="130" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#00d9ff" text-anchor="middle">Claude CLI</text>
+        <text x="130" y="40" font-family="Inter, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">Deep code understanding</text>
+        <text x="130" y="55" font-family="Inter, sans-serif" font-size="11" fill="#10b981" text-anchor="middle">Best: Complex refactoring</text>
+      </g>
+
+      <!-- Copilot CLI -->
+      <g transform="translate(0, 110)">
+        <rect x="0" y="0" width="260" height="70" rx="8" fill="#0a0a0a" stroke="#374151" stroke-width="1"/>
+        <text x="130" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#a855f7" text-anchor="middle">Copilot CLI</text>
+        <text x="130" y="40" font-family="Inter, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">Shell commands focus</text>
+        <text x="130" y="55" font-family="Inter, sans-serif" font-size="11" fill="#10b981" text-anchor="middle">Best: Git workflows</text>
+      </g>
+
+      <!-- OpenCode -->
+      <g transform="translate(0, 190)">
+        <rect x="0" y="0" width="260" height="70" rx="8" fill="#0a0a0a" stroke="#374151" stroke-width="1"/>
+        <text x="130" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#10b981" text-anchor="middle">OpenCode</text>
+        <text x="130" y="40" font-family="Inter, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">Multi-agent system</text>
+        <text x="130" y="55" font-family="Inter, sans-serif" font-size="11" fill="#10b981" text-anchor="middle">Best: Parallel tasks</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Branch 2: IDE Integration -->
+  <g transform="translate(550, 320)">
+    <rect x="0" y="0" width="300" height="400" rx="15" fill="#1a1a2e" stroke="url(#purple-gradient)" stroke-width="3"/>
+
+    <!-- Header -->
+    <rect x="0" y="0" width="300" height="50" rx="15" fill="url(#purple-gradient)" opacity="0.2"/>
+    <text x="150" y="35" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#a855f7" text-anchor="middle">IDE Extensions</text>
+
+    <!-- Tools -->
+    <g transform="translate(20, 70)">
+      <text x="0" y="0" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#e5e7eb">Extensions for your IDE:</text>
+
+      <!-- GitHub Copilot -->
+      <g transform="translate(0, 30)">
+        <rect x="0" y="0" width="260" height="70" rx="8" fill="#0a0a0a" stroke="#374151" stroke-width="1"/>
+        <text x="130" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#a855f7" text-anchor="middle">GitHub Copilot</text>
+        <text x="130" y="40" font-family="Inter, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">VS Code, JetBrains, Vim</text>
+        <text x="130" y="55" font-family="Inter, sans-serif" font-size="11" fill="#10b981" text-anchor="middle">Best: Autocomplete</text>
+      </g>
+
+      <!-- Continue -->
+      <g transform="translate(0, 110)">
+        <rect x="0" y="0" width="260" height="70" rx="8" fill="#0a0a0a" stroke="#374151" stroke-width="1"/>
+        <text x="130" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#00d9ff" text-anchor="middle">Continue.dev</text>
+        <text x="130" y="40" font-family="Inter, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">Open source, any LLM</text>
+        <text x="130" y="55" font-family="Inter, sans-serif" font-size="11" fill="#10b981" text-anchor="middle">Best: Customization</text>
+      </g>
+
+      <!-- Codeium -->
+      <g transform="translate(0, 190)">
+        <rect x="0" y="0" width="260" height="70" rx="8" fill="#0a0a0a" stroke="#374151" stroke-width="1"/>
+        <text x="130" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#10b981" text-anchor="middle">Codeium</text>
+        <text x="130" y="40" font-family="Inter, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">Free forever tier</text>
+        <text x="130" y="55" font-family="Inter, sans-serif" font-size="11" fill="#10b981" text-anchor="middle">Best: Budget option</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Branch 3: Standalone Editors -->
+  <g transform="translate(1050, 320)">
+    <rect x="0" y="0" width="300" height="400" rx="15" fill="#1a1a2e" stroke="url(#green-gradient)" stroke-width="3"/>
+
+    <!-- Header -->
+    <rect x="0" y="0" width="300" height="50" rx="15" fill="url(#green-gradient)" opacity="0.2"/>
+    <text x="150" y="35" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#10b981" text-anchor="middle">AI-Native Editors</text>
+
+    <!-- Tools -->
+    <g transform="translate(20, 70)">
+      <text x="0" y="0" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#e5e7eb">Full AI experience:</text>
+
+      <!-- Cursor -->
+      <g transform="translate(0, 30)">
+        <rect x="0" y="0" width="260" height="70" rx="8" fill="#0a0a0a" stroke="#374151" stroke-width="1"/>
+        <text x="130" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#00d9ff" text-anchor="middle">Cursor</text>
+        <text x="130" y="40" font-family="Inter, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">VS Code + Claude AI</text>
+        <text x="130" y="55" font-family="Inter, sans-serif" font-size="11" fill="#10b981" text-anchor="middle">Best: VS Code users</text>
+      </g>
+
+      <!-- Windsurf -->
+      <g transform="translate(0, 110)">
+        <rect x="0" y="0" width="260" height="70" rx="8" fill="#0a0a0a" stroke="#374151" stroke-width="1"/>
+        <text x="130" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#a855f7" text-anchor="middle">Windsurf</text>
+        <text x="130" y="40" font-family="Inter, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">AI-first architecture</text>
+        <text x="130" y="55" font-family="Inter, sans-serif" font-size="11" fill="#10b981" text-anchor="middle">Best: Flow state</text>
+      </g>
+
+      <!-- Tabnine -->
+      <g transform="translate(0, 190)">
+        <rect x="0" y="0" width="260" height="70" rx="8" fill="#0a0a0a" stroke="#374151" stroke-width="1"/>
+        <text x="130" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#f59e0b" text-anchor="middle">Tabnine</text>
+        <text x="130" y="40" font-family="Inter, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">Private AI models</text>
+        <text x="130" y="55" font-family="Inter, sans-serif" font-size="11" fill="#10b981" text-anchor="middle">Best: Enterprise</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Bottom Recommendation -->
+  <g transform="translate(100, 770)">
+    <rect x="0" y="0" width="1200" height="80" rx="15" fill="#1a1a2e" stroke="#374151" stroke-width="2"/>
+    <text x="600" y="30" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Quick Start Recommendation</text>
+    <text x="600" y="55" font-family="Inter, sans-serif" font-size="14" fill="#9ca3af" text-anchor="middle">
+      New to AI coding? Try <tspan fill="#a855f7" font-weight="600">GitHub Copilot</tspan> • Want CLI power? Try <tspan fill="#00d9ff" font-weight="600">Claude CLI</tspan> • Ready for AI-first? Try <tspan fill="#10b981" font-weight="600">Cursor</tspan>
+    </text>
+  </g>
+</svg>
