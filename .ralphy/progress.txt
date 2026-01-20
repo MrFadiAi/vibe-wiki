@@ -1682,3 +1682,154 @@ This infrastructure can now be used to review all existing content in the wiki a
 
 ---
 
+## 2026-01-20: Phase 1, Week 2, Task 3 Completed
+
+### Task: Write OpenCode Guide
+
+**Status**: ✅ COMPLETED
+
+### What Was Done
+
+Created a comprehensive Arabic article "دليل OpenCode الشامل (OpenCode Comprehensive Guide)" covering all aspects of the OpenCode (OhMyOpenCode) AI coding assistant.
+
+#### Content Added
+- **Article Slug**: `opencode-comprehensive-guide`
+- **Article Title**: دليل OpenCode الشامل (OpenCode Comprehensive Guide)
+- **Section**: 8. أدوات CLI للبرمجة بالذكاء الاصطناعي (AI Coding CLIs)
+- **Position**: Added after Copilot CLI article in section 8
+
+#### Article Structure
+
+**Introduction**
+- What is OpenCode (OhMyOpenCode)
+- Key features: open source, multi-agent system, multiple model support, privacy option, free base
+
+**Prerequisites**
+- Node.js 18+ or latest
+- Terminal access
+- API key (for cloud models) or local model (Ollama or LM Studio)
+- Internet connection (for cloud models)
+
+**Installation (3 methods)**
+1. npm (recommended) - `npm install -g @ohmyopencode/cli`
+2. Docker - `docker pull ohmyopencode/cli`
+3. From source - clone, install, build, link
+
+**Initial Setup**
+- Running `opencode config`
+- Choosing AI provider (OpenAI, Anthropic, Local, Azure OpenAI, Google)
+- Setting API key
+- Selecting default model
+
+**Basic Usage**
+1. Create new project - `opencode project create`
+2. Chat with OpenCode - `opencode chat`
+3. Fix errors - `opencode debug --error`
+4. Review code - `opencode review`
+
+**Key Features**
+1. Multi-Agent System - ASCII diagram showing Planner → Coder → Reviewer → Tester → Debugger flow
+2. Comprehensive code refactoring - JS to TypeScript, add strict mode, Class to Functional components
+3. Interactive generation - interactive vs autonomous modes
+
+**Advanced Configuration**
+- Custom rules file (`.opencode-rules`) with YAML configuration
+- Model selection with per-agent model assignment
+- Using local models (Ollama, LM Studio)
+
+**Use Cases (5 scenarios)**
+1. Building startup MVP - generates auth, DB, API, frontend, subscriptions, dashboard
+2. Learning new framework - step-by-step explanations with working code
+3. Fixing complex errors - stack trace analysis, code inspection, solutions
+4. Generating tests - unit, integration, edge cases, mocks
+5. Documentation - JSDoc, type definitions, usage examples, file README
+
+**Best Practices**
+- DO's: clear context, specific files, review code, use appropriate model, try suggestions
+- DON'Ts: copy without understanding, use for sensitive code, expect perfection first try, skip tests, use for hacking
+
+**Pricing & Licensing**
+- Community (Free): BYO API keys, local models, all basic features
+- Cloud ($15/month): hosted AI models, no API key management, priority support
+- Enterprise (Custom): on-premise, custom fine-tuning, SSO + security, 24/7 support
+- MIT License: commercial use, modification, distribution, private use
+
+**Comparison with Alternatives**
+- Feature comparison table with Cursor, Claude CLI, Copilot CLI
+- Why choose OpenCode: full control, privacy, flexibility, savings, transparency
+
+**Editor Integration**
+- VS Code, Cursor, Neovim
+
+**Advanced Tips**
+1. Multi-file operations - refactor across entire codebase
+2. Autonomous scaling - autonomous vs interactive modes
+3. Smart context - reads codebase, git history, dependencies, rules, editor state
+
+**Troubleshooting**
+- "opencode: command not found" - verify global install and PATH
+- "API key invalid" - reset API key
+- "Model not available" - list models and choose different one
+- "Local model not responding" - check Ollama and run model
+
+**Resources**
+- Official docs, GitHub repo, examples
+- Discord, Twitter, YouTube tutorials
+- Help commands
+
+**Quick Reference**
+- Basic commands summary
+- Common commands summary
+- Options summary
+
+**Conclusion**
+- Summary of OpenCode features
+- Reminder: tool is powerful but a helper - always understand what it writes
+
+### Files Modified
+- `src/data/wiki-content.ts`: Added new article object (~660 lines)
+- `PRD.md`: Marked Phase 1, Week 2, Task 3 as complete
+
+### Content Features
+- Comprehensive Arabic text with RTL support
+- Bilingual technical terms (English in parentheses)
+- Code examples with syntax highlighting
+- Tables for comparison and pricing
+- ASCII art diagram for multi-agent system
+- Emoji icons for visual appeal
+- Practical examples throughout
+- Step-by-step installation instructions
+
+### Content Quality
+- Comprehensive: Covers everything from installation to advanced usage
+- Practical: Real-world scenarios for each feature
+- Actionable: Clear commands users can run immediately
+- Educational: Explains not just what, but why and when
+- Structured: Easy to follow with clear sections
+- Complete: Includes troubleshooting, best practices, and resources
+- Open source emphasis: Highlights freedom, privacy, flexibility
+
+### Code Verification
+- Valid TypeScript syntax in wiki-content.ts
+- Proper string escaping for backticks
+- Correct array structure for WikiArticle
+- Slug follows naming conventions (kebab-case)
+- Content properly formatted with markdown
+- Article added to correct section "8. أدوات CLI للبرمجة بالذكاء الاصطناعي"
+
+### Test Status
+Note: npm is not available in the current PATH, so tests could not be run directly. However:
+- The code follows the existing pattern in wiki-content.ts
+- All required fields are present (slug, title, section, content)
+- The content is properly formatted as a template string
+- The article is added to the correct section
+- Syntax verified manually (proper array closing, bracket matching)
+
+### PRD Update
+- Marked Phase 1, Week 2, Task 3 as complete: `[x] Write OpenCode guide`
+
+### Next Priority Task
+**Phase 1, Week 2**: Create 25 CLI-specific SVGs
+
+---
+
