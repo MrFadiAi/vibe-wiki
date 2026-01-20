@@ -5,13 +5,25 @@ export type {
 } from './svg-utils';
 
 // Core article types
+export interface ArticleDiagram {
+  id: string; // Unique identifier for positioning
+  filename: string; // SVG filename in /public/images/diagrams/
+  alt: string; // Arabic alt text
+  caption: string; // Arabic caption
+  position: 'inline' | 'before-section' | 'after-section';
+  sectionHeading?: string; // For positioned placement
+  priority?: boolean; // For above-the-fold loading
+}
+
 export interface WikiArticle {
   slug: string;
   title: string;
   section: string;
+  description?: string;
   content: string;
   codeBlocks?: CodeBlock[];
-  visualAssets?: string[]; // SVG file references for diagrams
+  visualAssets?: string[]; // SVG file references for diagrams (legacy)
+  diagrams?: ArticleDiagram[]; // Enhanced diagram support with metadata
 }
 
 export interface CodeBlock {

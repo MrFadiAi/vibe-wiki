@@ -1,9 +1,13 @@
+import type { ArticleDiagram } from "@/types";
+
 export interface WikiArticle {
   slug: string;
   title: string;
   section: string;
+  description?: string;
   content: string;
   codeBlocks?: { language: string; code: string; title?: string }[];
+  diagrams?: ArticleDiagram[];
 }
 
 export interface WikiSection {
@@ -58,6 +62,26 @@ export const wikiContent: WikiSection[] = [
 
 عندما تكون "في المود"، تشعر البرمجة بالإحساس وكأنها محادثة مع زميل عبقري لا يتعب أبداً، ولا يحكم على أسئلتك، ويمكنه كتابة الكود بسرعة التفكير. هذا هو "الفايب".
         `,
+        diagrams: [
+          {
+            id: "what-is-vibe-coding-traditional-vs-vibecoding",
+            filename: "workflow-traditional-coding.svg",
+            alt: "رسم بياني يوضح الفرق بين البرمجة التقليدية والبرمجة بالإحساس",
+            caption: "الشكل ١: البرمجة التقليدية مقابل البرمجة بالإحساس",
+            position: "inline",
+            sectionHeading: "الفلسفة",
+            priority: true,
+          },
+          {
+            id: "what-is-vibe-coding-vibecoding-workflow",
+            filename: "workflow-vibecoding.svg",
+            alt: "رسم بياني يوضح سير عمل البرمجة بالإحساس بالتفصيل",
+            caption: "الشكل ٢: سير عمل البرمجة بالإحساس",
+            position: "after-section",
+            sectionHeading: "حالة التدفق (Flow State)",
+            priority: true,
+          },
+        ],
       },
       {
         slug: "the-vibe-stack",
@@ -130,6 +154,26 @@ cd my-vibe-project
 
 # ابدأ التطوير
 npm run dev`,
+          },
+        ],
+        diagrams: [
+          {
+            id: "the-vibe-stack-decision-tree",
+            filename: "getting-started-decision-tree.svg",
+            alt: "رسم بياني لشجرة القرار لاختيار أداة البرمجة بالذكاء الاصطناعي المناسبة",
+            caption: "الشكل ٣: شجرة قرار لاختيار أداة البرمجة بالذكاء الاصطناعي",
+            position: "before-section",
+            sectionHeading: "الواجهة الأمامية: Next.js",
+            priority: true,
+          },
+          {
+            id: "the-vibe-stack-learning-paths",
+            filename: "getting-started-learning-paths.svg",
+            alt: "رسم بياني يوضح مسارات التعلم المتاحة للبرمجة بالإحساس",
+            caption: "الشكل ٤: مسارات التعلم المتاحة",
+            position: "after-section",
+            sectionHeading: "لماذا هذه الحزمة؟",
+            priority: true,
           },
         ],
       },
@@ -234,6 +278,17 @@ npm --version
 
 إذا أعطت كل الأوامر أرقام الإصدارات، فأنت جاهز للبدء.
         `,
+        diagrams: [
+          {
+            id: "prep-your-machine-installation-flow",
+            filename: "getting-started-installation-flow.svg",
+            alt: "رسم بياني يوضح خطوات تثبيت بيئة التطوير للبرمجة بالإحساس",
+            caption: "الشكل ٥: تدفق تثبيت الأدوات الأساسية",
+            position: "after-section",
+            sectionHeading: "إعداد نظام macOS",
+            priority: true,
+          },
+        ],
       },
       {
         slug: "the-terminal",
@@ -439,6 +494,17 @@ Cursor مبني على VS Code، لكنه يأخذ الذكاء الاصطناع
 
 Cursor يحولك إلى مطور خارق من خلال التعامل مع الأجزاء الميكانيكية للبرمجة بينما تركز أنت على الإبداع.
         `,
+        diagrams: [
+          {
+            id: "the-editor-cli-overview-architecture",
+            filename: "cli-overview-architecture.svg",
+            alt: "رسم بياني يوضح البنية التقنية العامة لأدوات سطر الأوامر للذكاء الاصطناعي",
+            caption: "الشكل ١٠: البنية التقنية لأدوات CLI للذكاء الاصطناعي",
+            position: "after-section",
+            sectionHeading: "لماذا Cursor وليس VS Code؟",
+            priority: true,
+          },
+        ],
       },
       {
         slug: "llms-explained",
@@ -622,6 +688,17 @@ GitHub هو قاعدتك الأساسية، تعود عليه جيداً.
 
 ستندهش من جودة الكود الذي سيولده الذكاء الاصطناعي لك في ثوانٍ. تذكر أن تراجع الكود وتعدل عليه ليصل للنتيجة التي تحلم بها.
         `,
+        diagrams: [
+          {
+            id: "hello-world-with-ai-workflow",
+            filename: "getting-started-ai-workflow.svg",
+            alt: "رسم بياني يوضح سير عمل البرمجة بمساعدة الذكاء الاصطناعي",
+            caption: "الشكل ٦: دورة سير العمل من الفكرة إلى الكود",
+            position: "after-section",
+            sectionHeading: "البرومبت المقترح",
+            priority: true,
+          },
+        ],
       },
       {
         slug: "iterating",
@@ -673,6 +750,26 @@ GitHub هو قاعدتك الأساسية، تعود عليه جيداً.
         slug: "conversational-coding",
         title: "البرمجة التحادثية",
         section: "أنماط البرمجة",
+        diagrams: [
+          {
+            id: "conversational-coding-context-awareness",
+            filename: "workflow-context-awareness.svg",
+            alt: "رسم بياني يوضح الوعي بالسياق في البرمجة بمساعدة الذكاء الاصطناعي",
+            caption: "الشكل ٨: الوعي بالسياق في البرمجة",
+            position: "after-section",
+            sectionHeading: "المبادئ الأساسية للتواصل الفعال",
+            priority: true,
+          },
+          {
+            id: "conversational-coding-ai-pair-programming",
+            filename: "workflow-ai-pair-programming.svg",
+            alt: "رسم بياني يوضح مفهوم البرمجة الثنائية بمساعدة الذكاء الاصطناعي",
+            caption: "الشكل ٩: البرمجة الثنائية بالذكاء الاصطناعي",
+            position: "after-section",
+            sectionHeading: "ما هي البرمجة التحادثية؟",
+            priority: true,
+          },
+        ],
         content: `
 البرمجة التحادثية (Conversational Coding) هي أسلوب جديد في تطوير البرمجيات حيث تتحول البرمجة من كتابة الكود يدوياً إلى محادثة مستمرة مع زميل ذكي لا يتعب. في هذا المقال، ستتعلم كيف تتواصل بفعالية مع الذكاء الاصطناعي لتحقيق أقصى إنتاجية.
 
@@ -1749,6 +1846,17 @@ const response = await openai.chat.completions.create({
         slug: "your-first-15-minutes",
         title: "أول 15 دقيقة لك (Your First 15 Minutes)",
         section: "المقدمة",
+        diagrams: [
+          {
+            id: "your-first-15-minutes-timeline",
+            filename: "getting-started-timeline-flow.svg",
+            alt: "رسم بياني يوضح الجدول الزمني لرحلة الـ 15 دقيقة للبدء في البرمجة بالإحساس",
+            caption: "الشكل ٧: الجدول الزمني لرحلتك الأولى في البرمجة بالإحساس",
+            position: "after-section",
+            sectionHeading: "⏱️ الجدول الزمني",
+            priority: true,
+          },
+        ],
         content: `
 هل أنت جديد في عالم البرمجة بالإحساس؟ هذا الدليل سيأخذك من الصفر إلى أول كود يعمل بمساعدة الذكاء الاصطناعي في **15 دقيقة فقط**.
 
@@ -3449,7 +3557,6 @@ gh copilot explain "أمر" --detailed       # شرح مفصل
         slug: 'opencode-comprehensive-guide',
         title: 'دليل OpenCode الشامل (OpenCode Comprehensive Guide)',
         section: '8. أدوات CLI للبرمجة بالذكاء الاصطناعي (AI Coding CLIs)',
-        description: 'دليل شامل لأداة OpenCode (OhMyOpenCode) - المساعد البرمجي مفتوح المصدر مع نظام الذكاء الاصطناعي متعدد الوكلاء',
         content: `
 # دليل OpenCode الشامل (OpenCode Comprehensive Guide)
 

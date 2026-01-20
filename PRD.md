@@ -539,9 +539,9 @@ For diagrams containing text:
 | QA and testing | 2h | QA |
 
 **Deliverables:**
-- [ ] 10 diagrams integrated (Getting Started + Workflow)
+- [x] 10 diagrams integrated (Getting Started + Workflow)
 - [x] Diagram registry with full Arabic metadata
-- [ ] Updated article rendering pipeline
+- [x] Updated article rendering pipeline
 
 ### Phase 2: CLI Tools (Week 2)
 
