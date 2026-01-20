@@ -1,0 +1,221 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" role="img" aria-labelledby="cli-claude-feature-icons-title cli-claude-feature-icons-desc">
+  <title id="cli-claude-feature-icons-title">Claude CLI Key Features</title>
+  <desc id="cli-claude-feature-icons-desc">Visual representation of Claude CLI's key features with icons: Codebase Awareness, Refactoring, Debugging, and Context-Aware Conversations.</desc>
+
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a2e;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Cyan Gradient -->
+    <linearGradient id="cyan-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0099cc;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Purple Gradient -->
+    <linearGradient id="purple-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Pink Gradient -->
+    <linearGradient id="pink-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#be185d;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Green Gradient -->
+    <linearGradient id="green-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="800" fill="url(#bg-gradient)"/>
+
+  <!-- Title -->
+  <text x="700" y="60" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="36" fill="#ffffff">
+    Claude CLI Key Features
+  </text>
+
+  <!-- Feature 1: Codebase Awareness -->
+  <g transform="translate(200, 250)">
+    <!-- Circle Background -->
+    <circle cx="0" cy="0" r="100" fill="#1a1a2e" stroke="url(#cyan-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <!-- Icon: Folder with files -->
+    <g transform="translate(-40, -45)">
+      <path d="M 0 10 L 0 60 Q 0 65 5 65 L 75 65 Q 80 65 80 60 L 80 25 Q 80 20 75 20 L 40 20 L 35 15 Q 32 12 28 12 L 5 12 Q 0 12 0 17 Z" fill="none" stroke="url(#cyan-gradient)" stroke-width="3"/>
+      <path d="M 20 35 L 60 35" stroke="url(#cyan-gradient)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M 20 45 L 50 45" stroke="url(#cyan-gradient)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M 20 55 L 55 55" stroke="url(#cyan-gradient)" stroke-width="2" stroke-linecap="round"/>
+    </g>
+
+    <!-- Title -->
+    <text x="0" y="130" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="20" fill="#00d9ff">
+      Codebase Awareness
+    </text>
+
+    <!-- Description -->
+    <text x="0" y="160" text-anchor="middle" font-family="'Inter', sans-serif" font-size="13" fill="#9ca3af">
+      <tspan x="0" dy="0">Indexes entire project</tspan>
+      <tspan x="0" dy="18">Understands structure</tspan>
+      <tspan x="0" dy="18">Context-aware answers</tspan>
+    </text>
+  </g>
+
+  <!-- Feature 2: Refactoring -->
+  <g transform="translate(500, 250)">
+    <!-- Circle Background -->
+    <circle cx="0" cy="0" r="100" fill="#1a1a2e" stroke="url(#purple-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <!-- Icon: Code transformation -->
+    <g transform="translate(-40, -45)">
+      <!-- Old code -->
+      <text x="5" y="25" font-family="'Fira Code', monospace" font-size="11" fill="#6b7280" opacity="0.6">function</text>
+      <rect x="5" y="35" width="70" height="3" rx="1.5" fill="#6b7280" opacity="0.4"/>
+      <rect x="5" y="42" width="50" height="3" rx="1.5" fill="#6b7280" opacity="0.4"/>
+
+      <!-- Arrow -->
+      <path d="M 35 55 L 35 65 L 30 60 M 35 65 L 40 60" stroke="url(#purple-gradient)" stroke-width="2" fill="none"/>
+
+      <!-- New code -->
+      <text x="5" y="82" font-family="'Fira Code', monospace" font-size="11" fill="url(#purple-gradient)">const</text>
+      <rect x="5" y="92" width="70" height="3" rx="1.5" fill="url(#purple-gradient)"/>
+      <rect x="5" y="99" width="60" height="3" rx="1.5" fill="url(#purple-gradient)"/>
+    </g>
+
+    <!-- Title -->
+    <text x="0" y="130" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="20" fill="#a855f7">
+      Refactoring
+    </text>
+
+    <!-- Description -->
+    <text x="0" y="160" text-anchor="middle" font-family="'Inter', sans-serif" font-size="13" fill="#9ca3af">
+      <tspan x="0" dy="0">JS to TypeScript</tspan>
+      <tspan x="0" dy="18">Modernize legacy code</tspan>
+      <tspan x="0" dy="18">Improve architecture</tspan>
+    </text>
+  </g>
+
+  <!-- Feature 3: Debugging -->
+  <g transform="translate(800, 250)">
+    <!-- Circle Background -->
+    <circle cx="0" cy="0" r="100" fill="#1a1a2e" stroke="url(#pink-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <!-- Icon: Bug with X -->
+    <g transform="translate(-40, -45)">
+      <!-- Bug body -->
+      <ellipse cx="40" cy="40" rx="25" ry="20" fill="none" stroke="url(#pink-gradient)" stroke-width="3"/>
+      <!-- Bug head -->
+      <circle cx="60" cy="40" r="10" fill="none" stroke="url(#pink-gradient)" stroke-width="3"/>
+      <!-- Antennae -->
+      <path d="M 65 32 Q 70 25 75 30" stroke="url(#pink-gradient)" stroke-width="2" fill="none"/>
+      <path d="M 68 35 Q 75 30 80 35" stroke="url(#pink-gradient)" stroke-width="2" fill="none"/>
+      <!-- Legs -->
+      <path d="M 20 30 L 10 20" stroke="url(#pink-gradient)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M 15 40 L 5 40" stroke="url(#pink-gradient)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M 20 50 L 10 60" stroke="url(#pink-gradient)" stroke-width="2" stroke-linecap="round"/>
+      <!-- X mark -->
+      <path d="M 30 30 L 50 50 M 50 30 L 30 50" stroke="#10b981" stroke-width="4" stroke-linecap="round"/>
+    </g>
+
+    <!-- Title -->
+    <text x="0" y="130" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="20" fill="#ec4899">
+      Debugging
+    </text>
+
+    <!-- Description -->
+    <text x="0" y="160" text-anchor="middle" font-family="'Inter', sans-serif" font-size="13" fill="#9ca3af">
+      <tspan x="0" dy="0">Error analysis</tspan>
+      <tspan x="0" dy="18">Stack trace解读</tspan>
+      <tspan x="0" dy="18">Suggested fixes</tspan>
+    </text>
+  </g>
+
+  <!-- Feature 4: Context-Aware Conversations -->
+  <g transform="translate(1100, 250)">
+    <!-- Circle Background -->
+    <circle cx="0" cy="0" r="100" fill="#1a1a2e" stroke="url(#green-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <!-- Icon: Chat bubbles with file -->
+    <g transform="translate(-40, -45)">
+      <!-- File icon -->
+      <rect x="5" y="5" width="25" height="30" rx="2" fill="none" stroke="url(#green-gradient)" stroke-width="2"/>
+      <path d="M 20 5 L 20 12 L 27 12" stroke="url(#green-gradient)" stroke-width="2" fill="none"/>
+      <rect x="10" y="15" width="15" height="2" fill="url(#green-gradient)"/>
+      <rect x="10" y="20" width="12" height="2" fill="url(#green-gradient)"/>
+
+      <!-- Chat bubble 1 -->
+      <rect x="35" y="30" width="40" height="20" rx="5" fill="none" stroke="url(#green-gradient)" stroke-width="2"/>
+      <rect x="40" y="38" width="20" height="3" rx="1.5" fill="url(#green-gradient)"/>
+
+      <!-- Chat bubble 2 -->
+      <rect x="30" y="55" width="45" height="20" rx="5" fill="none" stroke="url(#green-gradient)" stroke-width="2"/>
+      <rect x="35" y="63" width="25" height="3" rx="1.5" fill="url(#green-gradient)"/>
+    </g>
+
+    <!-- Title -->
+    <text x="0" y="130" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="20" fill="#10b981">
+      Context-Aware
+    </text>
+
+    <!-- Description -->
+    <text x="0" y="160" text-anchor="middle" font-family="'Inter', sans-serif" font-size="13" fill="#9ca3af">
+      <tspan x="0" dy="0">Multi-turn conversations</tspan>
+      <tspan x="0" dy="18">Remembers context</tspan>
+      <tspan x="0" dy="18">File-aware responses</tspan>
+    </text>
+  </g>
+
+  <!-- Bottom Command Examples -->
+  <g transform="translate(100, 520)">
+    <rect x="0" y="0" width="280" height="120" rx="12" fill="#1a1a2e" stroke="url(#cyan-gradient)" stroke-width="2" opacity="0.8"/>
+    <text x="140" y="30" text-anchor="middle" font-family="'Fira Code', monospace" font-size="14" fill="#00d9ff">claude scan .</text>
+    <text x="20" y="55" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">→ Indexes your entire project</text>
+    <text x="20" y="75" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">→ Builds understanding</text>
+    <text x="20" y="95" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">→ Enables context-aware queries</text>
+  </g>
+
+  <g transform="translate(410, 520)">
+    <rect x="0" y="0" width="280" height="120" rx="12" fill="#1a1a2e" stroke="url(#purple-gradient)" stroke-width="2" opacity="0.8"/>
+    <text x="140" y="30" text-anchor="middle" font-family="'Fira Code', monospace" font-size="14" fill="#a855f7">claude refactor src/</text>
+    <text x="20" y="55" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">→ Analyzes code structure</text>
+    <text x="20" y="75" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">→ Suggests improvements</text>
+    <text x="20" y="95" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">→ Applies transformations</text>
+  </g>
+
+  <g transform="translate(720, 520)">
+    <rect x="0" y="0" width="280" height="120" rx="12" fill="#1a1a2e" stroke="url(#pink-gradient)" stroke-width="2" opacity="0.8"/>
+    <text x="140" y="30" text-anchor="middle" font-family="'Fira Code', monospace" font-size="14" fill="#ec4899">claude debug --error</text>
+    <text x="20" y="55" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">→ Analyzes stack trace</text>
+    <text x="20" y="75" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">→ Identifies root cause</text>
+    <text x="20" y="95" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">→ Provides solutions</text>
+  </g>
+
+  <g transform="translate(1030, 520)">
+    <rect x="0" y="0" width="280" height="120" rx="12" fill="#1a1a2e" stroke="url(#green-gradient)" stroke-width="2" opacity="0.8"/>
+    <text x="140" y="30" text-anchor="middle" font-family="'Fira Code', monospace" font-size="13" fill="#10b981">claude chat --files src/</text>
+    <text x="20" y="55" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">→ Loads files as context</text>
+    <text x="20" y="75" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">→ Maintains conversation</text>
+    <text x="20" y="95" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">→ Remembers your intent</text>
+  </g>
+
+  <!-- Bottom note -->
+  <text x="700" y="730" text-anchor="middle" font-family="'Inter', sans-serif" font-size="14" fill="#6b7280">
+    All features work together to provide an intelligent, context-aware coding assistant
+  </text>
+</svg>

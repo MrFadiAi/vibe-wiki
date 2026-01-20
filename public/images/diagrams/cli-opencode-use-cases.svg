@@ -1,0 +1,417 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1100" role="img" aria-labelledby="cli-opencode-use-cases-title cli-opencode-use-cases-desc">
+  <title id="cli-opencode-use-cases-title">OpenCode CLI Use Cases</title>
+  <desc id="cli-opencode-use-cases-desc">Real-world scenarios and use cases where OpenCode CLI excels for developers and teams.</desc>
+
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a2e;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Cyan Gradient -->
+    <linearGradient id="cyan-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0099cc;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Purple Gradient -->
+    <linearGradient id="purple-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Green Gradient -->
+    <linearGradient id="green-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Orange Gradient -->
+    <linearGradient id="orange-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Pink Gradient -->
+    <linearGradient id="pink-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#db2777;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="1100" fill="url(#bg-gradient)"/>
+
+  <!-- Title -->
+  <text x="700" y="50" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="36" fill="#ffffff">
+    Use Cases
+  </text>
+  <text x="700" y="85" text-anchor="middle" font-family="'Inter', sans-serif" font-size="18" fill="#9ca3af">
+    Real-world scenarios where OpenCode CLI excels
+  </text>
+
+  <!-- Use Case 1: Code Review -->
+  <g transform="translate(100, 130)">
+    <rect x="0" y="0" width="560" height="220" rx="16" fill="#1a1a2e" stroke="url(#cyan-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <rect x="0" y="0" width="560" height="60" rx="16" fill="url(#cyan-gradient)" opacity="0.2"/>
+    <rect x="0" y="40" width="560" height="20" fill="url(#cyan-gradient)" opacity="0.2"/>
+
+    <circle cx="40" cy="30" r="22" fill="url(#cyan-gradient)"/>
+    <text x="40" y="37" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#ffffff">
+      1
+    </text>
+
+    <text x="80" y="35" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#00d9ff">
+      Automated Code Review
+    </text>
+
+    <g transform="translate(30, 80)">
+      <text x="0" y="0" font-family="'Inter', sans-serif" font-size="14" fill="#e0e0e0">
+        <tspan x="0" dy="0">Get intelligent feedback on your pull requests before</tspan>
+        <tspan x="0" dy="20">merging. OpenCode analyzes changes for bugs, security</tspan>
+        <tspan x="0" dy="20">issues, and best practices.</tspan>
+      </text>
+
+      <g transform="translate(0, 85)">
+        <text x="0" y="0" font-family="'Fira Code', monospace" font-size="12" fill="#10b981">
+          $ opcode review --pr-branch feature/auth
+        </text>
+      </g>
+
+      <g transform="translate(0, 110)">
+        <circle cx="10" cy="0" r="8" fill="#10b981"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">
+          Catches bugs humans miss
+        </text>
+      </g>
+      <g transform="translate(180, 110)">
+        <circle cx="10" cy="0" r="8" fill="#10b981"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">
+          Suggests improvements
+        </text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Use Case 2: Legacy Code Refactoring -->
+  <g transform="translate(740, 130)">
+    <rect x="0" y="0" width="560" height="220" rx="16" fill="#1a1a2e" stroke="url(#purple-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <rect x="0" y="0" width="560" height="60" rx="16" fill="url(#purple-gradient)" opacity="0.2"/>
+    <rect x="0" y="40" width="560" height="20" fill="url(#purple-gradient)" opacity="0.2"/>
+
+    <circle cx="40" cy="30" r="22" fill="url(#purple-gradient)"/>
+    <text x="40" y="37" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#ffffff">
+      2
+    </text>
+
+    <text x="80" y="35" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#a855f7">
+      Legacy Code Refactoring
+    </text>
+
+    <g transform="translate(30, 80)">
+      <text x="0" y="0" font-family="'Inter', sans-serif" font-size="14" fill="#e0e0e0">
+        <tspan x="0" dy="0">Understand and modernize old codebases safely.</tspan>
+        <tspan x="0" dy="20">OpenCode maps dependencies and suggests refactors</tspan>
+        <tspan x="0" dy="20">with minimal risk.</tspan>
+      </text>
+
+      <g transform="translate(0, 85)">
+        <text x="0" y="0" font-family="'Fira Code', monospace" font-size="12" fill="#10b981">
+          $ opcode refactor --pattern="convert to async"
+        </text>
+      </g>
+
+      <g transform="translate(0, 110)">
+        <circle cx="10" cy="0" r="8" fill="#10b981"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">
+          Understands spaghetti code
+        </text>
+      </g>
+      <g transform="translate(220, 110)">
+        <circle cx="10" cy="0" r="8" fill="#10b981"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">
+          Safe multi-file changes
+        </text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Use Case 3: Debugging -->
+  <g transform="translate(100, 380)">
+    <rect x="0" y="0" width="560" height="220" rx="16" fill="#1a1a2e" stroke="url(#green-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <rect x="0" y="0" width="560" height="60" rx="16" fill="url(#green-gradient)" opacity="0.2"/>
+    <rect x="0" y="40" width="560" height="20" fill="url(#green-gradient)" opacity="0.2"/>
+
+    <circle cx="40" cy="30" r="22" fill="url(#green-gradient)"/>
+    <text x="40" y="37" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#ffffff">
+      3
+    </text>
+
+    <text x="80" y="35" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#10b981">
+      Debugging Assistant
+    </text>
+
+    <g transform="translate(30, 80)">
+      <text x="0" y="0" font-family="'Inter', sans-serif" font-size="14" fill="#e0e0e0">
+        <tspan x="0" dy="0">Paste error messages or stack traces and get</tspan>
+        <tspan x="0" dy="20">instant analysis with root cause and fixes. OpenCode</tspan>
+        <tspan x="0" dy="20">reads your code to understand context.</tspan>
+      </text>
+
+      <g transform="translate(0, 85)">
+        <text x="0" y="0" font-family="'Fira Code', monospace" font-size="12" fill="#10b981">
+          $ opcode debug "TypeError: Cannot read property"
+        </text>
+      </g>
+
+      <g transform="translate(0, 110)">
+        <circle cx="10" cy="0" r="8" fill="#10b981"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">
+          Analyzes stack traces
+        </text>
+      </g>
+      <g transform="translate(180, 110)">
+        <circle cx="10" cy="0" r="8" fill="#10b981"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">
+          Suggests specific fixes
+        </text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Use Case 4: Test Generation -->
+  <g transform="translate(740, 380)">
+    <rect x="0" y="0" width="560" height="220" rx="16" fill="#1a1a2e" stroke="url(#orange-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <rect x="0" y="0" width="560" height="60" rx="16" fill="url(#orange-gradient)" opacity="0.2"/>
+    <rect x="0" y="40" width="560" height="20" fill="url(#orange-gradient)" opacity="0.2"/>
+
+    <circle cx="40" cy="30" r="22" fill="url(#orange-gradient)"/>
+    <text x="40" y="37" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#ffffff">
+      4
+    </text>
+
+    <text x="80" y="35" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#f59e0b">
+      Test Generation
+    </text>
+
+    <g transform="translate(30, 80)">
+      <text x="0" y="0" font-family="'Inter', sans-serif" font-size="14" fill="#e0e0e0">
+        <tspan x="0" dy="0">Automatically generate comprehensive unit tests,</tspan>
+        <tspan x="0" dy="20">integration tests, and edge cases for your code.</tspan>
+        <tspan x="0" dy="20">Improves coverage instantly.</tspan>
+      </text>
+
+      <g transform="translate(0, 85)">
+        <text x="0" y="0" font-family="'Fira Code', monospace" font-size="12" fill="#10b981">
+          $ opcode test --generate --target src/auth/
+        </text>
+      </g>
+
+      <g transform="translate(0, 110)">
+        <circle cx="10" cy="0" r="8" fill="#10b981"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">
+          Multiple test frameworks
+        </text>
+      </g>
+      <g transform="translate(210, 110)">
+        <circle cx="10" cy="0" r="8" fill="#10b981"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">
+          Edge case detection
+        </text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Use Case 5: Documentation -->
+  <g transform="translate(100, 630)">
+    <rect x="0" y="0" width="560" height="220" rx="16" fill="#1a1a2e" stroke="url(#pink-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <rect x="0" y="0" width="560" height="60" rx="16" fill="url(#pink-gradient)" opacity="0.2"/>
+    <rect x="0" y="40" width="560" height="20" fill="url(#pink-gradient)" opacity="0.2"/>
+
+    <circle cx="40" cy="30" r="22" fill="url(#pink-gradient)"/>
+    <text x="40" y="37" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#ffffff">
+      5
+    </text>
+
+    <text x="80" y="35" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#ec4899">
+      Documentation Writer
+    </text>
+
+    <g transform="translate(30, 80)">
+      <text x="0" y="0" font-family="'Inter', sans-serif" font-size="14" fill="#e0e0e0">
+        <tspan x="0" dy="0">Generate README files, API docs, and inline</tspan>
+        <tspan x="0" dy="20">comments automatically. Keep your documentation</tspan>
+        <tspan x="0" dy="20">in sync with your code.</tspan>
+      </text>
+
+      <g transform="translate(0, 85)">
+        <text x="0" y="0" font-family="'Fira Code', monospace" font-size="12" fill="#10b981">
+          $ opcode docs --generate --format markdown
+        </text>
+      </g>
+
+      <g transform="translate(0, 110)">
+        <circle cx="10" cy="0" r="8" fill="#10b981"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">
+          README + API docs
+        </text>
+      </g>
+      <g transform="translate(180, 110)">
+        <circle cx="10" cy="0" r="8" fill="#10b981"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">
+          Multiple formats
+        </text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Use Case 6: Onboarding -->
+  <g transform="translate(740, 630)">
+    <rect x="0" y="0" width="560" height="220" rx="16" fill="#1a1a2e" stroke="#06b6d4" stroke-width="3" filter="url(#glow)"/>
+
+    <rect x="0" y="0" width="560" height="60" rx="16" fill="#06b6d4" opacity="0.2"/>
+    <rect x="0" y="40" width="560" height="20" fill="#06b6d4" opacity="0.2"/>
+
+    <circle cx="40" cy="30" r="22" fill="#06b6d4"/>
+    <text x="40" y="37" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#ffffff">
+      6
+    </text>
+
+    <text x="80" y="35" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#06b6d4">
+      Team Onboarding
+    </text>
+
+    <g transform="translate(30, 80)">
+      <text x="0" y="0" font-family="'Inter', sans-serif" font-size="14" fill="#e0e0e0">
+        <tspan x="0" dy="0">Help new developers understand your codebase</tspan>
+        <tspan x="0" dy="20">quickly. Ask questions and get contextual answers</tspan>
+        <tspan x="0" dy="20">about architecture, patterns, and conventions.</tspan>
+      </text>
+
+      <g transform="translate(0, 85)">
+        <text x="0" y="0" font-family="'Fira Code', monospace" font-size="12" fill="#10b981">
+          $ opcode explain "how does authentication work?"
+        </text>
+      </g>
+
+      <g transform="translate(0, 110)">
+        <circle cx="10" cy="0" r="8" fill="#10b981"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">
+          Natural language queries
+        </text>
+      </g>
+      <g transform="translate(220, 110)">
+        <circle cx="10" cy="0" r="8" fill="#10b981"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">
+          Interactive learning
+        </text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Bottom Call to Action -->
+  <g transform="translate(200, 880)">
+    <rect x="0" y="0" width="1000" height="160" rx="16" fill="#1a1a2e" stroke="url(#cyan-gradient)" stroke-width="2"/>
+
+    <text x="500" y="35" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="20" fill="#00d9ff">
+      More Use Cases
+    </text>
+
+    <g transform="translate(50, 55)">
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="200" height="85" rx="10" fill="#0a0a0a" opacity="0.5"/>
+        <circle cx="30" cy="25" r="15" fill="url(#purple-gradient)"/>
+        <text x="30" y="30" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#ffffff">
+          🔄
+        </text>
+        <text x="55" y="20" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#a855f7">
+          Migration
+        </text>
+        <text x="15" y="40" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          Convert code between
+        </text>
+        <text x="15" y="55" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          frameworks and languages
+        </text>
+        <text x="15" y="70" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          safely
+        </text>
+      </g>
+
+      <g transform="translate(220, 0)">
+        <rect x="0" y="0" width="200" height="85" rx="10" fill="#0a0a0a" opacity="0.5"/>
+        <circle cx="30" cy="25" r="15" fill="url(#green-gradient)"/>
+        <text x="30" y="30" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#ffffff">
+          🔐
+        </text>
+        <text x="55" y="20" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#10b981">
+          Security Audit
+        </text>
+        <text x="15" y="40" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          Find vulnerabilities and
+        </text>
+        <text x="15" y="55" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          security issues in your
+        </text>
+        <text x="15" y="70" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          code automatically
+        </text>
+      </g>
+
+      <g transform="translate(440, 0)">
+        <rect x="0" y="0" width="200" height="85" rx="10" fill="#0a0a0a" opacity="0.5"/>
+        <circle cx="30" cy="25" r="15" fill="url(#orange-gradient)"/>
+        <text x="30" y="30" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#ffffff">
+          ⚡
+        </text>
+        <text x="55" y="20" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#f59e0b">
+          Performance
+        </text>
+        <text x="15" y="40" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          Optimize slow code and
+        </text>
+        <text x="15" y="55" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          suggest performance
+        </text>
+        <text x="15" y="70" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          improvements
+        </text>
+      </g>
+
+      <g transform="translate(660, 0)">
+        <rect x="0" y="0" width="200" height="85" rx="10" fill="#0a0a0a" opacity="0.5"/>
+        <circle cx="30" cy="25" r="15" fill="#ec4899"/>
+        <text x="30" y="30" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#ffffff">
+          🚀
+        </text>
+        <text x="55" y="20" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#ec4899">
+          CI/CD Integration
+        </text>
+        <text x="15" y="40" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          Automate checks in your
+        </text>
+        <text x="15" y="55" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          pipeline with pre-commit
+        </text>
+        <text x="15" y="70" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          hooks and GitHub Actions
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

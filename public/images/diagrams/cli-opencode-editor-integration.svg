@@ -1,0 +1,349 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="cli-opencode-editor-integration-title cli-opencode-editor-integration-desc">
+  <title id="cli-opencode-editor-integration-title">OpenCode CLI Editor Integration</title>
+  <desc id="cli-opencode-editor-integration-desc">A diagram showing how OpenCode CLI integrates with popular code editors like VS Code, JetBrains, and Vim/Neovim.</desc>
+
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a2e;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Cyan Gradient -->
+    <linearGradient id="cyan-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0099cc;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Purple Gradient -->
+    <linearGradient id="purple-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Green Gradient -->
+    <linearGradient id="green-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="900" fill="url(#bg-gradient)"/>
+
+  <!-- Title -->
+  <text x="700" y="50" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="36" fill="#ffffff">
+    Editor Integration
+  </text>
+  <text x="700" y="85" text-anchor="middle" font-family="'Inter', sans-serif" font-size="18" fill="#9ca3af">
+    Seamless integration with your favorite code editor
+  </text>
+
+  <!-- VS Code Section -->
+  <g transform="translate(100, 140)">
+    <rect x="0" y="0" width="380" height="350" rx="16" fill="#1a1a2e" stroke="url(#cyan-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <rect x="0" y="0" width="380" height="70" rx="16" fill="url(#cyan-gradient)" opacity="0.2"/>
+    <rect x="0" y="50" width="380" height="20" fill="url(#cyan-gradient)" opacity="0.2"/>
+
+    <circle cx="45" cy="35" r="25" fill="#007acc"/>
+    <text x="45" y="42" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#ffffff">
+      VS
+    </text>
+
+    <text x="85" y="40" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#00d9ff">
+      Visual Studio Code
+    </text>
+
+    <g transform="translate(25, 95)">
+      <text x="0" y="0" font-family="'Inter', sans-serif" font-weight="600" font-size="16" fill="#ffffff">
+        Features:
+      </text>
+
+      <g transform="translate(0, 30)">
+        <circle cx="10" cy="0" r="8" fill="#10b981"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="13" fill="#e0e0e0">
+          Native extension support
+        </text>
+      </g>
+
+      <g transform="translate(0, 60)">
+        <circle cx="10" cy="0" r="8" fill="#10b981"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="13" fill="#e0e0e0">
+          Inline code suggestions
+        </text>
+      </g>
+
+      <g transform="translate(0, 90)">
+        <circle cx="10" cy="0" r="8" fill="#10b981"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="13" fill="#e0e0e0">
+          Integrated terminal
+        </text>
+      </g>
+
+      <g transform="translate(0, 120)">
+        <circle cx="10" cy="0" r="8" fill="#10b981"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="13" fill="#e0e0e0">
+          Quick pick commands
+        </text>
+      </g>
+    </g>
+
+    <rect x="25" y="290" width="330" height="40" rx="8" fill="#0a0a0a" stroke="#00d9ff" stroke-width="1"/>
+    <text x="190" y="316" text-anchor="middle" font-family="'Fira Code', monospace" font-size="12" fill="#00d9ff">
+      ext install opencode.vscode
+    </text>
+  </g>
+
+  <!-- JetBrains Section -->
+  <g transform="translate(510, 140)">
+    <rect x="0" y="0" width="380" height="350" rx="16" fill="#1a1a2e" stroke="url(#purple-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <rect x="0" y="0" width="380" height="70" rx="16" fill="url(#purple-gradient)" opacity="0.2"/>
+    <rect x="0" y="50" width="380" height="20" fill="url(#purple-gradient)" opacity="0.2"/>
+
+    <circle cx="45" cy="35" r="25" fill="#000000"/>
+    <rect x="30" y="20" width="30" height="30" rx="4" fill="#a855f7"/>
+
+    <text x="85" y="40" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#a855f7">
+      JetBrains IDEs
+    </text>
+
+    <g transform="translate(25, 95)">
+      <text x="0" y="0" font-family="'Inter', sans-serif" font-weight="600" font-size="16" fill="#ffffff">
+        Supports:
+      </text>
+
+      <g transform="translate(0, 30)">
+        <circle cx="10" cy="0" r="8" fill="#10b981"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="13" fill="#e0e0e0">
+          IntelliJ IDEA
+        </text>
+      </g>
+
+      <g transform="translate(0, 60)">
+        <circle cx="10" cy="0" r="8" fill="#10b981"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="13" fill="#e0e0e0">
+          PyCharm
+        </text>
+      </g>
+
+      <g transform="translate(0, 90)">
+        <circle cx="10" cy="0" r="8" fill="#10b981"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="13" fill="#e0e0e0">
+          WebStorm
+        </text>
+      </g>
+
+      <g transform="translate(0, 120)">
+        <circle cx="10" cy="0" r="8" fill="#10b981"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="13" fill="#e0e0e0">
+          All JetBrains IDEs
+        </text>
+      </g>
+    </g>
+
+    <rect x="25" y="290" width="330" height="40" rx="8" fill="#0a0a0a" stroke="#a855f7" stroke-width="1"/>
+    <text x="190" y="316" text-anchor="middle" font-family="'Fira Code', monospace" font-size="12" fill="#a855f7">
+      Plugin marketplace: "OpenCode"
+    </text>
+  </g>
+
+  <!-- Vim/Neovim Section -->
+  <g transform="translate(920, 140)">
+    <rect x="0" y="0" width="380" height="350" rx="16" fill="#1a1a2e" stroke="url(#green-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <rect x="0" y="0" width="380" height="70" rx="16" fill="url(#green-gradient)" opacity="0.2"/>
+    <rect x="0" y="50" width="380" height="20" fill="url(#green-gradient)" opacity="0.2"/>
+
+    <circle cx="45" cy="35" r="25" fill="#019833"/>
+    <text x="45" y="42" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="16" fill="#ffffff">
+      Vim
+    </text>
+
+    <text x="85" y="40" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#10b981">
+      Vim / Neovim
+    </text>
+
+    <g transform="translate(25, 95)">
+      <text x="0" y="0" font-family="'Inter', sans-serif" font-weight="600" font-size="16" fill="#ffffff">
+        Features:
+      </text>
+
+      <g transform="translate(0, 30)">
+        <circle cx="10" cy="0" r="8" fill="#10b981"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="13" fill="#e0e0e0">
+          Async command execution
+        </text>
+      </g>
+
+      <g transform="translate(0, 60)">
+        <circle cx="10" cy="0" r="8" fill="#10b981"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="13" fill="#e0e0e0">
+          Floating window support
+        </text>
+      </g>
+
+      <g transform="translate(0, 90)">
+        <circle cx="10" cy="0" r="8" fill="#10b981"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="13" fill="#e0e0e0">
+          Lua plugin for Neovim
+        </text>
+      </g>
+
+      <g transform="translate(0, 120)">
+        <circle cx="10" cy="0" r="8" fill="#10b981"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="13" fill="#e0e0e0">
+          Lightweight &amp; fast
+        </text>
+      </g>
+    </g>
+
+    <rect x="25" y="290" width="330" height="40" rx="8" fill="#0a0a0a" stroke="#10b981" stroke-width="1"/>
+    <text x="190" y="316" text-anchor="middle" font-family="'Fira Code', monospace" font-size="11" fill="#10b981">
+      :Plug 'opencode/neovim-plugin'
+    </text>
+  </g>
+
+  <!-- CLI Integration Section -->
+  <g transform="translate(100, 520)">
+    <rect x="0" y="0" width="600" height="280" rx="16" fill="#1a1a2e" stroke="#f59e0b" stroke-width="2"/>
+
+    <rect x="0" y="0" width="600" height="60" rx="16" fill="#f59e0b" opacity="0.2"/>
+    <rect x="0" y="40" width="600" height="20" fill="#f59e0b" opacity="0.2"/>
+
+    <circle cx="40" cy="30" r="20" fill="#f59e0b"/>
+    <text x="40" y="36" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="16" fill="#ffffff">
+      &gt;
+    </text>
+
+    <text x="75" y="35" font-family="'Inter', sans-serif" font-weight="700" font-size="22" fill="#f59e0b">
+      CLI Integration (Terminal)
+    </text>
+
+    <g transform="translate(30, 85)">
+      <text x="0" y="0" font-family="'Inter', sans-serif" font-weight="600" font-size="14" fill="#ffffff">
+        Works in any terminal-based workflow:
+      </text>
+
+      <g transform="translate(0, 35)">
+        <rect x="0" y="0" width="540" height="35" rx="8" fill="#0a0a0a" stroke="#f59e0b" stroke-width="1"/>
+        <text x="20" y="23" font-family="'Fira Code', monospace" font-size="12" fill="#f59e0b">
+          opcode ask "how do I refactor this function?"
+        </text>
+      </g>
+
+      <g transform="translate(0, 85)">
+        <rect x="0" y="0" width="540" height="35" rx="8" fill="#0a0a0a" stroke="#f59e0b" stroke-width="1"/>
+        <text x="20" y="23" font-family="'Fira Code', monospace" font-size="12" fill="#f59e0b">
+          opcode gen --template component MyButton.tsx
+        </text>
+      </g>
+
+      <g transform="translate(0, 135)">
+        <rect x="0" y="0" width="540" height="35" rx="8" fill="#0a0a0a" stroke="#f59e0b" stroke-width="1"/>
+        <text x="20" y="23" font-family="'Fira Code', monospace" font-size="12" fill="#f59e0b">
+          opcode chat  # Interactive session
+        </text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Features Grid -->
+  <g transform="translate(720, 520)">
+    <rect x="0" y="0" width="580" height="280" rx="16" fill="#1a1a2e" stroke="url(#cyan-gradient)" stroke-width="2"/>
+
+    <text x="290" y="35" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="20" fill="#00d9ff">
+      Universal Features
+    </text>
+
+    <g transform="translate(30, 60)">
+      <!-- Feature 1 -->
+      <rect x="0" y="0" width="250" height="90" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <circle cx="30" cy="30" r="18" fill="url(#cyan-gradient)"/>
+      <text x="30" y="36" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#ffffff">
+        1
+      </text>
+      <text x="60" y="28" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#00d9ff">
+        Smart Context
+      </text>
+      <text x="60" y="48" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        Reads open files
+      </text>
+      <text x="15" y="75" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        Uses current file, selection
+      </text>
+    </g>
+
+    <g transform="translate(300, 60)">
+      <!-- Feature 2 -->
+      <rect x="0" y="0" width="250" height="90" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <circle cx="30" cy="30" r="18" fill="url(#purple-gradient)"/>
+      <text x="30" y="36" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#ffffff">
+        2
+      </text>
+      <text x="60" y="28" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#a855f7">
+        Quick Actions
+      </text>
+      <text x="60" y="48" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        Keyboard shortcuts
+      </text>
+      <text x="15" y="75" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        Execute without leaving editor
+      </text>
+    </g>
+
+    <g transform="translate(30, 165)">
+      <!-- Feature 3 -->
+      <rect x="0" y="0" width="250" height="90" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <circle cx="30" cy="30" r="18" fill="url(#green-gradient)"/>
+      <text x="30" y="36" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#ffffff">
+        3
+      </text>
+      <text x="60" y="28" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#10b981">
+        Error Detection
+      </text>
+      <text x="60" y="48" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        LSP integration
+      </text>
+      <text x="15" y="75" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        Auto-fix suggestions
+      </text>
+    </g>
+
+    <g transform="translate(300, 165)">
+      <!-- Feature 4 -->
+      <rect x="0" y="0" width="250" height="90" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <circle cx="30" cy="30" r="18" fill="#f59e0b"/>
+      <text x="30" y="36" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#ffffff">
+        4
+      </text>
+      <text x="60" y="28" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#f59e0b">
+        Project Aware
+      </text>
+      <text x="60" y="48" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        Understands structure
+      </text>
+      <text x="15" y="75" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        Works across entire codebase
+      </text>
+    </g>
+  </g>
+
+  <!-- Bottom Install Section -->
+  <g transform="translate(200, 830)">
+    <rect x="0" y="0" width="1000" height="50" rx="10" fill="url(#cyan-gradient)" opacity="0.1" stroke="#00d9ff" stroke-width="1"/>
+    <text x="500" y="32" text-anchor="middle" font-family="'Inter', sans-serif" font-size="14" fill="#00d9ff">
+      💡 Pro tip: Install the CLI once, use it everywhere. No editor-specific setup required for basic usage.
+    </text>
+  </g>
+</svg>

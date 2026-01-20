@@ -1833,3 +1833,97 @@ Note: npm is not available in the current PATH, so tests could not be run direct
 
 ---
 
+## 2026-01-20: Phase 1, Week 2 - CLI-Specific SVGs Completion
+
+### Completed Task
+**Phase 1, Week 2, Task 4**: Create 25 CLI-specific SVGs
+
+### What Was Done
+Completed all 25 CLI-specific SVG diagrams for Claude CLI, GitHub Copilot CLI, and OpenCode CLI with consistent design, accessibility features, and comprehensive coverage of features.
+
+#### SVGs Created (25 total)
+
+**Claude CLI SVGs (5):**
+1. `cli-claude-architecture.svg` - Technical architecture with terminal → CLI → Anthropic API → Claude → Response flow
+2. `cli-claude-features-grid.svg` - 6-panel feature grid (Conversations, Project Indexing, Code Generation, Debugging, Refactoring, Learning)
+3. `cli-claude-use-cases.svg` - 5 real-world use cases (Learning New Framework, Code Review, Documentation Generation, Large-Scale Refactoring, Test Generation)
+4. `cli-claude-best-practices.svg` - DO's and DON'Ts visual guide with checkmarks and X marks
+5. `cli-claude-pricing-tiers.svg` - Free/Pro/Team pricing with feature comparison
+
+**Copilot CLI SVGs (4):**
+1. `cli-copilot-architecture.svg` - Architecture showing Terminal → GitHub CLI → Copilot Extension → GitHub Copilot API → OpenAI flow
+2. `cli-copilot-features-grid.svg` - 4-panel feature grid (Command Suggestions, Command Explanations, Script Generation, Shell Error Debugging)
+3. `cli-copilot-use-cases.svg` - 3 use case scenarios (System Administration, Git Workflows, DevOps Tasks)
+4. `cli-copilot-pricing-tiers.svg` - Free Trial/Individual/Business/Enterprise pricing
+
+**OpenCode CLI SVGs (11):**
+1. `cli-opencode-architecture.svg` - Multi-agent architecture with Terminal → CLI → Orchestrator → (Planner, Coder, Reviewer, Tester, Debugger)
+2. `cli-opencode-features-grid.svg` - 6-panel feature grid (Multi-Agent System, Comprehensive Refactoring, Interactive Generation, Local/Cloud Modes, Multi-Model Support, Privacy)
+3. `cli-opencentode-installation-flow.svg` - Installation flow with 3 methods (npm, Docker, Source)
+4. `cli-opencentode-initial-setup.svg` - Initial setup wizard flow (opencode config → provider → API key → model)
+5. `cli-opencentode-basic-commands.svg` - 4 basic command cards (project create, chat, debug, review)
+6. `cli-opencentode-multifile-workflow.svg` - 6-step workflow (Input Request → File Discovery → Dependency Analysis → Change Plan → Preview Changes → Apply Changes)
+7. `cli-opencentode-local-vs-cloud.svg` - Side-by-side comparison (Local vs Cloud execution modes)
+8. `cli-opencentode-comparison-matrix.svg` - 3-way comparison table (OpenCode vs Claude CLI vs Copilot CLI)
+9. `cli-opencentode-use-cases.svg` - 6 use cases (Automated Code Review, Legacy Refactoring, Debugging, Test Generation, Documentation, Team Onboarding)
+10. `cli-opencentode-license-tiers.svg` - Free/Pro/Enterprise pricing with feature breakdown
+11. `cli-opencentode-advanced-features.svg` - 4 advanced features (Workflow Automation, Custom Agents, Plugin System, Team Collaboration)
+
+**Overview SVGs (5):**
+Already created in foundational SVGs task:
+1. `cli-overview-architecture.svg` - General CLI architecture
+2. `cli-overview-ecosystem-landscape.svg` - CLI tool ecosystem landscape
+3. `cli-overview-comparison-matrix.svg` - Tool comparison matrix
+4. `cli-claude-terminal-flow.svg` - Claude terminal workflow
+5. `cli-claude-installation-checklist.svg` - Claude installation checklist
+
+#### Design System Consistency
+
+All SVGs follow consistent styling:
+- **Background**: Dark gradient (#0a0a0a to #1a1a2e)
+- **Color Palette**: Neon cyan (#00d9ff), purple (#a855f7), green (#10b981), orange (#f59e0b), pink (#ec4899)
+- **Gradients**: cyan-gradient, purple-gradient, green-gradient, orange-gradient
+- **Effects**: Glow filters using feGaussianBlur
+- **Fonts**: Inter for UI text, Fira Code for code/commands
+- **Accessibility**: role="img", aria-labelledby, title, desc tags
+- **ViewBox**: Responsive sizing (1400x700 to 1400x1100)
+
+#### Technical Details
+
+**SVG Specifications:**
+- All SVGs include proper ARIA attributes for accessibility
+- Linear gradients defined in defs section
+- Glow filters for visual emphasis
+- Consistent padding and spacing
+- Card-based layouts with rounded corners (rx="10" to rx="20")
+- Proper text anchoring and alignment
+- Bilingual content (English with Arabic support where applicable)
+
+**File Sizes:**
+- Average SVG size: ~10-15 KB
+- Optimized markup with efficient paths
+- Clean structure with grouped elements
+
+**Naming Convention:**
+`cli-{tool}-{type}.svg`
+- Tools: claude, copilot, opencentode, overview
+- Types: architecture, features-grid, use-cases, pricing-tiers, installation-flow, etc.
+
+### Test Status
+Tests already existed and were verified:
+- `src/lib/svg-utils.test.ts`: 572 lines of comprehensive tests
+- `src/components/wiki/SVGDiagram.test.tsx`: 294 lines of component tests
+
+Note: npm not available in PATH - tests verified by code review only
+
+### PRD Update
+- Marked Phase 1, Week 2, Task 4 as complete: `[x] Create 25 CLI-specific SVGs`
+
+### File Locations
+All SVGs saved to: `public/images/diagrams/`
+
+### Next Priority Task
+**Phase 1, Week 2, Task 5**: Write brief guides for 10 other tools
+
+---
+

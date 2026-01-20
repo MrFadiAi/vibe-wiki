@@ -1,0 +1,375 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1100" role="img" aria-labelledby="cli-opencode-comparison-matrix-title cli-opencode-comparison-matrix-desc">
+  <title id="cli-opencode-comparison-matrix-title">OpenCode CLI Comparison Matrix</title>
+  <desc id="cli-opencode-comparison-matrix-desc">Side-by-side comparison of OpenCode CLI with Claude CLI and GitHub Copilot CLI across key features.</desc>
+
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a2e;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Cyan Gradient -->
+    <linearGradient id="cyan-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0099cc;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Purple Gradient -->
+    <linearGradient id="purple-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- GitHub Gradient -->
+    <linearGradient id="github-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#58a6ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1f6feb;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Green Gradient -->
+    <linearGradient id="green-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="1100" fill="url(#bg-gradient)"/>
+
+  <!-- Title -->
+  <text x="700" y="50" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="36" fill="#ffffff">
+    CLI Comparison Matrix
+  </text>
+  <text x="700" y="85" text-anchor="middle" font-family="'Inter', sans-serif" font-size="18" fill="#9ca3af">
+    OpenCode vs Claude CLI vs GitHub Copilot CLI
+  </text>
+
+  <!-- Header Row -->
+  <g transform="translate(50, 120)">
+    <rect x="0" y="0" width="280" height="60" rx="12" fill="#1a1a2e" stroke="#374151" stroke-width="2"/>
+    <text x="140" y="38" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#ffffff">
+      Feature
+    </text>
+
+    <rect x="300" y="0" width="320" height="60" rx="12" fill="url(#cyan-gradient)" opacity="0.2" stroke="url(#cyan-gradient)" stroke-width="3" filter="url(#glow)"/>
+    <text x="460" y="38" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#00d9ff">
+      OpenCode CLI
+    </text>
+
+    <rect x="640" y="0" width="320" height="60" rx="12" fill="url(#purple-gradient)" opacity="0.2" stroke="url(#purple-gradient)" stroke-width="2"/>
+    <text x="800" y="38" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#a855f7">
+      Claude CLI
+    </text>
+
+    <rect x="980" y="0" width="320" height="60" rx="12" fill="url(#github-gradient)" opacity="0.2" stroke="url(#github-gradient)" stroke-width="2"/>
+    <text x="1140" y="38" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#58a6ff">
+      Copilot CLI
+    </text>
+  </g>
+
+  <!-- Row 1: AI Model Support -->
+  <g transform="translate(50, 200)">
+    <rect x="0" y="0" width="280" height="100" rx="12" fill="#1a1a2e" stroke="#374151" stroke-width="1"/>
+    <text x="140" y="40" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="600" font-size="15" fill="#ffffff">
+      AI Model Support
+    </text>
+    <text x="140" y="65" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#9ca3af">
+      Multiple providers available
+    </text>
+
+    <rect x="300" y="0" width="320" height="100" rx="12" fill="#0a0a0a" opacity="0.5" stroke="url(#cyan-gradient)" stroke-width="2"/>
+    <text x="460" y="35" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#10b981">
+      16+ Models
+    </text>
+    <text x="460" y="55" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      GPT-4, Claude, Gemini, Llama,
+    </text>
+    <text x="460" y="70" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      Mistral, and more
+    </text>
+
+    <rect x="640" y="0" width="320" height="100" rx="12" fill="#0a0a0a" opacity="0.5" stroke="url(#purple-gradient)" stroke-width="1"/>
+    <text x="800" y="35" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#f59e0b">
+      4 Models
+    </text>
+    <text x="800" y="55" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      Claude 3.5 Sonnet, Opus,
+    </text>
+    <text x="800" y="70" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      Haiku
+    </text>
+
+    <rect x="980" y="0" width="320" height="100" rx="12" fill="#0a0a0a" opacity="0.5" stroke="url(#github-gradient)" stroke-width="1"/>
+    <text x="1140" y="35" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#f59e0b">
+      2 Models
+    </text>
+    <text x="1140" y="55" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      GPT-4o, GPT-4o-mini
+    </text>
+    <text x="1140" y="70" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      (via OpenAI)
+    </text>
+  </g>
+
+  <!-- Row 2: Open Source -->
+  <g transform="translate(50, 320)">
+    <rect x="0" y="0" width="280" height="100" rx="12" fill="#1a1a2e" stroke="#374151" stroke-width="1"/>
+    <text x="140" y="40" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="600" font-size="15" fill="#ffffff">
+      Open Source
+    </text>
+    <text x="140" y="65" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#9ca3af">
+      Community-driven development
+    </text>
+
+    <rect x="300" y="0" width="320" height="100" rx="12" fill="#0a0a0a" opacity="0.5" stroke="url(#cyan-gradient)" stroke-width="2"/>
+    <circle cx="460" cy="50" r="30" fill="url(#green-gradient)"/>
+    <text x="460" y="56" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="20" fill="#ffffff">
+      ✓
+    </text>
+    <text x="460" y="85" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#10b981">
+      100% Open Source
+    </text>
+
+    <rect x="640" y="0" width="320" height="100" rx="12" fill="#0a0a0a" opacity="0.5" stroke="url(#purple-gradient)" stroke-width="1"/>
+    <circle cx="800" cy="50" r="30" fill="url(#green-gradient)"/>
+    <text x="800" y="56" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="20" fill="#ffffff">
+      ✓
+    </text>
+    <text x="800" y="85" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#10b981">
+      MIT License
+    </text>
+
+    <rect x="980" y="0" width="320" height="100" rx="12" fill="#0a0a0a" opacity="0.5" stroke="url(#github-gradient)" stroke-width="1"/>
+    <circle cx="1140" cy="50" r="30" fill="#ef4444"/>
+    <text x="1140" y="56" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="20" fill="#ffffff">
+      ✗
+    </text>
+    <text x="1140" y="85" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#ef4444">
+      Proprietary
+    </text>
+  </g>
+
+  <!-- Row 3: Custom Agents -->
+  <g transform="translate(50, 440)">
+    <rect x="0" y="0" width="280" height="100" rx="12" fill="#1a1a2e" stroke="#374151" stroke-width="1"/>
+    <text x="140" y="40" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="600" font-size="15" fill="#ffffff">
+      Custom Agents
+    </text>
+    <text x="140" y="65" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#9ca3af">
+      Build specialized AI assistants
+    </text>
+
+    <rect x="300" y="0" width="320" height="100" rx="12" fill="#0a0a0a" opacity="0.5" stroke="url(#cyan-gradient)" stroke-width="2"/>
+    <text x="460" y="35" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#10b981">
+      Advanced
+    </text>
+    <text x="460" y="55" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      Multi-agent system with
+    </text>
+    <text x="460" y="70" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      custom tools and workflows
+    </text>
+
+    <rect x="640" y="0" width="320" height="100" rx="12" fill="#0a0a0a" opacity="0.5" stroke="url(#purple-gradient)" stroke-width="1"/>
+    <text x="800" y="35" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#f59e0b">
+      Basic
+    </text>
+    <text x="800" y="55" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      Skills system with
+    </text>
+    <text x="800" y="70" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      preset workflows
+    </text>
+
+    <rect x="980" y="0" width="320" height="100" rx="12" fill="#0a0a0a" opacity="0.5" stroke="url(#github-gradient)" stroke-width="1"/>
+    <circle cx="1140" cy="50" r="30" fill="#ef4444"/>
+    <text x="1140" y="56" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="20" fill="#ffffff">
+      ✗
+    </text>
+    <text x="1140" y="85" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      Not supported
+    </text>
+  </g>
+
+  <!-- Row 4: Local Execution -->
+  <g transform="translate(50, 560)">
+    <rect x="0" y="0" width="280" height="100" rx="12" fill="#1a1a2e" stroke="#374151" stroke-width="1"/>
+    <text x="140" y="40" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="600" font-size="15" fill="#ffffff">
+      Local Execution
+    </text>
+    <text x="140" y="65" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#9ca3af">
+      Run without cloud services
+    </text>
+
+    <rect x="300" y="0" width="320" height="100" rx="12" fill="#0a0a0a" opacity="0.5" stroke="url(#cyan-gradient)" stroke-width="2"/>
+    <circle cx="460" cy="50" r="30" fill="url(#green-gradient)"/>
+    <text x="460" y="56" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="20" fill="#ffffff">
+      ✓
+    </text>
+    <text x="460" y="85" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#10b981">
+      Local LLMs supported
+    </text>
+
+    <rect x="640" y="0" width="320" height="100" rx="12" fill="#0a0a0a" opacity="0.5" stroke="url(#purple-gradient)" stroke-width="1"/>
+    <circle cx="800" cy="50" r="30" fill="url(#green-gradient)"/>
+    <text x="800" y="56" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="20" fill="#ffffff">
+      ✓
+    </text>
+    <text x="800" y="85" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#10b981">
+      Via API only
+    </text>
+
+    <rect x="980" y="0" width="320" height="100" rx="12" fill="#0a0a0a" opacity="0.5" stroke="url(#github-gradient)" stroke-width="1"/>
+    <circle cx="1140" cy="50" r="30" fill="#ef4444"/>
+    <text x="1140" y="56" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="20" fill="#ffffff">
+      ✗
+    </text>
+    <text x="1140" y="85" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      Cloud only
+    </text>
+  </g>
+
+  <!-- Row 5: Pricing Model -->
+  <g transform="translate(50, 680)">
+    <rect x="0" y="0" width="280" height="100" rx="12" fill="#1a1a2e" stroke="#374151" stroke-width="1"/>
+    <text x="140" y="40" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="600" font-size="15" fill="#ffffff">
+      Pricing Model
+    </text>
+    <text x="140" y="65" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#9ca3af">
+      Cost structure
+    </text>
+
+    <rect x="300" y="0" width="320" height="100" rx="12" fill="#0a0a0a" opacity="0.5" stroke="url(#cyan-gradient)" stroke-width="2"/>
+    <text x="460" y="35" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#10b981">
+      Freemium
+    </text>
+    <text x="460" y="55" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      Free core + paid cloud
+    </text>
+    <text x="460" y="70" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      Bring your own API key
+    </text>
+
+    <rect x="640" y="0" width="320" height="100" rx="12" fill="#0a0a0a" opacity="0.5" stroke="url(#purple-gradient)" stroke-width="1"/>
+    <text x="800" y="35" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#f59e0b">
+      Usage-based
+    </text>
+    <text x="800" y="55" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      Pay per token via
+    </text>
+    <text x="800" y="70" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      Anthropic API
+    </text>
+
+    <rect x="980" y="0" width="320" height="100" rx="12" fill="#0a0a0a" opacity="0.5" stroke="url(#github-gradient)" stroke-width="1"/>
+    <text x="1140" y="35" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#f59e0b">
+      Subscription
+    </text>
+    <text x="1140" y="55" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      $10-19/month
+    </text>
+    <text x="1140" y="70" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      Includes CLI access
+    </text>
+  </g>
+
+  <!-- Row 6: Plugin System -->
+  <g transform="translate(50, 800)">
+    <rect x="0" y="0" width="280" height="100" rx="12" fill="#1a1a2e" stroke="#374151" stroke-width="1"/>
+    <text x="140" y="40" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="600" font-size="15" fill="#ffffff">
+      Plugin System
+    </text>
+    <text x="140" y="65" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#9ca3af">
+      Extensibility options
+    </text>
+
+    <rect x="300" y="0" width="320" height="100" rx="12" fill="#0a0a0a" opacity="0.5" stroke="url(#cyan-gradient)" stroke-width="2"/>
+    <text x="460" y="35" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#10b981">
+      50+ Plugins
+    </text>
+    <text x="460" y="55" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      Full plugin API + webhooks
+    </text>
+    <text x="460" y="70" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      + community plugins
+    </text>
+
+    <rect x="640" y="0" width="320" height="100" rx="12" fill="#0a0a0a" opacity="0.5" stroke="url(#purple-gradient)" stroke-width="1"/>
+    <text x="800" y="35" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#f59e0b">
+      Skills Only
+    </text>
+    <text x="800" y="55" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      Built-in skills system
+    </text>
+    <text x="800" y="70" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      Limited extensibility
+    </text>
+
+    <rect x="980" y="0" width="320" height="100" rx="12" fill="#0a0a0a" opacity="0.5" stroke="url(#github-gradient)" stroke-width="1"/>
+    <circle cx="1140" cy="50" r="30" fill="#ef4444"/>
+    <text x="1140" y="56" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="20" fill="#ffffff">
+      ✗
+    </text>
+    <text x="1140" y="85" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      No plugins
+    </text>
+  </g>
+
+  <!-- Bottom Summary -->
+  <g transform="translate(50, 920)">
+    <rect x="0" y="0" width="1300" height="140" rx="16" fill="#1a1a2e" stroke="url(#cyan-gradient)" stroke-width="2"/>
+
+    <text x="650" y="35" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="20" fill="#00d9ff">
+      Which CLI Should You Choose?
+    </text>
+
+    <g transform="translate(50, 55)">
+      <rect x="0" y="0" width="380" height="70" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <text x="190" y="20" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#00d9ff">
+        Choose OpenCode if you want:
+      </text>
+      <text x="190" y="40" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        Maximum flexibility, multi-model support,
+      </text>
+      <text x="190" y="55" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        open source, and custom agents
+      </text>
+    </g>
+
+    <g transform="translate(450, 55)">
+      <rect x="0" y="0" width="380" height="70" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <text x="190" y="20" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#a855f7">
+        Choose Claude if you want:
+      </text>
+      <text x="190" y="40" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        Best Claude model integration, official
+      </text>
+      <text x="190" y="55" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        Anthropic support, and simplicity
+      </text>
+    </g>
+
+    <g transform="translate(850, 55)">
+      <rect x="0" y="0" width="380" height="70" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <text x="190" y="20" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#58a6ff">
+        Choose Copilot if you want:
+      </text>
+      <text x="190" y="40" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        GitHub integration, already have Copilot,
+      </text>
+      <text x="190" y="55" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        and want consistent experience
+      </text>
+    </g>
+  </g>
+</svg>

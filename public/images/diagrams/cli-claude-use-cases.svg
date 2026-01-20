@@ -1,0 +1,270 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="cli-claude-use-cases-title cli-claude-use-cases-desc">
+  <title id="cli-claude-use-cases-title">Claude CLI Use Cases</title>
+  <desc id="cli-claude-use-cases-desc">Five practical use case scenarios for Claude CLI: Learning Frameworks, Code Review, Documentation, Large-Scale Refactoring, and Test Generation.</desc>
+
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a2e;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Gradients -->
+    <linearGradient id="cyan-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0099cc;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="purple-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="pink-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#be185d;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="green-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="orange-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f97316;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ea580c;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="900" fill="url(#bg-gradient)"/>
+
+  <!-- Title -->
+  <text x="700" y="50" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="36" fill="#ffffff">
+    Claude CLI Use Cases
+  </text>
+
+  <!-- Use Case 1: Learning a New Framework -->
+  <g transform="translate(140, 160)">
+    <rect x="0" y="0" width="500" height="320" rx="16" fill="#1a1a2e" stroke="url(#cyan-gradient)" stroke-width="2" filter="url(#glow)"/>
+
+    <!-- Header -->
+    <rect x="0" y="0" width="500" height="50" rx="16" fill="url(#cyan-gradient)" opacity="0.2"/>
+    <rect x="0" y="25" width="500" height="25" fill="url(#cyan-gradient)" opacity="0.2"/>
+
+    <!-- Icon -->
+    <circle cx="40" cy="25" r="18" fill="url(#cyan-gradient)"/>
+    <text x="40" y="31" text-anchor="middle" font-family="'Inter', sans-serif" font-size="18" fill="#ffffff">1</text>
+
+    <!-- Title -->
+    <text x="70" y="32" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#00d9ff">
+      Learning a New Framework
+    </text>
+
+    <!-- Content -->
+    <text x="25" y="80" font-family="'Inter', sans-serif" font-size="13" fill="#e0e0e0">
+      <tspan x="25" dy="0">Quickly understand new frameworks with:</tspan>
+      <tspan x="25" dy="25">• Concept explanations</tspan>
+      <tspan x="25" dy="22">• Code examples</tspan>
+      <tspan x="25" dy="22">• Best practices</tspan>
+    </text>
+
+    <!-- Example Command -->
+    <rect x="25" y="165" width="450" height="40" rx="8" fill="#0a0a0a" stroke="url(#cyan-gradient)" stroke-width="1"/>
+    <text x="250" y="190" text-anchor="middle" font-family="'Fira Code', monospace" font-size="12" fill="#00d9ff">
+      claude chat "Explain Next.js 14 App Router"
+    </text>
+
+    <!-- Output Example -->
+    <rect x="25" y="220" width="450" height="80" rx="8" fill="#0a0a0a" opacity="0.5"/>
+    <text x="40" y="245" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      <tspan x="40" dy="0">→ Explains server vs client components</tspan>
+      <tspan x="40" dy="18">→ Shows file-based routing</tspan>
+      <tspan x="40" dy="18">→ Provides working examples</tspan>
+    </text>
+  </g>
+
+  <!-- Use Case 2: Code Review -->
+  <g transform="translate(680, 160)">
+    <rect x="0" y="0" width="500" height="320" rx="16" fill="#1a1a2e" stroke="url(#purple-gradient)" stroke-width="2" filter="url(#glow)"/>
+
+    <!-- Header -->
+    <rect x="0" y="0" width="500" height="50" rx="16" fill="url(#purple-gradient)" opacity="0.2"/>
+    <rect x="0" y="25" width="500" height="25" fill="url(#purple-gradient)" opacity="0.2"/>
+
+    <!-- Icon -->
+    <circle cx="40" cy="25" r="18" fill="url(#purple-gradient)"/>
+    <text x="40" y="31" text-anchor="middle" font-family="'Inter', sans-serif" font-size="18" fill="#ffffff">2</text>
+
+    <!-- Title -->
+    <text x="70" y="32" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#a855f7">
+      Code Review
+    </text>
+
+    <!-- Content -->
+    <text x="25" y="80" font-family="'Inter', sans-serif" font-size="13" fill="#e0e0e0">
+      <tspan x="25" dy="0">Get intelligent code reviews:</tspan>
+      <tspan x="25" dy="25">• Bug detection</tspan>
+      <tspan x="25" dy="22">• Performance suggestions</tspan>
+      <tspan x="25" dy="22">• Security improvements</tspan>
+    </text>
+
+    <!-- Example Command -->
+    <rect x="25" y="165" width="450" height="40" rx="8" fill="#0a0a0a" stroke="url(#purple-gradient)" stroke-width="1"/>
+    <text x="250" y="190" text-anchor="middle" font-family="'Fira Code', monospace" font-size="12" fill="#a855f7">
+      claude review src/utils/validation.ts
+    </text>
+
+    <!-- Output Example -->
+    <rect x="25" y="220" width="450" height="80" rx="8" fill="#0a0a0a" opacity="0.5"/>
+    <text x="40" y="245" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      <tspan x="40" dy="0">→ Finds potential issues</tspan>
+      <tspan x="40" dy="18">→ Suggests improvements</tspan>
+      <tspan x="40" dy="18">→ Explains reasoning</tspan>
+    </text>
+  </g>
+
+  <!-- Use Case 3: Documentation -->
+  <g transform="translate(140, 510)">
+    <rect x="0" y="0" width="500" height="320" rx="16" fill="#1a1a2e" stroke="url(#green-gradient)" stroke-width="2" filter="url(#glow)"/>
+
+    <!-- Header -->
+    <rect x="0" y="0" width="500" height="50" rx="16" fill="url(#green-gradient)" opacity="0.2"/>
+    <rect x="0" y="25" width="500" height="25" fill="url(#green-gradient)" opacity="0.2"/>
+
+    <!-- Icon -->
+    <circle cx="40" cy="25" r="18" fill="url(#green-gradient)"/>
+    <text x="40" y="31" text-anchor="middle" font-family="'Inter', sans-serif" font-size="18" fill="#ffffff">3</text>
+
+    <!-- Title -->
+    <text x="70" y="32" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#10b981">
+      Documentation Generation
+    </text>
+
+    <!-- Content -->
+    <text x="25" y="80" font-family="'Inter', sans-serif" font-size="13" fill="#e0e0e0">
+      <tspan x="25" dy="0">Automatically create docs:</tspan>
+      <tspan x="25" dy="25">• JSDoc comments</tspan>
+      <tspan x="25" dy="22">• README files</tspan>
+      <tspan x="25" dy="22">• API documentation</tspan>
+    </text>
+
+    <!-- Example Command -->
+    <rect x="25" y="165" width="450" height="40" rx="8" fill="#0a0a0a" stroke="url(#green-gradient)" stroke-width="1"/>
+    <text x="250" y="190" text-anchor="middle" font-family="'Fira Code', monospace" font-size="12" fill="#10b981">
+      claude document src/api/users.ts
+    </text>
+
+    <!-- Output Example -->
+    <rect x="25" y="220" width="450" height="80" rx="8" fill="#0a0a0a" opacity="0.5"/>
+    <text x="40" y="245" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      <tspan x="40" dy="0">→ Adds JSDoc comments</tspan>
+      <tspan x="40" dy="18">→ Documents parameters</tspan>
+      <tspan x="40" dy="18">→ Includes usage examples</tspan>
+    </text>
+  </g>
+
+  <!-- Use Case 4: Large-Scale Refactoring -->
+  <g transform="translate(680, 510)">
+    <rect x="0" y="0" width="500" height="320" rx="16" fill="#1a1a2e" stroke="url(#pink-gradient)" stroke-width="2" filter="url(#glow)"/>
+
+    <!-- Header -->
+    <rect x="0" y="0" width="500" height="50" rx="16" fill="url(#pink-gradient)" opacity="0.2"/>
+    <rect x="0" y="25" width="500" height="25" fill="url(#pink-gradient)" opacity="0.2"/>
+
+    <!-- Icon -->
+    <circle cx="40" cy="25" r="18" fill="url(#pink-gradient)"/>
+    <text x="40" y="31" text-anchor="middle" font-family="'Inter', sans-serif" font-size="18" fill="#ffffff">4</text>
+
+    <!-- Title -->
+    <text x="70" y="32" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#ec4899">
+      Large-Scale Refactoring
+    </text>
+
+    <!-- Content -->
+    <text x="25" y="80" font-family="'Inter', sans-serif" font-size="13" fill="#e0e0e0">
+      <tspan x="25" dy="0">Transform entire codebases:</tspan>
+      <tspan x="25" dy="25">• Language migration</tspan>
+      <tspan x="25" dy="22">• Architecture updates</tspan>
+      <tspan x="25" dy="22">• Pattern standardization</tspan>
+    </text>
+
+    <!-- Example Command -->
+    <rect x="25" y="165" width="450" height="40" rx="8" fill="#0a0a0a" stroke="url(#pink-gradient)" stroke-width="1"/>
+    <text x="250" y="190" text-anchor="middle" font-family="'Fira Code', monospace" font-size="11" fill="#ec4899">
+      claude refactor "Convert all to TypeScript"
+    </text>
+
+    <!-- Output Example -->
+    <rect x="25" y="220" width="450" height="80" rx="8" fill="#0a0a0a" opacity="0.5"/>
+    <text x="40" y="245" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      <tspan x="40" dy="0">→ Analyzes all files</tspan>
+      <tspan x="40" dy="18">→ Converts .js → .ts</tspan>
+      <tspan x="40" dy="18">→ Adds type annotations</tspan>
+    </text>
+  </g>
+
+  <!-- Use Case 5: Test Generation (spanning both columns) -->
+  <g transform="translate(140, 860)">
+    <rect x="0" y="0" width="1040" height="320" rx="16" fill="#1a1a2e" stroke="url(#orange-gradient)" stroke-width="2" filter="url(#glow)"/>
+
+    <!-- Header -->
+    <rect x="0" y="0" width="1040" height="50" rx="16" fill="url(#orange-gradient)" opacity="0.2"/>
+    <rect x="0" y="25" width="1040" height="25" fill="url(#orange-gradient)" opacity="0.2"/>
+
+    <!-- Icon -->
+    <circle cx="40" cy="25" r="18" fill="url(#orange-gradient)"/>
+    <text x="40" y="31" text-anchor="middle" font-family="'Inter', sans-serif" font-size="18" fill="#ffffff">5</text>
+
+    <!-- Title -->
+    <text x="70" y="32" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#f97316">
+      Test Generation
+    </text>
+
+    <!-- Content -->
+    <text x="25" y="80" font-family="'Inter', sans-serif" font-size="13" fill="#e0e0e0">
+      <tspan x="25" dy="0">Generate comprehensive tests:</tspan>
+      <tspan x="570" dy="0">• Unit tests</tspan>
+      <tspan x="570" dy="22">• Integration tests</tspan>
+      <tspan x="570" dy="22">• Edge case coverage</tspan>
+      <tspan x="570" dy="22">• Mock data generation</tspan>
+    </text>
+
+    <!-- Example Commands -->
+    <rect x="25" y="150" width="450" height="40" rx="8" fill="#0a0a0a" stroke="url(#orange-gradient)" stroke-width="1"/>
+    <text x="250" y="175" text-anchor="middle" font-family="'Fira Code', monospace" font-size="11" fill="#f97316">
+      claude test "Add tests for auth service"
+    </text>
+
+    <rect x="565" y="150" width="450" height="40" rx="8" fill="#0a0a0a" stroke="url(#orange-gradient)" stroke-width="1"/>
+    <text x="790" y="175" text-anchor="middle" font-family="'Fira Code', monospace" font-size="11" fill="#f97316">
+      claude test "Cover edge cases"
+    </text>
+
+    <!-- Output Examples -->
+    <rect x="25" y="205" width="450" height="90" rx="8" fill="#0a0a0a" opacity="0.5"/>
+    <text x="40" y="230" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      <tspan x="40" dy="0">→ Generates test suites</tspan>
+      <tspan x="40" dy="18">→ Creates test cases</tspan>
+      <tspan x="40" dy="18">→ Adds assertions</tspan>
+      <tspan x="40" dy="18">→ Includes mock data</tspan>
+    </text>
+
+    <rect x="565" y="205" width="450" height="90" rx="8" fill="#0a0a0a" opacity="0.5"/>
+    <text x="580" y="230" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      <tspan x="580" dy="0">→ Identifies edge cases</tspan>
+      <tspan x="580" dy="18">→ Tests boundary conditions</tspan>
+      <tspan x="580" dy="18">→ Error scenario coverage</tspan>
+      <tspan x="580" dy="18">→ Validates error handling</tspan>
+    </text>
+  </g>
+</svg>

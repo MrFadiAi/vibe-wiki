@@ -1,0 +1,233 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="cli-copilot-use-cases-title cli-copilot-use-cases-desc">
+  <title id="cli-copilot-use-cases-title">GitHub Copilot CLI Use Cases</title>
+  <desc id="cli-copilot-use-cases-desc">Three practical scenarios for using GitHub Copilot CLI: System Administration, Git Workflows, and DevOps Tasks.</desc>
+
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a2e;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- GitHub Gradient -->
+    <linearGradient id="github-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#58a6ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1f6feb;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Purple Gradient -->
+    <linearGradient id="purple-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Green Gradient -->
+    <linearGradient id="green-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="900" fill="url(#bg-gradient)"/>
+
+  <!-- Title -->
+  <text x="700" y="60" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="36" fill="#ffffff">
+    Practical Use Cases
+  </text>
+  <text x="700" y="95" text-anchor="middle" font-family="'Inter', sans-serif" font-size="18" fill="#9ca3af">
+    See GitHub Copilot CLI in action
+  </text>
+
+  <!-- Use Case 1: System Administration -->
+  <g transform="translate(80, 140)">
+    <rect x="0" y="0" width="620" height="650" rx="20" fill="#1a1a2e" stroke="url(#github-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <!-- Header -->
+    <rect x="0" y="0" width="620" height="80" rx="20" fill="url(#github-gradient)" opacity="0.2"/>
+    <rect x="0" y="60" width="620" height="20" fill="url(#github-gradient)" opacity="0.2"/>
+
+    <circle cx="50" cy="40" r="25" fill="url(#github-gradient)"/>
+    <text x="50" y="48" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#ffffff">
+      1
+    </text>
+
+    <text x="90" y="35" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#58a6ff">
+      System Administration
+    </text>
+    <text x="90" y="60" font-family="'Inter', sans-serif" font-size="14" fill="#9ca3af">
+      Manage files and processes
+    </text>
+
+    <!-- Example 1 -->
+    <g transform="translate(30, 110)">
+      <rect x="0" y="0" width="560" height="150" rx="12" fill="#0a0a0a" opacity="0.5"/>
+      <text x="20" y="30" font-family="'Inter', sans-serif" font-weight="600" font-size="14" fill="#ffffff">
+        Finding Large Files
+      </text>
+
+      <rect x="20" y="50" width="520" height="35" rx="8" fill="#0a0a0a" stroke="url(#github-gradient)" stroke-width="1"/>
+      <text x="280" y="73" text-anchor="middle" font-family="'Fira Code', monospace" font-size="12" fill="#58a6ff">
+        gh copilot suggest "find all files larger than 100MB"
+      </text>
+
+      <text x="20" y="105" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        → Suggests find command with size criteria
+      </text>
+      <text x="20" y="125" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        → Executes: find . -type f -size +100M
+      </text>
+    </g>
+
+    <!-- Example 2 -->
+    <g transform="translate(30, 275)">
+      <rect x="0" y="0" width="560" height="150" rx="12" fill="#0a0a0a" opacity="0.5"/>
+      <text x="20" y="30" font-family="'Inter', sans-serif" font-weight="600" font-size="14" fill="#ffffff">
+        Process Management
+      </text>
+
+      <rect x="20" y="50" width="520" height="35" rx="8" fill="#0a0a0a" stroke="url(#github-gradient)" stroke-width="1"/>
+      <text x="280" y="73" text-anchor="middle" font-family="'Fira Code', monospace" font-size="12" fill="#58a6ff">
+        gh copilot suggest "kill process on port 3000"
+      </text>
+
+      <text x="20" y="105" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        → Finds process using port 3000
+      </text>
+      <text x="20" y="125" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        → Kills it gracefully with SIGTERM
+      </text>
+    </g>
+
+    <!-- Example 3 -->
+    <g transform="translate(30, 440)">
+      <rect x="0" y="0" width="560" height="150" rx="12" fill="#0a0a0a" opacity="0.5"/>
+      <text x="20" y="30" font-family="'Inter', sans-serif" font-weight="600" font-size="14" fill="#ffffff">
+        Disk Usage Analysis
+      </text>
+
+      <rect x="20" y="50" width="520" height="35" rx="8" fill="#0a0a0a" stroke="url(#github-gradient)" stroke-width="1"/>
+      <text x="280" y="73" text-anchor="middle" font-family="'Fira Code', monospace" font-size="12" fill="#58a6ff">
+        gh copilot suggest "show disk usage by folder"
+      </text>
+
+      <text x="20" y="105" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        → Uses du command with human-readable output
+      </text>
+      <text x="20" y="125" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        → Sorts by size, shows top directories
+      </text>
+    </g>
+  </g>
+
+  <!-- Use Case 2: Git Workflows -->
+  <g transform="translate(720, 140)">
+    <rect x="0" y="0" width="600" height="300" rx="20" fill="#1a1a2e" stroke="url(#purple-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <!-- Header -->
+    <rect x="0" y="0" width="600" height="80" rx="20" fill="url(#purple-gradient)" opacity="0.2"/>
+    <rect x="0" y="60" width="600" height="20" fill="url(#purple-gradient)" opacity="0.2"/>
+
+    <circle cx="50" cy="40" r="25" fill="url(#purple-gradient)"/>
+    <text x="50" y="48" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#ffffff">
+      2
+    </text>
+
+    <text x="90" y="35" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#a855f7">
+      Git Workflows
+    </text>
+    <text x="90" y="60" font-family="'Inter', sans-serif" font-size="14" fill="#9ca3af">
+      Simplify Git operations
+    </text>
+
+    <!-- Example -->
+    <g transform="translate(30, 110)">
+      <rect x="0" y="0" width="540" height="160" rx="12" fill="#0a0a0a" opacity="0.5"/>
+      <text x="20" y="30" font-family="'Inter', sans-serif" font-weight="600" font-size="14" fill="#ffffff">
+        Undo Last Commit
+      </text>
+
+      <rect x="20" y="50" width="500" height="35" rx="8" fill="#0a0a0a" stroke="url(#purple-gradient)" stroke-width="1"/>
+      <text x="270" y="73" text-anchor="middle" font-family="'Fira Code', monospace" font-size="11" fill="#a855f7">
+        gh copilot suggest "undo last commit but keep changes"
+      </text>
+
+      <text x="20" y="105" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        → Suggests: git reset --soft HEAD~1
+      </text>
+      <text x="20" y="125" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        → Keeps changes staged, removes commit
+      </text>
+      <text x="20" y="145" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        → Explains what each flag does
+      </text>
+    </g>
+  </g>
+
+  <!-- Use Case 3: DevOps Tasks -->
+  <g transform="translate(720, 460)">
+    <rect x="0" y="0" width="600" height="330" rx="20" fill="#1a1a2e" stroke="url(#green-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <!-- Header -->
+    <rect x="0" y="0" width="600" height="80" rx="20" fill="url(#green-gradient)" opacity="0.2"/>
+    <rect x="0" y="60" width="600" height="20" fill="url(#green-gradient)" opacity="0.2"/>
+
+    <circle cx="50" cy="40" r="25" fill="url(#green-gradient)"/>
+    <text x="50" y="48" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#ffffff">
+      3
+    </text>
+
+    <text x="90" y="35" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#10b981">
+      DevOps Tasks
+    </text>
+    <text x="90" y="60" font-family="'Inter', sans-serif" font-size="14" fill="#9ca3af">
+      Docker and deployment
+    </text>
+
+    <!-- Example -->
+    <g transform="translate(30, 110)">
+      <rect x="0" y="0" width="540" height="190" rx="12" fill="#0a0a0a" opacity="0.5"/>
+      <text x="20" y="30" font-family="'Inter', sans-serif" font-weight="600" font-size="14" fill="#ffffff">
+        Deploy with Environment Variables
+      </text>
+
+      <rect x="20" y="50" width="500" height="35" rx="8" fill="#0a0a0a" stroke="url(#green-gradient)" stroke-width="1"/>
+      <text x="270" y="73" text-anchor="middle" font-family="'Fira Code', monospace" font-size="10" fill="#10b981">
+        gh copilot suggest "deploy docker container with .env file"
+      </text>
+
+      <text x="20" y="105" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        → Builds Docker image from Dockerfile
+      </text>
+      <text x="20" y="125" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        → Uses --env-file to load variables
+      </text>
+      <text x="20" y="145" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        → Runs container with mapped ports
+      </text>
+      <text x="20" y="165" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        → Includes -d flag for detached mode
+      </text>
+    </g>
+  </g>
+
+  <!-- Bottom Tips -->
+  <g transform="translate(80, 810)">
+    <rect x="0" y="0" width="1240" height="70" rx="12" fill="#1a1a2e" stroke="url(#github-gradient)" stroke-width="2"/>
+    <text x="620" y="30" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="16" fill="#58a6ff">
+      💡 Pro Tips
+    </text>
+    <text x="620" y="52" text-anchor="middle" font-family="'Inter', sans-serif" font-size="13" fill="#e0e0e0">
+      Use natural language • Ask for explanations • Iterate on suggestions • Learn from generated commands
+    </text>
+  </g>
+</svg>

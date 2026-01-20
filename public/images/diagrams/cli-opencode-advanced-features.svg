@@ -1,0 +1,338 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="cli-opencode-advanced-features-title cli-opencode-advanced-features-desc">
+  <title id="cli-opencode-advanced-features-title">OpenCode CLI Advanced Features</title>
+  <desc id="cli-opencode-advanced-features-desc">Advanced capabilities of OpenCode CLI including workflow automation, custom agents, and extensibility options.</desc>
+
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a2e;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Cyan Gradient -->
+    <linearGradient id="cyan-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0099cc;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Purple Gradient -->
+    <linearGradient id="purple-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Green Gradient -->
+    <linearGradient id="green-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Orange Gradient -->
+    <linearGradient id="orange-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="900" fill="url(#bg-gradient)"/>
+
+  <!-- Title -->
+  <text x="700" y="50" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="36" fill="#ffffff">
+    Advanced Features
+  </text>
+  <text x="700" y="85" text-anchor="middle" font-family="'Inter', sans-serif" font-size="18" fill="#9ca3af">
+    Unlock the full power of OpenCode CLI for power users
+  </text>
+
+  <!-- Feature 1: Workflow Automation -->
+  <g transform="translate(100, 140)">
+    <rect x="0" y="0" width="560" height="350" rx="16" fill="#1a1a2e" stroke="url(#cyan-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <rect x="0" y="0" width="560" height="60" rx="16" fill="url(#cyan-gradient)" opacity="0.2"/>
+    <rect x="0" y="40" width="560" height="20" fill="url(#cyan-gradient)" opacity="0.2"/>
+
+    <circle cx="40" cy="30" r="22" fill="url(#cyan-gradient)"/>
+    <text x="40" y="37" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#ffffff">
+      1
+    </text>
+
+    <text x="80" y="35" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#00d9ff">
+      Workflow Automation
+    </text>
+
+    <g transform="translate(30, 85)">
+      <text x="0" y="0" font-family="'Inter', sans-serif" font-size="13" fill="#e0e0e0">
+        <tspan x="0" dy="0">Create automated workflows that chain multiple operations:</tspan>
+      </text>
+
+      <g transform="translate(0, 35)">
+        <rect x="0" y="0" width="500" height="70" rx="10" fill="#0a0a0a" opacity="0.5"/>
+        <text x="250" y="25" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#00d9ff">
+          Example: Code Review Workflow
+        </text>
+        <text x="15" y="45" font-family="'Fira Code', monospace" font-size="10" fill="#9ca3af">
+          1. Analyze changes → 2. Run tests → 3. Check style → 4. Generate report
+        </text>
+        <text x="15" y="60" font-family="'Fira Code', monospace" font-size="10" fill="#10b981">
+          opcode workflow run code-review --branch feature/new-auth
+        </text>
+      </g>
+    </g>
+
+    <g transform="translate(30, 210)">
+      <text x="0" y="0" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#ffffff">
+        Capabilities:
+      </text>
+
+      <g transform="translate(0, 25)">
+        <circle cx="10" cy="0" r="8" fill="#10b981"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">
+          Define custom pipelines in YAML
+        </text>
+      </g>
+
+      <g transform="translate(0, 50)">
+        <circle cx="10" cy="0" r="8" fill="#10b981"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">
+          Trigger on git events (pre-commit, pre-push)
+        </text>
+      </g>
+
+      <g transform="translate(0, 75)">
+        <circle cx="10" cy="0" r="8" fill="#10b981"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">
+          Run in CI/CD pipelines
+        </text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Feature 2: Custom Agents -->
+  <g transform="translate(740, 140)">
+    <rect x="0" y="0" width="560" height="350" rx="16" fill="#1a1a2e" stroke="url(#purple-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <rect x="0" y="0" width="560" height="60" rx="16" fill="url(#purple-gradient)" opacity="0.2"/>
+    <rect x="0" y="40" width="560" height="20" fill="url(#purple-gradient)" opacity="0.2"/>
+
+    <circle cx="40" cy="30" r="22" fill="url(#purple-gradient)"/>
+    <text x="40" y="37" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#ffffff">
+      2
+    </text>
+
+    <text x="80" y="35" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#a855f7">
+      Custom AI Agents
+    </text>
+
+    <g transform="translate(30, 85)">
+      <text x="0" y="0" font-family="'Inter', sans-serif" font-size="13" fill="#e0e0e0">
+        <tspan x="0" dy="0">Build specialized agents for your specific needs:</tspan>
+      </text>
+
+      <g transform="translate(0, 35)">
+        <rect x="0" y="0" width="500" height="70" rx="10" fill="#0a0a0a" opacity="0.5"/>
+        <text x="250" y="25" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#a855f7">
+          Example: Database Migration Agent
+        </text>
+        <text x="15" y="45" font-family="'Fira Code', monospace" font-size="10" fill="#9ca3af">
+          Specializes in SQL, schema changes, data validation
+        </text>
+        <text x="15" y="60" font-family="'Fira Code', monospace" font-size="10" fill="#10b981">
+          opcode agent create db-migration --specialist
+        </text>
+      </g>
+    </g>
+
+    <g transform="translate(30, 210)">
+      <text x="0" y="0" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#ffffff">
+        Agent Features:
+      </text>
+
+      <g transform="translate(0, 25)">
+        <circle cx="10" cy="0" r="8" fill="#10b981"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">
+          Define personality &amp; expertise
+        </text>
+      </g>
+
+      <g transform="translate(0, 50)">
+        <circle cx="10" cy="0" r="8" fill="#10b981"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">
+          Custom tools &amp; API integrations
+        </text>
+      </g>
+
+      <g transform="translate(0, 75)">
+        <circle cx="10" cy="0" r="8" fill="#10b981"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">
+          Share agents with your team
+        </text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Feature 3: Extensibility -->
+  <g transform="translate(100, 520)">
+    <rect x="0" y="0" width="560" height="280" rx="16" fill="#1a1a2e" stroke="url(#green-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <rect x="0" y="0" width="560" height="60" rx="16" fill="url(#green-gradient)" opacity="0.2"/>
+    <rect x="0" y="40" width="560" height="20" fill="url(#green-gradient)" opacity="0.2"/>
+
+    <circle cx="40" cy="30" r="22" fill="url(#green-gradient)"/>
+    <text x="40" y="37" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#ffffff">
+      3
+    </text>
+
+    <text x="80" y="35" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#10b981">
+      Plugin System
+    </text>
+
+    <g transform="translate(30, 85)">
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="240" height="150" rx="10" fill="#0a0a0a" opacity="0.5"/>
+        <circle cx="120" cy="35" r="20" fill="url(#green-gradient)"/>
+        <text x="120" y="41" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="12" fill="#ffffff">
+          API
+        </text>
+
+        <text x="120" y="70" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#10b981">
+          Plugin API
+        </text>
+
+        <text x="120" y="95" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          Extend core functionality
+        </text>
+        <text x="120" y="115" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          Add commands, hooks
+        </text>
+        <text x="120" y="135" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          Custom data sources
+        </text>
+      </g>
+
+      <g transform="translate(270, 0)">
+        <rect x="0" y="0" width="240" height="150" rx="10" fill="#0a0a0a" opacity="0.5"/>
+        <circle cx="120" cy="35" r="20" fill="#f59e0b"/>
+        <text x="120" y="41" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="12" fill="#ffffff">
+          WEB
+        </text>
+
+        <text x="120" y="70" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#f59e0b">
+          Webhooks
+        </text>
+
+        <text x="120" y="95" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          Trigger on events
+        </text>
+        <text x="120" y="115" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          GitHub, GitLab, Jira
+        </text>
+        <text x="120" y="135" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          Automate workflows
+        </text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Feature 4: Team Features -->
+  <g transform="translate(740, 520)">
+    <rect x="0" y="0" width="560" height="280" rx="16" fill="#1a1a2e" stroke="url(#orange-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <rect x="0" y="0" width="560" height="60" rx="16" fill="url(#orange-gradient)" opacity="0.2"/>
+    <rect x="0" y="40" width="560" height="20" fill="url(#orange-gradient)" opacity="0.2"/>
+
+    <circle cx="40" cy="30" r="22" fill="url(#orange-gradient)"/>
+    <text x="40" y="37" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#ffffff">
+      4
+    </text>
+
+    <text x="80" y="35" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#f59e0b">
+      Team Collaboration
+    </text>
+
+    <g transform="translate(30, 85)">
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="160" height="150" rx="10" fill="#0a0a0a" opacity="0.5"/>
+        <circle cx="80" cy="35" r="20" fill="url(#orange-gradient)"/>
+        <text x="80" y="41" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#ffffff">
+          👥
+        </text>
+
+        <text x="80" y="70" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#f59e0b">
+          Shared Workflows
+        </text>
+
+        <text x="80" y="95" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          Team-wide configs
+        </text>
+        <text x="80" y="115" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          Standard practices
+        </text>
+        <text x="80" y="135" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          Consistent output
+        </text>
+      </g>
+
+      <g transform="translate(180, 0)">
+        <rect x="0" y="0" width="160" height="150" rx="10" fill="#0a0a0a" opacity="0.5"/>
+        <circle cx="80" cy="35" r="20" fill="#ec4899"/>
+        <text x="80" y="41" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#ffffff">
+          📊
+        </text>
+
+        <text x="80" y="70" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#ec4899">
+          Analytics
+        </text>
+
+        <text x="80" y="95" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          Usage insights
+        </text>
+        <text x="80" y="115" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          Team productivity
+        </text>
+        <text x="80" y="135" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          Cost tracking
+        </text>
+      </g>
+
+      <g transform="translate(360, 0)">
+        <rect x="0" y="0" width="160" height="150" rx="10" fill="#0a0a0a" opacity="0.5"/>
+        <circle cx="80" cy="35" r="20" fill="#06b6d4"/>
+        <text x="80" y="41" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#ffffff">
+          🔒
+        </text>
+
+        <text x="80" y="70" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#06b6d4">
+          RBAC
+        </text>
+
+        <text x="80" y="95" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          Role-based access
+        </text>
+        <text x="80" y="115" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          Audit logs
+        </text>
+        <text x="80" y="135" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          Compliance ready
+        </text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Bottom CTA -->
+  <g transform="translate(200, 830)">
+    <rect x="0" y="0" width="1000" height="50" rx="10" fill="url(#cyan-gradient)" opacity="0.1" stroke="#00d9ff" stroke-width="1"/>
+    <text x="500" y="32" text-anchor="middle" font-family="'Inter', sans-serif" font-size="14" fill="#00d9ff">
+      🚀 Ready to go advanced? Run: opcode advanced --enable or visit docs.opencode.dev/advanced
+    </text>
+  </g>
+</svg>

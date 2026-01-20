@@ -1,0 +1,242 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" role="img" aria-labelledby="cli-claude-best-practices-title cli-claude-best-practices-desc">
+  <title id="cli-claude-best-practices-title">Claude CLI Best Practices</title>
+  <desc id="cli-claude-best-practices-desc">A checklist showing DO's and DON'Ts when using Claude CLI for best results.</desc>
+
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a2e;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Green Gradient for DO's -->
+    <linearGradient id="green-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Red Gradient for DON'Ts -->
+    <linearGradient id="red-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="1000" fill="url(#bg-gradient)"/>
+
+  <!-- Title -->
+  <text x="700" y="60" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="40" fill="#ffffff">
+    Best Practices
+  </text>
+  <text x="700" y="95" text-anchor="middle" font-family="'Inter', sans-serif" font-size="18" fill="#9ca3af">
+    Follow these guidelines for the best experience with Claude CLI
+  </text>
+
+  <!-- DO's Section -->
+  <g transform="translate(50, 140)">
+    <!-- Header -->
+    <rect x="0" y="0" width="600" height="60" rx="12" fill="url(#green-gradient)" filter="url(#glow)"/>
+    <text x="300" y="40" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="28" fill="#ffffff">
+      ✅ DO
+    </text>
+
+    <!-- DO Items -->
+    <g transform="translate(0, 80)">
+      <!-- Item 1 -->
+      <rect x="0" y="0" width="600" height="110" rx="12" fill="#1a1a2e" stroke="url(#green-gradient)" stroke-width="2"/>
+      <circle cx="40" cy="55" r="25" fill="url(#green-gradient)"/>
+      <text x="40" y="62" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#ffffff">1</text>
+      <text x="85" y="40" font-family="'Inter', sans-serif" font-weight="600" font-size="18" fill="#10b981">
+        Provide Clear Context
+      </text>
+      <text x="85" y="65" font-family="'Inter', sans-serif" font-size="14" fill="#9ca3af">
+        Give background info about your project
+      </text>
+      <text x="85" y="85" font-family="'Inter', sans-serif" font-size="14" fill="#9ca3af">
+        Include relevant files and describe goals
+      </text>
+    </g>
+
+    <g transform="translate(0, 205)">
+      <!-- Item 2 -->
+      <rect x="0" y="0" width="600" height="110" rx="12" fill="#1a1a2e" stroke="url(#green-gradient)" stroke-width="2"/>
+      <circle cx="40" cy="55" r="25" fill="url(#green-gradient)"/>
+      <text x="40" y="62" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#ffffff">2</text>
+      <text x="85" y="40" font-family="'Inter', sans-serif" font-weight="600" font-size="18" fill="#10b981">
+        Use File References
+      </text>
+      <text x="85" y="65" font-family="'Inter', sans-serif" font-size="14" fill="#9ca3af">
+        Reference specific files with --files flag
+      </text>
+      <text x="85" y="85" font-family="'Inter', sans-serif" font-size="14" fill="#9ca3af">
+        Helps Claude understand your codebase
+      </text>
+    </g>
+
+    <g transform="translate(0, 330)">
+      <!-- Item 3 -->
+      <rect x="0" y="0" width="600" height="110" rx="12" fill="#1a1a2e" stroke="url(#green-gradient)" stroke-width="2"/>
+      <circle cx="40" cy="55" r="25" fill="url(#green-gradient)"/>
+      <text x="40" y="62" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#ffffff">3</text>
+      <text x="85" y="40" font-family="'Inter', sans-serif" font-weight="600" font-size="18" fill="#10b981">
+        Iterate on Responses
+      </text>
+      <text x="85" y="65" font-family="'Inter', sans-serif" font-size="14" fill="#9ca3af">
+        Refine prompts based on answers
+      </text>
+      <text x="85" y="85" font-family="'Inter', sans-serif" font-size="14" fill="#9ca3af">
+        Build on previous conversation context
+      </text>
+    </g>
+
+    <g transform="translate(0, 455)">
+      <!-- Item 4 -->
+      <rect x="0" y="0" width="600" height="110" rx="12" fill="#1a1a2e" stroke="url(#green-gradient)" stroke-width="2"/>
+      <circle cx="40" cy="55" r="25" fill="url(#green-gradient)"/>
+      <text x="40" y="62" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#ffffff">4</text>
+      <text x="85" y="40" font-family="'Inter', sans-serif" font-weight="600" font-size="18" fill="#10b981">
+        Review Generated Code
+      </text>
+      <text x="85" y="65" font-family="'Inter', sans-serif" font-size="14" fill="#9ca3af">
+        Always review before using in production
+      </text>
+      <text x="85" y="85" font-family="'Inter', sans-serif" font-size="14" fill="#9ca3af">
+        Test thoroughly and understand what it does
+      </text>
+    </g>
+
+    <g transform="translate(0, 580)">
+      <!-- Item 5 -->
+      <rect x="0" y="0" width="600" height="110" rx="12" fill="#1a1a2e" stroke="url(#green-gradient)" stroke-width="2"/>
+      <circle cx="40" cy="55" r="25" fill="url(#green-gradient)"/>
+      <text x="40" y="62" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#ffffff">5</text>
+      <text x="85" y="40" font-family="'Inter', sans-serif" font-weight="600" font-size="18" fill="#10b981">
+        Use Appropriate Model
+      </text>
+      <text x="85" y="65" font-family="'Inter', sans-serif" font-size="14" fill="#9ca3af">
+        Haiku for speed, Sonnet for balance, Opus for quality
+      </text>
+      <text x="85" y="85" font-family="'Inter', sans-serif" font-size="14" fill="#9ca3af">
+        Choose based on task complexity
+      </text>
+    </g>
+  </g>
+
+  <!-- DON'Ts Section -->
+  <g transform="translate(750, 140)">
+    <!-- Header -->
+    <rect x="0" y="0" width="600" height="60" rx="12" fill="url(#red-gradient)" filter="url(#glow)"/>
+    <text x="300" y="40" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="28" fill="#ffffff">
+      ❌ DON'T
+    </text>
+
+    <!-- DON'T Items -->
+    <g transform="translate(0, 80)">
+      <!-- Item 1 -->
+      <rect x="0" y="0" width="600" height="110" rx="12" fill="#1a1a2e" stroke="url(#red-gradient)" stroke-width="2"/>
+      <circle cx="40" cy="55" r="25" fill="url(#red-gradient)"/>
+      <text x="40" y="60" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="20" fill="#ffffff">✕</text>
+      <text x="85" y="40" font-family="'Inter', sans-serif" font-weight="600" font-size="18" fill="#ef4444">
+        Copy Without Understanding
+      </text>
+      <text x="85" y="65" font-family="'Inter', sans-serif" font-size="14" fill="#9ca3af">
+        Don't blindly paste code you don't understand
+      </text>
+      <text x="85" y="85" font-family="'Inter', sans-serif" font-size="14" fill="#9ca3af">
+        Take time to learn what the code does
+      </text>
+    </g>
+
+    <g transform="translate(0, 205)">
+      <!-- Item 2 -->
+      <rect x="0" y="0" width="600" height="110" rx="12" fill="#1a1a2e" stroke="url(#red-gradient)" stroke-width="2"/>
+      <circle cx="40" cy="55" r="25" fill="url(#red-gradient)"/>
+      <text x="40" y="60" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="20" fill="#ffffff">✕</text>
+      <text x="85" y="40" font-family="'Inter', sans-serif" font-weight="600" font-size="18" fill="#ef4444">
+        Share Sensitive Code
+      </text>
+      <text x="85" y="65" font-family="'Inter', sans-serif" font-size="14" fill="#9ca3af">
+        Don't paste API keys, passwords, or secrets
+      </text>
+      <text x="85" y="85" font-family="'Inter', sans-serif" font-size="14" fill="#9ca3af">
+        Redact sensitive information before sharing
+      </text>
+    </g>
+
+    <g transform="translate(0, 330)">
+      <!-- Item 3 -->
+      <rect x="0" y="0" width="600" height="110" rx="12" fill="#1a1a2e" stroke="url(#red-gradient)" stroke-width="2"/>
+      <circle cx="40" cy="55" r="25" fill="url(#red-gradient)"/>
+      <text x="40" y="60" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="20" fill="#ffffff">✕</text>
+      <text x="85" y="40" font-family="'Inter', sans-serif" font-weight="600" font-size="18" fill="#ef4444">
+        Expect Perfection
+      </text>
+      <text x="85" y="65" font-family="'Inter', sans-serif" font-size="14" fill="#9ca3af">
+        First response may not be perfect
+      </text>
+      <text x="85" y="85" font-family="'Inter', sans-serif" font-size="14" fill="#9ca3af">
+        Iterate and refine to get better results
+      </text>
+    </g>
+
+    <g transform="translate(0, 455)">
+      <!-- Item 4 -->
+      <rect x="0" y="0" width="600" height="110" rx="12" fill="#1a1a2e" stroke="url(#red-gradient)" stroke-width="2"/>
+      <circle cx="40" cy="55" r="25" fill="url(#red-gradient)"/>
+      <text x="40" y="60" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="20" fill="#ffffff">✕</text>
+      <text x="85" y="40" font-family="'Inter', sans-serif" font-weight="600" font-size="18" fill="#ef4444">
+        Skip Testing
+      </text>
+      <text x="85" y="65" font-family="'Inter', sans-serif" font-size="14" fill="#9ca3af">
+        Always test AI-generated code
+      </text>
+      <text x="85" y="85" font-family="'Inter', sans-serif" font-size="14" fill="#9ca3af">
+        Edge cases and errors may exist
+      </text>
+    </g>
+
+    <g transform="translate(0, 580)">
+      <!-- Item 5 -->
+      <rect x="0" y="0" width="600" height="110" rx="12" fill="#1a1a2e" stroke="url(#red-gradient)" stroke-width="2"/>
+      <circle cx="40" cy="55" r="25" fill="url(#red-gradient)"/>
+      <text x="40" y="60" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="20" fill="#ffffff">✕</text>
+      <text x="85" y="40" font-family="'Inter', sans-serif" font-weight="600" font-size="18" fill="#ef4444">
+        Use Without Permission
+      </text>
+      <text x="85" y="65" font-family="'Inter', sans-serif" font-size="14" fill="#9ca3af">
+        Don't use for proprietary code without approval
+      </text>
+      <text x="85" y="85" font-family="'Inter', sans-serif" font-size="14" fill="#9ca3af">
+        Check your company's AI usage policy
+      </text>
+    </g>
+  </g>
+
+  <!-- Bottom Tips Section -->
+  <g transform="translate(200, 860)">
+    <rect x="0" y="0" width="1000" height="120" rx="16" fill="#1a1a2e" stroke="url(#green-gradient)" stroke-width="2" filter="url(#glow)"/>
+
+    <text x="500" y="35" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="20" fill="#10b981">
+      💡 Pro Tips
+    </text>
+
+    <g transform="translate(50, 55)">
+      <text x="0" y="0" font-family="'Inter', sans-serif" font-size="14" fill="#e0e0e0">
+        <tspan x="0" dy="0">• Start with claude chat for exploratory work</tspan>
+        <tspan x="450" dy="0">• Use specific file paths for better context</tspan>
+        <tspan x="0" dy="25">• Enable .claude-rules for project-specific guidelines</tspan>
+        <tspan x="450" dy="0">• Review privacy policy before sharing code</tspan>
+      </text>
+    </g>
+  </g>
+</svg>

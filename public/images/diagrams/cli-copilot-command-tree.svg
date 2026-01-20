@@ -1,0 +1,226 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" role="img" aria-labelledby="cli-copilot-command-tree-title cli-copilot-command-tree-desc">
+  <title id="cli-copilot-command-tree-title">GitHub Copilot CLI Command Tree</title>
+  <desc id="cli-copilot-command-tree-desc">A visual tree structure showing all GitHub Copilot CLI commands and their options.</desc>
+
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a2e;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- GitHub Gradient -->
+    <linearGradient id="github-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#58a6ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1f6feb;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="1000" fill="url(#bg-gradient)"/>
+
+  <!-- Title -->
+  <text x="700" y="50" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="36" fill="#ffffff">
+    Command Reference
+  </text>
+  <text x="700" y="85" text-anchor="middle" font-family="'Inter', sans-serif" font-size="18" fill="#9ca3af">
+    All GitHub Copilot CLI commands at a glance
+  </text>
+
+  <!-- Root Command -->
+  <g transform="translate(700, 150)">
+    <rect x="-150" y="-35" width="300" height="70" rx="12" fill="url(#github-gradient)" filter="url(#glow)"/>
+    <text x="0" y="8" text-anchor="middle" font-family="'Fira Code', monospace" font-weight="700" font-size="18" fill="#ffffff">
+      gh copilot
+    </text>
+  </g>
+
+  <!-- Connection Lines -->
+  <g stroke="url(#github-gradient)" stroke-width="2" fill="none">
+    <!-- From root to suggest -->
+    <path d="M 700 185 L 700 240 L 350 240 L 350 280"/>
+    <!-- From root to explain -->
+    <path d="M 700 185 L 700 280"/>
+    <!-- From root to alias -->
+    <path d="M 700 185 L 700 240 L 1050 240 L 1050 280"/>
+  </g>
+
+  <!-- Suggest Branch -->
+  <g transform="translate(350, 320)">
+    <!-- Main Command -->
+    <rect x="-100" y="-30" width="200" height="60" rx="10" fill="#1a1a2e" stroke="url(#github-gradient)" stroke-width="2"/>
+    <text x="0" y="5" text-anchor="middle" font-family="'Fira Code', monospace" font-weight="600" font-size="14" fill="#58a6ff">
+      suggest
+    </text>
+
+    <!-- Description -->
+    <text x="0" y="45" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      Generate commands
+    </text>
+
+    <!-- Options -->
+    <g transform="translate(0, 80)">
+      <rect x="-90" y="-20" width="180" height="40" rx="8" fill="#0a0a0a" stroke="#58a6ff" stroke-width="1"/>
+      <text x="0" y="5" text-anchor="middle" font-family="'Fira Code', monospace" font-size="10" fill="#9ca3af">
+        --shell &lt;type&gt;
+      </text>
+    </g>
+
+    <g transform="translate(0, 140)">
+      <rect x="-90" y="-20" width="180" height="40" rx="8" fill="#0a0a0a" stroke="#58a6ff" stroke-width="1"/>
+      <text x="0" y="5" text-anchor="middle" font-family="'Fira Code', monospace" font-size="10" fill="#9ca3af">
+        --dry-run
+      </text>
+    </g>
+
+    <!-- Example -->
+    <g transform="translate(0, 200)">
+      <rect x="-100" y="-25" width="200" height="50" rx="8" fill="#0a0a0a" stroke="#10b981" stroke-width="1"/>
+      <text x="0" y="0" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#10b981">
+        Example:
+      </text>
+      <text x="0" y="16" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" fill="#e0e0e0">
+        "compress images"
+      </text>
+    </g>
+  </g>
+
+  <!-- Explain Branch -->
+  <g transform="translate(700, 320)">
+    <!-- Main Command -->
+    <rect x="-100" y="-30" width="200" height="60" rx="10" fill="#1a1a2e" stroke="url(#github-gradient)" stroke-width="2"/>
+    <text x="0" y="5" text-anchor="middle" font-family="'Fira Code', monospace" font-weight="600" font-size="14" fill="#58a6ff">
+      explain
+    </text>
+
+    <!-- Description -->
+    <text x="0" y="45" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      Explain commands
+    </text>
+
+    <!-- Options -->
+    <g transform="translate(0, 80)">
+      <rect x="-90" y="-20" width="180" height="40" rx="8" fill="#0a0a0a" stroke="#58a6ff" stroke-width="1"/>
+      <text x="0" y="5" text-anchor="middle" font-family="'Fira Code', monospace" font-size="10" fill="#9ca3af">
+        --detailed
+      </text>
+    </g>
+
+    <g transform="translate(0, 140)">
+      <rect x="-90" y="-20" width="180" height="40" rx="8" fill="#0a0a0a" stroke="#58a6ff" stroke-width="1"/>
+      <text x="0" y="5" text-anchor="middle" font-family="'Fira Code', monospace" font-size="10" fill="#9ca3af">
+        --output-format
+      </text>
+    </g>
+
+    <!-- Example -->
+    <g transform="translate(0, 200)">
+      <rect x="-100" y="-25" width="200" height="50" rx="8" fill="#0a0a0a" stroke="#10b981" stroke-width="1"/>
+      <text x="0" y="0" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#10b981">
+        Example:
+      </text>
+      <text x="0" y="16" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" fill="#e0e0e0">
+        "tar -czf file.tar.gz"
+      </text>
+    </g>
+  </g>
+
+  <!-- Alias Branch -->
+  <g transform="translate(1050, 320)">
+    <!-- Main Command -->
+    <rect x="-100" y="-30" width="200" height="60" rx="10" fill="#1a1a2e" stroke="url(#github-gradient)" stroke-width="2"/>
+    <text x="0" y="5" text-anchor="middle" font-family="'Fira Code', monospace" font-weight="600" font-size="14" fill="#58a6ff">
+      alias
+    </text>
+
+    <!-- Description -->
+    <text x="0" y="45" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      Create shortcuts
+    </text>
+
+    <!-- Options -->
+    <g transform="translate(0, 80)">
+      <rect x="-90" y="-20" width="180" height="40" rx="8" fill="#0a0a0a" stroke="#58a6ff" stroke-width="1"/>
+      <text x="0" y="5" text-anchor="middle" font-family="'Fira Code', monospace" font-size="10" fill="#9ca3af">
+        --shell
+      </text>
+    </g>
+
+    <!-- Example -->
+    <g transform="translate(0, 140)">
+      <rect x="-100" y="-25" width="200" height="50" rx="8" fill="#0a0a0a" stroke="#10b981" stroke-width="1"/>
+      <text x="0" y="0" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#10b981">
+        Bash/Zsh:
+      </text>
+      <text x="0" y="16" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" fill="#e0e0e0">
+        alias cs='gh copilot suggest'
+      </text>
+    </g>
+  </g>
+
+  <!-- Bottom Use Cases -->
+  <g transform="translate(100, 650)">
+    <rect x="0" y="0" width="380" height="200" rx="16" fill="#1a1a2e" stroke="url(#github-gradient)" stroke-width="2"/>
+    <text x="190" y="30" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="16" fill="#58a6ff">
+      System Administration
+    </text>
+    <g transform="translate(20, 50)">
+      <text x="0" y="0" font-family="'Fira Code', monospace" font-size="11" fill="#e0e0e0">
+        <tspan x="0" dy="0">cs "find large files"</tspan>
+        <tspan x="0" dy="20">cs "kill process on port 3000"</tspan>
+        <tspan x="0" dy="20">cs "list disk usage"</tspan>
+        <tspan x="0" dy="20">cs "check running services"</tspan>
+      </text>
+    </g>
+  </g>
+
+  <g transform="translate(510, 650)">
+    <rect x="0" y="0" width="380" height="200" rx="16" fill="#1a1a2e" stroke="url(#github-gradient)" stroke-width="2"/>
+    <text x="190" y="30" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="16" fill="#58a6ff">
+      Git Workflows
+    </text>
+    <g transform="translate(20, 50)">
+      <text x="0" y="0" font-family="'Fira Code', monospace" font-size="11" fill="#e0e0e0">
+        <tspan x="0" dy="0">cs "undo last commit"</tspan>
+        <tspan x="0" dy="20">cs "create new branch"</tspan>
+        <tspan x="0" dy="20">cs "merge branches safely"</tspan>
+        <tspan x="0" dy="20">cs "stash uncommitted changes"</tspan>
+      </text>
+    </g>
+  </g>
+
+  <g transform="translate(920, 650)">
+    <rect x="0" y="0" width="380" height="200" rx="16" fill="#1a1a2e" stroke="url(#github-gradient)" stroke-width="2"/>
+    <text x="190" y="30" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="16" fill="#58a6ff">
+      DevOps &amp; Docker
+    </text>
+    <g transform="translate(20, 50)">
+      <text x="0" y="0" font-family="'Fira Code', monospace" font-size="11" fill="#e0e0e0">
+        <tspan x="0" dy="0">cs "deploy container"</tspan>
+        <tspan x="0" dy="20">cs "build docker image"</tspan>
+        <tspan x="0" dy="20">cs "check container logs"</tspan>
+        <tspan x="0" dy="20">cs "restart nginx server"</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- Quick Reference -->
+  <g transform="translate(100, 880)">
+    <rect x="0" y="0" width="1200" height="80" rx="12" fill="#1a1a2e" stroke="#10b981" stroke-width="2"/>
+    <text x="40" y="30" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#10b981">
+      💡 Quick Tip:
+    </text>
+    <text x="40" y="55" font-family="'Inter', sans-serif" font-size="13" fill="#e0e0e0">
+      Create aliases in your shell config: <tspan font-family="'Fira Code', monospace" fill="#58a6ff">alias cs='gh copilot suggest'</tspan> and <tspan font-family="'Fira Code', monospace" fill="#58a6ff">alias ce='gh copilot explain'</tspan>
+    </text>
+  </g>
+</svg>

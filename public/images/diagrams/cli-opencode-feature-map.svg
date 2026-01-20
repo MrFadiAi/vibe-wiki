@@ -1,0 +1,476 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="cli-opencode-feature-map-title cli-opencode-feature-map-desc">
+  <title id="cli-opencode-feature-map-title">OpenCode CLI Feature Map</title>
+  <desc id="cli-opencode-feature-map-desc">A comprehensive map of all OpenCode CLI features organized by category: Core Features, AI Capabilities, Developer Tools, and Integrations.</desc>
+
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a2e;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Cyan Gradient -->
+    <linearGradient id="cyan-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0099cc;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Purple Gradient -->
+    <linearGradient id="purple-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Orange Gradient -->
+    <linearGradient id="orange-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Green Gradient -->
+    <linearGradient id="green-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="900" fill="url(#bg-gradient)"/>
+
+  <!-- Title -->
+  <text x="700" y="60" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="36" fill="#ffffff">
+    Feature Map
+  </text>
+  <text x="700" y="95" text-anchor="middle" font-family="'Inter', sans-serif" font-size="18" fill="#9ca3af">
+    Everything OpenCode CLI can do for you
+  </text>
+
+  <!-- Core Features Quadrant -->
+  <g transform="translate(100, 140)">
+    <rect x="0" y="0" width="550" height="320" rx="16" fill="#1a1a2e" stroke="url(#cyan-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <rect x="0" y="0" width="550" height="60" rx="16" fill="url(#cyan-gradient)" opacity="0.2"/>
+    <rect x="0" y="40" width="550" height="20" fill="url(#cyan-gradient)" opacity="0.2"/>
+
+    <text x="275" y="38" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#00d9ff">
+      Core Features
+    </text>
+
+    <g transform="translate(30, 85)">
+      <!-- Feature 1 -->
+      <rect x="0" y="0" width="240" height="100" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <circle cx="30" cy="25" r="18" fill="url(#cyan-gradient)"/>
+      <text x="30" y="31" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#ffffff">
+        Q
+      </text>
+      <text x="60" y="25" font-family="'Inter', sans-serif" font-weight="600" font-size="14" fill="#00d9ff">
+        opcode ask
+      </text>
+      <text x="60" y="45" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        Quick Q&amp;A mode
+      </text>
+      <text x="15" y="75" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        Get instant answers to
+      </text>
+      <text x="15" y="90" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        coding questions
+      </text>
+    </g>
+
+    <g transform="translate(290, 85)">
+      <!-- Feature 2 -->
+      <rect x="0" y="0" width="240" height="100" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <circle cx="30" cy="25" r="18" fill="url(#cyan-gradient)"/>
+      <text x="30" y="31" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#ffffff">
+        G
+      </text>
+      <text x="60" y="25" font-family="'Inter', sans-serif" font-weight="600" font-size="14" fill="#00d9ff">
+        opcode gen
+      </text>
+      <text x="60" y="45" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        Code generation
+      </text>
+      <text x="15" y="75" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        Generate files,
+      </text>
+      <text x="15" y="90" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        components, functions
+      </text>
+    </g>
+
+    <g transform="translate(30, 200)">
+      <!-- Feature 3 -->
+      <rect x="0" y="0" width="240" height="100" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <circle cx="30" cy="25" r="18" fill="url(#cyan-gradient)"/>
+      <text x="30" y="31" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#ffffff">
+        C
+      </text>
+      <text x="60" y="25" font-family="'Inter', sans-serif" font-weight="600" font-size="14" fill="#00d9ff">
+        opcode chat
+      </text>
+      <text x="60" y="45" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        Interactive chat
+      </text>
+      <text x="15" y="75" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        Conversational coding
+      </text>
+      <text x="15" y="90" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        session
+      </text>
+    </g>
+
+    <g transform="translate(290, 200)">
+      <!-- Feature 4 -->
+      <rect x="0" y="0" width="240" height="100" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <circle cx="30" cy="25" r="18" fill="url(#cyan-gradient)"/>
+      <text x="30" y="31" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#ffffff">
+        A
+      </text>
+      <text x="60" y="25" font-family="'Inter', sans-serif" font-weight="600" font-size="14" fill="#00d9ff">
+        opcode agent
+      </text>
+      <text x="60" y="45" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        Multi-agent mode
+      </text>
+      <text x="15" y="75" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        Collaborative agents
+      </text>
+      <text x="15" y="90" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        for complex tasks
+      </text>
+    </g>
+  </g>
+
+  <!-- AI Capabilities Quadrant -->
+  <g transform="translate(750, 140)">
+    <rect x="0" y="0" width="550" height="320" rx="16" fill="#1a1a2e" stroke="url(#purple-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <rect x="0" y="0" width="550" height="60" rx="16" fill="url(#purple-gradient)" opacity="0.2"/>
+    <rect x="0" y="40" width="550" height="20" fill="url(#purple-gradient)" opacity="0.2"/>
+
+    <text x="275" y="38" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#a855f7">
+      AI Capabilities
+    </text>
+
+    <g transform="translate(30, 85)">
+      <rect x="0" y="0" width="240" height="100" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <circle cx="30" cy="25" r="18" fill="url(#purple-gradient)"/>
+      <text x="30" y="31" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="12" fill="#ffffff">
+        M
+      </text>
+      <text x="60" y="25" font-family="'Inter', sans-serif" font-weight="600" font-size="14" fill="#a855f7">
+        Multi-Model Support
+      </text>
+      <text x="60" y="45" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        GPT-4, Claude, Gemini
+      </text>
+      <text x="15" y="75" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        Use the best model for
+      </text>
+      <text x="15" y="90" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        each task
+      </text>
+    </g>
+
+    <g transform="translate(290, 85)">
+      <rect x="0" y="0" width="240" height="100" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <circle cx="30" cy="25" r="18" fill="url(#purple-gradient)"/>
+      <text x="30" y="31" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="12" fill="#ffffff">
+        C
+      </text>
+      <text x="60" y="25" font-family="'Inter', sans-serif" font-weight="600" font-size="14" fill="#a855f7">
+        Context Awareness
+      </text>
+      <text x="60" y="45" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        Understands your codebase
+      </text>
+      <text x="15" y="75" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        Reads files, git history,
+      </text>
+      <text x="15" y="90" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        documentation
+      </text>
+    </g>
+
+    <g transform="translate(30, 200)">
+      <rect x="0" y="0" width="240" height="100" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <circle cx="30" cy="25" r="18" fill="url(#purple-gradient)"/>
+      <text x="30" y="31" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="12" fill="#ffffff">
+        L
+      </text>
+      <text x="60" y="25" font-family="'Inter', sans-serif" font-weight="600" font-size="14" fill="#a855f7">
+        Local AI Support
+      </text>
+      <text x="60" y="45" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        Run Llama 3 locally
+      </text>
+      <text x="15" y="75" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        Privacy-first option
+      </text>
+      <text x="15" y="90" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        for sensitive code
+      </text>
+    </g>
+
+    <g transform="translate(290, 200)">
+      <rect x="0" y="0" width="240" height="100" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <circle cx="30" cy="25" r="18" fill="url(#purple-gradient)"/>
+      <text x="30" y="31" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="12" fill="#ffffff">
+        S
+      </text>
+      <text x="60" y="25" font-family="'Inter', sans-serif" font-weight="600" font-size="14" fill="#a855f7">
+        Streaming Responses
+      </text>
+      <text x="60" y="45" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        Real-time output
+      </text>
+      <text x="15" y="75" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        See answers as they're
+      </text>
+      <text x="15" y="90" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        generated
+      </text>
+    </g>
+  </g>
+
+  <!-- Developer Tools Quadrant -->
+  <g transform="translate(100, 480)">
+    <rect x="0" y="0" width="550" height="320" rx="16" fill="#1a1a2e" stroke="url(#orange-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <rect x="0" y="0" width="550" height="60" rx="16" fill="url(#orange-gradient)" opacity="0.2"/>
+    <rect x="0" y="40" width="550" height="20" fill="url(#orange-gradient)" opacity="0.2"/>
+
+    <text x="275" y="38" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#f59e0b">
+      Developer Tools
+    </text>
+
+    <g transform="translate(30, 85)">
+      <rect x="0" y="0" width="240" height="100" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <circle cx="30" cy="25" r="18" fill="url(#orange-gradient)"/>
+      <text x="30" y="31" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="12" fill="#ffffff">
+        D
+      </text>
+      <text x="60" y="25" font-family="'Inter', sans-serif" font-weight="600" font-size="14" fill="#f59e0b">
+        Debugging Helper
+      </text>
+      <text x="60" y="45" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        Analyze errors &amp; fix bugs
+      </text>
+      <text x="15" y="75" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        Paste error messages,
+      </text>
+      <text x="15" y="90" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        get solutions
+      </text>
+    </g>
+
+    <g transform="translate(290, 85)">
+      <rect x="0" y="0" width="240" height="100" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <circle cx="30" cy="25" r="18" fill="url(#orange-gradient)"/>
+      <text x="30" y="31" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="12" fill="#ffffff">
+        R
+      </text>
+      <text x="60" y="25" font-family="'Inter', sans-serif" font-weight="600" font-size="14" fill="#f59e0b">
+        Refactoring Tools
+      </text>
+      <text x="60" y="45" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        Improve code quality
+      </text>
+      <text x="15" y="75" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        Optimize, simplify,
+      </text>
+      <text x="15" y="90" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        modernize code
+      </text>
+    </g>
+
+    <g transform="translate(30, 200)">
+      <rect x="0" y="0" width="240" height="100" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <circle cx="30" cy="25" r="18" fill="url(#orange-gradient)"/>
+      <text x="30" y="31" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="12" fill="#ffffff">
+        T
+      </text>
+      <text x="60" y="25" font-family="'Inter', sans-serif" font-weight="600" font-size="14" fill="#f59e0b">
+        Test Generation
+      </text>
+      <text x="60" y="45" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        Auto-generate tests
+      </text>
+      <text x="15" y="75" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        Unit, integration, E2E
+      </text>
+      <text x="15" y="90" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        test coverage
+      </text>
+    </g>
+
+    <g transform="translate(290, 200)">
+      <rect x="0" y="0" width="240" height="100" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <circle cx="30" cy="25" r="18" fill="url(#orange-gradient)"/>
+      <text x="30" y="31" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="12" fill="#ffffff">
+        D
+      </text>
+      <text x="60" y="25" font-family="'Inter', sans-serif" font-weight="600" font-size="14" fill="#f59e0b">
+        Doc Generator
+      </text>
+      <text x="60" y="45" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        Create documentation
+      </text>
+      <text x="15" y="75" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        Auto-generate docs,
+      </text>
+      <text x="15" y="90" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        README, API docs
+      </text>
+    </g>
+  </g>
+
+  <!-- Integrations Quadrant -->
+  <g transform="translate(750, 480)">
+    <rect x="0" y="0" width="550" height="320" rx="16" fill="#1a1a2e" stroke="url(#green-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <rect x="0" y="0" width="550" height="60" rx="16" fill="url(#green-gradient)" opacity="0.2"/>
+    <rect x="0" y="40" width="550" height="20" fill="url(#green-gradient)" opacity="0.2"/>
+
+    <text x="275" y="38" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#10b981">
+      Integrations
+    </text>
+
+    <g transform="translate(30, 85)">
+      <rect x="0" y="0" width="240" height="100" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <circle cx="30" cy="25" r="18" fill="url(#green-gradient)"/>
+      <text x="30" y="31" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="12" fill="#ffffff">
+        G
+      </text>
+      <text x="60" y="25" font-family="'Inter', sans-serif" font-weight="600" font-size="14" fill="#10b981">
+        Git Integration
+      </text>
+      <text x="60" y="45" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        Understands changes
+      </text>
+      <text x="15" y="75" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        Reads diffs, commits,
+      </text>
+      <text x="15" y="90" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        branch history
+      </text>
+    </g>
+
+    <g transform="translate(290, 85)">
+      <rect x="0" y="0" width="240" height="100" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <circle cx="30" cy="25" r="18" fill="url(#green-gradient)"/>
+      <text x="30" y="31" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="12" fill="#ffffff">
+        E
+      </text>
+      <text x="60" y="25" font-family="'Inter', sans-serif" font-weight="600" font-size="14" fill="#10b981">
+        Editor Plugins
+      </text>
+      <text x="60" y="45" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        VS Code, JetBrains
+      </text>
+      <text x="15" y="75" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        Seamlessly integrate
+      </text>
+      <text x="15" y="90" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        with your editor
+      </text>
+    </g>
+
+    <g transform="translate(30, 200)">
+      <rect x="0" y="0" width="240" height="100" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <circle cx="30" cy="25" r="18" fill="url(#green-gradient)"/>
+      <text x="30" y="31" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="12" fill="#ffffff">
+        P
+      </text>
+      <text x="60" y="25" font-family="'Inter', sans-serif" font-weight="600" font-size="14" fill="#10b981">
+        Plugin System
+      </text>
+      <text x="60" y="45" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        Extensible via plugins
+      </text>
+      <text x="15" y="75" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        Community plugins,
+      </text>
+      <text x="15" y="90" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        custom extensions
+      </text>
+    </g>
+
+    <g transform="translate(290, 200)">
+      <rect x="0" y="0" width="240" height="100" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <circle cx="30" cy="25" r="18" fill="url(#green-gradient)"/>
+      <text x="30" y="31" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="12" fill="#ffffff">
+        A
+      </text>
+      <text x="60" y="25" font-family="'Inter', sans-serif" font-weight="600" font-size="14" fill="#10b981">
+        API Access
+      </text>
+      <text x="60" y="45" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        REST &amp; GraphQL APIs
+      </text>
+      <text x="15" y="75" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        Build custom tools
+      </text>
+      <text x="15" y="90" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        on top of OpenCode
+      </text>
+    </g>
+  </g>
+
+  <!-- Bottom Stats Bar -->
+  <g transform="translate(100, 820)">
+    <rect x="0" y="0" width="1200" height="60" rx="12" fill="url(#cyan-gradient)" opacity="0.1" stroke="#00d9ff" stroke-width="1"/>
+
+    <g transform="translate(100, 20)">
+      <text x="0" y="0" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#00d9ff">
+        16+
+      </text>
+      <text x="40" y="0" font-family="'Inter', sans-serif" font-size="12" fill="#9ca3af">
+        AI Models
+      </text>
+    </g>
+
+    <g transform="translate(300, 20)">
+      <text x="0" y="0" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#a855f7">
+        50+
+      </text>
+      <text x="40" y="0" font-family="'Inter', sans-serif" font-size="12" fill="#9ca3af">
+        Plugins
+      </text>
+    </g>
+
+    <g transform="translate(500, 20)">
+      <text x="0" y="0" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#f59e0b">
+        100%
+      </text>
+      <text x="50" y="0" font-family="'Inter', sans-serif" font-size="12" fill="#9ca3af">
+        Open Source
+      </text>
+    </g>
+
+    <g transform="translate(700, 20)">
+      <text x="0" y="0" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#10b981">
+        ∞
+      </text>
+      <text x="25" y="0" font-family="'Inter', sans-serif" font-size="12" fill="#9ca3af">
+        Possibilities
+      </text>
+    </g>
+
+    <text x="1000" y="0" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">
+      Start exploring:
+    </text>
+    <text x="1000" y="20" text-anchor="middle" font-family="'Fira Code', monospace" font-size="12" fill="#00d9ff">
+      opcode --help
+    </text>
+  </g>
+</svg>

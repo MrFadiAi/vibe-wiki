@@ -1,0 +1,324 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="cli-opencode-agent-collaboration-title cli-opencode-agent-collaboration-desc">
+  <title id="cli-opencode-agent-collaboration-title">OpenCode CLI Agent Collaboration</title>
+  <desc id="cli-opencode-agent-collaboration-desc">A diagram showing how OpenCode CLI's multi-agent system works with specialized AI agents collaborating on complex tasks.</desc>
+
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a2e;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Cyan Gradient -->
+    <linearGradient id="cyan-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0099cc;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Purple Gradient -->
+    <linearGradient id="purple-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Orange Gradient -->
+    <linearGradient id="orange-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Green Gradient -->
+    <linearGradient id="green-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Arrow Marker -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#00d9ff"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="900" fill="url(#bg-gradient)"/>
+
+  <!-- Title -->
+  <text x="700" y="50" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="36" fill="#ffffff">
+    Multi-Agent Collaboration
+  </text>
+  <text x="700" y="85" text-anchor="middle" font-family="'Inter', sans-serif" font-size="18" fill="#9ca3af">
+    Specialized AI agents work together to solve complex coding tasks
+  </text>
+
+  <!-- Central Orchestrator -->
+  <g transform="translate(550, 200)">
+    <rect x="0" y="0" width="300" height="120" rx="20" fill="#1a1a2e" stroke="url(#cyan-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <circle cx="150" cy="40" r="25" fill="url(#cyan-gradient)"/>
+    <text x="150" y="46" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="16" fill="#ffffff">
+      O
+    </text>
+
+    <text x="150" y="85" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#00d9ff">
+      Orchestrator Agent
+    </text>
+    <text x="150" y="105" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#9ca3af">
+      Coordinates all agents
+    </text>
+  </g>
+
+  <!-- Agent 1: Coder -->
+  <g transform="translate(100, 380)">
+    <rect x="0" y="0" width="260" height="200" rx="16" fill="#1a1a2e" stroke="url(#purple-gradient)" stroke-width="2"/>
+
+    <rect x="0" y="0" width="260" height="50" rx="16" fill="url(#purple-gradient)" opacity="0.2"/>
+    <rect x="0" y="30" width="260" height="20" fill="url(#purple-gradient)" opacity="0.2"/>
+
+    <circle cx="40" cy="25" r="20" fill="url(#purple-gradient)"/>
+    <text x="40" y="31" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#ffffff">
+      C
+    </text>
+
+    <text x="75" y="30" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#a855f7">
+      Coder Agent
+    </text>
+
+    <g transform="translate(20, 65)">
+      <text x="0" y="0" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">
+        <tspan x="0" dy="0">• Writes &amp; modifies code</tspan>
+        <tspan x="0" dy="20">• Creates new files</tspan>
+        <tspan x="0" dy="20">• Implements features</tspan>
+        <tspan x="0" dy="20">• Refactors existing</tspan>
+        <tspan x="0" dy="20">  code</tspan>
+        <tspan x="0" dy="25">Model: GPT-4 Turbo</tspan>
+      </text>
+    </g>
+
+    <rect x="20" y="180" width="220" height="2" fill="url(#purple-gradient)"/>
+  </g>
+
+  <!-- Connection Line 1 -->
+  <path d="M 360 480 L 550 260" stroke="url(#cyan-gradient)" stroke-width="2" fill="none" stroke-dasharray="5,5" opacity="0.5"/>
+
+  <!-- Agent 2: Reviewer -->
+  <g transform="translate(390, 380)">
+    <rect x="0" y="0" width="260" height="200" rx="16" fill="#1a1a2e" stroke="url(#orange-gradient)" stroke-width="2"/>
+
+    <rect x="0" y="0" width="260" height="50" rx="16" fill="url(#orange-gradient)" opacity="0.2"/>
+    <rect x="0" y="30" width="260" height="20" fill="url(#orange-gradient)" opacity="0.2"/>
+
+    <circle cx="40" cy="25" r="20" fill="url(#orange-gradient)"/>
+    <text x="40" y="31" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#ffffff">
+      R
+    </text>
+
+    <text x="75" y="30" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#f59e0b">
+      Reviewer Agent
+    </text>
+
+    <g transform="translate(20, 65)">
+      <text x="0" y="0" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">
+        <tspan x="0" dy="0">• Reviews code changes</tspan>
+        <tspan x="0" dy="20">• Finds bugs &amp; issues</tspan>
+        <tspan x="0" dy="20">• Suggests improvements</tspan>
+        <tspan x="0" dy="20">• Checks best practices</tspan>
+        <tspan x="0" dy="25">Model: Claude 3 Opus</tspan>
+      </text>
+    </g>
+
+    <rect x="20" y="180" width="220" height="2" fill="url(#orange-gradient)"/>
+  </g>
+
+  <!-- Connection Line 2 -->
+  <path d="M 520 380 L 620 320" stroke="url(#cyan-gradient)" stroke-width="2" fill="none" marker-end="url(#arrowhead)" opacity="0.5"/>
+
+  <!-- Agent 3: Debugger -->
+  <g transform="translate(680, 380)">
+    <rect x="0" y="0" width="260" height="200" rx="16" fill="#1a1a2e" stroke="url(#green-gradient)" stroke-width="2"/>
+
+    <rect x="0" y="0" width="260" height="50" rx="16" fill="url(#green-gradient)" opacity="0.2"/>
+    <rect x="0" y="30" width="260" height="20" fill="url(#green-gradient)" opacity="0.2"/>
+
+    <circle cx="40" cy="25" r="20" fill="url(#green-gradient)"/>
+    <text x="40" y="31" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#ffffff">
+      D
+    </text>
+
+    <text x="75" y="30" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#10b981">
+      Debugger Agent
+    </text>
+
+    <g transform="translate(20, 65)">
+      <text x="0" y="0" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">
+        <tspan x="0" dy="0">• Analyzes errors</tspan>
+        <tspan x="0" dy="20">• Traces issues</tspan>
+        <tspan x="0" dy="20">• Proposes fixes</tspan>
+        <tspan x="0" dy="20">• Tests solutions</tspan>
+        <tspan x="0" dy="25">Model: GPT-4</tspan>
+      </text>
+    </g>
+
+    <rect x="20" y="180" width="220" height="2" fill="url(#green-gradient)"/>
+  </g>
+
+  <!-- Connection Line 3 -->
+  <path d="M 810 380 L 750 320" stroke="url(#cyan-gradient)" stroke-width="2" fill="none" marker-end="url(#arrowhead)" opacity="0.5"/>
+
+  <!-- Agent 4: Tester -->
+  <g transform="translate(970, 380)">
+    <rect x="0" y="0" width="260" height="200" rx="16" fill="#1a1a2e" stroke="#ec4899" stroke-width="2"/>
+
+    <rect x="0" y="0" width="260" height="50" rx="16" fill="#ec4899" opacity="0.2"/>
+    <rect x="0" y="30" width="260" height="20" fill="#ec4899" opacity="0.2"/>
+
+    <circle cx="40" cy="25" r="20" fill="#ec4899"/>
+    <text x="40" y="31" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#ffffff">
+      T
+    </text>
+
+    <text x="75" y="30" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#ec4899">
+      Tester Agent
+    </text>
+
+    <g transform="translate(20, 65)">
+      <text x="0" y="0" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">
+        <tspan x="0" dy="0">• Generates tests</tspan>
+        <tspan x="0" dy="20">• Runs test suites</tspan>
+        <tspan x="0" dy="20">• Validates coverage</tspan>
+        <tspan x="0" dy="20">• Reports failures</tspan>
+        <tspan x="0" dy="25">Model: Claude 3 Sonnet</tspan>
+      </text>
+    </g>
+
+    <rect x="20" y="180" width="220" height="2" fill="#ec4899"/>
+  </g>
+
+  <!-- Connection Line 4 -->
+  <path d="M 970 480 L 800 320" stroke="url(#cyan-gradient)" stroke-width="2" fill="none" stroke-dasharray="5,5" opacity="0.5"/>
+
+  <!-- Collaboration Flow Section -->
+  <g transform="translate(100, 620)">
+    <rect x="0" y="0" width="1200" height="200" rx="16" fill="#1a1a2e" stroke="url(#cyan-gradient)" stroke-width="2"/>
+
+    <text x="600" y="35" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="20" fill="#00d9ff">
+      How It Works
+    </text>
+
+    <!-- Step 1 -->
+    <g transform="translate(40, 60)">
+      <circle cx="25" cy="25" r="25" fill="url(#purple-gradient)"/>
+      <text x="25" y="31" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#ffffff">
+        1
+      </text>
+
+      <text x="65" y="20" font-family="'Inter', sans-serif" font-weight="600" font-size="14" fill="#a855f7">
+        You Submit Task
+      </text>
+      <text x="65" y="40" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        "Add authentication"
+      </text>
+    </g>
+
+    <!-- Arrow -->
+    <path d="M 200 85 L 240 85" stroke="url(#cyan-gradient)" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+    <!-- Step 2 -->
+    <g transform="translate(260, 60)">
+      <circle cx="25" cy="25" r="25" fill="url(#cyan-gradient)"/>
+      <text x="25" y="31" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#ffffff">
+        2
+      </text>
+
+      <text x="65" y="20" font-family="'Inter', sans-serif" font-weight="600" font-size="14" fill="#00d9ff">
+        Orchestrator Plans
+      </text>
+      <text x="65" y="40" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        Breaks into subtasks
+      </text>
+    </g>
+
+    <!-- Arrow -->
+    <path d="M 450 85 L 490 85" stroke="url(#cyan-gradient)" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+    <!-- Step 3 -->
+    <g transform="translate(510, 60)">
+      <circle cx="25" cy="25" r="25" fill="url(#orange-gradient)"/>
+      <text x="25" y="31" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#ffffff">
+        3
+      </text>
+
+      <text x="65" y="20" font-family="'Inter', sans-serif" font-weight="600" font-size="14" fill="#f59e0b">
+        Agents Collaborate
+      </text>
+      <text x="65" y="40" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        Each agent works on their part
+      </text>
+    </g>
+
+    <!-- Arrow -->
+    <path d="M 720 85 L 760 85" stroke="url(#cyan-gradient)" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+    <!-- Step 4 -->
+    <g transform="translate(780, 60)">
+      <circle cx="25" cy="25" r="25" fill="url(#green-gradient)"/>
+      <text x="25" y="31" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#ffffff">
+        4
+      </text>
+
+      <text x="65" y="20" font-family="'Inter', sans-serif" font-weight="600" font-size="14" fill="#10b981">
+        Review &amp; Validate
+      </text>
+      <text x="65" y="40" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        Cross-agent validation
+      </text>
+    </g>
+
+    <!-- Arrow -->
+    <path d="M 970 85 L 1010 85" stroke="url(#cyan-gradient)" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+    <!-- Step 5 -->
+    <g transform="translate(1030, 60)">
+      <circle cx="25" cy="25" r="25" fill="#ec4899"/>
+      <text x="25" y="31" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#ffffff">
+        5
+      </text>
+
+      <text x="65" y="20" font-family="'Inter', sans-serif" font-weight="600" font-size="14" fill="#ec4899">
+        Complete!
+      </text>
+      <text x="65" y="40" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        Production-ready code
+      </text>
+    </g>
+
+    <!-- Example Command -->
+    <g transform="translate(40, 130)">
+      <rect x="0" y="0" width="1120" height="50" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <text x="20" y="20" font-family="'Inter', sans-serif" font-size="12" fill="#9ca3af">
+        Example:
+      </text>
+      <text x="100" y="20" font-family="'Fira Code', monospace" font-size="12" fill="#00d9ff">
+        opcode agent "Add JWT authentication with refresh tokens"
+      </text>
+      <text x="20" y="38" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        → Coder writes auth • Reviewer checks security • Debugger tests flows • Tester adds coverage • Orchestrator ensures quality
+      </text>
+    </g>
+  </g>
+
+  <!-- Bottom Tip -->
+  <g transform="translate(200, 840)">
+    <text x="500" y="0" text-anchor="middle" font-family="'Inter', sans-serif" font-size="14" fill="#9ca3af">
+      💡 Agents communicate through a shared context, allowing them to build on each other's work
+    </text>
+  </g>
+</svg>

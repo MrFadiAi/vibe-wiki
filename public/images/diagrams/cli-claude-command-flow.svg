@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="cli-claude-command-flow-title cli-claude-command-flow-desc">
+  <title id="cli-claude-command-flow-title">Claude CLI Command Flow Diagram</title>
+  <desc id="cli-claude-command-flow-desc">A diagram showing the different command types in Claude CLI and their workflows: ask, analyze, generate, and chat.</desc>
+
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a2e;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Cyan Gradient -->
+    <linearGradient id="cyan-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0099cc;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Purple Gradient -->
+    <linearGradient id="purple-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Arrow Marker -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#00d9ff"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="900" fill="url(#bg-gradient)"/>
+
+  <!-- Title -->
+  <text x="700" y="50" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="32" fill="#ffffff">
+    Claude CLI Command Flow
+  </text>
+
+  <!-- Central Hub: Claude CLI -->
+  <g transform="translate(700, 450)">
+    <circle cx="0" cy="0" r="80" fill="url(#purple-gradient)" filter="url(#glow)"/>
+    <text x="0" y="-10" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#ffffff">Claude</text>
+    <text x="0" y="15" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#ffffff">CLI</text>
+  </g>
+
+  <!-- Command 1: claude ask -->
+  <g transform="translate(200, 150)">
+    <rect x="-100" y="-60" width="200" height="120" rx="12" fill="#1a1a2e" stroke="url(#cyan-gradient)" stroke-width="2" filter="url(#glow)"/>
+    <text x="0" y="-25" text-anchor="middle" font-family="'Fira Code', monospace" font-size="14" fill="#00d9ff">claude ask</text>
+    <text x="0" y="0" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">Direct questions</text>
+    <text x="0" y="20" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">Quick answers</text>
+    <text x="0" y="38" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">No context needed</text>
+  </g>
+
+  <!-- Arrow from ask to center -->
+  <path d="M 300 150 Q 400 250 620 400" stroke="url(#cyan-gradient)" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Command 2: claude analyze -->
+  <g transform="translate(1200, 150)">
+    <rect x="-100" y="-60" width="200" height="120" rx="12" fill="#1a1a2e" stroke="url(#cyan-gradient)" stroke-width="2" filter="url(#glow)"/>
+    <text x="0" y="-25" text-anchor="middle" font-family="'Fira Code', monospace" font-size="14" fill="#00d9ff">claude analyze</text>
+    <text x="0" y="0" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">File analysis</text>
+    <text x="0" y="20" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">Code review</text>
+    <text x="0" y="38" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">Bug detection</text>
+  </g>
+
+  <!-- Arrow from analyze to center -->
+  <path d="M 1100 150 Q 1000 250 780 400" stroke="url(#cyan-gradient)" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Command 3: claude generate -->
+  <g transform="translate(200, 750)">
+    <rect x="-100" y="-60" width="200" height="120" rx="12" fill="#1a1a2e" stroke="url(#cyan-gradient)" stroke-width="2" filter="url(#glow)"/>
+    <text x="0" y="-25" text-anchor="middle" font-family="'Fira Code', monospace" font-size="14" fill="#00d9ff">claude generate</text>
+    <text x="0" y="0" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">Code generation</text>
+    <text x="0" y="20" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">Create functions</text>
+    <text x="0" y="38" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">Build components</text>
+  </g>
+
+  <!-- Arrow from generate to center -->
+  <path d="M 300 750 Q 400 650 620 500" stroke="url(#cyan-gradient)" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Command 4: claude chat -->
+  <g transform="translate(1200, 750)">
+    <rect x="-100" y="-60" width="200" height="120" rx="12" fill="#1a1a2e" stroke="url(#cyan-gradient)" stroke-width="2" filter="url(#glow)"/>
+    <text x="0" y="-25" text-anchor="middle" font-family="'Fira Code', monospace" font-size="14" fill="#00d9ff">claude chat</text>
+    <text x="0" y="0" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">Interactive mode</text>
+    <text x="0" y="20" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">Multi-turn conversations</text>
+    <text x="0" y="38" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">Context-aware</text>
+  </g>
+
+  <!-- Arrow from chat to center -->
+  <path d="M 1100 750 Q 1000 650 780 500" stroke="url(#cyan-gradient)" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- claude scan (additional command) -->
+  <g transform="translate(700, 150)">
+    <rect x="-90" y="-40" width="180" height="80" rx="10" fill="#1a1a2e" stroke="url(#purple-gradient)" stroke-width="2" filter="url(#glow)"/>
+    <text x="0" y="-10" text-anchor="middle" font-family="'Fira Code', monospace" font-size="12" fill="#a855f7">claude scan</text>
+    <text x="0" y="10" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#e0e0e0">Index project</text>
+    <text x="0" y="25" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" fill="#9ca3af">Build codebase awareness</text>
+  </g>
+
+  <!-- Arrow from scan to center -->
+  <path d="M 700 190 L 700 370" stroke="url(#purple-gradient)" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- claude refactor (additional command) -->
+  <g transform="translate(700, 750)">
+    <rect x="-90" y="-40" width="180" height="80" rx="10" fill="#1a1a2e" stroke="url(#purple-gradient)" stroke-width="2" filter="url(#glow)"/>
+    <text x="0" y="-10" text-anchor="middle" font-family="'Fira Code', monospace" font-size="12" fill="#a855f7">claude refactor</text>
+    <text x="0" y="10" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#e0e0e0">Transform code</text>
+    <text x="0" y="25" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" fill="#9ca3af">JS to TS, modernize</text>
+  </g>
+
+  <!-- Arrow from center to refactor -->
+  <path d="M 700 530 L 700 710" stroke="url(#purple-gradient)" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- claude debug (additional command) -->
+  <g transform="translate(100, 450)">
+    <rect x="-80" y="-40" width="160" height="80" rx="10" fill="#1a1a2e" stroke="#ec4899" stroke-width="2" filter="url(#glow)"/>
+    <text x="0" y="-10" text-anchor="middle" font-family="'Fira Code', monospace" font-size="11" fill="#ec4899">claude debug</text>
+    <text x="0" y="10" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" fill="#e0e0e0">Error analysis</text>
+    <text x="0" y="25" text-anchor="middle" font-family="'Inter', sans-serif" font-size="8" fill="#9ca3af">Fix bugs fast</text>
+  </g>
+
+  <!-- Arrow from debug to center -->
+  <path d="M 180 450 L 620 450" stroke="#ec4899" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Legend -->
+  <g transform="translate(50, 820)">
+    <rect x="0" y="0" width="280" height="70" rx="8" fill="#1a1a2e" opacity="0.8"/>
+    <text x="10" y="20" font-family="'Inter', sans-serif" font-weight="700" font-size="12" fill="#ffffff">Command Types:</text>
+    <circle cx="20" cy="40" r="6" fill="url(#cyan-gradient)"/>
+    <text x="35" y="44" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">Core Commands</text>
+    <circle cx="130" cy="40" r="6" fill="url(#purple-gradient)"/>
+    <text x="145" y="44" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">Advanced</text>
+    <circle cx="210" cy="40" r="6" fill="#ec4899"/>
+    <text x="225" y="44" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">Debug</text>
+  </g>
+</svg>

@@ -1,0 +1,310 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 700" role="img" aria-labelledby="cli-opencode-workflow-state-title cli-opencode-workflow-state-desc">
+  <title id="cli-opencode-workflow-state-title">OpenCode CLI Workflow State Management</title>
+  <desc id="cli-opencode-workflow-state-desc">A state diagram showing how OpenCode CLI manages workflow states across sessions including history, context, and continuation.</desc>
+
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a2e;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Cyan Gradient -->
+    <linearGradient id="cyan-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0099cc;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Purple Gradient -->
+    <linearGradient id="purple-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Green Gradient -->
+    <linearGradient id="green-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Arrow Marker -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#00d9ff"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="700" fill="url(#bg-gradient)"/>
+
+  <!-- Title -->
+  <text x="700" y="50" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="36" fill="#ffffff">
+    Session State Management
+  </text>
+  <text x="700" y="85" text-anchor="middle" font-family="'Inter', sans-serif" font-size="18" fill="#9ca3af">
+    OpenCode maintains context and history across your coding sessions
+  </text>
+
+  <!-- State Flow -->
+  <!-- Initial State -->
+  <g transform="translate(100, 200)">
+    <rect x="0" y="0" width="200" height="120" rx="16" fill="#1a1a2e" stroke="#6b7280" stroke-width="2"/>
+
+    <circle cx="100" cy="35" r="20" fill="#6b7280"/>
+    <text x="100" y="41" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#ffffff">
+      1
+    </text>
+
+    <text x="100" y="70" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="600" font-size="16" fill="#ffffff">
+      Initial State
+    </text>
+    <text x="100" y="90" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#9ca3af">
+      No context yet
+    </text>
+    <text x="100" y="105" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#6b7280">
+      opcode chat
+    </text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <path d="M 300 260 L 350 260" stroke="url(#cyan-gradient)" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="325" y="245" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#00d9ff">
+    First input
+  </text>
+
+  <!-- Context Building -->
+  <g transform="translate(360, 160)">
+    <rect x="0" y="0" width="240" height="200" rx="16" fill="#1a1a2e" stroke="url(#cyan-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <circle cx="120" cy="35" r="25" fill="url(#cyan-gradient)"/>
+    <text x="120" y="41" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="16" fill="#ffffff">
+      2
+    </text>
+
+    <text x="120" y="75" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#00d9ff">
+      Context Building
+    </text>
+
+    <g transform="translate(20, 95)">
+      <text x="0" y="0" font-family="'Inter', sans-serif" font-size="11" fill="#e0e0e0">
+        <tspan x="0" dy="0">• Reads project files</tspan>
+        <tspan x="0" dy="16">• Analyzes structure</tspan>
+        <tspan x="0" dy="16">• Builds knowledge base</tspan>
+        <tspan x="0" dy="16">• Loads git history</tspan>
+      </text>
+    </g>
+
+    <text x="120" y="185" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+      Growing context...
+    </text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <path d="M 600 260 L 650 260" stroke="url(#cyan-gradient)" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="625" y="245" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#00d9ff">
+    Active session
+  </text>
+
+  <!-- Active Session -->
+  <g transform="translate(660, 160)">
+    <rect x="0" y="0" width="240" height="200" rx="16" fill="#1a1a2e" stroke="url(#purple-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <circle cx="120" cy="35" r="25" fill="url(#purple-gradient)"/>
+    <text x="120" y="41" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="16" fill="#ffffff">
+      3
+    </text>
+
+    <text x="120" y="75" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#a855f7">
+      Active Session
+    </text>
+
+    <g transform="translate(20, 95)">
+      <text x="0" y="0" font-family="'Inter', sans-serif" font-size="11" fill="#e0e0e0">
+        <tspan x="0" dy="0">• Maintains conversation</tspan>
+        <tspan x="0" dy="16">• Tracks file changes</tspan>
+        <tspan x="0" dy="16">• Remembers preferences</tspan>
+        <tspan x="0" dy="16">• Updates context live</tspan>
+      </text>
+    </g>
+
+    <rect x="20" y="170" width="200" height="20" rx="6" fill="url(#purple-gradient)" opacity="0.2"/>
+    <text x="120" y="184" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#a855f7">
+      Full context aware
+    </text>
+  </g>
+
+  <!-- Arrow 3 -->
+  <path d="M 900 260 L 950 260" stroke="url(#purple-gradient)" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="925" y="245" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#a855f7">
+    Pause/Exit
+  </text>
+
+  <!-- Saved State -->
+  <g transform="translate(960, 160)">
+    <rect x="0" y="0" width="240" height="200" rx="16" fill="#1a1a2e" stroke="url(#green-gradient)" stroke-width="2"/>
+
+    <circle cx="120" cy="35" r="25" fill="url(#green-gradient)"/>
+    <text x="120" y="41" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="16" fill="#ffffff">
+      4
+    </text>
+
+    <text x="120" y="75" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#10b981">
+      Saved State
+    </text>
+
+    <g transform="translate(20, 95)">
+      <text x="0" y="0" font-family="'Inter', sans-serif" font-size="11" fill="#e0e0e0">
+        <tspan x="0" dy="0">• Serializes context</tspan>
+        <tspan x="0" dy="16">• Saves to disk</tspan>
+        <tspan x="0" dy="16">• Persists history</tspan>
+        <tspan x="0" dy="16">• Stores session ID</tspan>
+      </text>
+    </g>
+
+    <rect x="20" y="170" width="200" height="20" rx="6" fill="url(#green-gradient)" opacity="0.2"/>
+    <text x="120" y="184" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#10b981">
+      Ready to resume
+    </text>
+  </g>
+
+  <!-- Resume Arrow -->
+  <path d="M 1080 360 Q 1140 420 1140 480 Q 1140 540 1080 540 L 460 540 Q 400 540 400 480 Q 400 420 460 380" stroke="url(#green-gradient)" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+  <text x="770" y="530" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#10b981">
+    opcode chat --resume
+  </text>
+
+  <!-- State Storage Details -->
+  <g transform="translate(100, 420)">
+    <rect x="0" y="0" width="500" height="220" rx="16" fill="#1a1a2e" stroke="url(#cyan-gradient)" stroke-width="2"/>
+
+    <text x="250" y="30" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#00d9ff">
+      What Gets Stored
+    </text>
+
+    <g transform="translate(30, 55)">
+      <g transform="translate(0, 0)">
+        <circle cx="10" cy="0" r="8" fill="#00d9ff"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">
+          <tspan x="25" dy="0">Conversation history</tspan>
+          <tspan x="25" dy="16" fill="#9ca3af">All Q&amp;A exchanges</tspan>
+        </text>
+      </g>
+
+      <g transform="translate(0, 45)">
+        <circle cx="10" cy="0" r="8" fill="#00d9ff"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">
+          <tspan x="25" dy="0">File context</tspan>
+          <tspan x="25" dy="16" fill="#9ca3af">Read files and their contents</tspan>
+        </text>
+      </g>
+
+      <g transform="translate(240, 0)">
+        <circle cx="10" cy="0" r="8" fill="#00d9ff"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">
+          <tspan x="25" dy="0">Code changes</tspan>
+          <tspan x="25" dy="16" fill="#9ca3af">Modifications made</tspan>
+        </text>
+      </g>
+
+      <g transform="translate(240, 45)">
+        <circle cx="10" cy="0" r="8" fill="#00d9ff"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="12" fill="#e0e0e0">
+          <tspan x="25" dy="0">User preferences</tspan>
+          <tspan x="25" dy="16" fill="#9ca3af">Settings &amp; choices</tspan>
+        </text>
+      </g>
+    </g>
+
+    <line x1="30" y1="125" x2="470" y2="125" stroke="#374151" stroke-width="1"/>
+
+    <g transform="translate(30, 145)">
+      <text x="0" y="0" font-family="'Inter', sans-serif" font-size="12" fill="#9ca3af">
+        Storage location:
+      </text>
+      <rect x="110" y="-12" width="360" height="25" rx="6" fill="#0a0a0a" opacity="0.5"/>
+      <text x="130" y="5" font-family="'Fira Code', monospace" font-size="11" fill="#00d9ff">
+        ~/.opencode/sessions/&lt;session-id&gt;.json
+      </text>
+    </g>
+
+    <g transform="translate(30, 180)">
+      <text x="0" y="0" font-family="'Inter', sans-serif" font-size="12" fill="#9ca3af">
+        List sessions:
+      </text>
+      <rect x="110" y="-12" width="300" height="25" rx="6" fill="#0a0a0a" opacity="0.5"/>
+      <text x="130" y="5" font-family="'Fira Code', monospace" font-size="11" fill="#10b981">
+        opcode chat --list-sessions
+      </text>
+    </g>
+  </g>
+
+  <!-- Session Features -->
+  <g transform="translate(640, 420)">
+    <rect x="0" y="0" width="560" height="220" rx="16" fill="#1a1a2e" stroke="url(#purple-gradient)" stroke-width="2"/>
+
+    <text x="280" y="30" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#a855f7">
+      Session Features
+    </text>
+
+    <g transform="translate(30, 55)">
+      <rect x="0" y="0" width="240" height="70" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <text x="120" y="25" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#a855f7">
+        Auto-Save
+      </text>
+      <text x="120" y="45" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        Context saved every 30s
+      </text>
+      <text x="120" y="60" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        Never lose progress
+      </text>
+    </g>
+
+    <g transform="translate(290, 55)">
+      <rect x="0" y="0" width="240" height="70" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <text x="120" y="25" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#a855f7">
+        Cross-Device Sync
+      </text>
+      <text x="120" y="45" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        Sync via cloud (optional)
+      </text>
+      <text x="120" y="60" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        Work from anywhere
+      </text>
+    </g>
+
+    <g transform="translate(30, 140)">
+      <rect x="0" y="0" width="240" height="60" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <text x="120" y="25" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#a855f7">
+        Session Sharing
+      </text>
+      <text x="120" y="45" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        Export session for team review
+      </text>
+    </g>
+
+    <g transform="translate(290, 140)">
+      <rect x="0" y="0" width="240" height="60" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <text x="120" y="25" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#a855f7">
+        Time Travel
+      </text>
+      <text x="120" y="45" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+        Revert to any point in history
+      </text>
+    </g>
+  </g>
+
+  <!-- Bottom Tip -->
+  <g transform="translate(200, 660)">
+    <text x="500" y="0" text-anchor="middle" font-family="'Inter', sans-serif" font-size="13" fill="#9ca3af">
+      💡 Sessions persist indefinitely. Clean up old sessions with: opcode chat --clean-sessions
+    </text>
+  </g>
+</svg>

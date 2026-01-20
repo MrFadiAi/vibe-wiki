@@ -1,0 +1,369 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" role="img" aria-labelledby="cli-opencode-multifile-workflow-title cli-opencode-multifile-workflow-desc">
+  <title id="cli-opencode-multifile-workflow-title">OpenCode Multi-File Workflow</title>
+  <desc id="cli-opencode-multifile-workflow-desc">How OpenCode CLI handles multi-file operations with smart context gathering and coordinated changes.</desc>
+
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a2e;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Cyan Gradient -->
+    <linearGradient id="cyan-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0099cc;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Purple Gradient -->
+    <linearGradient id="purple-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Green Gradient -->
+    <linearGradient id="green-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Orange Gradient -->
+    <linearGradient id="orange-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Arrow Marker -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#00d9ff" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="1000" fill="url(#bg-gradient)"/>
+
+  <!-- Title -->
+  <text x="700" y="50" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="36" fill="#ffffff">
+    Multi-File Workflow
+  </text>
+  <text x="700" y="85" text-anchor="middle" font-family="'Inter', sans-serif" font-size="18" fill="#9ca3af">
+    How OpenCode handles coordinated changes across multiple files
+  </text>
+
+  <!-- Step 1: Input -->
+  <g transform="translate(100, 130)">
+    <rect x="0" y="0" width="500" height="180" rx="16" fill="#1a1a2e" stroke="url(#cyan-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <rect x="0" y="0" width="500" height="60" rx="16" fill="url(#cyan-gradient)" opacity="0.2"/>
+    <rect x="0" y="40" width="500" height="20" fill="url(#cyan-gradient)" opacity="0.2"/>
+
+    <circle cx="40" cy="30" r="22" fill="url(#cyan-gradient)"/>
+    <text x="40" y="37" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#ffffff">
+      1
+    </text>
+
+    <text x="80" y="35" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#00d9ff">
+      Input Request
+    </text>
+
+    <g transform="translate(30, 80)">
+      <text x="0" y="0" font-family="'Inter', sans-serif" font-weight="600" font-size="15" fill="#ffffff">
+        User Command:
+      </text>
+      <rect x="0" y="15" width="440" height="40" rx="8" fill="#0a0a0a" stroke="#00d9ff" stroke-width="1"/>
+      <text x="220" y="40" text-anchor="middle" font-family="'Fira Code', monospace" font-size="13" fill="#00d9ff">
+        opcode refactor --pattern="auth" --scope="src/"
+      </text>
+
+      <g transform="translate(0, 70)">
+        <circle cx="10" cy="0" r="8" fill="#10b981"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="13" fill="#e0e0e0">
+          Specified pattern: "auth"
+        </text>
+      </g>
+      <g transform="translate(0, 95)">
+        <circle cx="10" cy="0" r="8" fill="#10b981"/>
+        <text x="25" y="5" font-family="'Inter', sans-serif" font-size="13" fill="#e0e0e0">
+          Scope: src/ directory
+        </text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Arrow 1 -->
+  <path d="M 600 220 L 700 220" stroke="url(#cyan-gradient)" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 2: Discovery -->
+  <g transform="translate(700, 130)">
+    <rect x="0" y="0" width="500" height="180" rx="16" fill="#1a1a2e" stroke="url(#purple-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <rect x="0" y="0" width="500" height="60" rx="16" fill="url(#purple-gradient)" opacity="0.2"/>
+    <rect x="0" y="40" width="500" height="20" fill="url(#purple-gradient)" opacity="0.2"/>
+
+    <circle cx="40" cy="30" r="22" fill="url(#purple-gradient)"/>
+    <text x="40" y="37" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#ffffff">
+      2
+    </text>
+
+    <text x="80" y="35" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#a855f7">
+      File Discovery
+    </text>
+
+    <g transform="translate(30, 75)">
+      <rect x="0" y="0" width="440" height="85" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <text x="220" y="25" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#a855f7">
+        Found 12 related files
+      </text>
+      <text x="20" y="50" font-family="'Fira Code', monospace" font-size="10" fill="#9ca3af">
+        src/auth/login.ts, src/auth/middleware.ts,
+      </text>
+      <text x="20" y="65" font-family="'Fira Code', monospace" font-size="10" fill="#9ca3af">
+        src/auth/validators.ts, src/api/auth-routes.ts,
+      </text>
+      <text x="20" y="80" font-family="'Fira Code', monospace" font-size="10" fill="#9ca3af">
+        +8 more files...
+      </text>
+    </g>
+  </g>
+
+  <!-- Arrow 2 -->
+  <path d="M 950 310 L 950 360" stroke="url(#purple-gradient)" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 3: Analysis -->
+  <g transform="translate(700, 370)">
+    <rect x="0" y="0" width="500" height="180" rx="16" fill="#1a1a2e" stroke="url(#green-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <rect x="0" y="0" width="500" height="60" rx="16" fill="url(#green-gradient)" opacity="0.2"/>
+    <rect x="0" y="40" width="500" height="20" fill="url(#green-gradient)" opacity="0.2"/>
+
+    <circle cx="40" cy="30" r="22" fill="url(#green-gradient)"/>
+    <text x="40" y="37" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#ffffff">
+      3
+    </text>
+
+    <text x="80" y="35" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#10b981">
+      Dependency Analysis
+    </text>
+
+    <g transform="translate(30, 75)">
+      <rect x="0" y="0" width="440" height="85" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <text x="220" y="25" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#10b981">
+        Building dependency graph
+      </text>
+      <text x="20" y="50" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        • Identified 3 import chains
+      </text>
+      <text x="20" y="65" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        • Found shared types to update
+      </text>
+      <text x="20" y="80" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        • Detected 2 circular dependencies
+      </text>
+    </g>
+  </g>
+
+  <!-- Arrow 3 -->
+  <path d="M 700 460 L 600 460" stroke="url(#green-gradient)" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 4: Planning -->
+  <g transform="translate(100, 370)">
+    <rect x="0" y="0" width="500" height="180" rx="16" fill="#1a1a2e" stroke="url(#orange-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <rect x="0" y="0" width="500" height="60" rx="16" fill="url(#orange-gradient)" opacity="0.2"/>
+    <rect x="0" y="40" width="500" height="20" fill="url(#orange-gradient)" opacity="0.2"/>
+
+    <circle cx="40" cy="30" r="22" fill="url(#orange-gradient)"/>
+    <text x="40" y="37" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#ffffff">
+      4
+    </text>
+
+    <text x="80" y="35" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#f59e0b">
+      Change Plan
+    </text>
+
+    <g transform="translate(30, 75)">
+      <rect x="0" y="0" width="440" height="85" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <text x="220" y="25" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#f59e0b">
+        Generated execution plan
+      </text>
+      <text x="20" y="50" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        Order: types → utils → components → routes
+      </text>
+      <text x="20" y="65" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        Estimated changes: 45 lines across 12 files
+      </text>
+      <text x="20" y="80" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        Risk level: Medium
+      </text>
+    </g>
+  </g>
+
+  <!-- Arrow 4 -->
+  <path d="M 350 550 L 350 600" stroke="url(#orange-gradient)" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 5: Execution Preview -->
+  <g transform="translate(100, 610)">
+    <rect x="0" y="0" width="500" height="180" rx="16" fill="#1a1a2e" stroke="#ec4899" stroke-width="3" filter="url(#glow)"/>
+
+    <rect x="0" y="0" width="500" height="60" rx="16" fill="#ec4899" opacity="0.2"/>
+    <rect x="0" y="40" width="500" height="20" fill="#ec4899" opacity="0.2"/>
+
+    <circle cx="40" cy="30" r="22" fill="#ec4899"/>
+    <text x="40" y="37" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#ffffff">
+      5
+    </text>
+
+    <text x="80" y="35" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#ec4899">
+      Preview Changes
+    </text>
+
+    <g transform="translate(30, 75)">
+      <rect x="0" y="0" width="440" height="85" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <text x="220" y="25" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#ec4899">
+        Review before applying
+      </text>
+      <g transform="translate(10, 45)">
+        <rect x="0" y="0" width="130" height="30" rx="6" fill="#10b981" opacity="0.2"/>
+        <text x="65" y="20" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#10b981">
+          8 additions
+        </text>
+      </g>
+      <g transform="translate(150, 45)">
+        <rect x="0" y="0" width="130" height="30" rx="6" fill="#ef4444" opacity="0.2"/>
+        <text x="65" y="20" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#ef4444">
+          12 deletions
+        </text>
+      </g>
+      <g transform="translate(290, 45)">
+        <rect x="0" y="0" width="130" height="30" rx="6" fill="#f59e0b" opacity="0.2"/>
+        <text x="65" y="20" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#f59e0b">
+          25 modifications
+        </text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Arrow 5 -->
+  <path d="M 600 700 L 700 700" stroke="#ec4899" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Step 6: Execution -->
+  <g transform="translate(700, 610)">
+    <rect x="0" y="0" width="500" height="180" rx="16" fill="#1a1a2e" stroke="url(#cyan-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <rect x="0" y="0" width="500" height="60" rx="16" fill="url(#cyan-gradient)" opacity="0.2"/>
+    <rect x="0" y="40" width="500" height="20" fill="url(#cyan-gradient)" opacity="0.2"/>
+
+    <circle cx="40" cy="30" r="22" fill="url(#cyan-gradient)"/>
+    <text x="40" y="37" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#ffffff">
+      6
+    </text>
+
+    <text x="80" y="35" font-family="'Inter', sans-serif" font-weight="700" font-size="24" fill="#00d9ff">
+      Apply Changes
+    </text>
+
+    <g transform="translate(30, 75)">
+      <rect x="0" y="0" width="440" height="85" rx="10" fill="#0a0a0a" opacity="0.5"/>
+      <text x="220" y="25" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#00d9ff">
+        Executing coordinated changes
+      </text>
+      <text x="20" y="50" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        Progress: ████████░░ 80%
+      </text>
+      <text x="20" y="65" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+        Processed: 10/12 files
+      </text>
+      <text x="20" y="80" font-family="'Inter', sans-serif" font-size="11" fill="#10b981">
+        Status: All changes applied successfully
+      </text>
+    </g>
+  </g>
+
+  <!-- Bottom Info Panel -->
+  <g transform="translate(100, 820)">
+    <rect x="0" y="0" width="1200" height="140" rx="16" fill="#1a1a2e" stroke="url(#cyan-gradient)" stroke-width="2"/>
+
+    <text x="600" y="35" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="20" fill="#00d9ff">
+      Multi-File Features
+    </text>
+
+    <g transform="translate(50, 55)">
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="260" height="70" rx="10" fill="#0a0a0a" opacity="0.5"/>
+        <circle cx="30" cy="25" r="15" fill="url(#purple-gradient)"/>
+        <text x="30" y="30" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#ffffff">
+          🔍
+        </text>
+        <text x="55" y="20" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#a855f7">
+          Smart Discovery
+        </text>
+        <text x="15" y="40" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          Finds all related files
+        </text>
+        <text x="15" y="55" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          based on imports/usage
+        </text>
+      </g>
+
+      <g transform="translate(290, 0)">
+        <rect x="0" y="0" width="260" height="70" rx="10" fill="#0a0a0a" opacity="0.5"/>
+        <circle cx="30" cy="25" r="15" fill="url(#green-gradient)"/>
+        <text x="30" y="30" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#ffffff">
+          📊
+        </text>
+        <text x="55" y="20" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#10b981">
+          Dependency Graph
+        </text>
+        <text x="15" y="40" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          Analyzes relationships
+        </text>
+        <text x="15" y="55" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          to prevent breakage
+        </text>
+      </g>
+
+      <g transform="translate(580, 0)">
+        <rect x="0" y="0" width="260" height="70" rx="10" fill="#0a0a0a" opacity="0.5"/>
+        <circle cx="30" cy="25" r="15" fill="url(#orange-gradient)"/>
+        <text x="30" y="30" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#ffffff">
+          🎯
+        </text>
+        <text x="55" y="20" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#f59e0b">
+          Safe Ordering
+        </text>
+        <text x="15" y="40" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          Changes applied in
+        </text>
+        <text x="15" y="55" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          dependency order
+        </text>
+      </g>
+
+      <g transform="translate(870, 0)">
+        <rect x="0" y="0" width="260" height="70" rx="10" fill="#0a0a0a" opacity="0.5"/>
+        <circle cx="30" cy="25" r="15" fill="#ec4899"/>
+        <text x="30" y="30" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#ffffff">
+          🔄
+        </text>
+        <text x="55" y="20" font-family="'Inter', sans-serif" font-weight="600" font-size="13" fill="#ec4899">
+          Rollback Ready
+        </text>
+        <text x="15" y="40" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          Automatic backups
+        </text>
+        <text x="15" y="55" font-family="'Inter', sans-serif" font-size="10" fill="#9ca3af">
+          before changes
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

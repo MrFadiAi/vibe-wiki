@@ -1,0 +1,220 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 700" role="img" aria-labelledby="cli-copilot-workflow-title cli-copilot-workflow-desc">
+  <title id="cli-copilot-workflow-title">GitHub Copilot CLI Workflow</title>
+  <desc id="cli-copilot-workflow-desc">A diagram showing how GitHub Copilot CLI works: Natural language input → AI processing → Command suggestion → Execution.</desc>
+
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a2e;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- GitHub Gradient -->
+    <linearGradient id="github-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#58a6ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1f6feb;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Arrow Marker -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#58a6ff"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="700" fill="url(#bg-gradient)"/>
+
+  <!-- Title -->
+  <text x="700" y="50" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="36" fill="#ffffff">
+    GitHub Copilot CLI Workflow
+  </text>
+
+  <!-- Step 1: User Input -->
+  <g transform="translate(200, 200)">
+    <rect x="-120" y="-80" width="240" height="160" rx="16" fill="#1a1a2e" stroke="url(#github-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <!-- Icon: User -->
+    <circle cx="0" cy="-30" r="25" fill="url(#github-gradient)" opacity="0.3"/>
+    <circle cx="0" cy="-40" r="12" fill="#58a6ff"/>
+    <path d="M -15 -20 Q 0 -35 15 -20 Q 15 -10 0 -10 Q -15 -10 -15 -20" fill="#58a6ff"/>
+
+    <!-- Title -->
+    <text x="0" y="15" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#58a6ff">
+      Your Input
+    </text>
+
+    <!-- Example -->
+    <rect x="-100" y="30" width="200" height="35" rx="8" fill="#0a0a0a" stroke="#58a6ff" stroke-width="1"/>
+    <text x="0" y="53" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#9ca3af">
+      "compress all images"
+    </text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <g transform="translate(350, 200)">
+    <path d="M 0 0 L 100 0" stroke="url(#github-gradient)" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="50" y="-15" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#58a6ff">
+      Natural Language
+    </text>
+  </g>
+
+  <!-- Step 2: AI Processing -->
+  <g transform="translate(530, 200)">
+    <rect x="-120" y="-80" width="240" height="160" rx="16" fill="#1a1a2e" stroke="url(#github-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <!-- Icon: Brain/AI -->
+    <circle cx="0" cy="-30" r="25" fill="url(#github-gradient)" opacity="0.3"/>
+    <path d="M -12 -35 Q 0 -50 12 -35 Q 15 -25 12 -15 Q 0 -5 -12 -15 Q -15 -25 -12 -35" fill="#58a6ff" opacity="0.8"/>
+    <circle cx="-6" cy="-28" r="3" fill="#ffffff"/>
+    <circle cx="6" cy="-28" r="3" fill="#ffffff"/>
+    <path d="M -5 -18 Q 0 -15 5 -18" stroke="#ffffff" stroke-width="2" fill="none"/>
+
+    <!-- Title -->
+    <text x="0" y="15" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#58a6ff">
+      AI Processing
+    </text>
+
+    <!-- Description -->
+    <text x="0" y="38" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      <tspan x="0" dy="0">Understands intent</tspan>
+      <tspan x="0" dy="14">Identifies command</tspan>
+    </text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <g transform="translate(680, 200)">
+    <path d="M 0 0 L 100 0" stroke="url(#github-gradient)" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="50" y="-15" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#58a6ff">
+      Generates
+    </text>
+  </g>
+
+  <!-- Step 3: Command Suggestion -->
+  <g transform="translate(860, 200)">
+    <rect x="-120" y="-80" width="240" height="160" rx="16" fill="#1a1a2e" stroke="url(#github-gradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <!-- Icon: Terminal -->
+    <rect x="-20" y="-50" width="40" height="30" rx="4" fill="url(#github-gradient)" opacity="0.3"/>
+    <text x="-12" y="-30" font-family="'Fira Code', monospace" font-size="12" fill="#58a6ff">&gt;</text>
+    <rect x="-5" y="-34" width="15" height="2" fill="#58a6ff"/>
+    <rect x="-5" y="-29" width="10" height="2" fill="#58a6ff"/>
+
+    <!-- Title -->
+    <text x="0" y="15" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#58a6ff">
+      Suggestion
+    </text>
+
+    <!-- Example -->
+    <rect x="-100" y="30" width="200" height="35" rx="8" fill="#0a0a0a" stroke="#10b981" stroke-width="1"/>
+    <text x="0" y="53" text-anchor="middle" font-family="'Fira Code', monospace" font-size="11" fill="#10b981">
+      find . | pngquant
+    </text>
+  </g>
+
+  <!-- Arrow 3 -->
+  <g transform="translate(1010, 200)">
+    <path d="M 0 0 L 100 0" stroke="url(#github-gradient)" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="50" y="-15" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#58a6ff">
+      Execute
+    </text>
+  </g>
+
+  <!-- Step 4: Execution -->
+  <g transform="translate(1190, 200)">
+    <rect x="-120" y="-80" width="240" height="160" rx="16" fill="#1a1a2e" stroke="#10b981" stroke-width="3" filter="url(#glow)"/>
+
+    <!-- Icon: Checkmark -->
+    <circle cx="0" cy="-30" r="25" fill="#10b981" opacity="0.3"/>
+    <path d="M -12 -32 L -4 -24 L 12 -40" stroke="#10b981" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+    <!-- Title -->
+    <text x="0" y="15" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="18" fill="#10b981">
+      Complete!
+    </text>
+
+    <!-- Description -->
+    <text x="0" y="38" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      <tspan x="0" dy="0">Task executed</tspan>
+      <tspan x="0" dy="14">Images compressed</tspan>
+    </text>
+  </g>
+
+  <!-- Bottom Workflow: Explain Command -->
+  <g transform="translate(200, 480)">
+    <rect x="-120" y="-60" width="240" height="120" rx="16" fill="#1a1a2e" stroke="url(#github-gradient)" stroke-width="2"/>
+    <text x="0" y="-25" text-anchor="middle" font-family="'Fira Code', monospace" font-size="14" fill="#58a6ff">
+      gh copilot explain
+    </text>
+    <text x="0" y="0" text-anchor="middle" font-family="'Inter', sans-serif" font-size="13" fill="#e0e0e0">
+      "tar -czf archive.tar.gz"
+    </text>
+    <text x="0" y="25" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      → Explains what command does
+    </text>
+    <text x="0" y="42" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      → Breaks down each flag
+    </text>
+  </g>
+
+  <g transform="translate(530, 480)">
+    <rect x="-120" y="-60" width="240" height="120" rx="16" fill="#1a1a2e" stroke="url(#github-gradient)" stroke-width="2"/>
+    <text x="0" y="-25" text-anchor="middle" font-family="'Fira Code', monospace" font-size="14" fill="#58a6ff">
+      gh copilot suggest
+    </text>
+    <text x="0" y="0" text-anchor="middle" font-family="'Inter', sans-serif" font-size="13" fill="#e0e0e0">
+      "kill port 3000"
+    </text>
+    <text x="0" y="25" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      → Suggests command
+    </text>
+    <text x="0" y="42" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      → Shows explanation
+    </text>
+  </g>
+
+  <g transform="translate(860, 480)">
+    <rect x="-120" y="-60" width="240" height="120" rx="16" fill="#1a1a2e" stroke="url(#github-gradient)" stroke-width="2"/>
+    <text x="0" y="-25" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#58a6ff">
+      Two Modes
+    </text>
+    <text x="0" y="0" text-anchor="middle" font-family="'Inter', sans-serif" font-size="13" fill="#e0e0e0">
+      suggest + explain
+    </text>
+    <text x="0" y="25" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      → Create new commands
+    </text>
+    <text x="0" y="42" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      → Understand existing ones
+    </text>
+  </g>
+
+  <g transform="translate(1190, 480)">
+    <rect x="-120" y="-60" width="240" height="120" rx="16" fill="#1a1a2e" stroke="#10b981" stroke-width="2"/>
+    <text x="0" y="-25" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="700" font-size="14" fill="#10b981">
+      GitHub Integration
+    </text>
+    <text x="0" y="0" text-anchor="middle" font-family="'Inter', sans-serif" font-size="13" fill="#e0e0e0">
+      Built on GitHub CLI
+    </text>
+    <text x="0" y="25" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      → Uses your GitHub auth
+    </text>
+    <text x="0" y="42" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#9ca3af">
+      → Same credentials
+    </text>
+  </g>
+
+  <!-- Bottom Note -->
+  <text x="700" y="650" text-anchor="middle" font-family="'Inter', sans-serif" font-size="14" fill="#9ca3af">
+    Copilot CLI helps both beginners learn terminal and experts work faster
+  </text>
+</svg>
