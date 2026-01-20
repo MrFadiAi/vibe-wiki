@@ -365,3 +365,22 @@ export type {
   TimeSeriesPoint,
   AggregationPeriod,
 } from './analytics';
+
+// User Testing types - re-exported from user-testing.ts
+export type {
+  TesterRole,
+  DifficultyRating,
+  SatisfactionRating,
+  TaskCompletionStatus,
+  IssueSeverity,
+  IssueCategory,
+  TestingTask,
+  TestingIssue,
+  TaskResult,
+  SessionFeedback,
+  UserTestingSession,
+  CreateTestingTaskInput,
+  ReportIssueInput,
+  TestingSessionSummary,
+  UserPersona,
+} from './user-testing';
