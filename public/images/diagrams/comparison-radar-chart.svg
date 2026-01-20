@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">AI Coding CLI Radar Chart Comparison</title>
+  <desc id="desc">Radar chart comparing AI coding CLI tools across multiple dimensions</desc>
+
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="grad-cyan" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#00d9ff;stop-opacity:0.1" />
+    </linearGradient>
+    <linearGradient id="grad-purple" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:0.1" />
+    </linearGradient>
+    <linearGradient id="grad-green" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:0.1" />
+    </linearGradient>
+    <linearGradient id="grad-orange" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:0.1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="900" fill="#0a0a0a"/>
+  <rect width="1400" height="900" fill="url(#grad-cyan)" opacity="0.03"/>
+
+  <!-- Title -->
+  <text x="700" y="50" text-anchor="middle" font-family="Inter, sans-serif" font-size="36" font-weight="700" fill="#ffffff">
+    Multi-Dimensional Comparison
+  </text>
+  <text x="700" y="80" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" fill="#6b7280">
+    How each tool performs across 7 key dimensions
+  </text>
+
+  <!-- Radar Chart Center -->
+  <g transform="translate(700, 480)">
+    <!-- Background Grid (Concentric Pentagons for 7 axes) -->
+    <g stroke="#1a1a2e" stroke-width="1.5" fill="none">
+      <!-- Outer circle (scale of 5) -->
+      <circle cx="0" cy="0" r="280" stroke="#2a2a3e"/>
+      <!-- Scale circles -->
+      <circle cx="0" cy="0" r="224" stroke="#1a1a2e"/>
+      <circle cx="0" cy="0" r="168" stroke="#1a1a2e"/>
+      <circle cx="0" cy="0" r="112" stroke="#1a1a2e"/>
+      <circle cx="0" cy="0" r="56" stroke="#1a1a2e"/>
+    </g>
+
+    <!-- Axis Lines & Labels -->
+    <g stroke="#1a1a2e" stroke-width="1.5">
+      <!-- Code Quality (0° - Top) -->
+      <line x1="0" y1="0" x2="0" y2="-280"/>
+
+      <!-- Codebase Analysis (~51°) -->
+      <line x1="0" y1="0" x2="218" y2="-178"/>
+
+      <!-- Privacy/Security (~103°) -->
+      <line x1="0" y1="0" x2="267" y2="68"/>
+
+      <!-- Ease of Use (~154°) -->
+      <line x1="0" y1="0" x2="121" y2="252"/>
+
+      <!-- Pricing (~206°) -->
+      <line x1="0" y1="0" x2="-121" y2="252"/>
+
+      <!-- Git Integration (~257°) -->
+      <line x1="0" y1="0" x2="-267" y2="68"/>
+
+      <!-- Terminal UX (~309°) -->
+      <line x1="0" y1="0" x2="-218" y2="-178"/>
+    </g>
+
+    <!-- Axis Labels -->
+    <g font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#ffffff" text-anchor="middle">
+      <text x="0" y="-300">Code Quality</text>
+      <text x="250" y="-195">Codebase Analysis</text>
+      <text x="300" y="85">Privacy/Security</text>
+      <text x="140" y="275">Ease of Use</text>
+      <text x="-140" y="275">Pricing Value</text>
+      <text x="-300" y="85">Git Integration</text>
+      <text x="-250" y="-195">Terminal UX</text>
+    </g>
+
+    <!-- Claude CLI Polygon -->
+    <g>
+      <!-- Data: Quality=5, Analysis=5, Privacy=4, Ease=5, Pricing=3, Git=5, Terminal=4 -->
+      <polygon points="0,-280 218,-178 214,54 121,252 -121,252 -267,68 -174,-142"
+               fill="url(#grad-cyan)" stroke="#00d9ff" stroke-width="2.5" filter="url(#glow)"/>
+      <!-- Data points -->
+      <circle cx="0" cy="-280" r="5" fill="#00d9ff"/>
+      <circle cx="218" cy="-178" r="5" fill="#00d9ff"/>
+      <circle cx="214" cy="54" r="5" fill="#00d9ff"/>
+      <circle cx="121" cy="252" r="5" fill="#00d9ff"/>
+      <circle cx="-121" cy="252" r="5" fill="#00d9ff"/>
+      <circle cx="-267" cy="68" r="5" fill="#00d9ff"/>
+      <circle cx="-174" cy="-142" r="5" fill="#00d9ff"/>
+    </g>
+
+    <!-- OpenCode Polygon -->
+    <g>
+      <!-- Data: Quality=5, Analysis=5, Privacy=5, Ease=4, Pricing=5, Git=4, Terminal=5 -->
+      <polygon points="0,-280 218,-178 267,68 97,202 121,252 -214,54 -218,-178"
+               fill="url(#grad-purple)" stroke="#a855f7" stroke-width="2.5" filter="url(#glow)"/>
+      <!-- Data points -->
+      <circle cx="0" cy="-280" r="5" fill="#a855f7"/>
+      <circle cx="218" cy="-178" r="5" fill="#a855f7"/>
+      <circle cx="267" cy="68" r="5" fill="#a855f7"/>
+      <circle cx="97" cy="202" r="5" fill="#a855f7"/>
+      <circle cx="121" cy="252" r="5" fill="#a855f7"/>
+      <circle cx="-214" cy="54" r="5" fill="#a855f7"/>
+      <circle cx="-218" cy="-178" r="5" fill="#a855f7"/>
+    </g>
+
+    <!-- Copilot CLI Polygon -->
+    <g>
+      <!-- Data: Quality=4, Analysis=3, Privacy=3, Ease=4, Pricing=4, Git=5, Terminal=5 -->
+      <polygon points="0,-224 131,-107 160,41 97,202 97,202 -267,68 -218,-178"
+               fill="url(#grad-green)" stroke="#10b981" stroke-width="2.5" filter="url(#glow)"/>
+      <!-- Data points -->
+      <circle cx="0" cy="-224" r="5" fill="#10b981"/>
+      <circle cx="131" cy="-107" r="5" fill="#10b981"/>
+      <circle cx="160" cy="41" r="5" fill="#10b981"/>
+      <circle cx="97" cy="202" r="5" fill="#10b981"/>
+      <circle cx="97" cy="202" r="5" fill="#10b981"/>
+      <circle cx="-267" cy="68" r="5" fill="#10b981"/>
+      <circle cx="-218" cy="-178" r="5" fill="#10b981"/>
+    </g>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(200, 820)">
+    <rect x="0" y="0" width="30" height="15" fill="#00d9ff" rx="3" opacity="0.5"/>
+    <text x="40" y="12" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#00d9ff">Claude CLI</text>
+    <text x="140" y="12" font-family="Inter, sans-serif" font-size="12" fill="#6b7280">Best: Quality, Analysis, Git</text>
+  </g>
+
+  <g transform="translate(500, 820)">
+    <rect x="0" y="0" width="30" height="15" fill="#a855f7" rx="3" opacity="0.5"/>
+    <text x="40" y="12" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#a855f7">OpenCode</text>
+    <text x="140" y="12" font-family="Inter, sans-serif" font-size="12" fill="#6b7280">Best: Privacy, Pricing, Terminal</text>
+  </g>
+
+  <g transform="translate(800, 820)">
+    <rect x="0" y="0" width="30" height="15" fill="#10b981" rx="3" opacity="0.5"/>
+    <text x="40" y="12" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#10b981">Copilot CLI</text>
+    <text x="140" y="12" font-family="Inter, sans-serif" font-size="12" fill="#6b7280">Best: Git, Terminal</text>
+  </g>
+</svg>

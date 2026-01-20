@@ -1050,7 +1050,7 @@ Day 6-7: Master Advanced Patterns
 
 **Week 3: Learning Paths & Comparison**
 - [x] Write all 4 learning paths
-- [ ] Create comparison matrices
+- [x] Create comparison matrices
 - [ ] Create workflow diagrams
 - [ ] Create 12 remaining SVGs
 - [ ] Final content review

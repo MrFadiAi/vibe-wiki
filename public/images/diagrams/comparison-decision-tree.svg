@@ -1,0 +1,241 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">AI Coding CLI Decision Tree</title>
+  <desc id="desc">Decision tree for choosing the right AI coding CLI tool based on needs</desc>
+
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="grad-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#00a3cc;stop-opacity:0.8" />
+    </linearGradient>
+    <linearGradient id="grad-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:0.8" />
+    </linearGradient>
+    <linearGradient id="grad-green" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:0.8" />
+    </linearGradient>
+    <linearGradient id="grad-orange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:0.8" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="900" fill="#0a0a0a"/>
+  <rect width="1400" height="900" fill="url(#grad-cyan)" opacity="0.03"/>
+
+  <!-- Title -->
+  <text x="700" y="50" text-anchor="middle" font-family="Inter, sans-serif" font-size="36" font-weight="700" fill="#ffffff">
+    What's Your Priority?
+  </text>
+  <text x="700" y="80" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" fill="#6b7280">
+    Choose the AI Coding CLI that matches your needs
+  </text>
+
+  <!-- Start Node -->
+  <g transform="translate(550, 120)">
+    <rect width="300" height="60" rx="10" fill="url(#grad-purple)" filter="url(#glow)"/>
+    <text x="150" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="#ffffff">
+      Start: What do you need?
+    </text>
+  </g>
+
+  <!-- First Decision -->
+  <line x1="700" y1="180" x2="350" y2="240" stroke="#00d9ff" stroke-width="2"/>
+  <line x1="700" y1="180" x2="700" y2="240" stroke="#a855f7" stroke-width="2"/>
+  <line x1="700" y1="180" x2="1050" y2="240" stroke="#10b981" stroke-width="2"/>
+
+  <!-- Decision Nodes Row 1 -->
+  <g transform="translate(200, 240)">
+    <rect width="300" height="80" rx="10" fill="#1a1a2e" stroke="#00d9ff" stroke-width="2"/>
+    <text x="150" y="30" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#00d9ff">
+      Privacy & Security
+    </text>
+    <text x="150" y="55" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#6b7280">
+      Need offline/local AI?
+    </text>
+  </g>
+
+  <g transform="translate(550, 240)">
+    <rect width="300" height="80" rx="10" fill="#1a1a2e" stroke="#a855f7" stroke-width="2"/>
+    <text x="150" y="30" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#a855f7">
+      Best Reasoning
+    </text>
+    <text x="150" y="55" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#6b7280">
+      Want smartest AI?
+    </text>
+  </g>
+
+  <g transform="translate(900, 240)">
+    <rect width="300" height="80" rx="10" fill="#1a1a2e" stroke="#10b981" stroke-width="2"/>
+    <text x="150" y="30" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#10b981">
+      GitHub Integration
+    </text>
+    <text x="150" y="55" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#6b7280">
+      Heavy GitHub user?
+    </text>
+  </g>
+
+  <!-- Connectors to Results -->
+  <line x1="350" y1="320" x2="350" y2="380" stroke="#00d9ff" stroke-width="2"/>
+  <line x1="700" y1="320" x2="700" y2="380" stroke="#a855f7" stroke-width="2"/>
+  <line x1="1050" y1="320" x2="1050" y2="380" stroke="#10b981" stroke-width="2"/>
+
+  <!-- Result Cards Row 1 -->
+  <g transform="translate(200, 380)">
+    <rect width="300" height="120" rx="10" fill="url(#grad-cyan)" filter="url(#glow)"/>
+    <text x="150" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#ffffff">
+      OpenCode
+    </text>
+    <text x="150" y="65" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#ffffff">
+      ✓ Local models (Ollama)
+    </text>
+    <text x="150" y="90" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#ffffff">
+      ✓ Open source & free
+    </text>
+    <text x="150" y="115" text-anchor="middle" font-family="Fira Code, monospace" font-size="12" fill="#0a0a0a">
+      npm install -g @ohmyopencode/cli
+    </text>
+  </g>
+
+  <g transform="translate(550, 380)">
+    <rect width="300" height="120" rx="10" fill="url(#grad-purple)" filter="url(#glow)"/>
+    <text x="150" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#ffffff">
+      Claude CLI
+    </text>
+    <text x="150" y="65" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#ffffff">
+      ✓ Best explanations
+    </text>
+    <text x="150" y="90" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#ffffff">
+      ✓ Strong reasoning
+    </text>
+    <text x="150" y="115" text-anchor="middle" font-family="Fira Code, monospace" font-size="12" fill="#0a0a0a">
+      npm install -g @anthropic-ai/claude-cli
+    </text>
+  </g>
+
+  <g transform="translate(900, 380)">
+    <rect width="300" height="120" rx="10" fill="url(#grad-green)" filter="url(#glow)"/>
+    <text x="150" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#ffffff">
+      Copilot CLI
+    </text>
+    <text x="150" y="65" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#ffffff">
+      ✓ GitHub native
+    </text>
+    <text x="150" y="90" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#ffffff">
+      ✓ Terminal commands
+    </text>
+    <text x="150" y="115" text-anchor="middle" font-family="Fira Code, monospace" font-size="12" fill="#0a0a0a">
+      gh extension install github/gh-copilot
+    </text>
+  </g>
+
+  <!-- Secondary Questions -->
+  <g transform="translate(100, 560)">
+    <rect width="280" height="100" rx="10" fill="#1a1a2e" stroke="#ec4899" stroke-width="2"/>
+    <text x="140" y="30" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#ec4899">
+      Building Startup MVP?
+    </text>
+    <text x="140" y="60" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#6b7280">
+      OpenCode (free + multi-agent)
+    </text>
+    <text x="140" y="85" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#6b7280">
+      or Claude CLI (quality)
+    </text>
+  </g>
+
+  <g transform="translate(420, 560)">
+    <rect width="280" height="100" rx="10" fill="#1a1a2e" stroke="#f59e0b" stroke-width="2"/>
+    <text x="140" y="30" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#f59e0b">
+      Learning to Code?
+    </text>
+    <text x="140" y="60" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#6b7280">
+      Claude CLI (best teaching)
+    </text>
+    <text x="140" y="85" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#6b7280">
+      or OpenCode (free)
+    </text>
+  </g>
+
+  <g transform="translate(740, 560)">
+    <rect width="280" height="100" rx="10" fill="#1a1a2e" stroke="#ef4444" stroke-width="2"/>
+    <text x="140" y="30" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#ef4444">
+      Enterprise Team?
+    </text>
+    <text x="140" y="60" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#6b7280">
+      Copilot CLI (GitHub SSO)
+    </text>
+    <text x="140" y="85" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#6b7280">
+      or OpenCode (on-prem)
+    </text>
+  </g>
+
+  <g transform="translate(1060, 560)">
+    <rect width="280" height="100" rx="10" fill="#1a1a2e" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="140" y="30" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#8b5cf6">
+      Terminal Power User?
+    </text>
+    <text x="140" y="60" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#6b7280">
+      Copilot CLI (terminal-first)
+    </text>
+    <text x="140" y="85" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#6b7280">
+      or OpenCode (extensive CLI)
+    </text>
+  </g>
+
+  <!-- Quick Comparison Table -->
+  <g transform="translate(50, 720)">
+    <text x="0" y="0" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="#ffffff">
+      Quick Feature Comparison
+    </text>
+
+    <!-- Table Header -->
+    <g transform="translate(0, 30)">
+      <rect width="1300" height="40" rx="5" fill="#1a1a2e" stroke="#00d9ff" stroke-width="1"/>
+      <text x="100" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Feature</text>
+      <text x="350" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#00d9ff">Claude CLI</text>
+      <text x="600" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#10b981">Copilot CLI</text>
+      <text x="850" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#a855f7">OpenCode</text>
+      <text x="1100" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#f59e0b">Codex API</text>
+    </g>
+
+    <!-- Row 1: Code Generation -->
+    <g transform="translate(0, 75)">
+      <rect width="1300" height="35" rx="5" fill="#0f0f1a"/>
+      <text x="100" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#ffffff">Code Generation</text>
+      <text x="350" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#00d9ff">⭐⭐⭐⭐⭐</text>
+      <text x="600" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#10b981">⭐⭐⭐⭐</text>
+      <text x="850" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#a855f7">⭐⭐⭐⭐⭐</text>
+      <text x="1100" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#f59e0b">⭐⭐⭐⭐⭐</text>
+    </g>
+
+    <!-- Row 2: Codebase Analysis -->
+    <g transform="translate(0, 115)">
+      <rect width="1300" height="35" rx="5" fill="#0f0f1a"/>
+      <text x="100" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#ffffff">Codebase Analysis</text>
+      <text x="350" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#00d9ff">⭐⭐⭐⭐⭐</text>
+      <text x="600" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#10b981">⭐⭐⭐</text>
+      <text x="850" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#a855f7">⭐⭐⭐⭐⭐</text>
+      <text x="1100" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#f59e0b">⭐⭐⭐⭐</text>
+    </g>
+
+    <!-- Row 3: Price -->
+    <g transform="translate(0, 155)">
+      <rect width="1300" height="35" rx="5" fill="#0f0f1a"/>
+      <text x="100" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#ffffff">Price</text>
+      <text x="350" y="22" text-anchor="middle" font-family="Fira Code, monospace" font-size="11" fill="#00d9ff">$20/mo</text>
+      <text x="600" y="22" text-anchor="middle" font-family="Fira Code, monospace" font-size="11" fill="#10b981">$10/mo</text>
+      <text x="850" y="22" text-anchor="middle" font-family="Fira Code, monospace" font-size="11" fill="#a855f7">FREE</text>
+      <text x="1100" y="22" text-anchor="middle" font-family="Fira Code, monospace" font-size="11" fill="#f59e0b">Pay/API</text>
+    </g>
+  </g>
+</svg>
