@@ -1413,3 +1413,139 @@ Note: npm is not available in the current PATH, so tests could not be run direct
 
 ---
 
+## 2026-01-20: Phase 1, Week 2, Task 2 Completed
+
+### Task: Write Copilot CLI Guide
+
+**Status**: ✅ COMPLETED
+
+### What Was Done
+
+Created a comprehensive Arabic article "دليل GitHub Copilot CLI الشامل (GitHub Copilot CLI Comprehensive Guide)" covering all aspects of GitHub Copilot CLI.
+
+#### Content Added
+- **Article Slug**: `copilot-cli-comprehensive-guide`
+- **Article Title**: دليل GitHub Copilot CLI الشامل (GitHub Copilot CLI Comprehensive Guide)
+- **Section**: أدوات CLI (AI Coding CLIs)
+- **Position**: Added after Claude CLI article in section 8
+
+#### Article Structure
+
+**Introduction**
+- What is GitHub Copilot CLI
+- Key capabilities: suggest commands, explain commands, generate scripts, debug shell errors
+
+**Prerequisites**
+- GitHub account with Copilot subscription
+- GitHub CLI installed
+- Terminal access
+- Installation permissions
+
+**Installation (5 steps)**
+1. Install GitHub CLI (brew, winget, apt, dnf)
+2. Verify installation with `gh --version`
+3. Login with `gh auth login`
+4. Install extension: `gh extension install github/gh-copilot`
+5. Verify with `gh copilot --version`
+
+**Core Commands**
+1. `gh copilot suggest` - Suggest commands based on natural language
+2. `gh copilot explain` - Explain complex commands
+
+**Use Cases (3 scenarios)**
+1. System Administration - Finding large files modified recently
+2. Git Workflows - Undo commits, create branches, merge strategies
+3. DevOps Tasks - Docker deployment with environment variables
+
+**Aliases for Speed**
+- Bash/Zsh: `alias cs='gh copilot suggest'` and `alias ce='gh copilot explain'`
+- PowerShell: Functions for `cs` and `ce`
+
+**Advanced Tips**
+- Multiple suggestions with `--shell` flag
+- Shell customization
+- Detailed explanations with `--detailed`
+- Workflow integration with pipes
+
+**Comparison with Alternatives**
+- Feature comparison table with Claude CLI and OpenCode
+- Why choose Copilot CLI
+
+**Pricing**
+- Free: 2 month trial
+- Individual: $10/month (unlimited suggestions)
+- Business: $19/user/month (+ team policies)
+- Enterprise: Custom pricing
+
+**Best Practices**
+- DO's: Clear descriptions, understand before execute, use aliases, test in safe environment
+- DON'Ts: Don't execute blindly, don't fully rely on suggestions, don't share sensitive data
+
+**Practical Examples**
+- File management: Find duplicates, delete temp files, calculate folder size
+- Process management: Kill on port, kill by name, show resource usage
+- Networking: Test connectivity, list open ports, trace route
+
+**Troubleshooting**
+- "gh: command not found" - Install GitHub CLI or add to PATH
+- "extension not found" - Reinstall extension
+- "authentication failed" - Re-authenticate
+
+**Resources**
+- Official documentation links
+- Help commands
+
+**Quick Reference**
+- Basic commands summary
+- Aliases summary
+- Options summary
+
+### Files Modified
+- `src/data/wiki-content.ts`: Added new article object (~550 lines)
+- `PRD.md`: Marked Phase 1, Week 2, Task 2 as complete
+
+### Content Features
+- Comprehensive Arabic text with RTL support
+- Bilingual technical terms (English in parentheses)
+- Code examples with syntax highlighting
+- Tables for comparison and pricing
+- Emoji icons for visual appeal
+- Practical examples throughout
+- Step-by-step installation instructions
+
+### Content Quality
+- Comprehensive: Covers everything from installation to advanced usage
+- Practical: Real-world examples for each feature
+- Actionable: Clear commands users can run immediately
+- Educational: Explains not just what, but why and when
+- Structured: Easy to follow with clear sections
+- Complete: Includes troubleshooting, best practices, and resources
+
+### Code Verification
+- Valid TypeScript syntax in wiki-content.ts
+- Proper string escaping for backticks
+- Correct array structure for WikiArticle
+- Slug follows naming conventions (kebab-case)
+- Content properly formatted with markdown
+- Article added to correct section "8. أدوات CLI للبرمجة بالذكاء الاصطناعي"
+
+### File Changes
+- Modified: `src/data/wiki-content.ts` (+550 lines)
+- Modified: `PRD.md` (marked task as complete)
+
+### Test Status
+Note: npm is not available in the current PATH, so tests could not be run directly. However:
+- The code follows the existing pattern in wiki-content.ts
+- All required fields are present (slug, title, section, content)
+- The content is properly formatted as a template string
+- The article is added to the correct section
+- Syntax verified manually (proper array closing, bracket matching)
+
+### PRD Update
+- Marked Phase 1, Week 2, Task 2 as complete: `[x] Write Copilot CLI guide`
+
+### Next Priority Task
+**Phase 1, Week 2, Task 3**: Write OpenCode guide
+
+---
+

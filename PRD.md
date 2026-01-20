@@ -1043,7 +1043,7 @@ Day 6-7: Master Advanced Patterns
 
 **Week 2: CLI Tools Documentation**
 - [x] Write Claude CLI comprehensive guide
-- [ ] Write Copilot CLI guide
+- [x] Write Copilot CLI guide
 - [ ] Write OpenCode guide
 - [ ] Create 25 CLI-specific SVGs
 - [ ] Write brief guides for 10 other tools
