@@ -10,12 +10,16 @@ import type { SVGDiagram as SVGDiagramType } from '@/lib/svg-utils';
 
 // Mock Next.js Image component
 vi.mock('next/image', () => ({
-  default: ({ src, alt, className, title, priority }: {
+  default: ({ src, alt, className, title, priority, loading, placeholder, blurDataURL, sizes }: {
     src: string;
     alt: string;
     className?: string;
     title?: string;
     priority?: boolean;
+    loading?: 'eager' | 'lazy';
+    placeholder?: 'blur' | 'empty';
+    blurDataURL?: string;
+    sizes?: string;
   }) => (
     <img
       src={src}
@@ -23,6 +27,10 @@ vi.mock('next/image', () => ({
       className={className}
       title={title}
       data-priority={priority}
+      data-loading={loading}
+      data-placeholder={placeholder}
+      data-blur={!!blurDataURL}
+      data-sizes={sizes}
     />
   ),
 }));
@@ -133,6 +141,36 @@ describe('SVGDiagram', () => {
     const figure = container.querySelector('figure');
     expect(figure).toBeInTheDocument();
     expect(figure).toHaveClass('svg-diagram-container');
+  });
+
+  // Lazy loading tests
+  it('should use lazy loading by default', () => {
+    render(<SVGDiagram diagram={mockDiagram} />);
+    const img = screen.getByRole('img');
+    expect(img).toHaveAttribute('data-loading', 'lazy');
+    expect(img).toHaveAttribute('data-priority', 'false');
+  });
+
+  it('should use eager loading when priority is true', () => {
+    render(<SVGDiagram diagram={mockDiagram} priority={true} />);
+    const img = screen.getByRole('img');
+    expect(img).toHaveAttribute('data-loading', 'eager');
+    expect(img).toHaveAttribute('data-priority', 'true');
+  });
+
+  it('should use blur placeholder', () => {
+    render(<SVGDiagram diagram={mockDiagram} />);
+    const img = screen.getByRole('img');
+    expect(img).toHaveAttribute('data-placeholder', 'blur');
+    expect(img).toHaveAttribute('data-blur', 'true');
+  });
+
+  it('should include responsive sizes attribute', () => {
+    render(<SVGDiagram diagram={mockDiagram} />);
+    const img = screen.getByRole('img');
+    expect(img).toHaveAttribute('data-sizes');
+    expect(img?.getAttribute('data-sizes')).toContain('100vw');
+    expect(img?.getAttribute('data-sizes')).toContain('80vw');
   });
 });
 
@@ -289,5 +327,27 @@ describe('SVGDiagramWithLink', () => {
     render(<SVGDiagramWithLink diagram={mockDiagram} href="/full.svg" />);
     const figcaption = screen.queryByTagName('FIGCAPTION');
     expect(figcaption).toBeInTheDocument();
+  });
+
+  // Lazy loading tests for SVGDiagramWithLink
+  it('should use lazy loading by default for SVGDiagramWithLink', () => {
+    render(<SVGDiagramWithLink diagram={mockDiagram} />);
+    const img = screen.getByRole('img');
+    expect(img).toHaveAttribute('data-loading', 'lazy');
+    expect(img).toHaveAttribute('data-priority', 'false');
+  });
+
+  it('should use eager loading when priority is true for SVGDiagramWithLink', () => {
+    render(<SVGDiagramWithLink diagram={mockDiagram} priority={true} />);
+    const img = screen.getByRole('img');
+    expect(img).toHaveAttribute('data-loading', 'eager');
+    expect(img).toHaveAttribute('data-priority', 'true');
+  });
+
+  it('should use blur placeholder for SVGDiagramWithLink', () => {
+    render(<SVGDiagramWithLink diagram={mockDiagram} />);
+    const img = screen.getByRole('img');
+    expect(img).toHaveAttribute('data-placeholder', 'blur');
+    expect(img).toHaveAttribute('data-blur', 'true');
   });
 });

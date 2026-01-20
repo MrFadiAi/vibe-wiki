@@ -1,6 +1,6 @@
 /**
  * SVGDiagram Component
- * Renders accessible SVG diagram images with captions
+ * Renders accessible SVG diagram images with captions and lazy loading
  */
 
 import React from 'react';
@@ -10,9 +10,10 @@ import type { SVGDiagram as SVGDiagramType } from '@/lib/svg-utils';
 interface SVGDiagramProps {
   diagram: SVGDiagramType;
   className?: string;
+  priority?: boolean; // For above-the-fold images
 }
 
-export function SVGDiagram({ diagram, className = '' }: SVGDiagramProps) {
+export function SVGDiagram({ diagram, className = '', priority = false }: SVGDiagramProps) {
   const { src, alt, caption, maxWidth, title, description } = diagram;
 
   // Build figure className
@@ -38,6 +39,14 @@ export function SVGDiagram({ diagram, className = '' }: SVGDiagramProps) {
     .filter(Boolean)
     .join(' ');
 
+  // Placeholder blur color matching the theme
+  const blurDataURL = `data:image/svg+xml;base64,${Buffer.from(
+    `<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+      <rect width="40" height="40" fill="%230a0a0a"/>
+      <rect width="40" height="40" fill="%231a1a2e" opacity="0.5"/>
+    </svg>`
+  ).toString('base64')}`;
+
   return (
     <figure className={figureClasses}>
       <div className="relative">
@@ -49,8 +58,13 @@ export function SVGDiagram({ diagram, className = '' }: SVGDiagramProps) {
           className={imgClasses}
           // Accessibility props
           title={title}
-          // Priority loading for above-the-fold diagrams
-          priority={false}
+          // Lazy loading configuration
+          loading={priority ? 'eager' : 'lazy'}
+          priority={priority}
+          placeholder="blur"
+          blurDataURL={blurDataURL}
+          // Improve perceived performance
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
         />
         {description && (
           <span className="sr-only" id={`${src}-desc`}>
@@ -112,9 +126,12 @@ export function SVGDiagramGrid({
  * Renders an SVG diagram that links to a full-size version
  */
 
-interface SVGDiagramWithLinkProps extends SVGDiagramProps {
+interface SVGDiagramWithLinkProps {
+  diagram: SVGDiagramType;
   href?: string;
   linkTitle?: string;
+  className?: string;
+  priority?: boolean;
 }
 
 export function SVGDiagramWithLink({
@@ -122,6 +139,7 @@ export function SVGDiagramWithLink({
   href,
   linkTitle = 'View full-size',
   className = '',
+  priority = false,
 }: SVGDiagramWithLinkProps) {
   const { src, alt, caption, maxWidth, title, description } = diagram;
   const linkHref = href || src;
@@ -151,6 +169,14 @@ export function SVGDiagramWithLink({
     .filter(Boolean)
     .join(' ');
 
+  // Placeholder blur color matching the theme
+  const blurDataURL = `data:image/svg+xml;base64,${Buffer.from(
+    `<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+      <rect width="40" height="40" fill="%230a0a0a"/>
+      <rect width="40" height="40" fill="%231a1a2e" opacity="0.5"/>
+    </svg>`
+  ).toString('base64')}`;
+
   return (
     <figure className={figureClasses}>
       <a href={linkHref} target="_blank" rel="noopener noreferrer" className="block">
@@ -161,6 +187,13 @@ export function SVGDiagramWithLink({
           height={600}
           className={imgClasses}
           title={title}
+          // Lazy loading configuration
+          loading={priority ? 'eager' : 'lazy'}
+          priority={priority}
+          placeholder="blur"
+          blurDataURL={blurDataURL}
+          // Improve perceived performance
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
         />
         {description && (
           <span className="sr-only" id={`${src}-desc`}>
