@@ -7696,4 +7696,2559 @@ bito chat
       },
     ],
   },
+  {
+    name: "9. مسارات التعلم (Learning Paths)",
+    articles: [
+      {
+        slug: "learning-path-1-beginner-to-first-app",
+        title: "المسار الأول: من المبتدئ إلى أول تطبيق (Complete Beginner to First App)",
+        section: "مسارات التعلم",
+        content: `
+# المسار الأول: من المبتدئ إلى أول تطبيق (2 أسابيع)
+# Path 1: Complete Beginner to First App (2 weeks)
+
+**الهدف**: تحويلك من شخص لا يعرف البرمجة إلى مطور يمتلك تطبيقًا عمليًا يعمل في غضون أسبوعين.
+
+---
+
+## الأسبوع الأول: التأسيس (Week 1: Foundations)
+
+### اليوم 1-2: فهم البرمجة بالإحساس (Understanding Vibecoding)
+
+#### 📖 ماذا ستتعلم
+- ما هي البرمجة بالإحساس وكيف تختلف عن البرمجة التقليدية
+- الفلسفة الأساسية: الحدس فوق الحفظ
+- الأدوات التي ستحتاجها
+- لماذا هذا هو الوقت الأفضل لتعلم البرمجة
+
+#### ✅ المهام
+1. اقرأ مقال **"ما هي البرمجة بالإحساس؟"** في هذا الويكي
+2. شاهد فيديو مقدمة عن البرمجة بالذكاء الاصطناعي (15 دقيقة)
+3. أنشئ حسابًا على GitHub (إذا لم يكن لديك واحد)
+4. انضم لمجتمع Discord أو Slack للمبرمجين بالذكاء الاصطناعي
+
+#### 🎯 التمارين
+- **تمرين 1**: اكتب 3 أفكار لمشاريع صغيرة تود بناءها
+- **تمرين 2**: صف شكل تطبيق مثالي باستخدام لغتك الخاصة
+- **تمرين 3**: حدد أداة واحدة تريد تعلمها أولاً (Cursor أو Windsurf)
+
+---
+
+### اليوم 3-4: تجهيز بيئتك (Setup Your Environment)
+
+#### 📖 ماذا ستتعلم
+- كيف تثبت وتُشغل محرر AI (Cursor أو Windsurf)
+- أساسيات JavaScript/TypeScript
+- كيف تستخدم Prompt الأول مع AI
+- المفاهيم الأساسية للتحكم في الإصدارات (Git)
+
+#### ✅ المهام
+1. **تثبيت Cursor** (موصى به للمبتدئين):
+   \`\`\`bash
+   # على macOS
+   brew install --cask cursor
+
+   # على Windows
+   # حمّل من https://cursor.com/downloads
+   \`\`\`
+
+2. **أو تثبيت Windsurf** (بديل مجاني):
+   - حمّل من https://codeium.com/windsurf
+
+3. تثبيت Node.js عبر nvm:
+   \`\`\`bash
+   # تثبيت nvm
+   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+
+   # تثبيت Node.js
+   nvm install 20
+   \`\`\`
+
+4. إعداد GitHub:
+   \`\`\`bash
+   # إعداد git
+   git config --global user.name "Your Name"
+   git config --global user.email "your@email.com"
+   \`\`\`
+
+#### 🎯 التمارين
+- **تمرين 1**: Hello World بالذكاء الاصطناعي
+  - افتح Cursor
+  - اضغط \`Ctrl+L\` (أو \`Cmd+L\`)
+  - اكتب: "Create a simple HTML page that says Hello World"
+  - شاهد كيف يولد AI الكود
+
+- **تمرين 2**: عدّل الصفحة
+  - اسأل AI: "Change the background color to blue"
+  - لاحظ كيف يفهم AI وينفذ طلبك
+
+---
+
+### اليوم 5-7: تعلم أداة CLI واحدة (Learn One CLI Tool)
+
+#### 📖 ماذا ستتعلم
+- كيف تتفاعل مع AI من خلال Terminal
+- الأوامر الأساسية لـ Claude CLI أو Copilot CLI
+- كيف تبني سكريبت بسيط بمساعدة AI
+- أفضل الممارسات للبرومبتات
+
+#### ✅ المهام
+1. اختر أداة CLI:
+   - **Claude CLI** (موصى به): أفضل للتعلّم والشرح
+   - **Copilot CLI**: مجانٍ وسهل الاستخدام
+
+2. تثبيت Claude CLI:
+   \`\`\`bash
+   npm install -g @anthropic-ai/claude-cli
+   claude init
+   \`\`\`
+
+3. تثبيت Copilot CLI:
+   \`\`\`bash
+   # تثبيت GitHub CLI أولاً
+   brew install gh  # macOS
+   winget install GitHub.cli  # Windows
+
+   # تثبيت امتداد Copilot
+   gh extension install github/gh-copilot
+   gh auth login
+   \`\`\`
+
+#### 🎯 التمارين
+- **تمرين 1**: 10 أوامر أساسية
+  \`\`\`bash
+  # Claude CLI
+  claude ask "What is a JavaScript variable?"
+  claude ask "Explain arrays in JavaScript"
+  claude ask "How do I create a function?"
+  claude ask "What is a loop?"
+  claude ask "Explain objects in JavaScript"
+
+  # Copilot CLI
+  gh copilot suggest "list all files in current directory"
+  gh copilot suggest "find all JavaScript files"
+  gh copilot explain "npm install"
+  gh copilot explain "git status"
+  \`\`\`
+
+- **تمرين 2**: بناء سكريبت بسيط
+  - اسأل Claude: "Create a JavaScript script that calculates the sum of numbers from 1 to 100"
+  - احفظ الملف
+  - شغّله: \`node script.js\`
+
+---
+
+## الأسبوع الثاني: مشروعك الأول (Week 2: Your First Project)
+
+### اليوم 8-10: تخطيط مشروعك (Plan Your Project)
+
+#### 📖 ماذا ستتعلم
+- كيف تختار مشروع مناسب لمستواك
+- أساسيات التصميم البسيط (UI/UX)
+- كيف تطلب من AI تخطيط المعمارية
+- تقسيم المشروع لمهام صغيرة
+
+#### ✅ المهام
+1. اختر مشروعًا واحدًا:
+   - **خيار أ**: تطبيق Todo List
+     - إضافة مهام
+     - حذف مهام
+     - تحديد مهام كمكتملة
+
+   - **خيار ب**: موقع شخصي (Portfolio)
+     - صفحة رئيسية
+     - قسم "عني"
+     - معرض أعمال
+     - نموذج تواصل
+
+2. ارسم مخططًا بسيطًا:
+   - استخدم الورقة والقلم
+   - أو استخدم FigJam
+   - حدد الصفحات والمكونات
+
+3. اطلب من AI التخطيط:
+   \`\`\`
+   Prompt: "I want to build a Todo app with Next.js.
+   Plan the architecture and file structure.
+   What components do I need?
+   What state management should I use?"
+   \`\`\`
+
+#### 🎯 التمارين
+- **تمرين 1**: قائمة المكونات
+  - اكتب قائمة بكل المكونات التي يحتاجها مشروعك
+  - رتبها من الأهم إلى الأقل أهمية
+
+- **تمرين 2**: خطة العمل
+  - قسم العمل لمهام يومية
+  - قدّر الوقت لكل مهمة
+
+---
+
+### اليوم 11-13: البناء مع AI (Build with AI)
+
+#### 📖 ماذا ستتعلم
+- كيف تولّد المكونات مع AI
+- التكرار والتحسين مع AI
+- تصحيح الأخطاء بمساعدة AI
+- دمج المكونات معًا
+
+#### ✅ المهام
+1. إنشاء المشروع:
+   \`\`\`bash
+   # مع Cursor
+   File → New Project → Next.js
+
+   # أو يدويًا
+   npx create-next-app@latest my-app
+   \`\`\`
+
+2. توليد المكونات:
+   - اضغط \`Ctrl+L\` في Cursor
+   - اكتب: "Create a TodoItem component with checkbox and delete button"
+
+3. التكرار:
+   - راجع الكود المولد
+   - اطلب تعديلات: "Make the checkbox green when checked"
+   - افهم التغييرات
+
+4. التصحيح:
+   - عند ظهور خطأ، حدّده واضغط \`Ctrl+L\`
+   - اكتب: "Fix this error"
+
+#### 🎯 التمارين
+- **تمرين 1**: بناء 5 مكونات
+  1. المكون الرئيسي (App/TodoList)
+  2. مكون العنصر (TodoItem)
+  3. نموذج الإضافة (AddTodoForm)
+  4. شريط الحالة (StatusBar)
+  5. الفلتر (FilterButtons)
+
+- **تمرين 2**: إدارة الحالة
+  - اسأل AI: "Add state management for todos using useState"
+  - افهم كيف تعمل الحالة
+
+---
+
+### اليوم 14: النشر والمشاركة (Deploy & Share)
+
+#### 📖 ماذا ستتعلم
+- كيف تنشر مشروعك على Vercel
+- كيف تشاركه على GitHub
+- كيف تقدم مشاركتك
+- ماذا تعلّمت وكيف تواصل
+
+#### ✅ المهام
+1. النشر على Vercel:
+   \`\`\`bash
+   # تثبيت Vercel CLI
+   npm i -g vercel
+
+   # النشر
+   vercel
+
+   # أو ادفع لـ GitHub وانشر من لوحة التحكم
+   \`\`\`
+
+2. رفع على GitHub:
+   \`\`\`bash
+   git init
+   git add .
+   git commit -m "Initial commit: My first AI-built app"
+   gh repo create my-first-app --public --source=.
+   git push -u origin main
+   \`\`\`
+
+3. المشاركة:
+   - انشر الرابط على Twitter/X
+   - شاركه في مجتمع Discord
+   - أضفه لملفك الشخصي على LinkedIn
+
+#### 🎯 التمارين
+- **تمرين 1**: تقديم المشروع
+  - اكتب فقرة عن مشروعك
+  - صف التحديات التي واجهتها
+  - كيف ساعدك AI
+
+- **تمرين 2**: خطة التحسين
+  - اكتب 3 ميزات تود إضافتها
+  - حدد أولويتها
+
+---
+
+## 🎉 تهانينا! (Congratulations!)
+
+### ماذا حققت؟
+- ✅ فهمت فلسفة البرمجة بالإحساس
+- ✅ جهّزت بيئة التطوير
+- ✅ تعلّمت أداة CLI واحدة
+- ✅ بنيت تطبيقًا عمليًا
+- ✅ نشرت مشروعك الأول
+- ✅ شاركت عملك مع العالم
+
+### المهارات المكتسبة
+1. **JavaScript/TypeScript الأساسيات**
+2. **React/Next.js المبادئ**
+3. **استخدام AI للبرمجة**
+4. **Git و GitHub**
+5. **النشر على Vercel**
+6. **حل المشكلات مع AI**
+
+---
+
+## 🚀 الخطوات التالية (Next Steps)
+
+### خيار 1: التعمق أكثر
+- أكمل المسار الثاني: **من المبرمج التقليدي إلى AI-Assisted Dev**
+- تعلم Vue.js أو Svelte
+- استكشف قواعد البيانات (Supabase)
+
+### خيار 2: بناء المزيد
+- طبّق ما تعلّمت على مشروع جديد
+- حاول بناء تطبيق أكثر تعقيدًا
+- أضف ميزات لمشروعك الحالي
+
+### خيار 3: الانضمام للمجتمع
+- شارك تجربتك على مدونة
+- ساعد مبتدئين آخرين
+- شارك في هاكاثونات
+
+---
+
+## 💡 نصائح للمستقبل
+
+### افعل (DO) ✅
+- استمر في التعلم كل يوم
+- جرّب أدوات AI جديدة
+- شارك معرفتك مع الآخرين
+- اقرأ كود الآخرين
+- حاول فهم ما يولده AI
+
+### لا تفعل (DON'T) ❌
+- لا تعتمد كليًا على AI
+- لا تنسخ دون فهم
+- لا تستسلم عند الأخطاء
+- لا تقارن نفسك بمطورين محترفين
+- لا تهمل الأساسيات
+
+---
+
+## 📚 موارد إضافية
+
+### مقالات في هذا الويكي
+- [ما هي البرمجة بالإحساس؟](/wiki/what-is-vibe-coding)
+- [دليل Claude CLI الشامل](/wiki/claude-cli-comprehensive-guide)
+- [دليل Cursor الشامل](/wiki/cursor-guide)
+
+### موارد خارجية
+- [Next.js Documentation](https://nextjs.org/docs)
+- [React Documentation](https://react.dev)
+- [freeCodeCamp](https://freecodecamp.org)
+
+---
+
+**هل أنت مستعد للمسار التالي؟** 🚀
+
+الآن بعد أن أكملت أول تطبيق، حان الوقت للانتقال إلى **المسار الثاني: Traditional Dev → AI-Assisted Dev** حيث ستتعلم كيف تدمج AI في سير عمل التطوير الحالي لديك.
+        `,
+      },
+      {
+        slug: "learning-path-2-dev-to-ai-assisted",
+        title: "المسار الثاني: من المبرمج التقليدي إلى المبرمج المساعد بالذكاء الاصطناعي (Traditional Dev to AI-Assisted)",
+        section: "مسارات التعلم",
+        content: `
+# المسار الثاني: من المبرمج التقليدي إلى المبرمج المساعد بالذكاء الاصطناعي (أسبوع واحد)
+# Path 2: Traditional Dev → AI-Assisted Dev (1 week)
+
+**الهدف**: تحويل المطورين ذوي الخبرة من العمل التقليدي إلى استخدام AI بكفاءة في سير عملهم اليومي.
+
+**المتطلبات**: خبرة سنة على الأقل في البرمجة (أي لغة)
+
+---
+
+## اليوم الأول: تغيير العقلية (Day 1: Mindset Shift)
+
+### 📖 ماذا ستتعلم
+- فلسفة البرمجة بالإحساس للمطورين المحترفين
+- كيف تتجاوز العادات القديمة
+- أساسيات هندسة البرومبت (Prompt Engineering)
+- متى تستخدم AI ومتى لا تستخدمه
+
+### 🔓 ما الذي يجب إلغاؤه (Unlearn)
+
+#### العادات القديمة ❌
+1. **حفظ القواعد النحوية**
+   - لست بحاجة لحفظ كل API
+   - AI يتذكر لك
+
+2. **كتابة كل الكود يدويًا**
+   - Boilerplate يمكن توليده
+   - ركز على المنطق الفريد
+
+3. **البحث اليدوي عن الأخطاء**
+   - AI يمكنه تشخيص المشاكل
+   - استخدم وقتك للتفكير
+
+4. **القول "سأتعلم ذلك لاحقًا"**
+   - AI يسرع التعلم
+   - تعلم وأنت تبني
+
+#### العادات الجديدة ✅
+1. **وصف ما تريد بوضوح**
+   - التفكير في الأهداف قبل الكود
+   - البرومptime الجيد = كود أفضل
+
+2. **الثقة في AI مع التحقق**
+   - دع AI يقترح
+   - راجع وافهم
+
+3. **التكرار السريع**
+   - احصل على مسودة سريعة
+   - حسّنها تدريجيًا
+
+4. **التعلم المستمر**
+   - كل شيء يتغير بسرعة
+   - احتضن التغيير
+
+---
+
+## اليوم 2-3: دمج الأدوات (Day 2-3: Tool Integration)
+
+### 📖 ماذا ستتعلم
+- تثبيت وإعداد محرر AI
+- تثبيت أداة CLI
+- ترحيل مشروع موجود
+- التمرين على refactoring بمساعدة AI
+
+### 🔧 الأدوات المطلوبة
+
+#### 1. محرر AI (AI Editor)
+
+**خيار أ: Cursor** (موصى به)
+\`\`\`bash
+# تثبيت Cursor
+brew install --cask cursor  # macOS
+# أو حمّل من cursor.com
+\`\`\`
+
+**مميزات Cursor**:
+- ChatPanel: محادثة مستمرة مع AI
+- Cmd+K: تعديل الكود في مكانه
+- Cmd+L: محادثة كاملة عن الملف
+- Context-aware: يفهم مشروعك بالكامل
+
+**خيار ب: Windsurf** (مجاني)
+\`\`\`bash
+# تثبيت Windsurf
+# حمّل من codeium.com/windsurf
+\`\`\`
+
+**خيار ج: VS Code + AI Extension**
+\`\`\`bash
+# VS Code مع Cursor AI أو Copilot
+code --install-extension cursor.cursor-ai
+# أو
+code --install-extension GitHub.copilot
+\`\`\`
+
+---
+
+#### 2. أداة CLI (CLI Tool)
+
+**خيار أ: Claude CLI**
+\`\`\`bash
+npm install -g @anthropic-ai/claude-cli
+claude init
+\`\`\`
+
+**خيار أ: OpenCode**
+\`\`\`bash
+npm install -g @ohmyopencode/cli
+opencode init
+\`\`\`
+
+**خيار ج: Copilot CLI**
+\`\`\`bash
+gh extension install github/gh-copilot
+gh auth login
+\`\`\`
+
+---
+
+### 🎯 التمارين
+
+#### تمرين 1: ترحيل مشروع موجود
+
+1. **افتح مشروعك الحالي** في Cursor/Windsurf
+2. **استخدم AI لفهم المشروع**:
+   \`\`\`
+   Prompt: "Analyze this project. What is the architecture?
+   What are the main components? What could be improved?"
+   \`\`\`
+
+3. **أجرِ مراجعة كود**:
+   \`\`\`
+   Prompt: "Review the main file. What issues do you see?
+   Are there any bugs or potential improvements?"
+   \`\`\`
+
+#### تمرين 2: Refactoring بمساعدة AI
+
+1. **اختر ملفًا قديمًا** في مشروعك
+2. **اطلب Refactoring**:
+   \`\`\`
+   Prompt: "Refactor this code to be more maintainable.
+   Use modern patterns. Add TypeScript types if missing."
+   \`\`\`
+
+3. **افهم التغييرات**:
+   - راجع كل تغيير
+   - اسأل AI: "Why did you make this change?"
+   - تعلم من الاقتراحات
+
+#### تمرين 3: إضافة اختبارات
+
+\`\`\`
+Prompt: "Generate unit tests for this function.
+Use Jest. Include edge cases."
+\`\`\`
+
+---
+
+## اليوم 4-5: سير العمل AI-First (Day 4-5: AI-First Workflow)
+
+### 📖 ماذا ستتعلم
+- بناء ميزات جديدة مع AI
+- استخدام AI كمراجع كود
+- توليد الوثائق تلقائيًا
+- الجمع بين AI والبرمجة التقليدية
+
+### 🔄 سير العمل AI-First
+
+#### الخطوة 1: فهم المتطلبات
+\`\`\`
+Prompt: "I need to add user authentication to this app.
+What approach would you recommend? JWT? Session?
+Consider this is a Next.js app with Supabase."
+\`\`\`
+
+#### الخطوة 2: التخطيط
+\`\`\`
+Prompt: "Create a plan for implementing JWT auth.
+List all files I need to create or modify.
+What dependencies do I need?"
+\`\`\`
+
+#### الخطوة 3: التنفيذ
+\`\`\`
+Prompt: "Create the auth utility file with JWT functions.
+Include sign, verify, and refresh token methods.
+Use the jsonwebtoken library."
+\`\`\`
+
+#### الخطوة 4: التكامل
+\`\`\`
+Prompt: "Now integrate this auth utility into the API routes.
+Add middleware to protect routes."
+\`\`\`
+
+#### الخطوة 5: الاختبار
+\`\`\`
+Prompt: "Generate tests for the auth implementation.
+Include login, logout, and protected routes."
+\`\`\`
+
+---
+
+### 🎯 التمارين
+
+#### تمرين 1: بناء ميزة جديدة كاملة
+
+**المشروع**: أضف ميزة "إشعارات" لتطبيقك
+
+1. **التخطيط مع AI**:
+   \`\`\`
+   Prompt: "Plan a notification system for this app.
+   Should use real-time? Database? Email?
+   Give me a complete architecture."
+   \`\`\`
+
+2. **التنفيذ التدريجي**:
+   - قسّم لمهام صغيرة
+   - نفّذ مهمة واحدة في كل مرة
+   - راجع وافهم كل خطوة
+
+3. **الاختبار**:
+   \`\`\`
+   Prompt: "Create test cases for the notification system.
+   Include success and failure scenarios."
+   \`\`\`
+
+#### تمرين 2: Code Review مع AI
+
+\`\`\`
+Prompt: "Review this pull request.
+Check for:
+1. Security vulnerabilities
+2. Performance issues
+3. Code style consistency
+4. Missing edge cases
+5. Documentation completeness
+"
+\`\`\`
+
+#### تمرين 3: توليد الوثائق
+
+\`\`\`
+Prompt: "Generate comprehensive documentation for this module.
+Include:
+- JSDoc comments for all functions
+- Usage examples
+- Type definitions
+- README with setup instructions
+"
+\`\`\`
+
+---
+
+## اليوم 6-7: إتقان الأنماط المتقدمة (Day 6-7: Master Advanced Patterns)
+
+### 📖 ماذا ستتعلم
+- التعديل متعدد الملفات
+- الاستعلام عن قاعدة الكود
+- الوكلاء المستقلين (Autonomous Agents)
+- بناء ميزة معقدة باستخدام كل التقنيات
+
+### 🚀 الأنماط المتقدمة
+
+#### 1. التعديل متعدد الملفات (Multi-file Editing)
+
+**في Cursor**:
+\`\`\`
+# حدد ملفات متعددة (Cmd+Click)
+# اضغط Cmd+K
+# اكتب طلبًا يشمل كل الملفات
+\`\`\`
+
+**برومبت متقدم**:
+\`\`\`
+Prompt: "I've selected 3 files: the API route, the service layer,
+and the database schema. Refactor them to:
+1. Use a repository pattern
+2. Add error handling
+3. Improve type safety
+Maintain the same external interface."
+\`\`\`
+
+---
+
+#### 2. الاستعلام عن قاعدة الكود (Codebase Querying)
+
+**في Claude CLI**:
+\`\`\`bash
+# فهرسة المشروع
+claude scan .
+
+# استعلام
+claude ask "Where is the authentication logic?"
+claude ask "How is user data validated?"
+claude ask "Show me all API endpoints"
+\`\`\`
+
+**في Cursor**:
+\`\`\`
+Prompt: "Search the codebase for all places where user
+permissions are checked. Is there a pattern we should
+extract into a utility?"
+\`\`\`
+
+---
+
+#### 3. الوكلاء المستقلون (Autonomous Agents)
+
+**مع OpenCode**:
+\`\`\`bash
+# وضع مستقل بالكامل
+opencode agent "Refactor the auth system to use a
+middleware pattern. Create the necessary files,
+update the imports, and ensure all tests pass."
+
+# وضع تفاعلي
+opencode agent --interactive "Add dark mode support
+to the app. Ask me before making major changes."
+\`\`\`
+
+---
+
+### 🎯 التمرين النهائي: بناء ميزة معقدة
+
+**المشروع**: أضف نظام "Dashboard وAnalytics" لمشروعك
+
+#### المتطلبات
+1. صفحة Dashboard مع:
+   - إحصائيات فورية
+   - رسوم بيانية (Charts)
+   - جداول بيانات قابلة للفلترة
+
+2. Backend API:
+   - تجميع البيانات
+   - حساب المقاييس
+   - Caching للأداء
+
+3. Authentication:
+   - حماية routes
+   - أدوار المستخدمين
+
+#### التنفيذ خطوة بخطوة
+
+**الخطوة 1: البحث والتخطيط**
+\`\`\`
+Prompt: "Research best practices for building analytics
+dashboards in Next.js. What libraries should I use
+for charts? How should I structure the API?"
+\`\`\`
+
+**الخطوة 2: تصميم قاعدة البيانات**
+\`\`\`
+Prompt: "Design a database schema for storing analytics
+events. Include tables for events, users, and
+aggregated metrics. Use SQL."
+\`\`\`
+
+**الخطوة 3: بناء API**
+\`\`\`bash
+# استخدم OpenCode agent للبناء المستقل
+opencode agent "Create the analytics API routes.
+Implement endpoints for:
+1. GET /api/analytics/overview
+2. GET /api/analytics/trends
+3. POST /api/analytics/events
+
+Use the database schema we designed."
+\`\`\`
+
+**الخطوة 4: بناء الواجهة الأمامية**
+\`\`\`
+Prompt: "Create the dashboard page component.
+Include:
+1. Stat cards for key metrics
+2. Line chart for trends
+3. Data table with filters
+
+Use shadcn/ui components and recharts for graphs."
+\`\`\`
+
+**الخطوة 5: الاختبار**
+\`\`\`
+Prompt: "Generate integration tests for the analytics
+system. Test the API endpoints and the frontend
+components."
+\`\`\`
+
+**الخطوة 6: التوثيق**
+\`\`\`
+Prompt: "Write documentation for the analytics feature.
+Include:
+1. API reference
+2. Component props documentation
+3. Setup instructions
+4. Usage examples"
+\`\`\`
+
+---
+
+## 📊 قائمة التحقق من الإتقان (Mastery Checklist)
+
+### المبتدئ (Beginner)
+- [ ] ثبت Cursor أو Windsurf
+- [ ] استخدم ChatPanel لمرة واحدة
+- [ ] جرّبت Cmd+K للتعديل السريع
+- [ ] طلبت من AI شرح كود
+
+### المتوسط (Intermediate)
+- [ ] أجريت refactoring لملف كامل
+- [ ] استخدمت AI للبحث عن bugs
+- [ ] أضفت اختبارات بمساعدة AI
+- [ ] تولدت وثائق تلقائيًا
+
+### المتقدم (Advanced)
+- [ ] عدّلت ملفات متعددة دفعة واحدة
+- [ ] استخدمت autonomous agent
+- [ ] بنيت ميزة معقدة من A إلى Z
+- [ ] استخدمت AI لـ code review
+
+### الخبير (Expert)
+- [ ] صمّمت workflow مخصصًا لفريقك
+- [ ] أنشأت custom prompts قابلة لإعادة الاستخدام
+- [ ] درّبت الآخرين على AI-assisted development
+- [ ] ساهمت في أدوات AI مفتوحة المصدر
+
+---
+
+## 💡 نصائح للمطورين المحترفين
+
+### افعل (DO) ✅
+1. **ابدأ صغيرًا**
+   - جرّب AI على مهام بسيطة أولاً
+   - زد التعقيد تدريجيًا
+
+2. **افهم ما يولده AI**
+   - راجع كل كود
+   - اسأل "لماذا؟"
+
+3. **ابنِمكتبة برومبتات**
+   - احفظ prompts مفيدة
+   - حسّنها مع الوقت
+
+4. **استخدم AI للتعلم**
+   - اطلب شرحات لمفاهيم جديدة
+   - اطلب أمثلة عملية
+
+5. **شارك معرفتك**
+   - درّب زملاءك
+   - اكتب عن تجربتك
+
+### لا تفعل (DON'T) ❌
+1. **لا تعتمد كليًا**
+   - AI يسرع، لكنه لا ي替代ك
+
+2. **لا تنسخ دون فهم**
+   - الكود المفهود = كود قابل للصيانة
+
+3. **لا تستخدم AI للمهام الحرجة**
+   - Security-critical code
+   - Production hotfixes (كن حذرًا)
+
+4. **لا تتوقف عن التعلم**
+   - التكنولوجيا تتطور
+   - استمر في التحديث
+
+---
+
+## 🚀 الخطوات التالية
+
+### خيار 1: التخصص
+- ركز على مجالك (Frontend, Backend, DevOps)
+- تعلم AI tools متخصصة
+
+### خيار 2: القيادة
+- قود فريقك لتبني AI
+- بنى workflows جاهزة
+
+### خيار 3: المساهمة
+- ساهم في أدوات AI مفتوحة المصدر
+- شارك best practices
+
+---
+
+## 📚 موارد إضافية
+
+### مقالات في هذا الويكي
+- [دليل Claude CLI الشامل](/wiki/claude-cli-comprehensive-guide)
+- [دليل OpenCode الشامل](/wiki/opencode-comprehensive-guide)
+- [الأنماط المتقدمة في البرمجة بالذكاء الاصطناعي](/wiki/advanced-ai-patterns)
+
+### موارد خارجية
+- [Anthropic Prompt Engineering Guide](https://docs.anthropic.com/claude/docs/prompt-engineering)
+- [OpenAI Prompt Engineering](https://platform.openai.com/docs/guides/prompt-engineering)
+- [AI Coding Best Practices](https://github.com/prompt-engineering)
+
+---
+
+**تهانينا!** 🎉
+
+أنت الآن **مطور AI-Assisted** رسميًا. أنت:
+- ✅ تعرف كيف تستخدم AI بفعالية
+- ✅ تفهم متى تستخدم AI ومتى لا
+- ✅ تمتلك workflow متكامل
+- ✅ يمكن بناء ميزات معقدة بسرعة
+
+**المسار التالي**: تعلم كيف تبني SaaS products في **المسار الرابع: Building Production SaaS**
+        `,
+      },
+      {
+        slug: "learning-path-3-ai-tools-mastery",
+        title: "المسار الثالث: إتقان أدوات الذكاء الاصطناعي (AI Tools Mastery)",
+        section: "مسارات التعلم",
+        content: `
+# المسار الثالث: إتقان أدوات الذكاء الاصطناعي
+# Path 3: AI Tools Mastery
+
+**الهدف**: إتقان استخدام جميع أدوات البرمجة بالذكاء الاصطناعي، من المحررات إلى CLI إلى APIs.
+
+**المتطلبات**:
+- إكمال المسار الثاني أو خبرة 6 أشهر في البرمجة
+- فهم أساسيات JavaScript/TypeScript
+- خبرة مع محرر AI واحد على الأقل
+
+---
+
+## 🎯 مسار التعلم
+
+### الأسبوع 1: محررات AI المتقدمة (Advanced AI Editors)
+
+#### اليوم 1-2: Cursor - الإتقان الكامل
+
+**الميزات المتقدمة في Cursor**:
+
+1. **ChatPanel ذكي**
+   \`\`\`
+   # Prompt: فهم سياق المشروع
+   "Analyze the entire project structure.
+   What is the architecture? What patterns are used?
+   What could be improved?"
+   \`\`\`
+
+2. **Cmd+K: التعديل الدقيق**
+   \`\`\`
+   # حدد كودًا واضغط Cmd+K
+   "Refactor this to use async/await instead of promises"
+   "Extract this into a separate utility function"
+   "Add error handling with try-catch"
+   \`\`\`
+
+3. **Cmd+L: ملف كامل**
+   \`\`\`
+   "Rewrite this file to use TypeScript strict mode"
+   "Add comprehensive JSDoc comments"
+   "Optimize this for performance"
+   \`\`\`
+
+4. **Cmd+I: Inline Chat**
+   \`\`\`
+   # محادثة سريعة داخل الكود
+   "What's the complexity of this function?"
+   "Can you simplify this logic?"
+   \`\`\`
+
+5. **Context Awareness**
+   - كيف يستخدم Cursor سياق مشروعك:
+     - يقرأ الملفات المفتوحة
+     - يفهم dependencies
+     - يحلل git history
+
+**تمرين عملي**:
+\`\`\`
+# في مشروعك الحالي
+1. افتح ChatPanel واكتب:
+   "Give me a comprehensive overview of this project.
+   What tech stack? What patterns? What debts?"
+
+2. حدد ملفًا معقدًا واضغط Cmd+K:
+   "Refactor this to be more maintainable.
+   Extract complex logic into separate functions.
+   Add TypeScript types."
+
+3. راجع التغييرات وافهمها
+4. اضغط Tab لقبول التغييرات
+\`\`\`
+
+---
+
+#### اليوم 3-4: Windsurf - البديل المجاني
+
+**ميزات Windsurf الفريدة**:
+
+1. **Cascade: سياق ذكي متعدد الملفات**
+   \`\`\`
+   # Cascade يجمع سياق من ملفات متعددة
+   "I'm working on the authentication feature.
+   Look at:
+   - /api/auth/login.ts
+   - /lib/auth/utils.ts
+   - /components/AuthForm.tsx
+
+   Find inconsistencies in error handling."
+   \`\`\`
+
+2. **Codeium Chat**
+   - محادثة سياقية
+   - اقتراحات كود فورية
+   - شرح الكود المحدد
+
+3. **Autocomplete ذكي**
+   - يفهم نمط مشروعك
+   - يكمل الدوال بناءً على السياق
+   - يتعلم من اختياراتك
+
+**تمرين عملي**:
+\`\`\`
+# في Windsurf
+1. فعّل Cascade
+2. حدد 3 ملفات متعلقة بـ feature واحد
+3. اطلب:
+   "Find potential bugs in these files.
+   Look for:
+   - Missing error handling
+   - Race conditions
+   - Memory leaks"
+
+4. افهم كل إصلاح مقترح
+5. طبق التغييرات
+\`\`\`
+
+---
+
+#### اليوم 5-7: VS Code + Extensions
+
+**الإضافات الأساسية**:
+
+1. **GitHub Copilot**
+   \`\`\`bash
+   code --install-extension GitHub.copilot
+   \`\`\`
+   - Inline suggestions
+   - Copilot Chat
+   - Copilot Labs (refactoring)
+
+2. **Cursor AI Extension**
+   \`\`\`bash
+   code --install-extension cursor.cursor-ai
+   \`\`\`
+
+3. **Codeium** (مجاني)
+   \`\`\`bash
+   code --install-extension Codeium.codeium
+   \`\`\`
+
+4. **Continue.dev** (مفتوح المصدر)
+   \`\`\`bash
+   code --install-extension Continue.continue
+   \`\`\`
+
+**إعداد VS Code الأمثل**:
+\`\`\`json
+// settings.json
+{
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": false
+  },
+  "editor.inlineSuggest.enabled": true,
+  "editor.suggestSelection": "first",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+  "continue.telemetryEnabled": false
+}
+\`\`\`
+
+**تمرين عملي**:
+\`\`\`
+# أعد VS Code مع إضافات AI
+1. ثبت Copilot + Continue.dev
+2. أنشئ keybindings.json:
+   [
+     {
+       "key": "cmd+shift+c",
+       "command": "continue.continuePrompt"
+     },
+     {
+       "key": "cmd+shift+g",
+       "command": "github.copilot.focus"
+     }
+   ]
+
+3. جرّب على مشروع:
+   - استخدم Copilot لل suggestions
+   - استخدم Continue للـ explanations
+   - قارن النتائج
+\`\`\`
+
+---
+
+### الأسبوع 2: أدوات CLI المتقدمة (Advanced CLI Tools)
+
+#### اليوم 8-10: Claude CLI - إتقان كامل
+
+**الأوامر المتقدمة**:
+
+1. **scan - فهرسة ذكية**
+   \`\`\`bash
+   claude scan . --include="**/*.{ts,tsx}" --exclude="node_modules"
+   \`\`\`
+
+2. **ask - استعلام متقدم**
+   \`\`\`bash
+   # استعلام مع ملفات كسياق
+   claude ask "How does auth work?" --files src/auth/**/*.ts
+
+   # استعلام مع إخراج منسق
+   claude ask "List all API endpoints" --output json
+   \`\`\`
+
+3. **generate - توليد كود**
+   \`\`\`bash
+   # توليد ملف كامل
+   claude generate "Create a React hook for data fetching" \\
+     --output src/hooks/useFetch.ts \\
+     --language typescript
+
+   # توليد مع اختبارات
+   claude generate "Create a utility for date formatting" \\
+     --with-tests \\
+     --test-framework jest
+   \`\`\`
+
+4. **chat - محادثة تفاعلية**
+   \`\`\`bash
+   claude chat --context src/ --model claude-3-opus
+   \`\`\`
+
+**ملف .claude-rules متقدم**:
+\`\`\`yaml
+# .claude-rules
+project:
+  name: "My SaaS App"
+  type: "Next.js 14 + TypeScript + Supabase"
+
+coding_style:
+  - "Use functional components"
+  - "Prefer server components"
+  - "Use TypeScript strict mode"
+  - "Follow React best practices"
+  - "Use Tailwind for styling"
+  - "Write tests for all utilities"
+
+ai_preferences:
+  default_model: "claude-3-5-sonnet-20241022"
+  temperature: 0.2
+  max_tokens: 4000
+
+agents:
+  planner: "claude-3-opus"
+  coder: "claude-3-5-sonnet"
+  reviewer: "claude-3-sonnet"
+
+custom_prompts:
+  refactor: |
+    Refactor this code to:
+    1. Improve readability
+    2. Reduce complexity
+    3. Add error handling
+    4. Maintain same functionality
+
+  test: |
+    Generate comprehensive tests including:
+    1. Happy path
+    2. Edge cases
+    3. Error conditions
+    4. Boundary testing
+\`\`\`
+
+**تمرين عملي**:
+\`\`\`bash
+# على مشروع حقيقي
+1. أنشئ .claude-rules مفصّل
+2. جرّب:
+   claude scan .
+   claude ask "Review the codebase for security issues"
+   claude generate "Create an admin dashboard" --with-tests
+
+3. قارن النتائج مع/بدون .claude-rules
+\`\`\`
+
+---
+
+#### اليوم 11-12: OpenCode - Multi-Agent System
+
+**فهم نظام OpenCode Multi-Agent**:
+
+\`\`\`
+┌─────────────────────────────────────┐
+│         User Request               │
+└────────────┬────────────────────────┘
+             │
+             ▼
+┌─────────────────────────────────────┐
+│      Orchestrator Agent             │
+│  (Coordinates all agents)           │
+└────────────┬────────────────────────┘
+             │
+     ┌───────┴────────┐
+     │                │
+     ▼                ▼
+┌─────────┐      ┌──────────┐
+│ Planner │      │  Coder   │
+│ Agent   │      │  Agent   │
+└────┬────┘      └─────┬────┘
+     │                 │
+     ▼                 ▼
+┌─────────┐      ┌──────────┐
+│Reviewer │◄─────│ Tester   │
+│ Agent   │      │  Agent   │
+└────┬────┘      └─────┬────┘
+     │                 │
+     ▼                 │
+┌─────────┐            │
+│Debugger │◄───────────┘
+│ Agent   │
+└────┬────┘
+     │
+     ▼
+┌─────────────────────────────────────┐
+│      Final Output                   │
+└─────────────────────────────────────┘
+\`\`\`
+
+**الأوامر المتقدمة**:
+
+1. **agent - autonomous execution**
+   \`\`\`bash
+   # وضع مستقل بالكامل
+   opencode agent "Build a complete blog system with:
+   - Post CRUD
+   - Comments
+   - Categories
+   - Search
+
+   Use Next.js 14, Prisma, PostgreSQL"
+
+   # وضع تفاعلي
+   opencode agent --interactive "Refactor the auth system"
+   \`\`\`
+
+2. **build - step-by-step building**
+   \`\`\`bash
+   opencode build "Create a REST API for user management"
+   # سيطلب Planner التخطيط
+   # سيقوم Coder بكتابة الكود
+   # سيقوم Reviewer بمراجعته
+   # سيقوم Tester بكتابة الاختبارات
+   \`\`\`
+
+3. **review - code review**
+   \`\`\`bash
+   opencode review src/ --detailed
+   # يولد تقرير مراجعة شامل
+   \`\`\`
+
+**ملف .opencode-rules متقدم**:
+\`\`\`yaml
+# .opencode-rules
+project:
+  name: "Enterprise App"
+  stack:
+    - "Next.js 14"
+    - "TypeScript 5"
+    - "Prisma ORM"
+    - "PostgreSQL"
+    - "Redis for caching"
+
+code_quality:
+  - "100% test coverage for utilities"
+  - "TypeScript strict mode"
+  - "No any types"
+  - "ESLint + Prettier"
+  - "Husky pre-commit hooks"
+
+agents:
+  planner:
+    model: "claude-3-opus"
+    temperature: 0.3
+
+  coder:
+    model: "claude-3-5-sonnet"
+    temperature: 0.2
+    max_iterations: 3
+
+  reviewer:
+    model: "claude-3-sonnet"
+    strictness: "high"
+    check:
+      - security
+      - performance
+      - best_practices
+
+  tester:
+    model: "claude-3-5-sonnet"
+    framework: "vitest"
+    coverage_target: 80
+
+  debugger:
+    model: "claude-3-opus"
+    approach: "systematic"
+\`\`\`
+
+**تمرين عملي**:
+\`\`\`bash
+# بناء feature كامل باستخدام agents
+opencode agent "
+Build a payment processing system with:
+1. Stripe integration
+2. Webhook handling
+3. Payment history
+4. Invoice generation
+
+Include:
+- Complete error handling
+- Comprehensive tests
+- Type definitions
+- Documentation
+"
+
+# راقب كيف يعمل agents معًا
+# افهم كل قرار
+# راجع الكود النهائي
+\`\`\`
+
+---
+
+#### اليوم 13-14: Copilot CLI + أدوات أخرى
+
+**Copilot CLI - أوامر متقدمة**:
+
+\`\`\`bash
+# استعلام مع معاملات متقدمة
+gh copilot suggest "find all files larger than 10MB" \\
+  --shell bash \\
+  --explain
+
+# شرح مفصّل
+gh copilot explain "docker-compose up -d --build --force-recreate" \\
+  --detailed
+
+# اقتراحات متعددة
+gh copilot suggest "deploy to production" \\
+  --suggestions 3
+\`\`\`
+
+**أدوات CLI أخرى**:
+
+1. **Aider - Git-integrated AI**
+   \`\`\`bash
+   pip install aider-chat
+   aider --model gpt-4
+
+   # Aider يفهم git diffs
+   # ي提议 changes كـ commits
+   aider "Add user authentication"
+   \`\`\`
+
+2. **Mentat - المحرر AI**
+   \`\`\`bash
+   pip install mentat
+   mentat src/
+
+   # يقرأ الملفات ويعدّلها مباشرة
+   # ممتاز لـ bulk refactoring
+   \`\`\`
+
+3. **Continue.dev CLI**
+   \`\`\`bash
+   npm install -g continue
+   continue chat
+
+   # CLI frontend لـ Continue
+   # يعمل مع أي model
+   \`\`\`
+
+**تمرين عملي**:
+\`\`\`bash
+# مقارنة الأدوات
+# نفّذ نفس المهمة بكل أداة
+
+echo "Building a REST API"
+
+# مع Claude CLI
+claude generate "Create a REST API for products" \\
+  --output claude-version/
+
+# مع OpenCode
+opencode build "Create a REST API for products" \\
+  --output opencode-version/
+
+# مع Aider
+aider "Create a REST API for products"
+
+# قارن:
+# - جودة الكود
+# - السرعة
+# - سهولة الاستخدام
+\`\`\`
+
+---
+
+### الأسبوع 3: APIs وIntegration
+
+#### اليوم 15-17: OpenAI Codex API
+
+**الاستخدام المباشر**:
+
+\`\`\`typescript
+// src/lib/openai.ts
+import OpenAI from 'openai';
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+
+export async function generateCode(
+  prompt: string,
+  language: string = 'typescript'
+): Promise<string> {
+  const response = await openai.chat.completions.create({
+    model: 'gpt-4-turbo',
+    messages: [
+      {
+        role: 'system',
+        content: \`You are an expert \${language} developer.
+        Generate clean, well-documented code.\`
+      },
+      {
+        role: 'user',
+        content: prompt
+      }
+    ],
+    temperature: 0.2,
+    max_tokens: 2000,
+  });
+
+  return response.choices[0].message.content || '';
+}
+
+// Usage
+const code = await generateCode(
+  'Create a React hook for fetching data with loading and error states'
+);
+\`\`\`
+
+**نمط الفينكشن المتقدم**:
+
+\`\`\`typescript
+// تمريرة كود كاملة
+export async function refactorCode(
+  code: string,
+  instructions: string
+): Promise<{
+  refactored: string;
+  explanation: string;
+  changes: string[];
+}> {
+  const response = await openai.chat.completions.create({
+    model: 'gpt-4-turbo',
+    messages: [
+      {
+        role: 'system',
+        content: \`You are a code refactoring expert.
+        Respond in JSON format:
+        {
+          "refactored": "the refactored code",
+          "explanation": "what changed and why",
+          "changes": ["list of changes"]
+        }\`
+      },
+      {
+        role: 'user',
+        content: \`Refactor this code:
+\`\`\`
+\${code}
+\`\`\`
+
+Instructions: \${instructions}\`
+      }
+    ],
+    response_format: { type: "json_object" },
+  });
+
+  return JSON.parse(response.choices[0].message.content || '{}');
+}
+\`\`\`
+
+---
+
+#### اليوم 18-19: Anthropic Claude API
+
+**ميزات Claude الفريدة**:
+
+1. **MCP (Model Context Protocol)**
+   \`\`\`typescript
+   // Claude يمكنه قراءة ملفاتك مباشرة
+   import { Client } from '@anthropic-ai/sdk';
+
+   const client = new Client({
+     apiKey: process.env.ANTHROPIC_API_KEY,
+   });
+
+   const message = await client.messages.create({
+     model: 'claude-3-5-sonnet-20241022',
+     max_tokens: 2000,
+     tools: [
+       {
+         name: 'read_file',
+         description: 'Read a file from the filesystem',
+         input_schema: {
+           type: 'object',
+           properties: {
+             path: {
+               type: 'string',
+               description: 'Path to the file'
+             }
+           },
+           required: ['path']
+         }
+       }
+     ],
+     messages: [{
+       role: 'user',
+       content: 'Analyze the authentication flow in src/auth/login.ts'
+     }]
+   });
+   \`\`\`
+
+2. **Extended Context (200K tokens)**
+   \`\`\`typescript
+   // Claude يمكنه قراءة مشاريع كاملة
+   const projectContext = await readAllFiles('./src');
+
+   const analysis = await client.messages.create({
+     model: 'claude-3-5-sonnet-20241022',
+     messages: [{
+       role: 'user',
+       content: \`Analyze this entire project:
+\${projectContext}
+
+Provide:
+1. Architecture overview
+2. Potential issues
+3. Improvement suggestions\`
+     }]
+   });
+   \`\`\`
+
+---
+
+#### اليوم 20-21: Building AI-Powered Tools
+
+**مشروع: بنى AI assistant مخصص**
+
+\`\`\`typescript
+// tools/ai-assistant/src/index.ts
+import OpenAI from 'openai';
+
+interface AIAssistantConfig {
+  model: 'gpt-4' | 'claude-3-opus';
+  systemPrompt: string;
+  temperature?: number;
+}
+
+class AIAssistant {
+  private client: OpenAI;
+  private config: AIAssistantConfig;
+
+  constructor(config: AIAssistantConfig) {
+    this.config = config;
+    this.client = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    });
+  }
+
+  async chat(message: string, context?: string): Promise<string> {
+    const messages: OpenAI.Chat.Completions.ChatCompletionMessageParam[] = [
+      {
+        role: 'system',
+        content: this.config.systemPrompt,
+      }
+    ];
+
+    if (context) {
+      messages.push({
+        role: 'user',
+        content: \`Context:\\n\${context}\`,
+      });
+    }
+
+    messages.push({
+      role: 'user',
+      content: message,
+    });
+
+    const response = await this.client.chat.completions.create({
+      model: 'gpt-4-turbo',
+      messages,
+      temperature: this.config.temperature || 0.7,
+    });
+
+    return response.choices[0].message.content || '';
+  }
+
+  async generateCode(
+    description: string,
+    language: string
+  ): Promise<string> {
+    return this.chat(
+      \`Generate \${language} code for: \${description}\`,
+      undefined
+    );
+  }
+
+  async reviewCode(code: string): Promise<{
+    issues: string[];
+    suggestions: string[];
+    rating: number;
+  }> {
+    const response = await this.chat(
+      \`Review this code:\\n\`\`\`\\n\${code}\\n\`\`\`
+      Respond in JSON format with issues, suggestions, and rating (1-10).\`,
+      undefined
+    );
+
+    return JSON.parse(response);
+  }
+}
+
+// Usage
+const assistant = new AIAssistant({
+  model: 'gpt-4',
+  systemPrompt: 'You are an expert TypeScript developer.',
+  temperature: 0.2,
+});
+
+// Generate code
+const code = await assistant.generateCode(
+  'Create a debounce function',
+  'typescript'
+);
+
+// Review code
+const review = await assistant.reviewCode(\`
+  function debounce(fn, delay) {
+    let timeout;
+    return function(...args) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => fn.apply(this, args), delay);
+    };
+  }
+\`);
+\`\`\`
+
+---
+
+## 📊 قائمة التحقق من الإتقان
+
+### المستوى 1: الأساسيات (Basics)
+- [ ] ثبت Cursor و Windsurf
+- [ ] استخدم ChatPanel
+- [ ] ثبت Claude CLI أو OpenCode
+- [ ] استخدم cmd+k للتعديل
+
+### المستوى 2: المتوسط (Intermediate)
+- [ ] أعد .claude-rules أو .opencode-rules
+- [ ] استخدم autonomous agents
+- [ ] دمجت OpenAI أو Anthropic API
+- [ ] بنيت tool صغير مدعوم بـ AI
+
+### المستوى 3: المتقدم (Advanced)
+- [ ] أنشأت custom workflow
+- [ ] استخدمت agents لبنى feature كامل
+- [ ] بنيت AI assistant مخصص
+- [ ] دمجت AI في CI/CD
+
+### المستوى 4: الخبير (Expert)
+- [ ] صمّمت multi-agent system
+- [ ] ساهمت في أدوات AI مفتوحة المصدر
+- [ ] درّبت فرق على AI tools
+- [ ] نشرت عن AI-assisted development
+
+---
+
+## 🚀 المشروع النهائي
+
+**ابنِ منصة SaaS كاملة مدعومة بالذكاء الاصطناعي**
+
+### المتطلبات
+1. **Frontend**: Next.js 14 + shadcn/ui
+2. **Backend**: tRPC + Prisma + PostgreSQL
+3. **AI Features**:
+   - Code generation
+   - Automated testing
+   - Code review
+   - Documentation
+
+### الخطوات
+1. التصميم مع AI
+2. البناء مع OpenCode agents
+3. الاختبار مع AI-generated tests
+4. التوثيق مع AI
+5. النشر على Vercel
+
+---
+
+**تهانينا!** 🎉
+
+أنت الآن **خبير في أدوات AI للبرمجة**. أنت:
+- ✅ تتقن جميع المحررات الرئيسية
+- ✅ تستخدم CLI tools بكفاءة
+- ✅ دمجت APIs مباشرة
+- ✅ بنيت أدوات AI الخاصة بك
+        `,
+      },
+      {
+        slug: "learning-path-4-building-production-saas",
+        title: "المسار الرابع: بناء تطبيقات SaaS جاهزة للإنتاج (Building Production SaaS)",
+        section: "مسارات التعلم",
+        content: `
+# المسار الرابع: بناء تطبيقات SaaS جاهزة للإنتاج
+# Path 4: Building Production SaaS
+
+**الهدف**: بناء تطبيق SaaS كامل وجاهز للإنتاج باستخدام الذكاء الاصطناعي.
+
+**المدة**: 4 أسابيع
+**المستوى**: متقدم
+**المخرجات**: تطبيق SaaS حقيقي مدفوع وقابل للنشر
+
+---
+
+## 📋 نظرة عامة على المشروع (Project Overview)
+
+### المشروع: TaskFlow.ai - منصة إدارة مهام ذكية
+
+**الميزات الأساسية**:
+1. إدارة المهام (Task Management)
+2. تعاون الفريق (Team Collaboration)
+3. AI-powered suggestions
+4. Analytics Dashboard
+5. اشتراكات مدفوعة (Paid Subscriptions)
+
+**التقنيات**:
+- **Frontend**: Next.js 14, React, TypeScript, Tailwind CSS, shadcn/ui
+- **Backend**: tRPC, Next.js API Routes
+- **Database**: PostgreSQL (via Supabase)
+- **Auth**: NextAuth.js
+- **Payments**: Stripe
+- **AI**: OpenAI API للميزات الذكية
+- **Deployment**: Vercel
+
+---
+
+## الأسبوع الأول: التأسيس والتصميم (Week 1: Foundation & Design)
+
+### اليوم 1-2: التخطيط والتصميم
+
+#### الخطوة 1: البحث والتحليل
+
+**استخدم AI للبحث**:
+\`\`\`
+Prompt: "Research successful SaaS products in the task
+management space. What are their key features?
+What are users complaining about?
+What gaps exist in the market?"
+\`\`\`
+
+**تحليل المنافسين**:
+\`\`\`
+Prompt: "Analyze these competitors:
+1. Asana
+2. Linear
+3. ClickUp
+4. Notion
+
+Create a comparison matrix of:
+- Features
+- Pricing
+- User experience
+- Target market
+
+What can we do differently?"
+\`\`\`
+
+#### الخطوة 2: تحديد MVP
+
+**قائمة الميزات**:
+\`\`\`
+# مع AI، حدد MVP:
+Prompt: "From the full feature list, identify the absolute
+minimum features needed for:
+1. A usable product
+2. Happy users
+3. Willingness to pay
+
+Prioritize by:
+- User value
+- Development effort
+- Revenue potential"
+\`\`\`
+
+**MVP المحدد**:
+1. ✅ إنشاء وإدارة المهام
+2. ✅ فريق ومشاريع
+3. ✅ Drag-and-drop
+4. ✅ AI task suggestions
+5. ✅ Dashboard بسيط
+6. ✅ اشتراكات مدفوعة
+
+**للمستقبل**:
+- ⏳ Mobile apps
+- ⏳ Advanced analytics
+- ⏳ Integrations (Slack, GitHub)
+- ⏳ Time tracking
+
+#### الخطوة 3: تصميم UI/UX
+
+**استخدم AI للتصميم**:
+\`\`\`
+Prompt: "Design the information architecture for TaskFlow.ai.
+Include:
+1. Page structure
+2. Navigation flow
+3. User journey from signup to first task
+4. Key screens and layouts
+
+Consider:
+- Simplicity
+- Discoverability
+- Mobile responsiveness"
+\`\`\`
+
+**إنشاء Wireframes**:
+\`\`\`bash
+# استخدم Cursor لإنشاء مكونات UI
+cursor
+
+# Prompt:
+"Create these components using shadcn/ui:
+- Sidebar navigation
+- Task list card
+- Task detail modal
+- Dashboard stat cards
+
+Use Tailwind CSS.
+Make them responsive."
+\`\`\`
+
+---
+
+### اليوم 3-5: إعداد المشروع
+
+#### إنشاء المشروع
+
+\`\`\`bash
+# 1. إنشاء مشروع Next.js
+npx create-next-app@latest taskflow --typescript --tailwind --app --src-dir --import-alias "@/*"
+
+cd taskflow
+
+# 2. تثبيت dependencies
+npm install \\
+  @tanstack/react-query \\
+  zod \\
+  zustand \\
+  date-fns \\
+  lucide-react
+
+# 3. تثبيت dev dependencies
+npm install -D \\
+  @types/node \\
+  prettier \\
+  eslint-config-prettier
+
+# 4. إعداد shadcn/ui
+npx shadcn-ui@latest init
+\`\`\`
+
+#### إعداد البنية
+
+\`\`\`bash
+# بنية المجلدات
+src/
+├── app/                    # Next.js App Router
+│   ├── (auth)/            # Auth routes
+│   ├── (dashboard)/       # Dashboard routes
+│   ├── api/               # API routes
+│   └── layout.tsx
+├── components/            # React components
+│   ├── ui/               # shadcn/ui components
+│   ├── auth/             # Auth components
+│   ├── tasks/            # Task components
+│   └── dashboard/        # Dashboard components
+├── lib/                   # Utilities
+│   ├── db.ts             # Database client
+│   ├── auth.ts           # Auth utilities
+│   ├── stripe.ts         # Stripe client
+│   └── ai.ts             # AI utilities
+├── server/                # Backend code
+│   ├── api/              # tRPC routers
+│   ├── services/         # Business logic
+│   └── db/               # Database queries
+└── types/                 # TypeScript types
+    └── index.ts
+\`\`\`
+
+**مع OpenCode**:
+\`\`\`bash
+opencode build "
+Create the complete folder structure for TaskFlow.ai.
+Set up:
+1. Next.js 14 with App Router
+2. TypeScript with strict mode
+3. Tailwind CSS + shadcn/ui
+4. tRPC for type-safe APIs
+5. Prisma with PostgreSQL
+6. NextAuth.js for authentication
+
+Include:
+- Environment configuration
+- ESLint + Prettier
+- Git pre-commit hooks
+- TypeScript path aliases
+"
+\`\`\`
+
+---
+
+### اليوم 6-7: Database Schema
+
+#### تصميم قاعدة البيانات
+
+**استخدم AI للتخطيط**:
+\`\`\`
+Prompt: "Design a PostgreSQL database schema for a task
+management SaaS. Include tables for:
+
+1. Users (with auth)
+2. Organizations (teams)
+3. Projects
+4. Tasks
+5. Comments
+6. Subscriptions
+7. Invoices
+
+Consider:
+- Multi-tenancy (organizations)
+- Soft deletes
+- Audit trails
+- Indexes for performance
+- Row Level Security (RLS)
+
+Output as Prisma schema."
+\`\`\`
+
+**Schema المُنتج**:
+\`\`\`prisma
+// prisma/schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum SubscriptionStatus {
+  ACTIVE
+  CANCELLED
+  PAST_DUE
+}
+
+enum SubscriptionPlan {
+  FREE
+  PRO
+  ENTERPRISE
+}
+
+enum TaskStatus {
+  TODO
+  IN_PROGRESS
+  DONE
+}
+
+enum TaskPriority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  accounts      Account[]
+  sessions      Session[]
+  organizations OrganizationMember[]
+  tasks         Task[]
+  comments      Comment[]
+
+  @@map("users")
+}
+
+model Organization {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  members     OrganizationMember[]
+  projects    Project[]
+  subscription Subscription?
+
+  @@map("organizations")
+}
+
+model OrganizationMember {
+  id             String        @id @default(cuid())
+  userId         String
+  organizationId String
+  role           String        @default("MEMBER") // OWNER, ADMIN, MEMBER
+  createdAt      DateTime      @default(now())
+
+  user           User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  organization   Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, organizationId])
+  @@map("organization_members")
+}
+
+model Project {
+  id             String        @id @default(cuid())
+  name           String
+  description    String?
+  color          String        @default("#3B82F6")
+  organizationId String
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  organization   Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  tasks          Task[]
+
+  @@map("projects")
+}
+
+model Task {
+  id          String        @id @default(cuid())
+  title       String
+  description String?
+  status      TaskStatus    @default(TODO)
+  priority    TaskPriority  @default(MEDIUM)
+  dueDate     DateTime?
+  assigneeId  String?
+  projectId   String
+  position    Float         @default(0)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  assignee    User?         @relation(fields: [assigneeId], references: [id], onDelete: SetNull)
+  project     Project       @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  comments    Comment[]
+
+  @@index([projectId])
+  @@index([assigneeId])
+  @@map("tasks")
+}
+
+model Comment {
+  id        String   @id @default(cuid())
+  content   String
+  taskId    String
+  authorId  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  task      Task     @relation(fields: [taskId], references: [id], onDelete: Cascade)
+  author    User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+
+  @@index([taskId])
+  @@map("comments")
+}
+
+model Subscription {
+  id               String              @id @default(cuid())
+  organizationId   String              @unique
+  status           SubscriptionStatus  @default(ACTIVE)
+  plan             SubscriptionPlan    @default(FREE)
+  stripeSubscriptionId String?          @unique
+  stripeCustomerId String?             @unique
+  currentPeriodEnd DateTime?
+  createdAt        DateTime            @default(now())
+  updatedAt        DateTime            @updatedAt
+
+  organization     Organization        @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@map("subscriptions")
+}
+
+// Account, Session, VerificationToken for NextAuth
+// ... (standard NextAuth models)
+\`\`\`
+
+---
+
+## الأسبوع الثاني: التطوير الأساسي (Week 2: Core Development)
+
+### اليوم 8-10: Authentication
+
+#### إعداد NextAuth.js
+
+\`\`\`typescript
+// src/lib/auth.ts
+import { NextAuthOptions } from 'next-auth';
+import { PrismaAdapter } from '@next-auth/prisma-adapter';
+import GoogleProvider from 'next-auth/providers/google';
+import GitHubProvider from 'next-auth/providers/github';
+import { prisma } from './db';
+
+export const authOptions: NextAuthOptions = {
+  adapter: PrismaAdapter(prisma),
+  providers: [
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID!,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+    }),
+    GitHubProvider({
+      clientId: process.env.GITHUB_CLIENT_ID!,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET!,
+    }),
+  ],
+  callbacks: {
+    async session({ session, user }) {
+      if (session.user) {
+        session.user.id = user.id;
+      }
+      return session;
+    },
+  },
+  pages: {
+    signIn: '/auth/signin',
+  },
+};
+\`\`\`
+
+#### إنشاء صفحات Auth
+
+**مع Cursor**:
+\`\`\`
+Prompt: "Create a modern sign-in page with:
+1. Google and GitHub OAuth buttons
+2. Email/password option
+3. 'Remember me' checkbox
+4. 'Forgot password' link
+5. Sign up link
+
+Use shadcn/ui components.
+Add loading states and error handling."
+\`\`\`
+
+---
+
+### اليوم 11-14: Task Management Core
+
+#### إنشاء tRPC Routers
+
+\`\`\`typescript
+// src/server/api/routers/task.ts
+import { z } from 'zod';
+import { TRPCError } from '@trpc/server';
+import { eq, and, desc } from 'drizzle-orm';
+import { tasks } from '@/server/db/schema';
+import { createTRPCRouter, protectedProcedure } from '../trpc';
+
+export const taskRouter = createTRPCRouter({
+  // Get all tasks for a project
+  getByProject: protectedProcedure
+    .input(z.object({ projectId: z.string() }))
+    .query(async ({ ctx, input }) => {
+      return ctx.db.query.tasks.findMany({
+        where: eq(tasks.projectId, input.projectId),
+        orderBy: [tasks.position, tasks.createdAt],
+      });
+    }),
+
+  // Create task
+  create: protectedProcedure
+    .input(z.object({
+      title: z.string().min(1),
+      description: z.string().optional(),
+      projectId: z.string(),
+      assigneeId: z.string().optional(),
+      priority: z.enum(['LOW', 'MEDIUM', 'HIGH', 'URGENT']),
+    }))
+    .mutation(async ({ ctx, input }) => {
+      // Get max position
+      const maxPos = await ctx.db.query.tasks.findMany({
+        where: eq(tasks.projectId, input.projectId),
+        orderBy: [desc(tasks.position)],
+        limit: 1,
+      });
+
+      const position = (maxPos[0]?.position ?? 0) + 1;
+
+      const task = await ctx.db.insert(tasks).values({
+        ...input,
+        position,
+      }).returning();
+
+      return task[0];
+    }),
+
+  // Update task
+  update: protectedProcedure
+    .input(z.object({
+      id: z.string(),
+      title: z.string().optional(),
+      description: z.string().optional(),
+      status: z.enum(['TODO', 'IN_PROGRESS', 'DONE']).optional(),
+      priority: z.enum(['LOW', 'MEDIUM', 'HIGH', 'URGENT']).optional(),
+    }))
+    .mutation(async ({ ctx, input }) => {
+      const { id, ...data } = input;
+
+      const task = await ctx.db.query.tasks.findFirst({
+        where: eq(tasks.id, id),
+      });
+
+      if (!task) {
+        throw new TRPCError({
+          code: 'NOT_FOUND',
+          message: 'Task not found',
+        });
+      }
+
+      // Check permission
+      if (task.assigneeId !== ctx.session.user.id) {
+        throw new TRPCError({
+          code: 'FORBIDDEN',
+          message: 'Not authorized',
+        });
+      }
+
+      const updated = await ctx.db.update(tasks)
+        .set(data)
+        .where(eq(tasks.id, id))
+        .returning();
+
+      return updated[0];
+    }),
+
+  // Delete task
+  delete: protectedProcedure
+    .input(z.object({ id: z.string() }))
+    .mutation(async ({ ctx, input }) => {
+      await ctx.db.delete(tasks)
+        .where(eq(tasks.id, input.id));
+
+      return { success: true };
+    }),
+});
+\`\`\`
+
+#### واجهة المستخدم
+
+**مع OpenCode agent**:
+\`\`\`bash
+opencode agent "
+Create the task management UI with:
+1. Kanban board (TODO, IN_PROGRESS, DONE columns)
+2. Drag-and-drop between columns
+3. Task cards with title, priority, assignee
+4. Create task modal
+5. Task detail view
+
+Use:
+- @dnd-kit for drag-and-drop
+- shadcn/ui components
+- Tailwind CSS
+
+Include loading states, error handling, and optimistic updates.
+"
+\`\`\`
+
+---
+
+## الأسبوع الثالث: AI Features & Payments (Week 3)
+
+### اليوم 15-17: AI-Powered Features
+
+#### AI Task Suggestions
+
+\`\`\`typescript
+// src/lib/ai/suggestions.ts
+import OpenAI from 'openai';
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+
+export async function generateTaskSuggestions(
+  projectContext: string,
+  existingTasks: string[]
+): Promise<string[]> {
+  const response = await openai.chat.completions.create({
+    model: 'gpt-4-turbo',
+    messages: [
+      {
+        role: 'system',
+        content: 'You are a project management expert. Generate 5 actionable task suggestions based on project context.'
+      },
+      {
+        role: 'user',
+        content: \`Project context: \${projectContext}
+
+Existing tasks:
+\${existingTasks.map(t => \`- \${t}\`).join('\\n')}
+
+Generate 5 new, specific, actionable tasks that would be valuable next steps.\`
+      }
+    ],
+    temperature: 0.7,
+  });
+
+  const suggestions = response.choices[0].message.content || '';
+  return suggestions.split('\\n').filter(Boolean).slice(0, 5);
+}
+
+export async function estimateTaskDuration(
+  taskTitle: string,
+  taskDescription: string
+): Promise<{ hours: number; confidence: number }> {
+  const response = await openai.chat.completions.create({
+    model: 'gpt-4-turbo',
+    messages: [
+      {
+        role: 'system',
+        content: 'Estimate task duration in hours. Respond with JSON: { "hours": number, "confidence": 0-1 }'
+      },
+      {
+        role: 'user',
+        content: \`Task: \${taskTitle}\\nDescription: \${taskDescription}`
+      }
+    ],
+    response_format: { type: 'json_object' },
+  });
+
+  return JSON.parse(response.choices[0].message.content || '{}');
+}
+\`\`\`
+
+---
+
+### اليوم 18-21: Stripe Integration
+
+#### Stripe Webhook Handler
+
+\`\`\`typescript
+// src/app/api/stripe/webhook/route.ts
+import { headers } from 'next/headers';
+import { NextResponse } from 'next/server';
+import Stripe from 'stripe';
+import { prisma } from '@/lib/db';
+
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+  apiVersion: '2024-11-20.acacia',
+});
+
+const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!;
+
+export async function POST(req: Request) {
+  const body = await req.text();
+  const signature = headers().get('stripe-signature')!;
+
+  let event: Stripe.Event;
+
+  try {
+    event = stripe.webhooks.constructEvent(
+      body,
+      signature,
+      webhookSecret
+    );
+  } catch (err) {
+    return NextResponse.json(
+      { error: 'Invalid signature' },
+      { status: 400 }
+    );
+  }
+
+  switch (event.type) {
+    case 'checkout.session.completed': {
+      const session = event.data.object as Stripe.Checkout.Session;
+      const customerId = session.customer as string;
+
+      // Get organization
+      const subscription = await prisma.subscription.findFirst({
+        where: { stripeCustomerId: customerId },
+      });
+
+      if (subscription) {
+        await prisma.subscription.update({
+          where: { id: subscription.id },
+          data: {
+            status: 'ACTIVE',
+            plan: 'PRO',
+            stripeSubscriptionId: session.subscription as string,
+            currentPeriodEnd: new Date(session.expires_at! * 1000),
+          },
+        });
+      }
+      break;
+    }
+
+    case 'customer.subscription.deleted': {
+      const subscription = event.data.object as Stripe.Subscription;
+
+      await prisma.subscription.updateMany({
+        where: { stripeSubscriptionId: subscription.id },
+        data: { status: 'CANCELLED', plan: 'FREE' },
+      });
+      break;
+    }
+  }
+
+  return NextResponse.json({ received: true });
+}
+\`\`\`
+
+#### Pricing Page
+
+**مع Cursor**:
+\`\`\`
+Prompt: "Create a pricing page with:
+1. 3 tiers: Free, Pro ($29/mo), Enterprise (custom)
+2. Feature comparison table
+3. 'Get Started' buttons
+4. FAQ section
+
+Use modern design with gradients and animations.
+Include annual billing toggle (20% off)."
+\`\`\`
+
+---
+
+## الأسبوع الرابع: النشر والنمو (Week 4: Launch & Growth)
+
+### اليوم 22-24: Testing & QA
+
+**مع OpenCode**:
+\`\`\`bash
+opencode agent "
+Generate comprehensive tests for:
+1. All tRPC procedures
+2. React components (using React Testing Library)
+3. Authentication flow
+4. Stripe webhook handling
+
+Use Vitest.
+Aim for 80% coverage.
+"
+\`\`\`
+
+---
+
+### اليوم 25-28: Deployment
+
+#### إعداد Vercel
+
+\`\`\`bash
+# تثبيت Vercel CLI
+npm i -g vercel
+
+# نشر
+vercel --prod
+\`\`\`
+
+#### إعداد Environment Variables
+
+\`\`\`bash
+# في Vercel dashboard
+DATABASE_URL=postgresql://...
+NEXTAUTH_URL=https://taskflow.ai
+NEXTAUTH_SECRET=...
+GOOGLE_CLIENT_ID=...
+GOOGLE_CLIENT_SECRET=...
+GITHUB_CLIENT_ID=...
+GITHUB_CLIENT_SECRET=...
+STRIPE_SECRET_KEY=...
+STRIPE_WEBHOOK_SECRET=...
+STRIPE_PUBLISHABLE_KEY=...
+OPENAI_API_KEY=...
+\`\`\`
+
+---
+
+### اليوم 29-30: Launch
+
+#### قائمة الإطلاق
+
+**Marketing Site**:
+\`\`\`bash
+opencode build "
+Create a marketing landing page with:
+1. Hero section with CTA
+2. Features showcase (with animations)
+3. Pricing section
+4. Testimonials
+5. FAQ
+6. Footer
+
+Use Framer Motion for animations.
+Make it conversion-optimized."
+\`\`\`
+
+**Onboarding Flow**:
+\`\`\`bash
+opencode build "
+Create an onboarding flow:
+1. Welcome modal after signup
+2. Create first project
+3. Create first task
+4. Invite team members
+5. Upgrade prompt (after 3 tasks)
+
+Use progress indicators and smooth transitions."
+\`\`\`
+
+---
+
+## 🎉 MBRATCongratulations!
+
+### ماذا حققت؟
+- ✅ SaaS product كامل
+- ✅ Authentication جاهز
+- ✅ Payment integration
+- ✅ AI features مدمجة
+- ✅ جاهز للنشر
+- ✅ قابل للتوسع
+
+### الإيرادات المحتملة
+
+**مع 100 عميل**:
+- Free: 70
+- Pro ($29/mo): 25 = $725/mo
+- Enterprise ($199/mo): 5 = $995/mo
+- **Total: $1,720/month**
+
+**مع 1,000 عميل**:
+- **Total: ~$17,200/month**
+
+---
+
+## 🚀 الخطوات التالية
+
+1. **النشر على Product Hunt**
+2. **بنى audience على Twitter/X**
+3. **مدونة عن بناء SaaS**
+4. **استمع للمستخدمين**
+5. **كرر بسرعة**
+
+---
+
+**هل أنت مستعد للإطلاق؟** 🚀
+
+ابدأ الآن:
+\`\`\`bash
+npx create-next-app@latest your-saas
+cd your-saas
+\`\`\`
+        `,
+      },
+    ],
+  },
 ];

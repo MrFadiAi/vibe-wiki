@@ -2032,3 +2032,74 @@ Note: npm not available in PATH - code structure verified manually
 **Phase 1, Week 3, Task 1**: Write all 4 learning paths
 
 ---
+## 2026-01-20: Phase 1, Week 3, Task 1 - Learning Paths
+
+### Task Completed
+**Phase 1, Week 3, Task 1**: Write all 4 learning paths
+
+### Implementation Summary
+Added a new section "9. مسارات التعلم (Learning Paths)" to `src/data/wiki-content.ts` with 4 comprehensive Arabic learning path articles:
+
+#### Learning Path 1: Complete Beginner to First App (2 weeks)
+- **Slug**: `learning-path-1-beginner-to-first-app`
+- **Title**: "المسار الأول: من المبتدئ إلى أول تطبيق (Complete Beginner to First App)"
+- **Content**: ~340 lines covering:
+  - Week 1: Foundations (understanding vibecoding, environment setup, CLI basics, first project)
+  - Week 2: Build & Deploy (features, styling, deployment, next steps)
+  - Daily breakdowns with tasks and exercises
+  - Code examples in bash, TypeScript, YAML
+
+#### Learning Path 2: Traditional Dev to AI-Assisted (1 week)
+- **Slug**: `learning-path-2-dev-to-ai-assisted`
+- **Title**: "المسار الثاني: من المبرمج التقليدي إلى المبرمج المساعد بالذكاء الاصطناعي (Traditional Dev to AI-Assisted)"
+- **Content**: ~510 lines covering:
+  - Day 1-2: Mindset shift (AI-assisted vs AI-generated)
+  - Day 3-4: Tool integration (setup, advanced features)
+  - Day 5-7: AI-first workflow (refactoring, testing, CI/CD, best practices)
+  - Practical examples and transition strategies
+
+#### Learning Path 3: AI Tools Mastery (3 weeks)
+- **Slug**: `learning-path-3-ai-tools-mastery`
+- **Title**: "المسار الثالث: إتقان أدوات الذكاء الاصطناعي (AI Tools Mastery)"
+- **Content**: ~810 lines covering:
+  - Week 1: Advanced AI editors (Cursor deep dive, Windsurf mastery, VS Code AI setup)
+  - Week 2: CLI tools (Claude CLI, Copilot CLI, OpenCode, advanced patterns)
+  - Week 3: APIs & integration (Anthropic API, OpenAI API, custom tools, building on top)
+  - Comprehensive coverage with code examples
+
+#### Learning Path 4: Building Production SaaS (4 weeks)
+- **Slug**: `learning-path-4-building-production-saas`
+- **Title**: "المسار الرابع: بناء تطبيقات SaaS جاهزة للإنتاج (Building Production SaaS)"
+- **Content**: ~860 lines covering:
+  - Complete TaskFlow.ai project tutorial
+  - Week 1: Project planning & setup (Next.js, Prisma, PostgreSQL)
+  - Week 2: Core features (auth, task management, real-time updates)
+  - Week 3: Polish & UX (UI refinement, testing, analytics)
+  - Week 4: Launch & scale (deployment, monitoring, marketing)
+  - Real code examples throughout
+
+### File Changes
+- **File**: `src/data/wiki-content.ts`
+- **Lines Added**: ~2,556 lines
+- **File Size**: 7,699 lines → 10,255 lines
+
+### Content Structure
+All learning paths follow the established wiki format:
+- Bilingual Arabic (primary) with English technical terms
+- RTL content with markdown formatting
+- Code blocks in bash, TypeScript, YAML, JSON
+- Day-by-day breakdowns with specific tasks
+- Exercises and practical projects
+- DO's and DON'Ts sections
+- Resource links and next steps
+
+### PRD Update
+- Marked Phase 1, Week 3, Task 1 as complete: `[x] Write all 4 learning paths`
+
+### Test Status
+Note: npm not available in PATH - article structure verified manually against existing patterns
+
+### Next Priority Task
+**Phase 1, Week 3, Task 2**: Create comparison matrices
+
+---
