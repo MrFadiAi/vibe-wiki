@@ -798,4 +798,440 @@ describe('wiki-content Article Validation', () => {
       });
     });
   });
+
+  // OpenCode CLI Individual Articles Tests
+  const opencodeCliArticleSlugs = [
+    'opencode-cli-overview',
+    'opencode-cli-licensing',
+    'opencode-cli-comparison',
+    'opencode-cli-deployment',
+    'opencode-cli-workflows',
+    'opencode-cli-advanced',
+    'opencode-cli-context',
+    'opencode-cli-agents',
+    'opencode-cli-configuration',
+  ];
+
+  describe('opencode-cli-overview article', () => {
+    let article: WikiArticle;
+
+    beforeAll(() => {
+      article = findArticle('opencode-cli-overview');
+    });
+
+    it('should exist in wiki-content', () => {
+      expect(article).toBeDefined();
+      expect(article).not.toBeNull();
+    });
+
+    it('should have required fields', () => {
+      expect(article.slug).toBe('opencode-cli-overview');
+      expect(article.title).toContain('OpenCode CLI');
+      expect(article.section).toBeDefined();
+      expect(article.content).toBeDefined();
+    });
+
+    it('should pass article validation', () => {
+      const validationResult = validateArticle(article);
+      expect(validationResult).toHaveLength(0);
+    });
+
+    it('should have slug that follows naming conventions', () => {
+      expect(article.slug).toMatch(/^[a-z0-9-]+$/);
+      expect(article.slug).not.toContain('_');
+      expect(article.slug).not.toContain(' ');
+    });
+
+    it('should have valid title length', () => {
+      expect(article.title.length).toBeGreaterThanOrEqual(5);
+      expect(article.title.length).toBeLessThanOrEqual(200);
+    });
+
+    it('should have sufficient content length', () => {
+      expect(article.content.length).toBeGreaterThan(500);
+    });
+
+    it('should contain Arabic content', () => {
+      const arabicPattern = /[\u0600-\u06FF]/;
+      expect(article.content).toMatch(arabicPattern);
+    });
+
+    it('should include code examples for OpenCode commands', () => {
+      expect(article.content).toContain('```');
+      expect(article.content).toMatch(/opencode\s+\w+/);
+    });
+
+    it('should include multi-agent system explanation', () => {
+      expect(article.content.toLowerCase()).toMatch(/multi-agent|وكلاء|agents/);
+    });
+
+    it('should be in the correct CLI section', () => {
+      expect(article.section).toContain('CLI');
+    });
+  });
+
+  describe('opencode-cli-licensing article', () => {
+    let article: WikiArticle;
+
+    beforeAll(() => {
+      article = findArticle('opencode-cli-licensing');
+    });
+
+    it('should exist in wiki-content', () => {
+      expect(article).toBeDefined();
+      expect(article).not.toBeNull();
+    });
+
+    it('should have required fields', () => {
+      expect(article.slug).toBe('opencode-cli-licensing');
+      expect(article.title).toContain('OpenCode CLI');
+      expect(article.title).toMatch(/ترخيص|التسعير|Licensing|Pricing/);
+      expect(article.section).toBeDefined();
+      expect(article.content).toBeDefined();
+    });
+
+    it('should pass article validation', () => {
+      const validationResult = validateArticle(article);
+      expect(validationResult).toHaveLength(0);
+    });
+
+    it('should include licensing information', () => {
+      expect(article.content).toMatch(/ترخيص|التسعير|licensing|pricing|community|enterprise/i);
+    });
+
+    it('should include pricing tiers', () => {
+      expect(article.content).toMatch(/community|cloud|enterprise|free|paid/i);
+    });
+
+    it('should contain Arabic content', () => {
+      const arabicPattern = /[\u0600-\u06FF]/;
+      expect(article.content).toMatch(arabicPattern);
+    });
+  });
+
+  describe('opencode-cli-comparison article', () => {
+    let article: WikiArticle;
+
+    beforeAll(() => {
+      article = findArticle('opencode-cli-comparison');
+    });
+
+    it('should exist in wiki-content', () => {
+      expect(article).toBeDefined();
+      expect(article).not.toBeNull();
+    });
+
+    it('should have required fields', () => {
+      expect(article.slug).toBe('opencode-cli-comparison');
+      expect(article.title).toContain('OpenCode CLI');
+      expect(article.title).toMatch(/مقارنة|Comparison/);
+      expect(article.section).toBeDefined();
+      expect(article.content).toBeDefined();
+    });
+
+    it('should pass article validation', () => {
+      const validationResult = validateArticle(article);
+      expect(validationResult).toHaveLength(0);
+    });
+
+    it('should include comparison with other CLI tools', () => {
+      expect(article.content.toLowerCase()).toMatch(/claude|copilot|cursor|aider|comparison/);
+    });
+
+    it('should have comparison tables', () => {
+      expect(article.content).toContain('|');
+    });
+
+    it('should contain Arabic content', () => {
+      const arabicPattern = /[\u0600-\u06FF]/;
+      expect(article.content).toMatch(arabicPattern);
+    });
+  });
+
+  describe('opencode-cli-deployment article', () => {
+    let article: WikiArticle;
+
+    beforeAll(() => {
+      article = findArticle('opencode-cli-deployment');
+    });
+
+    it('should exist in wiki-content', () => {
+      expect(article).toBeDefined();
+      expect(article).not.toBeNull();
+    });
+
+    it('should have required fields', () => {
+      expect(article.slug).toBe('opencode-cli-deployment');
+      expect(article.title).toContain('OpenCode CLI');
+      expect(article.title).toMatch(/نشر|النشر|Deployment/);
+      expect(article.section).toBeDefined();
+      expect(article.content).toBeDefined();
+    });
+
+    it('should pass article validation', () => {
+      const validationResult = validateArticle(article);
+      expect(validationResult).toHaveLength(0);
+    });
+
+    it('should include deployment options', () => {
+      expect(article.content.toLowerCase()).toMatch(/local|cloud|deployment|ollama|lm studio/);
+    });
+
+    it('should include installation instructions', () => {
+      expect(article.content.toLowerCase()).toMatch(/install|تثبيت|setup|إعداد/);
+    });
+
+    it('should contain Arabic content', () => {
+      const arabicPattern = /[\u0600-\u06FF]/;
+      expect(article.content).toMatch(arabicPattern);
+    });
+  });
+
+  describe('opencode-cli-workflows article', () => {
+    let article: WikiArticle;
+
+    beforeAll(() => {
+      article = findArticle('opencode-cli-workflows');
+    });
+
+    it('should exist in wiki-content', () => {
+      expect(article).toBeDefined();
+      expect(article).not.toBeNull();
+    });
+
+    it('should have required fields', () => {
+      expect(article.slug).toBe('opencode-cli-workflows');
+      expect(article.title).toContain('OpenCode CLI');
+      expect(article.title).toMatch(/سير العمل|Workflows/);
+      expect(article.section).toBeDefined();
+      expect(article.content).toBeDefined();
+    });
+
+    it('should pass article validation', () => {
+      const validationResult = validateArticle(article);
+      expect(validationResult).toHaveLength(0);
+    });
+
+    it('should include workflow modes', () => {
+      expect(article.content.toLowerCase()).toMatch(/interactive|direct|autonomous|supervised/);
+    });
+
+    it('should include code examples', () => {
+      expect(article.content).toContain('```');
+    });
+
+    it('should contain Arabic content', () => {
+      const arabicPattern = /[\u0600-\u06FF]/;
+      expect(article.content).toMatch(arabicPattern);
+    });
+  });
+
+  describe('opencode-cli-advanced article', () => {
+    let article: WikiArticle;
+
+    beforeAll(() => {
+      article = findArticle('opencode-cli-advanced');
+    });
+
+    it('should exist in wiki-content', () => {
+      expect(article).toBeDefined();
+      expect(article).not.toBeNull();
+    });
+
+    it('should have required fields', () => {
+      expect(article.slug).toBe('opencode-cli-advanced');
+      expect(article.title).toContain('OpenCode CLI');
+      expect(article.title).toMatch(/متقدم|Advanced/);
+      expect(article.section).toBeDefined();
+      expect(article.content).toBeDefined();
+    });
+
+    it('should pass article validation', () => {
+      const validationResult = validateArticle(article);
+      expect(validationResult).toHaveLength(0);
+    });
+
+    it('should include advanced features', () => {
+      expect(article.content.toLowerCase()).toMatch(/template|rules|alias|git|automation/i);
+    });
+
+    it('should include code examples', () => {
+      expect(article.content).toContain('```');
+    });
+
+    it('should contain Arabic content', () => {
+      const arabicPattern = /[\u0600-\u06FF]/;
+      expect(article.content).toMatch(arabicPattern);
+    });
+  });
+
+  describe('opencode-cli-context article', () => {
+    let article: WikiArticle;
+
+    beforeAll(() => {
+      article = findArticle('opencode-cli-context');
+    });
+
+    it('should exist in wiki-content', () => {
+      expect(article).toBeDefined();
+      expect(article).not.toBeNull();
+    });
+
+    it('should have required fields', () => {
+      expect(article.slug).toBe('opencode-cli-context');
+      expect(article.title).toContain('OpenCode CLI');
+      expect(article.title).toMatch(/سياق|Context/);
+      expect(article.section).toBeDefined();
+      expect(article.content).toBeDefined();
+    });
+
+    it('should pass article validation', () => {
+      const validationResult = validateArticle(article);
+      expect(validationResult).toHaveLength(0);
+    });
+
+    it('should include context sources explanation', () => {
+      expect(article.content.toLowerCase()).toMatch(/context|sources|git history|dependencies/);
+    });
+
+    it('should include code examples', () => {
+      expect(article.content).toContain('```');
+    });
+
+    it('should contain Arabic content', () => {
+      const arabicPattern = /[\u0600-\u06FF]/;
+      expect(article.content).toMatch(arabicPattern);
+    });
+  });
+
+  describe('opencode-cli-agents article', () => {
+    let article: WikiArticle;
+
+    beforeAll(() => {
+      article = findArticle('opencode-cli-agents');
+    });
+
+    it('should exist in wiki-content', () => {
+      expect(article).toBeDefined();
+      expect(article).not.toBeNull();
+    });
+
+    it('should have required fields', () => {
+      expect(article.slug).toBe('opencode-cli-agents');
+      expect(article.title).toContain('OpenCode CLI');
+      expect(article.title).toMatch(/وكلاء|Agents/);
+      expect(article.section).toBeDefined();
+      expect(article.content).toBeDefined();
+    });
+
+    it('should pass article validation', () => {
+      const validationResult = validateArticle(article);
+      expect(validationResult).toHaveLength(0);
+    });
+
+    it('should include multi-agent system explanation', () => {
+      expect(article.content.toLowerCase()).toMatch(/planner|coder|reviewer|tester|debugger|agents/);
+    });
+
+    it('should include agent collaboration workflow', () => {
+      expect(article.content.toLowerCase()).toMatch(/collaboration|workflow|team/);
+    });
+
+    it('should contain Arabic content', () => {
+      const arabicPattern = /[\u0600-\u06FF]/;
+      expect(article.content).toMatch(arabicPattern);
+    });
+  });
+
+  describe('opencode-cli-configuration article', () => {
+    let article: WikiArticle;
+
+    beforeAll(() => {
+      article = findArticle('opencode-cli-configuration');
+    });
+
+    it('should exist in wiki-content', () => {
+      expect(article).toBeDefined();
+      expect(article).not.toBeNull();
+    });
+
+    it('should have required fields', () => {
+      expect(article.slug).toBe('opencode-cli-configuration');
+      expect(article.title).toContain('OpenCode CLI');
+      expect(article.title).toMatch(/إعدادات|Configuration/);
+      expect(article.section).toBeDefined();
+      expect(article.content).toBeDefined();
+    });
+
+    it('should pass article validation', () => {
+      const validationResult = validateArticle(article);
+      expect(validationResult).toHaveLength(0);
+    });
+
+    it('should include configuration options', () => {
+      expect(article.content.toLowerCase()).toMatch(/config|settings|provider|profile|environment/);
+    });
+
+    it('should include configuration examples', () => {
+      expect(article.content).toContain('```');
+      expect(article.content.toLowerCase()).toMatch(/json|yaml/);
+    });
+
+    it('should contain Arabic content', () => {
+      const arabicPattern = /[\u0600-\u06FF]/;
+      expect(article.content).toMatch(arabicPattern);
+    });
+  });
+
+  describe('all new OpenCode CLI articles', () => {
+    it('should all exist in wiki-content', () => {
+      opencodeCliArticleSlugs.forEach((slug) => {
+        const article = findArticle(slug);
+        expect(article).toBeDefined();
+        expect(article).not.toBeNull();
+      });
+    });
+
+    it('should all have unique slugs', () => {
+      const foundSlugs = opencodeCliArticleSlugs.map((slug) => {
+        const article = findArticle(slug);
+        return article?.slug;
+      });
+
+      const uniqueSlugs = new Set(foundSlugs);
+      expect(uniqueSlugs.size).toBe(opencodeCliArticleSlugs.length);
+    });
+
+    it('should all be in the same CLI section', () => {
+      opencodeCliArticleSlugs.forEach((slug) => {
+        const article = findArticle(slug);
+        expect(article.section).toContain('CLI');
+      });
+    });
+
+    it('should all include Arabic and English content', () => {
+      opencodeCliArticleSlugs.forEach((slug) => {
+        const article = findArticle(slug);
+        const arabicPattern = /[\u0600-\u06FF]/;
+        expect(article.content).toMatch(arabicPattern);
+        expect(article.content).toMatch(/[a-zA-Z]/);
+      });
+    });
+
+    it('should all have comprehensive content with code examples', () => {
+      opencodeCliArticleSlugs.forEach((slug) => {
+        const article = findArticle(slug);
+        expect(article.content.length).toBeGreaterThan(500);
+        expect(article.content).toContain('```');
+      });
+    });
+
+    it('should all pass validation', () => {
+      opencodeCliArticleSlugs.forEach((slug) => {
+        const article = findArticle(slug);
+        const validationResult = validateArticle(article);
+        expect(validationResult).toHaveLength(0);
+      });
+    });
+  });
 });
