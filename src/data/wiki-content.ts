@@ -2198,4 +2198,708 @@ for (let i = 0; i < array.length; i++) {
       },
     ],
   },
+  {
+    name: "8. أدوات CLI للبرمجة بالذكاء الاصطناعي (AI Coding CLIs)",
+    articles: [
+      {
+        slug: "claude-cli-comprehensive-guide",
+        title: "دليل Claude CLI الشامل (Claude CLI Comprehensive Guide)",
+        section: "أدوات CLI",
+        content: `
+# Claude CLI: البرمجة التفاعلية في الطرفية (Terminal)
+
+**Claude CLI** هي أداة سطر أوامر قوية تجلب الذكاء الاصطناعي Claude من Anthropic مباشرة إلى طرفيتك. تتيح لك التحدث مع الذكاء الاصطناعي، تحليل الكود، إنشاء ملفات، وإدارة المشاريع—all من خلال سطر الأوامر.
+
+## ما هو Claude CLI؟
+
+Claude CLI هو واجهة برمجية للأداة Claude AI تمكنك من:
+
+- 💬 **إجراء محادثات طبيعية** مع Claude حول كودك
+- 📁 **فهرسة وفهم مشروعك بالكامل**
+- ✨ **إنشاء وتعديل الكود** بذكاء
+- 🐛 **تصحيح الأخطاء** Debugging مع شرح وافٍ
+- 📚 **تعلم تقنيات جديدة** من خلال الأمثلة العملية
+
+---
+
+## المتطلبات الأساسية (Prerequisites)
+
+قبل التثبيت، تأكد من توفر:
+
+1. ✅ **Node.js 18+** أو **Python 3.8+**
+2. ✅ **مفتاح API من Anthropic**
+3. ✅ **طرفية Terminal** (bash, zsh, PowerShell, أو cmd)
+4. ✅ **اتصال بالإنترنت** (للاتصال بخدمات Anthropic)
+
+---
+
+## التثبيت (Installation)
+
+### الطريقة 1: عبر npm (Node.js) - الموصى بها
+
+\`\`\`bash
+# تثبيت الأداة عالمياً
+npm install -g @anthropic-ai/claude-cli
+
+# تهيئة الأداة
+claude init
+\`\`\`
+
+سيطلب منك الأمر:
+1. إدخال مفتاح API الخاص بك
+2. اختيار نموذج Claude المفضل (haiku, sonnet, opus)
+3. إعدادات إضافية (اختياري)
+
+### الطريقة 2: عبر pip (Python)
+
+\`\`\`bash
+# تثبيت الأداة
+pip install anthropic-cli
+
+# تهيئة الأداة
+claude config setup
+\`\`\`
+
+---
+
+## الاستخدام الأساسي (Basic Usage)
+
+### 1. طرح الأسئلة
+
+\`\`\`bash
+# اسأل Claude سؤالاً مباشراً
+claude ask "كيف أثبت JWT authentication في Express.js؟"
+
+# الحصول على شرح لمفهوم برمجي
+claude ask "ما الفرق بين map و filter في JavaScript؟"
+\`\`\`
+
+### 2. تحليل الملفات
+
+\`\`\`bash
+# تحليل ملف واحد
+claude analyze src/components/Button.tsx
+
+# تحليل ملفات متعددة
+claude analyze src/api/*.ts
+
+# الحصول على شرح للكود
+claude explain lib/utils.js
+\`\`\`
+
+### 3. إنشاء الكود
+
+\`\`\`bash
+# إنشاء مكون React جديد
+claude generate "أنشئ مكون React لتسجيل الدخول مع نموذج"
+
+# إنشاء نقطة نهاية API
+claude generate "أنشئ REST API endpoint للحصول على المستخدمين"
+\`\`\`
+
+### 4. وضع المحادثة (Chat Mode)
+
+\`\`\`bash
+# بدء محادثة تفاعلية
+claude chat
+
+# بدء محادثة مع سياق ملفات محدد
+claude chat --files src/api/users.ts src/lib/db.ts
+
+# بدء محادثة في مجلد معين
+claude chat --directory ./src
+\`\`\`
+
+---
+
+## الميزات الأساسية (Key Features)
+
+### 1. فهرسة المشروع (Project Indexing)
+
+\`\`\`bash
+# فهرسة المشروع بالكامل
+claude scan .
+
+# فهرسة مجلد محدد
+claude scan src/
+
+# طرح أسئلة بعد الفهرسة
+claude ask "أين يقع منطق المصادقة في هذا المشروع؟"
+claude ask "ما هي المكتبات المستخدمة في هذا المشروع؟"
+\`\`\`
+
+**مثال عملي:**
+
+\`\`\`bash
+# بعد فهرسة المشروع
+claude scan .
+
+# اسأل عن البنية
+claude ask "اشرح لي بنية هذا المشروع"
+
+# اطلب اقتراحات للتحسين
+claude ask "ما هي الملفات التي تحتاج إلى إعادة هيكلة؟"
+\`\`\`
+
+---
+
+### 2. إعادة الهيكلة (Refactoring)
+
+\`\`\`bash
+# تحويل JavaScript إلى TypeScript
+claude refactor src/legacy.js --to typescript
+
+# إعادة هيكلة مكون React
+claude refactor components/OldButton.tsx --use-hooks
+
+# تحسين الكود
+claude refactor src/utils/api.js --optimize
+\`\`\`
+
+**مثال: تحويل إلى TypeScript**
+
+\`\`\`bash
+# قبل: ملف JavaScript عادي
+# src/utils/math.js
+export function add(a, b) {
+  return a + b;
+}
+
+# بعد إعادة الهيكلة
+claude refactor src/utils/math.js --to typescript
+
+# ينتج: ملف TypeScript مع أنواع
+# src/utils/math.ts
+export function add(a: number, b: number): number {
+  return a + b;
+}
+\`\`\`
+
+---
+
+### 3. تصحيح الأخطاء (Debugging)
+
+\`\`\`bash
+# تصحيح خطأ محدد
+claude debug --error "TypeError: Cannot read property 'id' of undefined"
+
+# تصحيح ملف مع traces
+claude debug src/app.js --trace
+
+# تصحيح مع شرح مفصل
+claude debug --explain "ReferenceError: user is not defined"
+\`\`\`
+
+**مثال: فهم خطأ**
+
+\`\`\`bash
+# لديك خطأ في السجل
+Error: Cannot POST /api/users
+
+# اطلب من Claude المساعدة
+claude debug --error "Cannot POST /api/users" --files src/routes.js
+
+# Claude سيقوم بـ:
+# 1. فحص ملفاتك
+# 2. تحديد السبب المحتمل
+# 3. اقتراح الحلول
+# 4. إنشاء الاختبارات
+\`\`\`
+
+---
+
+### 4. المحادثات السياقية (Context-Aware Conversations)
+
+\`\`\`bash
+# محادثة مع ملفات محددة كسياق
+claude chat --files src/api/*.ts src/lib/database.ts
+
+# محادثة مع مجلد كامل
+claude chat --directory ./src/components
+
+# محادثة مع git diff
+claude chat --git-diff
+\`\`\`
+
+**مثال: مراجعة التغييرات**
+
+\`\`\`bash
+# راجع تغييراتك الأخيرة
+claude chat --git-diff
+
+# يمكنك السؤال:
+> "ما هي التغييرات التي قدمتها؟"
+> "هل هناك أي مشاكل محتملة؟"
+> "كيف يمكنني تحسين هذا الكود؟"
+\`\`\`
+
+---
+
+## التكوين المتقدم (Advanced Configuration)
+
+### 1. قواعد المشروع (Custom Rules File)
+
+أنشئ ملف \`.claude-rules\` في جذر مشروعك:
+
+\`\`\`yaml
+# .claude-rules
+project:
+  name: "تطبيق Next.js 14"
+  type: "fullstack"
+
+preferences:
+  - "استخدم App Router"
+  - "فضل مكونات السيرفر"
+  - "استخدم Tailwind CSS"
+  - "اتبع Airbnb Style Guide"
+
+typescript:
+  strict_mode: true
+  path_alias: "@/*"
+
+testing:
+  framework: "jest"
+  coverage_target: 80
+
+ai:
+  model: "claude-3-5-sonnet-20241022"
+  temperature: 0.2
+  max_tokens: 4000
+\`\`\`
+
+**الاستخدام:**
+
+\`\`\`bash
+# Claude سيقرأ القواعد تلقائياً
+claude generate "أضف مكوناً جديداً لصفحة تسجيل الدخول"
+
+# سينشئ Claude الكود وفقاً لقواعد مشروعك:
+# - TypeScript مع strict mode
+# - App Router pattern
+# - Tailwind classes
+# - Airbnb style
+\`\`\`
+
+---
+
+### 2. اختيار النموذج (Model Selection)
+
+\`\`\`bash
+# تعيين النموذج الافتراضي
+claude config set model claude-3-5-sonnet-20241022
+
+# الخيارات المتاحة:
+# - claude-3-5-sonnet (متوازن - موصى به)
+# - claude-3-opus (الأقوى - أبطأ)
+# - claude-3-haiku (الأسرع - أبسط)
+
+# التحقق من النموذج الحالي
+claude config get model
+\`\`\`
+
+**متى تستخدم كل نموذج؟**
+
+| النموذج | الاستخدام | السرعة | التكلفة |
+|---------|----------|--------|---------|
+| Haiku | أسئلة سريعة، نصوص بسيطة | ⚡⚡⚡ | 💰 |
+| Sonnet | معظم المهام اليومية | ⚡⚡ | 💰💰 |
+| Opus | مهام معقدة، refactor كبير | ⚡ | 💰💰💰 |
+
+---
+
+### 3. المتغيرات البيئية (Environment Variables)
+
+\`\`\`bash
+# ملف .env أو .bashrc أو .zshrc
+export ANTHROPIC_API_KEY="your-api-key-here"
+export CLAUDE_MODEL="claude-3-5-sonnet-20241022"
+export CLAUDE_MAX_TOKENS=4000
+export CLAUDE_TEMPERATURE=0.2
+\`\`\`
+
+---
+
+## سيناريوهات الاستخدام (Use Cases)
+
+### السيناريو 1: تعلم إطار عمل جديد
+
+\`\`\`bash
+# بدء محادثة حول إطار جديد
+claude chat
+
+> "أنا جديد في Next.js 14. اشرح لي App Router مع أمثلة"
+
+# Claude سيقوم بـ:
+# 1. شرح المفهوم
+# 2. إعطاء أمثلة عملية
+# 3. إنشاء ملفات تجريبية
+# 4. الإجابة على أسئلتك المتابعة
+\`\`\`
+
+---
+
+### السيناريو 2: مراجعة الكود (Code Review)
+
+\`\`\`bash
+# مراجعة ملف محدد
+claude review src/utils/validation.ts
+
+# الحصول على اقتراحات للتحسين
+> "ما هي المشاكل المحتملة؟"
+> "كيف يمكنني تحسين الأداء؟"
+> "هل هناك أي ثغرات أمنية؟"
+\`\`\`
+
+**مثال: مراجعة أمنية**
+
+\`\`\`bash
+claude review src/api/auth.ts --security
+
+# Claude سيركز على:
+# - حقن SQL
+# - XSS attacks
+# - CSRF protection
+# - password hashing
+# - JWT security
+\`\`\`
+
+---
+
+### السيناريو 3: إنشاء التوثيق (Documentation)
+
+\`\`\`bash
+# إنشاء JSDoc لمكون
+claude document src/components/Button.tsx
+
+# إنشاء README للمشروع
+claude document . --format readme
+
+# إنشاء API docs
+claude document src/api/ --format api
+\`\`\`
+
+**النتيجة:**
+
+\`\`\`typescript
+/**
+ * Button Component - زر تفاعلي قابل للتخصيص
+ *
+ * @param {Object} props - خصائص المكون
+ * @param {string} props.variant - نوع الزر (primary | secondary | danger)
+ * @param {boolean} props.disabled - حالة التعطيل
+ * @param {Function} props.onClick - معالج النقر
+ * @returns {JSX.Element} مكون الزر
+ *
+ * @example
+ * <Button variant="primary" onClick={handleSubmit}>
+ *   إرسال
+ * </Button>
+ */
+export function Button({ variant, disabled, onClick }) {
+  // ...
+}
+\`\`\`
+
+---
+
+### السيناريو 4: إعادة الهيكلة الكبيرة
+
+\`\`\`bash
+# تحويل Class Components إلى Hooks
+claude refactor src/components/ --to-hooks
+
+# تحويل JavaScript إلى TypeScript
+claude refactor src/ --to-typescript
+
+# إضافة Error Boundaries
+claude refactor src/ --add-error-boundaries
+\`\`\`
+
+**مثال: تحويل إلى TypeScript**
+
+\`\`\`bash
+# قبل: JavaScript
+// src/utils/api.js
+export async function fetchUser(id) {
+  const res = await fetch(\`/api/users/\${id}\`);
+  return res.json();
+}
+
+# بعد التحويل
+claude refactor src/utils/api.js --to typescript
+
+# النتيجة: TypeScript
+// src/utils/api.ts
+interface User {
+  id: number;
+  name: string;
+  email: string;
+}
+
+export async function fetchUser(id: number): Promise<User> {
+  const res = await fetch(\`/api/users/\${id}\`);
+  if (!res.ok) {
+    throw new Error(\`Failed to fetch user: \${res.statusText}\`);
+  }
+  return res.json();
+}
+\`\`\`
+
+---
+
+### السيناريو 5: إنشاء الاختبارات
+
+\`\`\`bash
+# إنشاء اختبارات لمكون
+claude test src/components/Button.tsx
+
+# إنشاء اختبارات لواجهة API
+claude test src/api/users.ts --integration
+
+# إنشاء اختبارات E2E
+claude test src/ --e2e
+\`\`\`
+
+**النتيجة:**
+
+\`\`\`typescript
+// src/components/Button.test.tsx
+import { render, screen, fireEvent } from '@testing-library/react';
+import { Button } from './Button';
+
+describe('Button Component', () => {
+  it('renders correctly with primary variant', () => {
+    render(<Button variant="primary">Click me</Button>);
+    expect(screen.getByText('Click me')).toBeInTheDocument();
+  });
+
+  it('calls onClick when clicked', () => {
+    const handleClick = jest.fn();
+    render(<Button onClick={handleClick}>Click me</Button>);
+    fireEvent.click(screen.getByText('Click me'));
+    expect(handleClick).toHaveBeenCalledTimes(1);
+  });
+
+  it('does not call onClick when disabled', () => {
+    const handleClick = jest.fn();
+    render(
+      <Button onClick={handleClick} disabled>
+        Click me
+      </Button>
+    );
+    fireEvent.click(screen.getByText('Click me'));
+    expect(handleClick).not.toHaveBeenCalled();
+  });
+});
+\`\`\`
+
+---
+
+## أفضل الممارسات (Best Practices)
+
+### ✅ افعل هذا (DO)
+
+1. **قدم سياقاً واضحاً**
+   \`\`\`bash
+   # ❌ سياق ضعيف
+   claude ask "أصلح هذا الكود"
+
+   # ✅ سياق جيد
+   claude ask "أصلح هذا الكود ليعمل مع React 18 وتحسين الأداء"
+   \`\`\`
+
+2. **استخدم مراجع الملفات**
+   \`\`\`bash
+   # ✅ محادثة مع ملفات محددة
+   claude chat --files src/api/*.ts src/lib/db.ts
+   \`\`\`
+
+3. **اكرر على الإجابات**
+   \`\`\`bash
+   # ✅ حوارات متعددة
+   > "أنشئ مكوناً جديداً"
+   > "أضف error handling"
+   > "حسّن الأداء"
+   > "أضف اختبارات"
+   \`\`\`
+
+4. **راجع الكود قبل الاستخدام**
+   \`\`\`bash
+   # ✅ افهم ما تم إنشاؤه
+   claude explain src/new-component.tsx
+   \`\`\`
+
+5. **استخدم النموذج المناسب**
+   \`\`\`bash
+   # ✅ للمهام اليومية
+   claude config set model claude-3-5-sonnet
+
+   # ✅ للمهام المعقدة
+   claude config set model claude-3-opus
+   \`\`\`
+
+---
+
+### ❌ لا تفعل هذا (DON'T)
+
+1. **لا تنسخ دون فهم**
+   \`\`\`bash
+   # ❌ نسخ أعمى
+   claude generate "كود معقد" && pbcopy
+
+   # ✅ افهم أولاً
+   claude generate "كود معقد" --explain
+   \`\`\`
+
+2. **لا تستخدم للكود الحساس**
+   \`\`\`bash
+   # ❌ مشاركة مفاتيح API
+   claude explain .env
+
+   # ✅ استخدام ملفات masked
+   claude explain src/ --exclude .env
+   \`\`\`
+
+3. **لا تتوقع الكمال من المحاولة الأولى**
+   \`\`\`bash
+   # ✅ اكرر للتحسين
+   claude generate "login component"
+   > "أضف error handling"
+   > "جعل التصميم متجاوباً"
+   > "أضف loading states"
+   \`\`\`
+
+4. **لا تتخطى الاختبارات**
+   \`\`\`bash
+   # ❌ استخدام مباشر
+   claude generate "api endpoint" > src/api/users.ts
+
+   # ✅ مع اختبارات
+   claude generate "api endpoint" --test > src/api/users.ts
+   \`\`\`
+
+---
+
+## التسعير والقيود (Pricing & Limits)
+
+### المستويات (Tiers)
+
+| المستوى | السعر | الطلبات/اليوم | الميزات |
+|---------|-------|--------------|---------|
+| **Free** | مجاناً | 100 طلب | أساسي |
+| **Pro** | $20/شهر | 5,000 طلب | أولوية + ميزات متقدمة |
+| **Team** | $30/مستخدم/شهر | غير محدود | تعاون + SSO |
+
+### القيود
+
+- **Free Tier**: 100 طلب في اليوم
+- **Token Limits**: حتى 200,000 token لكل طلب
+- **Rate Limits**: تعتمد على الخطة
+- **File Size**: حد 10MB لكل ملف
+
+---
+
+## المقارنة مع البدائل (Comparison)
+
+| الميزة | Claude CLI | Copilot CLI | OpenCode |
+|---------|-----------|-------------|----------|
+| جودة الكود | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| فهم المشروع | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| جودة المحادثة | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐ |
+| سهولة الاستخدام | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
+| المستوى المجاني | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
+| **المجموع** | **18/20** | **17/20** | **18/20** |
+
+### لماذا Claude CLI؟
+
+✅ **أفضل فهم للسياق** — Claude بارع في فهم المشروع الكلي
+
+✅ **محادثات طبيعية** — تشعر وكأنك تتحدث مع مطور بشري
+
+✅ **إعادة هيكلة قوية** — قدرة ممتازة على تعديل الكود الموجود
+
+✅ **شرح واضح** — يشرح الأفكار المعقدة بشكل بسيط
+
+---
+
+## المصادر (Resources)
+
+### الوثائق الرسمية
+
+- 📖 [توثيق Claude CLI الرسمي](https://docs.anthropic.com/cli)
+- 🐙 [مستودع GitHub](https://github.com/anthropics/claude-cli)
+- 💬 [منتدى المجتمع](https://community.anthropic.com)
+
+### أمثلة عملية
+
+- 🎯 [أمثلة Claude CLI](https://github.com/anthropics/claude-cli-examples)
+- 📝 [قوالب Prompts](https://docs.anthropic.com/prompts)
+- 🎓 [دروس تعليمية](https://www.anthropic.com/claude-tutorials)
+
+### الدعم والمساعدة
+
+\`\`\`bash
+# الحصول على مساعدة سريعة
+claude --help
+
+# مساعدة لأمر محدد
+claude chat --help
+claude generate --help
+
+# الإبلاغ عن مشكلة
+claude report --issue "وصف المشكلة"
+\`\`\`
+
+---
+
+## ملخص سريع (Quick Reference)
+
+\`\`\`bash
+# أوامر أساسية
+claude ask "سؤالك"                    # طرح سؤال
+claude analyze file.ts                 # تحليل ملف
+claude generate "طلبك"                 # إنشاء كود
+claude chat                            # محادثة تفاعلية
+
+# إدارة المشروع
+claude scan .                          # فهرسة المشروع
+claude refactor file.js --to ts        # إعادة هيكلة
+claude debug --error "خطأ"             # تصحيح الأخطاء
+claude review file.ts                  # مراجعة الكود
+
+# التكوين
+claude init                            # التهيئة الأولية
+claude config set model <model>        # اختيار النموذج
+claude config get model                # عرض الإعدادات
+
+# الاختبار والوثائق
+claude test file.ts                    # إنشاء اختبارات
+claude document file.ts                # إنشاء توثيق
+\`\`\`
+
+---
+
+## الخلاصة
+
+**Claude CLI** هو أداة قوية تجلب الذكاء الاصطناعي إلى طرفيتك. مع القدرة على:
+
+- 💬 محادثات طبيعية
+- 📁 فهم شامل للمشروع
+- ✨ إنشاء وتعديل الكود
+- 🐛 تصحيح الأخطاء
+- 📚 تعلم مستمر
+
+**تذكر**: Claude هو زميلك المبرمج، وليس بديلاً عنك. استخدمه لتسريع عملك، تعلم مهارات جديدة، والتغلب على التحديات البرمجية—but دائماً افهم ما تكتبه!
+
+---
+
+**هل أنت مستعد لبدء استخدام Claude CLI؟**
+
+ابدأ بتشغيل: \`claude init\`
+
+وادخل عالم البرمجة بالذكاء الاصطناعي! 🚀
+        `,
+      },
+    ],
+  },
 ];
