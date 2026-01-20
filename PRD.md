@@ -557,7 +557,7 @@ For diagrams containing text:
 | QA and testing | 2h | QA |
 
 **Deliverables:**
-- [ ] 5 new Claude CLI articles (1/5 complete: claude-cli-overview)
+- [x] 5 new Claude CLI articles (5/5 complete: claude-cli-overview, claude-cli-commands, claude-cli-pricing, claude-cli-best-practices, claude-cli-features)
 - [ ] 4 new Copilot CLI articles
 - [ ] 15 diagrams integrated
 
