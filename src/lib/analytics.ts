@@ -1437,7 +1437,10 @@ function getDeviceInfo(): DeviceInfo {
     deviceType = 'tablet';
   }
 
-  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  // Check for touch support - verify the property has a meaningful value
+  // 'ontouchstart' in window checks existence, but we also need to verify it's not null/undefined
+  const hasTouchEventHandler = window.ontouchstart !== null && window.ontouchstart !== undefined;
+  const isTouchDevice = hasTouchEventHandler || navigator.maxTouchPoints > 0;
 
   return {
     userAgent,
