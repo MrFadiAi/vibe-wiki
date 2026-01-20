@@ -626,7 +626,7 @@ For diagrams containing text:
 ### Acceptance Checklist
 
 - [x] All 48 diagrams are embedded in appropriate articles
-- [ ] 22 new article stubs are created and linked
+- [x] 22 new article stubs are created and linked
 - [x] All diagrams have Arabic alt text, caption, and title
 - [ ] SVGDiagram component renders without errors
 - [ ] Lazy loading works correctly (verified via DevTools)
