@@ -135,6 +135,38 @@ describe('Final Content Review - Phase 1', () => {
     });
   });
 
+  describe('Phase 1, Week 3 - Comparison Matrix', () => {
+    it('should have comparison matrix article', () => {
+      const article = allArticles.find((a) => a.slug === 'comparison-matrix-ai-coding-clis');
+      expect(article).toBeDefined();
+      expect(article?.content).toContain('مصفوفة المقارنة الشاملة');
+      expect(article?.content).toContain('AI Coding CLIs');
+    });
+
+    it('comparison matrix should have all comparison tables', () => {
+      const article = allArticles.find((a) => a.slug === 'comparison-matrix-ai-coding-clis');
+      expect(article?.content).toContain('جودة إنشاء الكود');
+      expect(article?.content).toContain('فهم قاعدة الكود');
+      expect(article?.content).toContain('تجربة المطور');
+      expect(article?.content).toContain('التسعير');
+    });
+
+    it('comparison matrix should cover all major CLI tools', () => {
+      const article = allArticles.find((a) => a.slug === 'comparison-matrix-ai-coding-clis');
+      const tools = ['Claude CLI', 'OpenCode', 'Copilot CLI', 'Aider', 'Cody CLI', 'Codex API'];
+      tools.forEach((tool) => {
+        expect(article?.content).toContain(tool);
+      });
+    });
+
+    it('comparison matrix should pass quality review', () => {
+      const article = allArticles.find((a) => a.slug === 'comparison-matrix-ai-coding-clis');
+      const review = reviewContent(article!);
+      expect(review.passes).toBe(true);
+      expect(review.overallScore).toBeGreaterThanOrEqual(80);
+    });
+  });
+
   describe('Phase 1, Week 3 - Learning Paths', () => {
     it('should have all 4 learning paths', () => {
       const learningPaths = [

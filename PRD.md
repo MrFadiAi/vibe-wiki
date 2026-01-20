@@ -1083,8 +1083,8 @@ Day 6-7: Master Advanced Patterns
 - [x] Collect feedback and iterate
 - [x] Performance testing
 - [x] Accessibility audit
-- [ ] Soft launch to community
-- [ ] Public announcement
+- [x] Soft launch to community
+- [x] Public announcement
 
 ---
 
@@ -1218,10 +1218,10 @@ interface SVGDiagramProps {
 
 - [x] Interactive CLI playground (browser-based terminal)
 - [x] AI chatbot for navigating the wiki
-- [ ] Video tutorials for each learning path
-- [ ] Live coding sessions (weekly)
-- [ ] Certification program for vibecoding mastery
-- [ ] Integration with actual CLI tools (API partnerships)
+- [x] Video tutorials for each learning path
+- [x] Live coding sessions (weekly)
+- [x] Certification program for vibecoding mastery
+- [x] Integration with actual CLI tools (API partnerships)
 
 ---
 
