@@ -576,7 +576,7 @@ For diagrams containing text:
 
 **Deliverables:**
 - [x] 9 new OpenCode articles (9/9 complete: opencode-cli-overview, opencode-cli-licensing, opencode-cli-comparison, opencode-cli-deployment, opencode-cli-workflows, opencode-cli-advanced, opencode-cli-context, opencode-cli-agents, opencode-cli-configuration)
-- [ ] 3 new overview articles
+- [x] 3 new overview articles (3/3 complete: cli-ecosystem-overview, cli-tools-comparison, ai-tools-quality-comparison)
 - [x] 14 OpenCode diagrams integrated (into opencode-comprehensive-guide)
 
 ### Phase 4: Polish & Documentation (Week 4)
