@@ -1,0 +1,248 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" role="img" aria-labelledby="claude-comparison-title claude-comparison-desc">
+  <title id="claude-comparison-title">Claude CLI vs Alternatives Comparison</title>
+  <desc id="claude-comparison-desc">Feature comparison table showing Claude CLI compared to GitHub Copilot CLI and OpenCode</desc>
+
+  <!-- Background -->
+  <rect width="1400" height="1000" fill="#0a0a0a"/>
+
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="cyan-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d9ff"/>
+      <stop offset="100%" stop-color="#0891b2"/>
+    </linearGradient>
+    <linearGradient id="purple-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="green-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="orange-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Title -->
+  <text x="700" y="60" font-family="Inter, sans-serif" font-size="42" font-weight="700" fill="#ffffff" text-anchor="middle">Claude CLI vs Alternatives</text>
+  <text x="700" y="95" font-family="Inter, sans-serif" font-size="18" fill="#6b7280" text-anchor="middle">Feature-by-feature comparison with GitHub Copilot CLI and OpenCode</text>
+
+  <!-- Comparison Table -->
+  <g transform="translate(80, 150)">
+    <!-- Table Header Background -->
+    <rect x="0" y="0" width="1240" height="80" rx="10" fill="url(#cyan-gradient)" opacity="0.2"/>
+
+    <!-- Column Headers -->
+    <text x="20" y="50" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#00d9ff">Feature</text>
+    <text x="450" y="50" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#a855f7" text-anchor="middle">Claude CLI</text>
+    <text x="800" y="50" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#10b981" text-anchor="middle">Copilot CLI</text>
+    <text x="1100" y="50" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#f59e0b" text-anchor="middle">OpenCode</text>
+
+    <!-- Row 1: Code Generation Quality -->
+    <g transform="translate(0, 100)">
+      <rect x="0" y="0" width="1240" height="70" rx="8" fill="#1a1a2e" opacity="0.5"/>
+      <text x="20" y="42" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#e5e7eb">Code Generation</text>
+
+      <!-- Claude CLI -->
+      <text x="450" y="42" font-family="Inter, sans-serif" font-size="28" text-anchor="middle">⭐⭐⭐⭐⭐</text>
+
+      <!-- Copilot CLI -->
+      <text x="800" y="42" font-family="Inter, sans-serif" font-size="28" text-anchor="middle">⭐⭐⭐⭐</text>
+
+      <!-- OpenCode -->
+      <text x="1100" y="42" font-family="Inter, sans-serif" font-size="28" text-anchor="middle">⭐⭐⭐⭐⭐</text>
+    </g>
+
+    <!-- Row 2: Codebase Analysis -->
+    <g transform="translate(0, 190)">
+      <rect x="0" y="0" width="1240" height="70" rx="8" fill="#1a1a2e" opacity="0.5"/>
+      <text x="20" y="42" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#e5e7eb">Codebase Analysis</text>
+
+      <!-- Claude CLI -->
+      <text x="450" y="42" font-family="Inter, sans-serif" font-size="28" text-anchor="middle">⭐⭐⭐⭐⭐</text>
+
+      <!-- Copilot CLI -->
+      <text x="800" y="42" font-family="Inter, sans-serif" font-size="28" text-anchor="middle">⭐⭐⭐</text>
+
+      <!-- OpenCode -->
+      <text x="1100" y="42" font-family="Inter, sans-serif" font-size="28" text-anchor="middle">⭐⭐⭐⭐⭐</text>
+    </g>
+
+    <!-- Row 3: Conversation Quality -->
+    <g transform="translate(0, 280)">
+      <rect x="0" y="0" width="1240" height="70" rx="8" fill="#1a1a2e" opacity="0.5"/>
+      <text x="20" y="42" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#e5e7eb">Conversation Quality</text>
+
+      <!-- Claude CLI -->
+      <text x="450" y="42" font-family="Inter, sans-serif" font-size="28" text-anchor="middle">⭐⭐⭐⭐⭐</text>
+
+      <!-- Copilot CLI -->
+      <text x="800" y="42" font-family="Inter, sans-serif" font-size="28" text-anchor="middle">⭐⭐⭐</text>
+
+      <!-- OpenCode -->
+      <text x="1100" y="42" font-family="Inter, sans-serif" font-size="28" text-anchor="middle">⭐⭐⭐⭐</text>
+    </g>
+
+    <!-- Row 4: Terminal UX -->
+    <g transform="translate(0, 370)">
+      <rect x="0" y="0" width="1240" height="70" rx="8" fill="#1a1a2e" opacity="0.5"/>
+      <text x="20" y="42" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#e5e7eb">Terminal UX</text>
+
+      <!-- Claude CLI -->
+      <text x="450" y="42" font-family="Inter, sans-serif" font-size="28" text-anchor="middle">⭐⭐⭐⭐</text>
+
+      <!-- Copilot CLI -->
+      <text x="800" y="42" font-family="Inter, sans-serif" font-size="28" text-anchor="middle">⭐⭐⭐⭐⭐</text>
+
+      <!-- OpenCode -->
+      <text x="450" y="42" font-family="Inter, sans-serif" font-size="28" text-anchor="middle">⭐⭐⭐⭐</text>
+    </g>
+
+    <!-- Row 5: Free Tier -->
+    <g transform="translate(0, 460)">
+      <rect x="0" y="0" width="1240" height="70" rx="8" fill="#1a1a2e" opacity="0.5"/>
+      <text x="20" y="42" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#e5e7eb">Free Tier</text>
+
+      <!-- Claude CLI -->
+      <g transform="translate(400, 18)">
+        <rect x="0" y="0" width="100" height="34" rx="6" fill="#0891b2" opacity="0.3"/>
+        <text x="50" y="22" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#00d9ff" text-anchor="middle">100/day</text>
+      </g>
+
+      <!-- Copilot CLI -->
+      <g transform="translate(750, 18)">
+        <rect x="0" y="0" width="100" height="34" rx="6" fill="#059669" opacity="0.3"/>
+        <text x="50" y="22" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#10b981" text-anchor="middle">2 months</text>
+      </g>
+
+      <!-- OpenCode -->
+      <g transform="translate(1050, 18)">
+        <rect x="0" y="0" width="100" height="34" rx="6" fill="#d97706" opacity="0.3"/>
+        <text x="50" y="22" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#f59e0b" text-anchor="middle">Unlimited</text>
+      </g>
+    </g>
+
+    <!-- Row 6: Pricing -->
+    <g transform="translate(0, 550)">
+      <rect x="0" y="0" width="1240" height="70" rx="8" fill="#1a1a2e" opacity="0.5"/>
+      <text x="20" y="42" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#e5e7eb">Pricing (Paid)</text>
+
+      <!-- Claude CLI -->
+      <g transform="translate(400, 18)">
+        <rect x="0" y="0" width="100" height="34" rx="6" fill="#0891b2" opacity="0.3"/>
+        <text x="50" y="22" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#00d9ff" text-anchor="middle">$20/mo</text>
+      </g>
+
+      <!-- Copilot CLI -->
+      <g transform="translate(750, 18)">
+        <rect x="0" y="0" width="100" height="34" rx="6" fill="#059669" opacity="0.3"/>
+        <text x="50" y="22" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#10b981" text-anchor="middle">$10/mo</text>
+      </g>
+
+      <!-- OpenCode -->
+      <g transform="translate(1050, 18)">
+        <rect x="0" y="0" width="100" height="34" rx="6" fill="#d97706" opacity="0.3"/>
+        <text x="50" y="22" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#f59e0b" text-anchor="middle">$15/mo</text>
+      </g>
+    </g>
+
+    <!-- Row 7: Open Source -->
+    <g transform="translate(0, 640)">
+      <rect x="0" y="0" width="1240" height="70" rx="8" fill="#1a1a2e" opacity="0.5"/>
+      <text x="20" y="42" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#e5e7eb">Open Source</text>
+
+      <!-- Claude CLI -->
+      <text x="450" y="42" font-family="Inter, sans-serif" font-size="20" text-anchor="middle">❌</text>
+
+      <!-- Copilot CLI -->
+      <text x="800" y="42" font-family="Inter, sans-serif" font-size="20" text-anchor="middle">❌</text>
+
+      <!-- OpenCode -->
+      <text x="1100" y="42" font-family="Inter, sans-serif" font-size="20" text-anchor="middle">✅</text>
+    </g>
+
+    <!-- Row 8: Local Models -->
+    <g transform="translate(0, 730)">
+      <rect x="0" y="0" width="1240" height="70" rx="8" fill="#1a1a2e" opacity="0.5"/>
+      <text x="20" y="42" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#e5e7eb">Local AI Models</text>
+
+      <!-- Claude CLI -->
+      <text x="450" y="42" font-family="Inter, sans-serif" font-size="20" text-anchor="middle">❌</text>
+
+      <!-- Copilot CLI -->
+      <text x="800" y="42" font-family="Inter, sans-serif" font-size="20" text-anchor="middle">❌</text>
+
+      <!-- OpenCode -->
+      <text x="1100" y="42" font-family="Inter, sans-serif" font-size="20" text-anchor="middle">✅</text>
+    </g>
+  </g>
+
+  <!-- Why Choose Claude CLI Panel -->
+  <g transform="translate(80, 820)">
+    <rect x="0" y="0" width="580" height="150" rx="15" fill="#1a1a2e" stroke="url(#purple-gradient)" stroke-width="3"/>
+    <text x="290" y="35" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#a855f7" text-anchor="middle">Why Choose Claude CLI?</text>
+
+    <g transform="translate(30, 55)">
+      <circle cx="10" cy="10" r="5" fill="#a855f7"/>
+      <text x="25" y="14" font-family="Inter, sans-serif" font-size="14" fill="#e5e7eb"><tspan font-weight="600">Best Reasoning:</tspan> Strongest problem-solving</text>
+
+      <circle cx="10" cy="35" r="5" fill="#a855f7"/>
+      <text x="25" y="39" font-family="Inter, sans-serif" font-size="14" fill="#e5e7eb"><tspan font-weight="600">Context Understanding:</tspan> Deep codebase awareness</text>
+
+      <circle cx="10" cy="60" r="5" fill="#a855f7"/>
+      <text x="25" y="64" font-family="Inter, sans-serif" font-size="14" fill="#e5e7eb"><tspan font-weight="600">Natural Conversations:</tspan> Chat like with a developer</text>
+
+      <circle cx="10" cy="85" r="5" fill="#a855f7"/>
+      <text x="25" y="89" font-family="Inter, sans-serif" font-size="14" fill="#e5e7eb"><tspan font-weight="600">Strong Refactoring:</tspan> Excellent code improvement</text>
+    </g>
+  </g>
+
+  <!-- Quick Recommendations Panel -->
+  <g transform="translate(720, 820)">
+    <rect x="0" y="0" width="580" height="150" rx="15" fill="#1a1a2e" stroke="url(#cyan-gradient)" stroke-width="3"/>
+    <text x="290" y="35" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#00d9ff" text-anchor="middle">Quick Recommendations</text>
+
+    <g transform="translate(30, 55)">
+      <g transform="translate(0, 0)">
+        <text x="0" y="0" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#10b981">Best for Learning:</text>
+        <text x="0" y="18" font-family="Inter, sans-serif" font-size="12" fill="#9ca3af">Claude CLI (best explanations)</text>
+      </g>
+
+      <g transform="translate(270, 0)">
+        <text x="0" y="0" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#10b981">Best Value:</text>
+        <text x="0" y="18" font-family="Inter, sans-serif" font-size="12" fill="#9ca3af">OpenCode (free tier)</text>
+      </g>
+
+      <g transform="translate(0, 40)">
+        <text x="0" y="0" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#10b981">Terminal Power User:</text>
+        <text x="0" y="18" font-family="Inter, sans-serif" font-size="12" fill="#9ca3af">Copilot CLI (best UX)</text>
+      </g>
+
+      <g transform="translate(270, 40)">
+        <text x="0" y="0" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#10b981">Privacy First:</text>
+        <text x="0" y="18" font-family="Inter, sans-serif" font-size="12" fill="#9ca3af">OpenCode (local mode)</text>
+      </g>
+
+      <g transform="translate(0, 80)">
+        <text x="0" y="0" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#10b981">Enterprise Teams:</text>
+        <text x="0" y="18" font-family="Inter, sans-serif" font-size="12" fill="#9ca3af">Copilot CLI (GitHub integration)</text>
+      </g>
+
+      <g transform="translate(270, 80)">
+        <text x="0" y="0" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#10b981">Complex Tasks:</text>
+        <text x="0" y="18" font-family="Inter, sans-serif" font-size="12" fill="#9ca3af">Claude CLI (strongest reasoning)</text>
+      </g>
+    </g>
+  </g>
+</svg>
