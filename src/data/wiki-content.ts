@@ -6066,6 +6066,134 @@ opencode refactor path --to typescript        # تحويل إلى TS
 
 واستمتع بحرية البرمجة الذكية! 🚀🔓
         `,
+        diagrams: [
+          {
+            id: 'opencode-architecture',
+            filename: 'cli-opencode-architecture.svg',
+            alt: 'البنية التقنية لـ OpenCode مع نظام الوكلاء المتعددين',
+            caption: 'الشكل ١: البنية التقنية لـ OpenCode ونظام الوكلاء المتعددين',
+            position: 'after-section',
+            sectionHeading: 'ما هو OpenCode؟',
+            priority: true,
+          },
+          {
+            id: 'opencode-features-grid',
+            filename: 'cli-opencode-feature-map.svg',
+            alt: 'خريطة الميزات الرئيسية في OpenCode',
+            caption: 'الشكل ٢: خريطة الميزات الرئيسية في OpenCode',
+            position: 'after-section',
+            sectionHeading: 'الميزات الرئيسية',
+            priority: true,
+          },
+          {
+            id: 'opencode-installation-flow',
+            filename: 'cli-opencode-installation-options.svg',
+            alt: 'خيارات تثبيت OpenCode المختلفة',
+            caption: 'الشكل ٣: طرق تثبيت OpenCode (npm، Docker، من المصدر)',
+            position: 'after-section',
+            sectionHeading: 'التثبيت (Installation)',
+            priority: true,
+          },
+          {
+            id: 'opencode-initial-setup',
+            filename: 'cli-opencode-config-layers.svg',
+            alt: 'طبقات الإعدادات في OpenCode',
+            caption: 'الشكل ٤: طبقات الإعدادات والتكوين في OpenCode',
+            position: 'after-section',
+            sectionHeading: 'الإعداد الأولي',
+            priority: false,
+          },
+          {
+            id: 'opencode-basic-commands',
+            filename: 'cli-opencode-context-sources.svg',
+            alt: 'مصادر السياق في OpenCode',
+            caption: 'الشكل ٥: كيف يجمع OpenCode السياق من مصادر متعددة',
+            position: 'after-section',
+            sectionHeading: 'الاستخدام الأساسي',
+            priority: true,
+          },
+          {
+            id: 'opencode-multifile-workflow',
+            filename: 'cli-opencode-multifile-workflow.svg',
+            alt: 'سير عمل الملفات المتعددة في OpenCode',
+            caption: 'الشكل ٦: سير العمل للتعامل مع ملفات متعددة',
+            position: 'after-section',
+            sectionHeading: 'الميزات الرئيسية',
+            priority: true,
+          },
+          {
+            id: 'opencode-agent-collaboration',
+            filename: 'cli-opencode-agent-collaboration.svg',
+            alt: 'تعاون الوكلاء في OpenCode',
+            caption: 'الشكل ٧: كيف يعمل الوكلاء المتعددون معاً في OpenCode',
+            position: 'after-section',
+            sectionHeading: 'نظام متعدد الوكلاء',
+            priority: true,
+          },
+          {
+            id: 'opencode-workflow-state',
+            filename: 'cli-opencode-workflow-state.svg',
+            alt: 'حالات سير العمل في OpenCode',
+            caption: 'الشكل ٨: حالات سير العمل المختلفة في OpenCode',
+            position: 'after-section',
+            sectionHeading: 'الميزات الرئيسية',
+            priority: false,
+          },
+          {
+            id: 'opencode-local-vs-cloud',
+            filename: 'cli-opencode-local-vs-cloud.svg',
+            alt: 'المحلي مقابل السحابي في OpenCode',
+            caption: 'الشكل ٩: مقارنة بين التنفيذ المحلي والسحابي',
+            position: 'after-section',
+            sectionHeading: 'التهيئة المتقدمة',
+            priority: false,
+          },
+          {
+            id: 'opencode-comparison-matrix',
+            filename: 'cli-opencode-comparison-matrix.svg',
+            alt: 'مصفوفة مقارنة OpenCode مع البدائل',
+            caption: 'الشكل ١٠: مقارنة OpenCode مع أدوات CLI الأخرى',
+            position: 'after-section',
+            sectionHeading: 'المقارنة مع البدائل',
+            priority: true,
+          },
+          {
+            id: 'opencode-use-cases',
+            filename: 'cli-opencode-use-cases.svg',
+            alt: 'حالات استخدام OpenCode',
+            caption: 'الشكل ١١: حالات الاستخدام الرئيسية لـ OpenCode',
+            position: 'after-section',
+            sectionHeading: 'حالات الاستخدام',
+            priority: true,
+          },
+          {
+            id: 'opencode-license-tiers',
+            filename: 'cli-opencode-license-tiers.svg',
+            alt: 'مستويات ترخيص OpenCode',
+            caption: 'الشكل ١٢: مستويات الترخيص والتسعير في OpenCode',
+            position: 'after-section',
+            sectionHeading: 'الترخيص والتسعير',
+            priority: false,
+          },
+          {
+            id: 'opencode-advanced-features',
+            filename: 'cli-opencode-advanced-features.svg',
+            alt: 'الميزات المتقدمة في OpenCode',
+            caption: 'الشكل ١٣: الميزات المتقدمة في OpenCode',
+            position: 'after-section',
+            sectionHeading: 'نصائح متقدمة',
+            priority: false,
+          },
+          {
+            id: 'opencode-editor-integration',
+            filename: 'cli-opencode-editor-integration.svg',
+            alt: 'تكامل OpenCode مع المحررات',
+            caption: 'الشكل ١٤: تكامل OpenCode مع VS Code و Cursor و Neovim',
+            position: 'after-section',
+            sectionHeading: 'دمج المحرر',
+            priority: true,
+          },
+        ],
       },
       {
         slug: 'codex-openai-guide',
