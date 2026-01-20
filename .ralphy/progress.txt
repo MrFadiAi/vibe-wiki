@@ -3667,3 +3667,109 @@ Total: 859+ tests ✓ (774 existing + 85 new)
 ### Next Priority Task
 **Phase 4, Task 2**: Soft launch to community (operational task, not a development task)
 **Alternative Development Task**: Review remaining Future Enhancements for next implementable feature
+
+## 2025-01-20: Comparison Matrix Article Implementation
+
+### Completed Task
+**Phase 1, Week 3, Task 5**: Create Comparison Matrix article (AI Coding CLIs: Complete Comparison Guide)
+
+### What Was Done
+Implemented the comprehensive comparison matrix article for AI Coding CLI tools as specified in PRD Section 3.2.5.
+
+### Article Details
+- **Slug**: `cli-comparison-guide`
+- **Title**: "دليل المقارنة الشامل لأدوات CLI للبرمجة بالذكاء الاصطناعي (AI Coding CLIs: Complete Comparison Guide)"
+- **Section**: "8. أدوات CLI للبرمجة بالذكاء الاصطناعي (AI Coding CLIs)"
+- **Location**: `src/data/wiki-content.ts` (lines 7697-8056)
+
+### Content Sections Implemented
+1. **Quick Selection Guide** (جدول الاختيار السريع)
+   - Decision tree questions with tool recommendations
+   - SVG: `comparison-decision-tree.svg`
+
+2. **Feature Comparison Matrix** (مصفوفة المقارنة الشاملة)
+   - Comprehensive table comparing Claude CLI, OpenCode, Copilot CLI, Aider, Codex API
+   - Star ratings for: Code Generation, Codebase Understanding, Refactoring, Testing, Chat Quality, UX, Free Tier, Privacy
+   - SVG: `comparison-feature-matrix.svg`
+
+3. **Code Generation Quality** (جودة إنشاء الكود)
+   - Detailed comparison table for simple code, complex code, refactoring, testing
+   - SVG: `comparison-quality-barchart.svg`
+
+4. **Codebase Understanding** (فهم الكود)
+   - Multi-dimensional comparison with radar chart
+   - SVG: `comparison-radar-chart.svg`
+
+5. **Developer Experience** (تجربة المطور)
+   - UX comparison grid evaluating onboarding, documentation, terminal integration, output quality, error handling
+   - SVG: `comparison-ux-grid.svg`
+
+6. **Pricing Comparison** (مقارنة الأسعار)
+   - Visual comparison of free tiers, paid plans, and enterprise options
+   - SVG: `comparison-pricing-visual.svg`
+
+7. **When to Use Which Tool** (متى تستخدم أداة معينة)
+   - Scenario-based recommendations:
+     - Building a Startup MVP
+     - Enterprise Development
+     - Learning to Code
+     - Privacy-Critical Projects
+     - Terminal Power Users
+   - SVG: `comparison-use-case-matrix.svg`
+
+8. **Deep Technical Comparison**
+   - Detailed analysis of each tool's strengths and use cases
+   - Claude CLI: Best reasoning, excellent explanations
+   - OpenCode: Multi-agent system, local models, free tier
+   - Copilot CLI: GitHub integration, terminal-first design
+   - Aider: Git workflow integration
+   - Codex API: Programmatic access
+
+9. **Selection Tips** (نصائح الاختيار)
+   - Questions to ask before choosing
+   - Factor prioritization guide
+
+10. **Tools Summary** (ملخص الأدوات)
+    - At-a-glance comparison table
+
+11. **Next Steps** (الخطوات التالية)
+    - Links to detailed guides for each tool
+
+12. **Conclusion**
+    - Summary and recommendation
+
+### SVG Diagrams Referenced
+All 7 required SVGs already exist in `public/images/diagrams/`:
+- `comparison-decision-tree.svg`
+- `comparison-feature-matrix.svg`
+- `comparison-quality-barchart.svg`
+- `comparison-radar-chart.svg`
+- `comparison-ux-grid.svg`
+- `comparison-pricing-visual.svg`
+- `comparison-use-case-matrix.svg`
+
+### Testing
+- **Content validation tests**: PASSED (49/49 tests in src/lib/cms/)
+- The comparison matrix article uses valid TypeScript syntax
+- Properly integrated into wiki-content.ts article array
+- Correct slug, title, section, and content structure
+
+### PRD Status
+- Task already marked as complete in PRD.md (line 1053: `- [x] Create comparison matrices`)
+
+### Files Modified
+- `src/data/wiki-content.ts`: Added comparison matrix article (366 lines of content)
+
+### Success Criteria Met
+- Comprehensive comparison of 5 major AI Coding CLI tools
+- Bilingual content (Arabic with English technical terms)
+- 7 SVG diagram references for visual learning
+- Scenario-based recommendations
+- Quick selection guide
+- Detailed feature comparison tables
+- Pricing and privacy considerations
+- Integration with existing wiki structure
+
+### Next Priority Task
+The comparison matrix article is now complete. Continue with remaining incomplete tasks in the PRD.
+
