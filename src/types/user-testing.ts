@@ -192,3 +192,134 @@ export interface UserPersona {
   technicalBackground: string;
   targetTasks: string[];
 }
+
+/**
+ * Feedback category
+ */
+export type FeedbackCategory =
+  | 'usability'
+  | 'content'
+  | 'performance'
+  | 'accessibility'
+  | 'feature'
+  | 'bug'
+  | 'translation'
+  | 'other';
+
+/**
+ * Feedback priority
+ */
+export type FeedbackPriority = 'critical' | 'high' | 'medium' | 'low' | 'trivial';
+
+/**
+ * Feedback status
+ */
+export type FeedbackStatus =
+  | 'pending'
+  | 'reviewing'
+  | 'accepted'
+  | 'rejected'
+  | 'in_progress'
+  | 'completed';
+
+/**
+ * Feedback item
+ */
+export interface FeedbackItem {
+  id: string;
+  category: FeedbackCategory;
+  priority: FeedbackPriority;
+  status: FeedbackStatus;
+  title: string;
+  description: string;
+  userId: string;
+  sessionId: string | null;
+  rating: 1 | 2 | 3 | 4 | 5 | null;
+  affectedArea: string | null;
+  reproductionSteps: string[] | null;
+  expectedBehavior: string | null;
+  actualBehavior: string | null;
+  screenshots: string[];
+  tags: string[];
+  upvotes: number;
+  createdAt: Date;
+  updatedAt: Date;
+  reviewedAt: Date | null;
+  reviewedBy: string | null;
+  resolution: string | null;
+  resolvedAt: Date | null;
+}
+
+/**
+ * Feedback analysis result
+ */
+export interface FeedbackAnalysis {
+  total: number;
+  byStatus: Record<FeedbackStatus, number>;
+  byCategory: Record<FeedbackCategory, number>;
+  byPriority: Record<FeedbackPriority, number>;
+  averageRating: number | null;
+  topIssues: Array<{
+    id: string;
+    title: string;
+    category: FeedbackCategory;
+    priority: FeedbackPriority;
+    status: FeedbackStatus;
+    score: number;
+    upvotes: number;
+    createdAt: Date;
+  }>;
+  recentTrends: FeedbackTrend[];
+  recommendations: ImprovementSuggestion[];
+}
+
+/**
+ * Feedback trend over time
+ */
+export interface FeedbackTrend {
+  category: FeedbackCategory;
+  recentCount: number;
+  olderCount: number;
+  changePercent: number;
+  direction: 'increasing' | 'decreasing' | 'stable';
+}
+
+/**
+ * Feedback aggregation by time period
+ */
+export interface FeedbackAggregation {
+  period: string;
+  total: number;
+  byCategory: Record<FeedbackCategory, number>;
+  byPriority: Record<FeedbackPriority, number>;
+  byStatus: Record<FeedbackStatus, number>;
+  averageRating: number | null;
+}
+
+/**
+ * Iteration action
+ */
+export interface IterationAction {
+  id: string;
+  type: 'immediate' | 'short-term' | 'long-term';
+  priority: FeedbackPriority;
+  title: string;
+  description: string;
+  feedbackIds: string[];
+  estimatedEffort: string;
+  assignedTo: string | null;
+  status: 'pending' | 'in_progress' | 'completed';
+  createdAt: Date;
+}
+
+/**
+ * Improvement suggestion
+ */
+export interface ImprovementSuggestion {
+  type: 'immediate' | 'short-term' | 'long-term' | 'process';
+  category: string;
+  title: string;
+  description: string;
+  priority: FeedbackPriority;
+  affectedAreas: string[];
+}
