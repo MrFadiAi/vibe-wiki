@@ -577,7 +577,7 @@ For diagrams containing text:
 **Deliverables:**
 - [ ] 9 new OpenCode articles
 - [ ] 3 new overview articles
-- [ ] 24 diagrams integrated
+- [x] 14 OpenCode diagrams integrated (into opencode-comprehensive-guide)
 
 ### Phase 4: Polish & Documentation (Week 4)
 

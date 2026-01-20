@@ -534,4 +534,268 @@ describe('wiki-content Article Validation', () => {
       }
     });
   });
+
+  describe('opencode-comprehensive-guide article with diagram integration', () => {
+    let opencodeArticle: WikiArticle;
+    const expectedDiagrams = [
+      'cli-opencode-architecture.svg',
+      'cli-opencode-installation-options.svg',
+      'cli-opencode-config-layers.svg',
+      'cli-opencode-workflow-state.svg',
+      'cli-opencode-agent-collaboration.svg',
+      'cli-opencode-feature-map.svg',
+      'cli-opencode-context-sources.svg',
+      'cli-opencode-multifile-workflow.svg',
+      'cli-opencode-advanced-features.svg',
+      'cli-opencode-local-vs-cloud.svg',
+      'cli-opencode-use-cases.svg',
+      'cli-opencode-license-tiers.svg',
+      'cli-opencode-comparison-matrix.svg',
+      'cli-opencode-editor-integration.svg',
+    ];
+
+    beforeAll(() => {
+      // Find the opencode-comprehensive-guide article
+      for (const section of wikiContent) {
+        const found = section.articles.find((a: WikiArticle) => a.slug === 'opencode-comprehensive-guide');
+        if (found) {
+          opencodeArticle = found;
+          break;
+        }
+      }
+    });
+
+    it('should exist in wiki-content', () => {
+      expect(opencodeArticle).toBeDefined();
+      expect(opencodeArticle).not.toBeNull();
+    });
+
+    it('should have required fields', () => {
+      expect(opencodeArticle.slug).toBe('opencode-comprehensive-guide');
+      expect(opencodeArticle.title).toContain('OpenCode');
+      expect(opencodeArticle.title).toContain('دليل');
+      expect(opencodeArticle.section).toBeDefined();
+      expect(opencodeArticle.content).toBeDefined();
+    });
+
+    it('should have a description', () => {
+      expect(opencodeArticle.description).toBeDefined();
+      expect(opencodeArticle.description).toContain('OpenCode');
+      expect(opencodeArticle.description).toContain('CLI');
+    });
+
+    it('should have diagrams array', () => {
+      expect(opencodeArticle.diagrams).toBeDefined();
+      expect(Array.isArray(opencodeArticle.diagrams)).toBe(true);
+    });
+
+    it('should have all 14 expected diagrams', () => {
+      expect(opencodeArticle.diagrams).toHaveLength(expectedDiagrams.length);
+    });
+
+    it('should have all expected diagram filenames', () => {
+      const diagramFilenames = opencodeArticle.diagrams.map((d) => d.filename);
+      expectedDiagrams.forEach((expectedDiagram) => {
+        expect(diagramFilenames).toContain(expectedDiagram);
+      });
+    });
+
+    it('should have diagram filenames starting with cli-opencode-', () => {
+      opencodeArticle.diagrams.forEach((diagram) => {
+        expect(diagram.filename).toMatch(/^cli-opencode-.*\.svg$/);
+      });
+    });
+
+    it('should have all diagrams with required metadata fields', () => {
+      opencodeArticle.diagrams.forEach((diagram) => {
+        expect(diagram.filename).toBeDefined();
+        expect(diagram.alt).toBeDefined();
+        expect(diagram.caption).toBeDefined();
+        expect(diagram.position).toBeDefined();
+        expect(diagram.priority).toBeDefined();
+        expect(typeof diagram.priority).toBe('boolean');
+      });
+    });
+
+    it('should have Arabic alt text for all diagrams', () => {
+      const arabicPattern = /[\u0600-\u06FF]/;
+      opencodeArticle.diagrams.forEach((diagram) => {
+        expect(diagram.alt).toMatch(arabicPattern);
+      });
+    });
+
+    it('should have Arabic captions for all diagrams', () => {
+      const arabicPattern = /[\u0600-\u06FF]/;
+      opencodeArticle.diagrams.forEach((diagram) => {
+        expect(diagram.caption).toMatch(arabicPattern);
+      });
+    });
+
+    it('should have sectionHeading for all diagrams', () => {
+      opencodeArticle.diagrams.forEach((diagram) => {
+        expect(diagram.sectionHeading).toBeDefined();
+        expect(diagram.sectionHeading).toBeTruthy();
+      });
+    });
+
+    it('should have position as after-section for all diagrams', () => {
+      opencodeArticle.diagrams.forEach((diagram) => {
+        expect(diagram.position).toBe('after-section');
+      });
+    });
+
+    it('should have valid figure numbers in captions (الشكل X)', () => {
+      const figureNumberPattern = /الشكل\s+[٠-١٢٣٤٥٦٧٨٩]+/;
+      opencodeArticle.diagrams.forEach((diagram) => {
+        expect(diagram.caption).toMatch(figureNumberPattern);
+      });
+    });
+
+    it('should have exactly 6 priority diagrams marked as high priority', () => {
+      const priorityDiagrams = opencodeArticle.diagrams.filter((d) => d.priority === true);
+      expect(priorityDiagrams.length).toBeGreaterThanOrEqual(5);
+    });
+
+    it('should have architecture diagram as priority', () => {
+      const architectureDiagram = opencodeArticle.diagrams.find(
+        (d) => d.filename === 'cli-opencode-architecture.svg',
+      );
+      expect(architectureDiagram).toBeDefined();
+      expect(architectureDiagram.priority).toBe(true);
+    });
+
+    it('should have installation-options diagram as priority', () => {
+      const installationDiagram = opencodeArticle.diagrams.find(
+        (d) => d.filename === 'cli-opencode-installation-options.svg',
+      );
+      expect(installationDiagram).toBeDefined();
+      expect(installationDiagram.priority).toBe(true);
+    });
+
+    it('should have agent-collaboration diagram as priority', () => {
+      const collaborationDiagram = opencodeArticle.diagrams.find(
+        (d) => d.filename === 'cli-opencode-agent-collaboration.svg',
+      );
+      expect(collaborationDiagram).toBeDefined();
+      expect(collaborationDiagram.priority).toBe(true);
+    });
+
+    it('should have feature-map diagram as priority', () => {
+      const featureMapDiagram = opencodeArticle.diagrams.find(
+        (d) => d.filename === 'cli-opencode-feature-map.svg',
+      );
+      expect(featureMapDiagram).toBeDefined();
+      expect(featureMapDiagram.priority).toBe(true);
+    });
+
+    it('should have use-cases diagram as priority', () => {
+      const useCasesDiagram = opencodeArticle.diagrams.find(
+        (d) => d.filename === 'cli-opencode-use-cases.svg',
+      );
+      expect(useCasesDiagram).toBeDefined();
+      expect(useCasesDiagram.priority).toBe(true);
+    });
+
+    it('should have comparison-matrix diagram as priority', () => {
+      const comparisonDiagram = opencodeArticle.diagrams.find(
+        (d) => d.filename === 'cli-opencode-comparison-matrix.svg',
+      );
+      expect(comparisonDiagram).toBeDefined();
+      expect(comparisonDiagram.priority).toBe(true);
+    });
+
+    it('should pass article validation', () => {
+      const validationResult = validateArticle(opencodeArticle);
+      expect(validationResult).toHaveLength(0);
+    });
+
+    it('should have slug that follows naming conventions', () => {
+      expect(opencodeArticle.slug).toMatch(/^[a-z0-9-]+$/);
+      expect(opencodeArticle.slug).not.toContain('_');
+      expect(opencodeArticle.slug).not.toContain(' ');
+    });
+
+    it('should have valid title length', () => {
+      expect(opencodeArticle.title.length).toBeGreaterThanOrEqual(5);
+      expect(opencodeArticle.title.length).toBeLessThanOrEqual(200);
+    });
+
+    it('should have sufficient content length', () => {
+      expect(opencodeArticle.content.length).toBeGreaterThan(500);
+    });
+
+    it('should contain Arabic content', () => {
+      const arabicPattern = /[\u0600-\u06FF]/;
+      expect(opencodeArticle.content).toMatch(arabicPattern);
+    });
+
+    it('should be in the correct CLI section', () => {
+      expect(opencodeArticle.section).toContain('CLI');
+    });
+
+    it('should include code examples for OpenCode commands', () => {
+      expect(opencodeArticle.content).toContain('```');
+      expect(opencodeArticle.content).toMatch(/opencode\s+\w+/);
+    });
+
+    it('should include multi-agent system explanation', () => {
+      expect(opencodeArticle.content.toLowerCase()).toMatch(/multi-agent|وكلاء|agents/);
+    });
+  });
+
+  describe('OpenCode diagram file validation', () => {
+    const opencodeDiagramFiles = [
+      'cli-opencode-architecture.svg',
+      'cli-opencode-installation-options.svg',
+      'cli-opencode-config-layers.svg',
+      'cli-opencode-feature-map.svg',
+      'cli-opencode-agent-collaboration.svg',
+      'cli-opencode-workflow-state.svg',
+      'cli-opencode-context-sources.svg',
+      'cli-opencode-editor-integration.svg',
+      'cli-opencode-advanced-features.svg',
+      'cli-opencode-multifile-workflow.svg',
+      'cli-opencode-local-vs-cloud.svg',
+      'cli-opencode-comparison-matrix.svg',
+      'cli-opencode-use-cases.svg',
+      'cli-opencode-license-tiers.svg',
+    ];
+
+    it('should reference all 14 diagram files in the article', () => {
+      let opencodeArticle: WikiArticle;
+      for (const section of wikiContent) {
+        const found = section.articles.find((a: WikiArticle) => a.slug === 'opencode-comprehensive-guide');
+        if (found) {
+          opencodeArticle = found;
+          break;
+        }
+      }
+
+      const articleDiagramFiles = opencodeArticle.diagrams.map((d) => d.filename);
+
+      opencodeDiagramFiles.forEach((expectedFile) => {
+        expect(articleDiagramFiles).toContain(expectedFile);
+      });
+    });
+
+    it('should have consistent SVG file naming convention', () => {
+      let opencodeArticle: WikiArticle;
+      for (const section of wikiContent) {
+        const found = section.articles.find((a: WikiArticle) => a.slug === 'opencode-comprehensive-guide');
+        if (found) {
+          opencodeArticle = found;
+          break;
+        }
+      }
+
+      opencodeArticle.diagrams.forEach((diagram) => {
+        // All should start with cli-opencode-
+        expect(diagram.filename).toMatch(/^cli-opencode-/);
+        // All should end with .svg
+        expect(diagram.filename).toMatch(/\.svg$/);
+        // Should use hyphens, not underscores
+        expect(diagram.filename).not.toContain('_');
+      });
+    });
+  });
 });

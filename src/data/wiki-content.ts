@@ -3694,6 +3694,121 @@ gh copilot explain "أمر" --detailed       # شرح مفصل
         slug: 'opencode-comprehensive-guide',
         title: 'دليل OpenCode الشامل (OpenCode Comprehensive Guide)',
         section: '8. أدوات CLI للبرمجة بالذكاء الاصطناعي (AI Coding CLIs)',
+        description: 'دليل شامل لأداة OpenCode CLI - المساعد البرمجي مفتوح المصدر مع نظام متعدد الوكلاء',
+        diagrams: [
+          {
+            filename: 'cli-opencode-architecture.svg',
+            alt: 'رسم بياني يوضح بنية OpenCode مع نظام الوكلاء المتعددين',
+            caption: 'الشكل ١: بنية OpenCode مع نظام الوكلاء المتعددين',
+            position: 'after-section',
+            sectionHeading: 'مقدمة',
+            priority: true,
+          },
+          {
+            filename: 'cli-opencode-installation-options.svg',
+            alt: 'رسم بياني يوضح طرق تثبيت OpenCode المختلفة',
+            caption: 'الشكل ٢: طرق تثبيت OpenCode (npm، Docker، من المصدر)',
+            position: 'after-section',
+            sectionHeading: 'التثبيت',
+            priority: true,
+          },
+          {
+            filename: 'cli-opencode-config-layers.svg',
+            alt: 'رسم بياني يوضح طبقات التكوين في OpenCode',
+            caption: 'الشكل ٣: طبقات التكوين في OpenCode',
+            position: 'after-section',
+            sectionHeading: 'الإعداد الأولي',
+            priority: false,
+          },
+          {
+            filename: 'cli-opencode-workflow-state.svg',
+            alt: 'رسم بياني يوضح حالات عملفق OpenCode',
+            caption: 'الشكل ٤: حالات عملفق OpenCode',
+            position: 'after-section',
+            sectionHeading: 'الاستخدام الأساسي',
+            priority: true,
+          },
+          {
+            filename: 'cli-opencode-agent-collaboration.svg',
+            alt: 'رسم بياني يوضح تعاون الوكلاء في OpenCode',
+            caption: 'الشكل ٥: تعاون الوكلاء في OpenCode',
+            position: 'after-section',
+            sectionHeading: 'نظام الوكلاء المتعددين',
+            priority: true,
+          },
+          {
+            filename: 'cli-opencode-feature-map.svg',
+            alt: 'رسم بياني يوضح خريطة ميزات OpenCode',
+            caption: 'الشكل ٦: خريطة ميزات OpenCode',
+            position: 'after-section',
+            sectionHeading: 'الميزات الرئيسية',
+            priority: true,
+          },
+          {
+            filename: 'cli-opencode-context-sources.svg',
+            alt: 'رسم بياني يوضح مصادر السياق في OpenCode',
+            caption: 'الشكل ٧: مصادر السياق في OpenCode',
+            position: 'after-section',
+            sectionHeading: 'السياق الذكي',
+            priority: false,
+          },
+          {
+            filename: 'cli-opencode-multifile-workflow.svg',
+            alt: 'رسم بياني يوضح عملفق العمليات متعددة الملفات',
+            caption: 'الشكل ٨: عملفق العمليات متعددة الملفات',
+            position: 'after-section',
+            sectionHeading: 'عمليات متعددة الملفات',
+            priority: false,
+          },
+          {
+            filename: 'cli-opencode-advanced-features.svg',
+            alt: 'رسم بياني يوضح الميزات المتقدمة في OpenCode',
+            caption: 'الشكل ٩: الميزات المتقدمة في OpenCode',
+            position: 'after-section',
+            sectionHeading: 'نصائح متقدمة',
+            priority: false,
+          },
+          {
+            filename: 'cli-opencode-local-vs-cloud.svg',
+            alt: 'رسم بياني يوضح الفرق بين النماذج المحلية والسحابية',
+            caption: 'الشكل ١٠: الفرق بين النماذج المحلية والسحابية',
+            position: 'after-section',
+            sectionHeading: 'استخدام النماذج المحلية',
+            priority: false,
+          },
+          {
+            filename: 'cli-opencode-use-cases.svg',
+            alt: 'رسم بياني يوضح سيناريوهات استخدام OpenCode',
+            caption: 'الشكل ١١: سيناريوهات استخدام OpenCode',
+            position: 'after-section',
+            sectionHeading: 'سيناريوهات الاستخدام',
+            priority: true,
+          },
+          {
+            filename: 'cli-opencode-license-tiers.svg',
+            alt: 'رسم بياني يوضح مستويات الترخيص في OpenCode',
+            caption: 'الشكل ١٢: مستويات الترخيص في OpenCode',
+            position: 'after-section',
+            sectionHeading: 'التسعير والترخيص',
+            priority: false,
+          },
+          {
+            filename: 'cli-opencode-comparison-matrix.svg',
+            alt: 'رسم بياني يوضح مقارنة OpenCode مع البدائل',
+            caption: 'الشكل ١٣: مقارنة OpenCode مع البدائل',
+            position: 'after-section',
+            sectionHeading: 'المقارنة مع البدائل',
+            priority: true,
+          },
+          {
+            filename: 'cli-opencode-editor-integration.svg',
+            alt: 'رسم بياني يوضح تكامل OpenCode مع المحررات',
+            caption: 'الشكل ١٤: تكامل OpenCode مع المحررات',
+            position: 'after-section',
+            sectionHeading: 'دمج المحرر',
+            priority: false,
+          },
+        ],
         content: `
 # دليل OpenCode الشامل (OpenCode Comprehensive Guide)
 
@@ -14685,9 +14800,9 @@ cs-interactive() {
     read -r choice
 
     local selected
-    selected=$(echo "$suggestions" | sed "${choice}q;d")
+    selected=\$(echo "\$suggestions" | sed "\${choice}q;d")
 
-    echo "Selected: $selected"
+    echo "Selected: \$selected"
     echo "Run? (y/n)"
     read -r confirm
 
@@ -14896,7 +15011,7 @@ check-copilot-config() {
 
     # Environment variables
     echo "Environment:"
-    echo "  GH_TOKEN: ${GH_TOKEN:+✅ set}"
+    echo "  GH_TOKEN: \$\{GH_TOKEN:+✅ set\}"
     echo "  LANG: $LANG"
 
     # Test connection
@@ -15028,9 +15143,9 @@ cs-interactive() {
     read -r choice
 
     local selected
-    selected=$(echo "$suggestions" | sed "${choice}q;d")
+    selected=\$(echo "\$suggestions" | sed "\${choice}q;d")
 
-    echo "Selected: $selected"
+    echo "Selected: \$selected"
     echo "Run? (y/n)"
     read -r confirm
 
