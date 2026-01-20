@@ -594,7 +594,7 @@ For diagrams containing text:
 
 **Deliverables:**
 - [x] All 48+ diagrams integrated
-- [ ] 22 new articles created (✅ 18/22 complete - 5 Claude CLI + 4 Copilot CLI + 9 OpenCode CLI)
+- [x] 22 new articles created (✅ 22/22 complete - 5 Claude CLI + 4 Copilot CLI + 9 OpenCode CLI + 3 Overview + 1 Workflow)
 - [x] Accessibility compliance report
 - [ ] Updated documentation
 
