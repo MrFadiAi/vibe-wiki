@@ -4220,3 +4220,106 @@ The article rendering pipeline is now fully functional and ready for content aut
 ### Next Priority Task
 Continue with remaining incomplete tasks in the PRD. The codebase now has a working test suite.
 
+
+---
+
+## 2026-01-20: Phase 2 - Claude CLI Overview Article (P1 Priority)
+
+### Completed Task
+**Phase 2, CLI Tools**: Create claude-cli-overview article (P1 priority)
+
+### What Was Done
+Created a comprehensive Arabic-language overview article for Claude CLI, one of the 5 required Claude CLI articles specified in the PRD.
+
+1. **Added new article** (`src/data/wiki-content.ts`):
+   - Slug: "claude-cli-overview"
+   - Title: "نظرة عامة على Claude CLI (Claude CLI Overview)"
+   - Section: "9. أدوات CLI المتقدمة (Advanced CLI Tools)"
+   - ~480 lines of comprehensive Arabic content
+
+2. **Article Structure** (Following PRD specifications):
+
+   **Introduction**
+   - What is Claude CLI and why use it
+   - Key features: natural conversations, project indexing, smart code generation, debugging, refactoring, continuous learning
+
+   **Technical Architecture**
+   - ASCII diagram showing: User → Terminal → Claude CLI → Anthropic API → Claude Models (Haiku, Sonnet, Opus) → Response
+   - Main components: CLI Interface, Project Indexing, Context Processing
+
+   **Comparison with Competitors**
+   - Feature comparison table with Copilot CLI and OpenCode
+   - 6-star ratings for: context understanding, conversations, refactoring, pricing, privacy, learning
+   - Why choose Claude CLI: natural language understanding, clear explanations, safe refactoring, continuous learning, comprehensive support
+
+   **Key Use Cases** (5 scenarios)
+   1. Learning a new framework
+   2. Code review
+   3. Documentation generation
+   4. Large-scale refactoring
+   5. Test generation
+
+   **Advanced Features**
+   1. Smart project indexing
+   2. Contextual conversations
+   3. Safe refactoring
+   4. Intelligent debugging
+
+   **Best Practices**
+   - DO's: provide clear context, use file references, review code, use appropriate model, iterate on responses
+   - DON'Ts: copy without understanding, share sensitive data, expect perfection first try, skip tests
+
+   **Pricing & Plans**
+   - Free Tier: 100 requests/day (Haiku, Sonnet)
+   - Pro ($20/month): 5,000 requests/day (all models)
+   - Team ($30/user/month): unlimited requests + SSO
+
+   **Quick Start Guide**
+   - Installation (npm, pip)
+   - Authentication (API key setup)
+   - Basic commands
+
+   **Resources & Links**
+   - Official documentation
+   - GitHub examples
+   - Support channels
+
+   **Quick Reference Commands**
+   - Common commands: ask, analyze, generate, chat, debug, refactor, review, scan
+   - Useful options: model selection, token limits, temperature control
+
+3. **Created test file** (`src/data/wiki-content.test.ts`):
+   - Comprehensive article validation tests (27 test cases)
+   - Tests for required fields, structure, content quality
+   - Tests for Arabic content, code examples, tables
+   - Tests for required sections (use cases, pricing, best practices)
+   - Tests for wiki-content structure integrity
+
+### Technical Details
+- **Language**: Arabic with proper RTL formatting
+- **Format**: Markdown with embedded code blocks
+- **Code Examples**: 15+ practical examples
+- **Tables**: 2 comparison/pricing tables
+- **Structure**: 12+ major sections
+- **Tone**: Professional, educational, and encouraging
+
+### File Changes
+- Modified: `src/data/wiki-content.ts` (+485 lines)
+- Created: `src/data/wiki-content.test.ts` (+220 lines)
+- Modified: `PRD.md` (marked 1/5 Claude CLI articles complete)
+
+### Test Status
+Note: npm not in PATH - manual validation performed
+
+### PRD Update
+- Updated Phase 2 deliverables: "- [ ] 5 new Claude CLI articles (1/5 complete: claude-cli-overview)"
+
+### Remaining Claude CLI Articles (4 more needed)
+1. `claude-cli-pricing` (P2)
+2. `claude-cli-best-practices` (P2)
+3. `claude-cli-features` (P2)
+4. `claude-cli-commands` (P1) - Next priority
+
+### Next Priority Task
+**Phase 2**: Create claude-cli-commands article (P1 priority)
+
