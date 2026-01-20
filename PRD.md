@@ -189,13 +189,13 @@ This PRD outlines the integration of **55 SVG diagrams** into the Vibe Wiki arti
 
 | Section | New Articles Count | Article Slugs |
 |---------|-------------------|---------------|
-| Claude CLI | 5 | `claude-cli-overview`, `claude-cli-pricing`, `claude-cli-best-practices`, `claude-cli-features`, `claude-cli-commands` |
+| Claude CLI | 5 (✅ 5/5 complete) | `claude-cli-overview`, `claude-cli-pricing`, `claude-cli-best-practices`, `claude-cli-features`, `claude-cli-commands` |
 | Copilot CLI | 4 | `copilot-cli-overview`, `copilot-cli-pricing`, `copilot-cli-configuration`, `copilot-cli-commands` |
 | OpenCode CLI | 9 | `opencode-cli-overview`, `opencode-cli-licensing`, `opencode-cli-comparison`, `opencode-cli-deployment`, `opencode-cli-workflows`, `opencode-cli-advanced`, `opencode-cli-context`, `opencode-cli-agents`, `opencode-cli-configuration` |
 | CLI Overview | 2 | `cli-tools-comparison`, `cli-ecosystem-overview` |
 | Comparisons | 1 | `ai-tools-quality-comparison` |
 | Workflows | 1 | `multi-agent-workflows` |
-| **Total** | **22** | |
+| **Total** | **22** (✅ 5/22 complete) | |
 
 ---
 
@@ -594,7 +594,7 @@ For diagrams containing text:
 
 **Deliverables:**
 - [ ] All 48+ diagrams integrated
-- [ ] 22 new articles created
+- [ ] 22 new articles created (✅ 5/22 complete - Claude CLI individual articles)
 - [ ] Accessibility compliance report
 - [ ] Updated documentation
 

@@ -689,7 +689,7 @@ export function calculateUserEngagementMetrics(userId: string, progress: UserPro
     return acc;
   }, {} as Record<number, number>);
 
-  const mostActiveHour = Object.entries(hourCounts).sort((a, b) => b[1] - a[1])[0]?.[0] ?? 0;
+  const mostActiveHour = Number(Object.entries(hourCounts).sort((a, b) => b[1] - a[1])[0]?.[0] ?? 0);
 
   return {
     userId,

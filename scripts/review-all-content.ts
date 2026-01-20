@@ -12,6 +12,7 @@ import {
   reviewMultipleArticles,
   getReviewSummary,
   type ContentReview,
+  type ReviewIssue,
 } from '../src/lib/content-review-utils';
 
 /**
@@ -59,7 +60,7 @@ function printStatus(passes: boolean, score: number): void {
 /**
  * Print issue with color-coded severity
  */
-function printIssue(issue: any, index: number): void {
+function printIssue(issue: ReviewIssue, index: number): void {
   const severityColors = {
     critical: colors.red,
     major: colors.yellow,
@@ -89,16 +90,25 @@ function printIssue(issue: any, index: number): void {
 function printSummaryStats(reviews: ContentReview[]): void {
   const summary = getReviewSummary(reviews);
 
+  // Calculate severity breakdown from all reviews
+  const severityBreakdown = { critical: 0, major: 0, minor: 0, suggestion: 0 };
+  for (const review of reviews) {
+    severityBreakdown.critical += review.summary.critical;
+    severityBreakdown.major += review.summary.major;
+    severityBreakdown.minor += review.summary.minor;
+    severityBreakdown.suggestion += review.summary.suggestion;
+  }
+
   printSubHeader('Overall Statistics');
 
   console.log(`Total Articles:     ${colors.bright}${summary.total}${colors.reset}`);
   console.log(`Passing:            ${colors.green}${summary.passing}${colors.reset}`);
   console.log(`Failing:            ${colors.red}${summary.failing}${colors.reset}`);
   console.log(`Average Score:      ${colors.bright}${summary.avgScore.toFixed(1)}/100${colors.reset}`);
-  console.log(`Critical Issues:    ${colors.red}${summary.totalIssues.critical}${colors.reset}`);
-  console.log(`Major Issues:       ${colors.yellow}${summary.totalIssues.major}${colors.reset}`);
-  console.log(`Minor Issues:       ${colors.blue}${summary.totalIssues.minor}${colors.reset}`);
-  console.log(`Suggestions:        ${colors.dim}${summary.totalIssues.suggestion}${colors.reset}`);
+  console.log(`Critical Issues:    ${colors.red}${severityBreakdown.critical}${colors.reset}`);
+  console.log(`Major Issues:       ${colors.yellow}${severityBreakdown.major}${colors.reset}`);
+  console.log(`Minor Issues:       ${colors.blue}${severityBreakdown.minor}${colors.reset}`);
+  console.log(`Suggestions:        ${colors.dim}${severityBreakdown.suggestion}${colors.reset}`);
 
   // Issues by category
   if (Object.keys(summary.byCategory).length > 0) {

@@ -80,14 +80,14 @@ export function ContributionForm({
   const [prerequisites, setPrerequisites] = useState<string[]>(initialData?.prerequisites || []);
   const [prereqInput, setPrereqInput] = useState("");
   const [steps, setSteps] = useState<Array<Omit<TutorialStep, "id">>>(
-    initialData?.steps?.map(({ id, ...rest }) => rest) || []
+    initialData?.steps || []
   );
 
   // Path-specific fields
   const [targetAudience, setTargetAudience] = useState<string[]>(initialData?.targetAudience || []);
   const [audienceInput, setAudienceInput] = useState("");
   const [pathItems, setPathItems] = useState<Array<Omit<PathItem, "id">>>(
-    initialData?.items?.map(({ id, ...rest }) => rest) || []
+    initialData?.items || []
   );
 
   const [errors, setErrors] = useState<Record<string, string>>({});

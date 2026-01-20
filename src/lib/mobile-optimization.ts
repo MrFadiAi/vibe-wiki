@@ -28,6 +28,10 @@ export interface ConnectionInfo {
   downlink: number;
   rtt: number;
   saveData: boolean;
+  addEventListener?: (type: string, listener: () => void) => void;
+  removeEventListener?: (type: string, listener: () => void) => void;
+  addListener?: (listener: () => void) => void;
+  removeListener?: (listener: () => void) => void;
 }
 
 /**
@@ -196,7 +200,7 @@ export function isRunningAsPWA(): boolean {
 
   // Check iOS standalone mode
   const navigatorWithStandalone = window.navigator as NavigatorWithStandalone;
-  const isIOSStandalone = ('standalone' in navigatorWithStandalone) && navigatorWithStandalone.standalone;
+  const isIOSStandalone = ('standalone' in navigatorWithStandalone) && navigatorWithStandalone.standalone === true;
 
   return isStandalone || isIOSStandalone;
 }
@@ -238,8 +242,8 @@ export function setupPWAInstallPrompt(callback: (prompt: PWAInstallPrompt) => vo
   const handler = (e: Event) => {
     e.preventDefault();
     const windowWithPWA = window as WindowWithPWAInstall;
-    windowWithPWA.deferredPrompt = e as PWAInstallPrompt;
-    callback(e as PWAInstallPrompt);
+    windowWithPWA.deferredPrompt = e as unknown as PWAInstallPrompt;
+    callback(e as unknown as PWAInstallPrompt);
   };
 
   window.addEventListener('beforeinstallprompt', handler);
@@ -261,7 +265,7 @@ export async function showPWAInstallPrompt(): Promise<{ outcome: 'accepted' | 'd
     const result = await prompt.prompt();
     // Clear the deferred prompt after showing
     const windowWithPWA = window as WindowWithPWAInstall;
-    windowWithPWA.deferredPrompt = null;
+    windowWithPWA.deferredPrompt = undefined;
     return result;
   } catch (error) {
     console.error('Failed to show install prompt:', error);

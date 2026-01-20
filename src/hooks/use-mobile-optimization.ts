@@ -388,10 +388,10 @@ export function useNetworkAwareLoading() {
       });
     };
 
-    connection.addEventListener('change', updateStrategy);
+    connection.addEventListener?.('change', updateStrategy);
 
     return () => {
-      connection.removeEventListener('change', updateStrategy);
+      connection.removeEventListener?.('change', updateStrategy);
     };
   }, []);
 
@@ -476,7 +476,7 @@ export function usePWAInstall() {
     // Listen for install prompt
     const handleBeforeInstallPrompt = (e: Event) => {
       e.preventDefault();
-      setPrompt(e as PWAInstallPrompt);
+      setPrompt(e as unknown as PWAInstallPrompt);
     };
 
     // Listen for app installed

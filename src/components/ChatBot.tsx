@@ -17,10 +17,9 @@ import {
   generateResponse,
   extractTopics,
   DEFAULT_CONFIG,
-  type ChatConversation,
-  type ChatbotConfig,
 } from '../lib/wiki-chatbot-utils';
 import type { WikiArticle, Tutorial, LearningPath } from '../types';
+import type { ChatConversation, ChatbotConfig } from '../types/wiki-chatbot';
 
 interface ChatBotProps {
   wikiArticles: WikiArticle[];

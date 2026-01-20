@@ -25,7 +25,7 @@ export interface CLIPlaygroundConfig {
   title?: string;
   welcomeMessage?: string;
   prompt?: string;
-  commands: CLICommand[];
+  commands?: CLICommand[];
   showQuickReference?: boolean;
   maxHeight?: string;
 }

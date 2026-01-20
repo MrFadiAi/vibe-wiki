@@ -22,7 +22,7 @@ export function ExerciseBlock({ exercise }: ExerciseBlockProps) {
   const hasSolution = Boolean(exercise.solution);
   const currentHint =
     hasHints && hintLevel > 0
-      ? exercise.hints.slice(0, hintLevel).join("\n\n")
+      ? exercise.hints?.slice(0, hintLevel).join("\n\n")
       : undefined;
 
   const handleShowNextHint = () => {

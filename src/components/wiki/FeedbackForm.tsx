@@ -19,12 +19,8 @@ import {
   ChevronDown,
   ChevronUp
 } from 'lucide-react';
-import {
-  FeedbackCategory,
-  FeedbackPriority,
-  FeedbackItem,
-  createFeedbackItem
-} from '@/lib/feedback-utils';
+import { createFeedbackItem } from '@/lib/feedback-utils';
+import type { FeedbackCategory, FeedbackPriority, FeedbackItem } from '@/types/user-testing';
 
 interface FeedbackFormProps {
   userId: string;
