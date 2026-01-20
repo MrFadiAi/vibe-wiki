@@ -2,6 +2,9 @@
  * Tests for mobile optimization utilities
  */
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-expressions */
+
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import {
   isPWASupported,

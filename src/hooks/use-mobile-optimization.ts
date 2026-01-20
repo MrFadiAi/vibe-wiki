@@ -14,6 +14,15 @@ import type {
   MobilePerformanceMetrics,
   PWAInstallPrompt,
 } from '@/lib/mobile-optimization';
+
+/**
+ * Extended Navigator interface for connection API
+ */
+interface NavigatorWithConnection extends Navigator {
+  connection?: ConnectionInfo;
+  mozConnection?: ConnectionInfo;
+  webkitConnection?: ConnectionInfo;
+}
 import {
   setupMobileOptimizations,
   needsMobileOptimization,
@@ -21,7 +30,6 @@ import {
   setupDynamicViewportHeight,
   setupNetworkListener,
   getCoreWebVitals,
-  getPWAInstallPrompt,
   setupPWAInstallPrompt,
   showPWAInstallPrompt,
   setupSafeAreaInsets,
@@ -81,7 +89,10 @@ export function useMobileOptimization(
   const [pwaInstallPrompt, setPWAInstallPrompt] = useState<PWAInstallPrompt | null>(null);
 
   const optionsRef = useRef(options);
-  optionsRef.current = options;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    optionsRef.current = options;
+  }, [options]);
 
   // Refresh status
   const refresh = useCallback(() => {
@@ -327,9 +338,10 @@ export function useHapticFeedback() {
  */
 export function useNetworkAwareLoading() {
   const [strategy, setStrategy] = useState(() => {
-    const connection = (navigator as any).connection ||
-                      (navigator as any).mozConnection ||
-                      (navigator as any).webkitConnection;
+    const navigatorWithConnection = navigator as NavigatorWithConnection;
+    const connection = navigatorWithConnection.connection ||
+                      navigatorWithConnection.mozConnection ||
+                      navigatorWithConnection.webkitConnection;
 
     if (!connection) {
       return {
@@ -355,9 +367,10 @@ export function useNetworkAwareLoading() {
   });
 
   useEffect(() => {
-    const connection = (navigator as any).connection ||
-                      (navigator as any).mozConnection ||
-                      (navigator as any).webkitConnection;
+    const navigatorWithConnection = navigator as NavigatorWithConnection;
+    const connection = navigatorWithConnection.connection ||
+                      navigatorWithConnection.mozConnection ||
+                      navigatorWithConnection.webkitConnection;
 
     if (!connection) return;
 
@@ -396,13 +409,16 @@ export function useOptimizedImage(src: string, enabled: boolean = true) {
 
   useEffect(() => {
     if (!enabled || typeof window === 'undefined') {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       setOptimizedSrc(src);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       setIsLoading(false);
       return;
     }
 
     // Check if we should lazy load based on connection
-    const connection = (navigator as any).connection;
+    const navigatorWithConnection = navigator as NavigatorWithConnection;
+    const connection = navigatorWithConnection.connection;
     const isSlow = connection?.effectiveType === 'slow-2g' ||
                    connection?.effectiveType === '2g' ||
                    connection?.saveData;
@@ -448,17 +464,19 @@ export function usePWAInstall() {
   useEffect(() => {
     // Check if PWA is supported
     const supported = 'serviceWorker' in navigator && ('onbeforeinstallprompt' in window);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     setIsSupported(supported);
 
     if (!supported) return;
 
     // Check if already installed
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     setIsInstalled(isRunningAsPWA());
 
     // Listen for install prompt
     const handleBeforeInstallPrompt = (e: Event) => {
       e.preventDefault();
-      setPrompt(e as any);
+      setPrompt(e as PWAInstallPrompt);
     };
 
     // Listen for app installed

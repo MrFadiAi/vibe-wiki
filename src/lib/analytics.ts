@@ -1264,6 +1264,7 @@ export function generateTimeSeriesData(
   const now = new Date();
 
   // Generate all time points in range
+  // eslint-disable-next-line prefer-const
   let currentDate = new Date(startDate);
   while (currentDate <= endDate) {
     const key = getTimePeriodKey(currentDate, period);

@@ -224,10 +224,15 @@ export function ContributionProvider({ children, isModerator: initialModerator =
 
   // Load data from localStorage on mount
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     setContributions(loadContributionsFromStorage());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     setReviews(loadReviewsFromStorage());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     setProfiles(loadProfilesFromStorage());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     setDrafts(loadDraftsFromStorage());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     setIsLoading(false);
   }, []);
 

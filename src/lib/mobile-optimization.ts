@@ -83,6 +83,29 @@ export interface MobilePerformanceMetrics {
 }
 
 /**
+ * Extended Navigator interface for iOS standalone mode
+ */
+interface NavigatorWithStandalone extends Navigator {
+  standalone?: boolean;
+}
+
+/**
+ * Extended Window interface for PWA install prompt
+ */
+interface WindowWithPWAInstall extends Window {
+  deferredPrompt?: PWAInstallPrompt;
+}
+
+/**
+ * Extended Navigator interface for connection API
+ */
+interface NavigatorWithConnection extends Navigator {
+  connection?: ConnectionInfo;
+  mozConnection?: ConnectionInfo;
+  webkitConnection?: ConnectionInfo;
+}
+
+/**
  * Image optimization settings
  */
 export interface ImageOptimizationSettings {
@@ -173,7 +196,8 @@ export function isRunningAsPWA(): boolean {
   const isStandalone = (window.matchMedia('(display-mode: standalone)').matches);
 
   // Check iOS standalone mode
-  const isIOSStandalone = ('standalone' in window.navigator) && (window.navigator as any).standalone;
+  const navigatorWithStandalone = window.navigator as NavigatorWithStandalone;
+  const isIOSStandalone = ('standalone' in navigatorWithStandalone) && navigatorWithStandalone.standalone;
 
   return isStandalone || isIOSStandalone;
 }
@@ -184,7 +208,8 @@ export function isRunningAsPWA(): boolean {
 export function getPWAInstallPrompt(): PWAInstallPrompt | null {
   if (typeof window === 'undefined') return null;
 
-  return (window as any).deferredPrompt || null;
+  const windowWithPWA = window as WindowWithPWAInstall;
+  return windowWithPWA.deferredPrompt || null;
 }
 
 /**
@@ -213,7 +238,8 @@ export function setupPWAInstallPrompt(callback: (prompt: PWAInstallPrompt) => vo
 
   const handler = (e: Event) => {
     e.preventDefault();
-    (window as any).deferredPrompt = e;
+    const windowWithPWA = window as WindowWithPWAInstall;
+    windowWithPWA.deferredPrompt = e as PWAInstallPrompt;
     callback(e as PWAInstallPrompt);
   };
 
@@ -235,7 +261,8 @@ export async function showPWAInstallPrompt(): Promise<{ outcome: 'accepted' | 'd
   try {
     const result = await prompt.prompt();
     // Clear the deferred prompt after showing
-    (window as any).deferredPrompt = null;
+    const windowWithPWA = window as WindowWithPWAInstall;
+    windowWithPWA.deferredPrompt = null;
     return result;
   } catch (error) {
     console.error('Failed to show install prompt:', error);
@@ -451,9 +478,10 @@ export function addHapticFeedback(type: 'light' | 'medium' | 'heavy' | 'success'
 export function getConnectionInfo(): ConnectionInfo | null {
   if (typeof navigator === 'undefined') return null;
 
-  const connection = (navigator as any).connection ||
-                    (navigator as any).mozConnection ||
-                    (navigator as any).webkitConnection;
+  const navigatorWithConnection = navigator as NavigatorWithConnection;
+  const connection = navigatorWithConnection.connection ||
+                    navigatorWithConnection.mozConnection ||
+                    navigatorWithConnection.webkitConnection;
 
   if (!connection) return null;
 
@@ -640,7 +668,7 @@ export function getCoreWebVitals(): Promise<MobilePerformanceMetrics> {
     try {
       const fcpObserver = new PerformanceObserver((list) => {
         const entries = list.getEntries();
-        const fcp = entries[0] as any;
+        const fcp = entries[0] as PerformanceEntry & { startTime?: number };
         metrics.firstContentfulPaint = fcp?.startTime;
         fcpObserver.disconnect();
       });
@@ -653,7 +681,7 @@ export function getCoreWebVitals(): Promise<MobilePerformanceMetrics> {
     try {
       const lcpObserver = new PerformanceObserver((list) => {
         const entries = list.getEntries();
-        const lcp = entries[entries.length - 1] as any;
+        const lcp = entries[entries.length - 1] as PerformanceEntry & { startTime?: number };
         metrics.largestContentfulPaint = lcp?.startTime;
         lcpObserver.disconnect();
       });
@@ -666,8 +694,8 @@ export function getCoreWebVitals(): Promise<MobilePerformanceMetrics> {
     try {
       const fidObserver = new PerformanceObserver((list) => {
         const entries = list.getEntries();
-        const fid = entries[0] as any;
-        metrics.firstInputDelay = fid?.processingStart - fid?.startTime;
+        const fid = entries[0] as PerformanceEntry & { processingStart?: number; startTime?: number };
+        metrics.firstInputDelay = (fid?.processingStart || 0) - (fid?.startTime || 0);
         fidObserver.disconnect();
       });
       fidObserver.observe({ entryTypes: ['first-input'] });
@@ -679,9 +707,9 @@ export function getCoreWebVitals(): Promise<MobilePerformanceMetrics> {
     try {
       let clsValue = 0;
       const clsObserver = new PerformanceObserver((list) => {
-        for (const entry of list.getEntries() as any[]) {
+        for (const entry of list.getEntries() as Array<PerformanceEntry & { value?: number; hadRecentInput?: boolean }>) {
           if (!entry.hadRecentInput) {
-            clsValue += entry.value;
+            clsValue += entry.value || 0;
           }
         }
         metrics.cumulativeLayoutShift = clsValue;

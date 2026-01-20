@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { motion } from "framer-motion";
 import { FileText, GraduationCap, Code2, Map, Filter } from "lucide-react";
 import type { Contribution, ContributionType, ContributionStatus, DifficultyLevel } from "@/types";
