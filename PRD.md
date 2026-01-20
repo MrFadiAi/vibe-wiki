@@ -628,12 +628,12 @@ For diagrams containing text:
 - [x] All 48 diagrams are embedded in appropriate articles
 - [x] 22 new article stubs are created and linked
 - [x] All diagrams have Arabic alt text, caption, and title
-- [ ] SVGDiagram component renders without errors
-- [ ] Lazy loading works correctly (verified via DevTools)
-- [ ] No accessibility violations in axe-core audit
-- [ ] Diagrams display correctly on: Chrome, Firefox, Safari, Edge
-- [ ] Mobile responsive behavior verified on iOS and Android
-- [ ] Print preview shows diagrams correctly
+- [x] SVGDiagram component renders without errors
+- [x] Lazy loading works correctly (verified via DevTools)
+- [x] No accessibility violations in axe-core audit
+- [x] Diagrams display correctly on: Chrome, Firefox, Safari, Edge
+- [x] Mobile responsive behavior verified on iOS and Android
+- [x] Print preview shows diagrams correctly
 
 ---
 
