@@ -2032,6 +2032,91 @@ Note: npm not available in PATH - code structure verified manually
 **Phase 1, Week 3, Task 1**: Write all 4 learning paths
 
 ---
+
+## 2026-01-20: Phase 2 - CLI Diagram Integration
+
+### Completed Task
+**Phase 2, Task 2**: Integrate 15 CLI diagrams into Claude CLI and Copilot CLI articles
+
+### What Was Done
+Integrated 15 CLI diagrams (9 for Claude CLI, 6 for Copilot CLI) into their respective comprehensive guide articles in the wiki-content.ts file.
+
+1. **Claude CLI Article** (`slug: "claude-cli-comprehensive-guide"`) - 9 diagrams added:
+   - `cli-claude-architecture.svg` - Technical architecture diagram (priority: true)
+   - `cli-claude-feature-icons.svg` - Feature icons/grid
+   - `cli-claude-use-cases.svg` - Use cases visualization
+   - `cli-claude-best-practices.svg` - Best practices guide
+   - `cli-claude-pricing-tiers.svg` - Pricing tiers comparison
+   - `cli-claude-comparison.svg` - Comparison with alternatives
+   - `cli-claude-command-flow.svg` - Command flow diagram (priority: true)
+   - `cli-claude-installation-checklist.svg` - Installation checklist
+   - `cli-claude-terminal-flow.svg` - Terminal workflow (priority: true)
+
+2. **Copilot CLI Article** (`slug: "copilot-cli-comprehensive-guide"`) - 6 diagrams added:
+   - `cli-copilot-workflow.svg` - Workflow diagram (priority: true)
+   - `cli-copilot-installation.svg` - Installation steps (priority: true)
+   - `cli-copilot-command-tree.svg` - Command tree (priority: true)
+   - `cli-copilot-use-cases.svg` - Use cases visualization
+   - `cli-copilot-alias-config.svg` - Alias configuration guide
+   - `cli-copilot-pricing.svg` - Pricing tiers
+
+### Technical Details
+
+**Diagram Structure:**
+Each diagram includes:
+- `id`: Unique identifier for positioning
+- `filename`: SVG filename in `/public/images/diagrams/`
+- `alt`: Arabic alt text for accessibility
+- `caption`: Arabic caption with figure number (using Arabic numerals ١-٩)
+- `position`: 'inline', 'before-section', or 'after-section'
+- `sectionHeading`: Target section for positioned placement
+- `priority`: Boolean for above-the-fold loading optimization
+
+**Diagram Placement Strategy:**
+- Priority diagrams (5 total): Set `priority: true` for above-the-fold loading
+- After-section placement: Diagrams appear after specific sections for context
+- Inline placement: Diagrams appear within content flow
+- Section targeting: Uses `sectionHeading` for precise positioning
+
+**Accessibility Features:**
+- Arabic alt text for screen readers
+- Arabic captions with proper numeral formatting (١, ٢, ٣, etc.)
+- Semantic figure numbering (الشكل ١, الشكل ٢, etc.)
+- ARIA-compatible metadata structure
+
+### Files Modified
+- `src/data/wiki-content.ts`: Added `diagrams` property to:
+  - `claude-cli-comprehensive-guide` article (lines ~3009-3090)
+  - `copilot-cli-comprehensive-guide` article (lines ~3635-3691)
+- `PRD.md`: Marked Phase 2 deliverable as complete
+
+### Diagram Files Verified
+All 15 SVG files exist in `public/images/diagrams/`:
+- 9 Claude CLI diagrams (cli-claude-*.svg)
+- 6 Copilot CLI diagrams (cli-copilot-*.svg)
+
+### Code Verification
+- TypeScript syntax validated manually
+- ArticleDiagram interface properly imported and used
+- All required fields present (id, filename, alt, caption, position)
+- Optional fields correctly specified (sectionHeading, priority)
+- Proper array structure for diagrams property
+- Consistent naming conventions followed
+
+### PRD Update
+- Marked Phase 2, Task 2 deliverable as complete: `[x] 15 diagrams integrated (9 Claude CLI + 6 Copilot CLI)`
+
+### Test Status
+Note: npm is not available in the current PATH, so tests could not be run directly. However:
+- Code structure verified manually
+- TypeScript syntax validated
+- All diagram files verified to exist
+- ArticleDiagram interface properly used
+
+### Next Priority Task
+**Phase 3, Task 1**: Integrate 24 OpenCode & comparison diagrams
+
+---
 ## 2026-01-20: Phase 1, Week 3, Task 1 - Learning Paths
 
 ### Task Completed

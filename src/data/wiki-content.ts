@@ -3007,6 +3007,87 @@ claude document file.ts                # إنشاء توثيق
 
 وادخل عالم البرمجة بالذكاء الاصطناعي! 🚀
         `,
+        diagrams: [
+          {
+            id: 'claude-cli-architecture',
+            filename: 'cli-claude-architecture.svg',
+            alt: 'رسم بياني يوضح البنية التقنية لـ Claude CLI',
+            caption: 'الشكل ١: البنية التقنية لـ Claude CLI',
+            position: 'after-section',
+            sectionHeading: 'التثبيت (Installation)',
+            priority: true,
+          },
+          {
+            id: 'claude-cli-feature-icons',
+            filename: 'cli-claude-feature-icons.svg',
+            alt: 'أيقونات توضح الميزات الرئيسية لـ Claude CLI',
+            caption: 'الشكل ٢: الميزات الرئيسية لـ Claude CLI',
+            position: 'inline',
+            priority: false,
+          },
+          {
+            id: 'claude-cli-use-cases',
+            filename: 'cli-claude-use-cases.svg',
+            alt: 'رسم بياني يوضح حالات استخدام Claude CLI',
+            caption: 'الشكل ٣: حالات استخدام Claude CLI',
+            position: 'after-section',
+            sectionHeading: 'سيناريوهات الاستخدام',
+            priority: false,
+          },
+          {
+            id: 'claude-cli-best-practices',
+            filename: 'cli-claude-best-practices.svg',
+            alt: 'رسم بياني يوضح أفضل الممارسات لاستخدام Claude CLI',
+            caption: 'الشكل ٤: أفضل الممارسات لاستخدام Claude CLI',
+            position: 'after-section',
+            sectionHeading: 'أفضل الممارسات',
+            priority: false,
+          },
+          {
+            id: 'claude-cli-pricing-tiers',
+            filename: 'cli-claude-pricing-tiers.svg',
+            alt: 'رسم بياني يوضح مستويات تسعير Claude CLI',
+            caption: 'الشكل ٥: مستويات تسعير Claude CLI',
+            position: 'after-section',
+            sectionHeading: 'التسعير والحدود',
+            priority: false,
+          },
+          {
+            id: 'claude-cli-comparison',
+            filename: 'cli-claude-comparison.svg',
+            alt: 'رسم بياني يقارن Claude CLI مع الأدوات الأخرى',
+            caption: 'الشكل ٦: مقارنة Claude CLI مع الأدوات الأخرى',
+            position: 'after-section',
+            sectionHeading: 'المقارنة مع البدائل',
+            priority: false,
+          },
+          {
+            id: 'claude-cli-command-flow',
+            filename: 'cli-claude-command-flow.svg',
+            alt: 'رسم بياني يوضح تدفق أوامر Claude CLI',
+            caption: 'الشكل ٧: تدفق أوامر Claude CLI',
+            position: 'after-section',
+            sectionHeading: 'الأوامر الأساسية',
+            priority: true,
+          },
+          {
+            id: 'claude-cli-installation-checklist',
+            filename: 'cli-claude-installation-checklist.svg',
+            alt: 'قائمة تثبيت Claude CLI مع خطوات التحقق',
+            caption: 'الشكل ٨: قائمة تثبيت Claude CLI',
+            position: 'inline',
+            priority: false,
+          },
+          {
+            id: 'claude-cli-terminal-flow',
+            filename: 'cli-claude-terminal-flow.svg',
+            alt: 'رسم بياني يوضح تدفق الطرفية مع Claude CLI',
+            caption: 'الشكل ٩: تدفق الطرفية مع Claude CLI',
+            position: 'after-section',
+            sectionHeading: 'الاستخدام الأساسي',
+            priority: true,
+          },
+        ],
       },
       {
         slug: "copilot-cli-comprehensive-guide",
@@ -3552,6 +3633,62 @@ gh copilot explain "أمر" --detailed       # شرح مفصل
 
 وحوّل طرفيتك إلى أداة ذكية! 🚀
         `,
+        diagrams: [
+          {
+            id: 'copilot-cli-workflow',
+            filename: 'cli-copilot-workflow.svg',
+            alt: 'رسم بياني يوضح سير عمل Copilot CLI',
+            caption: 'الشكل ١: سير عمل Copilot CLI',
+            position: 'after-section',
+            sectionHeading: 'ما هو GitHub Copilot CLI؟',
+            priority: true,
+          },
+          {
+            id: 'copilot-cli-installation',
+            filename: 'cli-copilot-installation.svg',
+            alt: 'رسم بياني يوضح خطوات تثبيت Copilot CLI',
+            caption: 'الشكل ٢: خطوات تثبيت Copilot CLI',
+            position: 'after-section',
+            sectionHeading: 'التثبيت (Installation)',
+            priority: true,
+          },
+          {
+            id: 'copilot-cli-command-tree',
+            filename: 'cli-copilot-command-tree.svg',
+            alt: 'رسم بياني يوضح شجرة أوامر Copilot CLI',
+            caption: 'الشكل ٣: شجرة أوامر Copilot CLI',
+            position: 'after-section',
+            sectionHeading: 'الأوامر الأساسية',
+            priority: true,
+          },
+          {
+            id: 'copilot-cli-use-cases',
+            filename: 'cli-copilot-use-cases.svg',
+            alt: 'رسم بياني يوضح حالات استخدام Copilot CLI',
+            caption: 'الشكل ٤: حالات استخدام Copilot CLI',
+            position: 'after-section',
+            sectionHeading: 'سيناريوهات الاستخدام',
+            priority: false,
+          },
+          {
+            id: 'copilot-cli-alias-config',
+            filename: 'cli-copilot-alias-config.svg',
+            alt: 'رسم بياني يوضح إعداد الاختصارات في Copilot CLI',
+            caption: 'الشكل ٥: إعداد الاختصارات في Copilot CLI',
+            position: 'after-section',
+            sectionHeading: 'الاختصارات للسرعة',
+            priority: false,
+          },
+          {
+            id: 'copilot-cli-pricing',
+            filename: 'cli-copilot-pricing.svg',
+            alt: 'رسم بياني يوضح تسعير GitHub Copilot CLI',
+            caption: 'الشكل ٦: تسعير GitHub Copilot CLI',
+            position: 'after-section',
+            sectionHeading: 'التسعير',
+            priority: false,
+          },
+        ],
       },
       {
         slug: 'opencode-comprehensive-guide',

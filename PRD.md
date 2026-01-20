@@ -559,7 +559,7 @@ For diagrams containing text:
 **Deliverables:**
 - [x] 5 new Claude CLI articles (5/5 complete: claude-cli-overview, claude-cli-commands, claude-cli-pricing, claude-cli-best-practices, claude-cli-features)
 - [x] 4 new Copilot CLI articles (4/4 complete: copilot-cli-overview, copilot-cli-commands, copilot-cli-pricing, copilot-cli-configuration)
-- [ ] 15 diagrams integrated
+- [x] 15 diagrams integrated (9 Claude CLI + 6 Copilot CLI)
 
 ### Phase 3: OpenCode & Comparisons (Week 3)
 
