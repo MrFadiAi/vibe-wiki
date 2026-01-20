@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-labelledby="timeline-title timeline-desc">
+  <title id="timeline-title">Your First 15 Minutes with Vibecoding</title>
+  <desc id="timeline-desc">A visual timeline showing the journey from minute 0 to 15, including understanding vibecoding, choosing tools, installation, and creating your first AI-generated code</desc>
+  
+  <defs>
+    <linearGradient id="grad-cyan-purple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="grad-purple-pink" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="400" fill="#0a0a0a"/>
+  
+  <!-- Timeline Base Line -->
+  <line x1="100" y1="200" x2="1100" y2="200" stroke="url(#grad-cyan-purple)" stroke-width="4" stroke-linecap="round" filter="url(#glow)"/>
+  
+  <!-- Minute 0-3: Understanding -->
+  <g id="step1">
+    <circle cx="150" cy="200" r="40" fill="#0a0a0a" stroke="#00d9ff" stroke-width="3" filter="url(#glow)"/>
+    <text x="150" y="210" text-anchor="middle" fill="#00d9ff" font-family="Inter, sans-serif" font-size="24" font-weight="700">0-3</text>
+    
+    <rect x="90" y="80" width="120" height="80" rx="8" fill="#1a1a1a" stroke="#00d9ff" stroke-width="2"/>
+    <text x="150" y="110" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="14" font-weight="600">What You'll</text>
+    <text x="150" y="130" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="14" font-weight="600">Learn</text>
+    <text x="150" y="150" text-anchor="middle" fill="#00d9ff" font-family="Inter, sans-serif" font-size="12">📚 Understanding</text>
+  </g>
+  
+  <!-- Minute 3-5: Choose Tool -->
+  <g id="step2">
+    <circle cx="400" cy="200" r="40" fill="#0a0a0a" stroke="#00d9ff" stroke-width="3" filter="url(#glow)"/>
+    <text x="400" y="210" text-anchor="middle" fill="#00d9ff" font-family="Inter, sans-serif" font-size="24" font-weight="700">3-5</text>
+    
+    <rect x="340" y="260" width="120" height="80" rx="8" fill="#1a1a1a" stroke="#00d9ff" stroke-width="2"/>
+    <text x="400" y="290" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="14" font-weight="600">Choose Your</text>
+    <text x="400" y="310" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="14" font-weight="600">Tool</text>
+    <text x="400" y="330" text-anchor="middle" fill="#00d9ff" font-family="Inter, sans-serif" font-size="12">🛠️ Decision</text>
+  </g>
+  
+  <!-- Minute 5-10: Installation -->
+  <g id="step3">
+    <circle cx="650" cy="200" r="40" fill="#0a0a0a" stroke="#a855f7" stroke-width="3" filter="url(#glow)"/>
+    <text x="650" y="210" text-anchor="middle" fill="#a855f7" font-family="Inter, sans-serif" font-size="24" font-weight="700">5-10</text>
+    
+    <rect x="590" y="80" width="120" height="80" rx="8" fill="#1a1a1a" stroke="#a855f7" stroke-width="2"/>
+    <text x="650" y="110" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="14" font-weight="600">Installation</text>
+    <text x="650" y="130" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="14" font-weight="600">& Setup</text>
+    <text x="650" y="150" text-anchor="middle" fill="#a855f7" font-family="Inter, sans-serif" font-size="12">⚙️ Configure</text>
+  </g>
+  
+  <!-- Minute 10-15: First Code -->
+  <g id="step4">
+    <circle cx="900" cy="200" r="40" fill="#0a0a0a" stroke="#ec4899" stroke-width="3" filter="url(#glow)"/>
+    <text x="900" y="210" text-anchor="middle" fill="#ec4899" font-family="Inter, sans-serif" font-size="24" font-weight="700">10-15</text>
+    
+    <rect x="840" y="260" width="120" height="80" rx="8" fill="#1a1a1a" stroke="#ec4899" stroke-width="2"/>
+    <text x="900" y="290" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="14" font-weight="600">First AI</text>
+    <text x="900" y="310" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="14" font-weight="600">Code</text>
+    <text x="900" y="330" text-anchor="middle" fill="#ec4899" font-family="Inter, sans-serif" font-size="12">🚀 Create</text>
+  </g>
+  
+  <!-- Success Indicator -->
+  <g id="success">
+    <circle cx="1050" cy="200" r="50" fill="#0a0a0a" stroke="url(#grad-purple-pink)" stroke-width="4" filter="url(#glow)"/>
+    <text x="1050" y="215" text-anchor="middle" fill="#ec4899" font-family="Inter, sans-serif" font-size="36">✓</text>
+    
+    <text x="1050" y="120" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="16" font-weight="700">You're a</text>
+    <text x="1050" y="140" text-anchor="middle" fill="url(#grad-purple-pink)" font-family="Inter, sans-serif" font-size="18" font-weight="700">Vibe Coder!</text>
+  </g>
+  
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="28" font-weight="700">Your First 15 Minutes Journey</text>
+</svg>
