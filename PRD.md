@@ -596,7 +596,7 @@ For diagrams containing text:
 - [x] All 48+ diagrams integrated
 - [x] 22 new articles created (✅ 22/22 complete - 5 Claude CLI + 4 Copilot CLI + 9 OpenCode CLI + 3 Overview + 1 Workflow)
 - [x] Accessibility compliance report
-- [ ] Updated documentation
+- [x] Updated documentation
 
 ---
 
