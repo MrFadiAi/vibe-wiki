@@ -1,0 +1,222 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="matrix-title matrix-desc">
+  <title id="matrix-title">AI Coding CLI Comparison Matrix</title>
+  <desc id="matrix-desc">Feature comparison matrix comparing major AI coding CLI tools across key dimensions</desc>
+
+  <defs>
+    <linearGradient id="grad-cyan-purple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+    </linearGradient>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="900" fill="#0a0a0a"/>
+
+  <!-- Title -->
+  <text x="700" y="50" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="28" font-weight="700">
+    AI Coding CLI Comparison Matrix
+  </text>
+
+  <text x="700" y="80" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="14">
+    Feature-by-feature comparison of major tools
+  </text>
+
+  <!-- Legend -->
+  <g id="legend">
+    <rect x="50" y="100" width="400" height="40" rx="8" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+    <circle cx="80" cy="120" r="6" fill="#10b981"/>
+    <text x="95" y="125" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">Excellent</text>
+    <circle cx="180" cy="120" r="6" fill="#00d9ff"/>
+    <text x="195" y="125" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">Good</text>
+    <circle cx="260" cy="120" r="6" fill="#f59e0b"/>
+    <text x="275" y="125" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">Fair</text>
+    <circle cx="340" cy="120" r="6" fill="#ef4444"/>
+    <text x="355" y="125" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">Poor</text>
+  </g>
+
+  <!-- Column Headers -->
+  <g id="headers">
+    <rect x="50" y="160" width="150" height="50" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+    <text x="125" y="190" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="13" font-weight="700">Feature</text>
+
+    <rect x="200" y="160" width="180" height="50" fill="#1a1a1a" stroke="url(#grad-cyan-purple)" stroke-width="2" filter="url(#glow)"/>
+    <text x="290" y="185" text-anchor="middle" fill="#00d9ff" font-family="Inter, sans-serif" font-size="13" font-weight="700">Claude Code</text>
+    <text x="290" y="202" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Anthropic</text>
+
+    <rect x="380" y="160" width="180" height="50" fill="#1a1a1a" stroke="#a855f7" stroke-width="2"/>
+    <text x="470" y="185" text-anchor="middle" fill="#a855f7" font-family="Inter, sans-serif" font-size="13" font-weight="700">Cursor CLI</text>
+    <text x="470" y="202" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Cursor IDE</text>
+
+    <rect x="560" y="160" width="180" height="50" fill="#1a1a1a" stroke="#ec4899" stroke-width="2"/>
+    <text x="650" y="185" text-anchor="middle" fill="#ec4899" font-family="Inter, sans-serif" font-size="13" font-weight="700">Windsurf CLI</text>
+    <text x="650" y="202" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Codeium</text>
+
+    <rect x="740" y="160" width="180" height="50" fill="#1a1a1a" stroke="#10b981" stroke-width="2"/>
+    <text x="830" y="185" text-anchor="middle" fill="#10b981" font-family="Inter, sans-serif" font-size="13" font-weight="700">Aider</text>
+    <text x="830" y="202" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Open Source</text>
+
+    <rect x="920" y="160" width="180" height="50" fill="#1a1a1a" stroke="#f59e0b" stroke-width="2"/>
+    <text x="1010" y="185" text-anchor="middle" fill="#f59e0b" font-family="Inter, sans-serif" font-size="13" font-weight="700">Ollama</text>
+    <text x="1010" y="202" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Local Models</text>
+
+    <rect x="1100" y="160" width="250" height="50" fill="#1a1a1a" stroke="#6b7280" stroke-width="1"/>
+    <text x="1225" y="185" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="13" font-weight="700">Notes</text>
+    <text x="1225" y="202" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Key insights</text>
+  </g>
+
+  <!-- Row 1: Code Quality -->
+  <g id="row-code-quality">
+    <rect x="50" y="210" width="1300" height="50" fill="#0a0a0a" stroke="#333" stroke-width="1"/>
+    <text x="125" y="240" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Code Quality</text>
+    <circle cx="290" cy="235" r="8" fill="#10b981"/>
+    <circle cx="470" cy="235" r="8" fill="#10b981"/>
+    <circle cx="650" cy="235" r="8" fill="#00d9ff"/>
+    <circle cx="830" cy="235" r="8" fill="#10b981"/>
+    <circle cx="1010" cy="235" r="8" fill="#f59e0b"/>
+    <text x="1225" y="240" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Claude excels at reasoning</text>
+  </g>
+
+  <!-- Row 2: Speed -->
+  <g id="row-speed">
+    <rect x="50" y="260" width="1300" height="50" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+    <text x="125" y="290" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Speed</text>
+    <circle cx="290" cy="285" r="8" fill="#10b981"/>
+    <circle cx="470" cy="285" r="8" fill="#10b981"/>
+    <circle cx="650" cy="285" r="8" fill="#10b981"/>
+    <circle cx="830" cy="285" r="8" fill="#00d9ff"/>
+    <circle cx="1010" cy="285" r="8" fill="#ef4444"/>
+    <text x="1225" y="290" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">All cloud tools fast</text>
+  </g>
+
+  <!-- Row 3: Context Window -->
+  <g id="row-context">
+    <rect x="50" y="310" width="1300" height="50" fill="#0a0a0a" stroke="#333" stroke-width="1"/>
+    <text x="125" y="340" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Context Window</text>
+    <circle cx="290" cy="335" r="8" fill="#10b981"/>
+    <circle cx="470" cy="335" r="8" fill="#00d9ff"/>
+    <circle cx="650" cy="335" r="8" fill="#00d9ff"/>
+    <circle cx="830" cy="335" r="8" fill="#f59e0b"/>
+    <circle cx="1010" cy="335" r="8" fill="#ef4444"/>
+    <text x="1225" y="340" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Claude: 200K tokens</text>
+  </g>
+
+  <!-- Row 4: Ease of Setup -->
+  <g id="row-setup">
+    <rect x="50" y="360" width="1300" height="50" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+    <text x="125" y="390" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Ease of Setup</text>
+    <circle cx="290" cy="385" r="8" fill="#10b981"/>
+    <circle cx="470" cy="385" r="8" fill="#10b981"/>
+    <circle cx="650" cy="385" r="8" fill="#10b981"/>
+    <circle cx="830" cy="385" r="8" fill="#00d9ff"/>
+    <circle cx="1010" cy="385" r="8" fill="#f59e0b"/>
+    <text x="1225" y="390" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">One command for most</text>
+  </g>
+
+  <!-- Row 5: Cost -->
+  <g id="row-cost">
+    <rect x="50" y="410" width="1300" height="50" fill="#0a0a0a" stroke="#333" stroke-width="1"/>
+    <text x="125" y="440" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Cost</text>
+    <circle cx="290" cy="435" r="8" fill="#00d9ff"/>
+    <circle cx="470" cy="435" r="8" fill="#00d9ff"/>
+    <circle cx="650" cy="435" r="8" fill="#10b981"/>
+    <circle cx="830" cy="435" r="8" fill="#10b981"/>
+    <circle cx="1010" cy="435" r="8" fill="#10b981"/>
+    <text x="1225" y="440" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Free options available</text>
+  </g>
+
+  <!-- Row 6: Privacy -->
+  <g id="row-privacy">
+    <rect x="50" y="460" width="1300" height="50" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+    <text x="125" y="490" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Privacy</text>
+    <circle cx="290" cy="485" r="8" fill="#00d9ff"/>
+    <circle cx="470" cy="485" r="8" fill="#00d9ff"/>
+    <circle cx="650" cy="485" r="8" fill="#00d9ff"/>
+    <circle cx="830" cy="485" r="8" fill="#10b981"/>
+    <circle cx="1010" cy="485" r="8" fill="#10b981"/>
+    <text x="1225" y="490" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Local = best privacy</text>
+  </g>
+
+  <!-- Row 7: Extensibility -->
+  <g id="row-extensible">
+    <rect x="50" y="510" width="1300" height="50" fill="#0a0a0a" stroke="#333" stroke-width="1"/>
+    <text x="125" y="540" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Extensibility</text>
+    <circle cx="290" cy="535" r="8" fill="#10b981"/>
+    <circle cx="470" cy="535" r="8" fill="#00d9ff"/>
+    <circle cx="650" cy="535" r="8" fill="#00d9ff"/>
+    <circle cx="830" cy="535" r="8" fill="#10b981"/>
+    <circle cx="1010" cy="535" r="8" fill="#00d9ff"/>
+    <text x="1225" y="540" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">MCP plugins = powerful</text>
+  </g>
+
+  <!-- Row 8: Multi-file Edits -->
+  <g id="row-multifile">
+    <rect x="50" y="560" width="1300" height="50" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+    <text x="125" y="590" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Multi-file Edits</text>
+    <circle cx="290" cy="585" r="8" fill="#10b981"/>
+    <circle cx="470" cy="585" r="8" fill="#10b981"/>
+    <circle cx="650" cy="585" r="8" fill="#10b981"/>
+    <circle cx="830" cy="585" r="8" fill="#10b981"/>
+    <circle cx="1010" cy="585" r="8" fill="#f59e0b"/>
+    <text x="1225" y="590" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">All support well</text>
+  </g>
+
+  <!-- Row 9: Language Support -->
+  <g id="row-languages">
+    <rect x="50" y="610" width="1300" height="50" fill="#0a0a0a" stroke="#333" stroke-width="1"/>
+    <text x="125" y="640" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Language Support</text>
+    <circle cx="290" cy="635" r="8" fill="#10b981"/>
+    <circle cx="470" cy="635" r="8" fill="#10b981"/>
+    <circle cx="650" cy="635" r="8" fill="#10b981"/>
+    <circle cx="830" cy="635" r="8" fill="#10b981"/>
+    <circle cx="1010" cy="635" r="8" fill="#00d9ff"/>
+    <text x="1225" y="640" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Universal support</text>
+  </g>
+
+  <!-- Row 10: CLI vs IDE -->
+  <g id="row-cli">
+    <rect x="50" y="660" width="1300" height="50" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+    <text x="125" y="690" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">CLI-First</text>
+    <circle cx="290" cy="685" r="8" fill="#10b981"/>
+    <circle cx="470" cy="685" r="8" fill="#00d9ff"/>
+    <circle cx="650" cy="685" r="8" fill="#00d9ff"/>
+    <circle cx="830" cy="685" r="8" fill="#10b981"/>
+    <circle cx="1010" cy="685" r="8" fill="#10b981"/>
+    <text x="1225" y="690" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Claude/Aider pure CLI</text>
+  </g>
+
+  <!-- Summary Section -->
+  <g id="summary">
+    <rect x="50" y="730" width="1300" height="120" rx="12" fill="#1a1a1a" stroke="url(#grad-cyan-purple)" stroke-width="2" filter="url(#shadow)"/>
+    <text x="700" y="760" text-anchor="middle" fill="#00d9ff" font-family="Inter, sans-serif" font-size="16" font-weight="700">📊 Summary & Recommendations</text>
+
+    <text x="100" y="790" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Best Overall:</text>
+    <text x="230" y="790" fill="#10b981" font-family="Inter, sans-serif" font-size="12">Claude Code - Superior reasoning, great context</text>
+
+    <text x="100" y="815" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Best Free:</text>
+    <text x="230" y="815" fill="#10b981" font-family="Inter, sans-serif" font-size="12">Windsurf - Free tier with good features</text>
+
+    <text x="100" y="840" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Best Privacy:</text>
+    <text x="230" y="840" fill="#10b981" font-family="Inter, sans-serif" font-size="12">Ollama - 100% local, no data leaves</text>
+
+    <text x="750" y="790" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Best for Teams:</text>
+    <text x="880" y="790" fill="#10b981" font-family="Inter, sans-serif" font-size="12">Claude Code - Shared context</text>
+
+    <text x="750" y="815" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Best Open Source:</text>
+    <text x="880" y="815" fill="#10b981" font-family="Inter, sans-serif" font-size="12">Aider - Mature, well-documented</text>
+
+    <text x="750" y="840" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Quick Start:</text>
+    <text x="880" y="840" fill="#10b981" font-family="Inter, sans-serif" font-size="12">Claude Code - npm install -g @anthropic-ai/claude-code</text>
+  </g>
+</svg>

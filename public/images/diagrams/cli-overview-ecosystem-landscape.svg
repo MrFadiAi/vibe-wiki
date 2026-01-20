@@ -1,0 +1,215 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="eco-title eco-desc">
+  <title id="eco-title">AI Coding CLI Ecosystem Landscape</title>
+  <desc id="eco-desc">Visual landscape of the AI coding CLI ecosystem showing tool categories, relationships, and market positioning</desc>
+
+  <defs>
+    <linearGradient id="grad-cyan-purple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="grad-purple-pink" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="grad-green-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00d9ff;stop-opacity:1" />
+    </linearGradient>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="900" fill="#0a0a0a"/>
+
+  <!-- Title -->
+  <text x="700" y="50" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="28" font-weight="700">
+    AI Coding CLI Ecosystem Landscape
+  </text>
+
+  <!-- Subtitle -->
+  <text x="700" y="80" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="14">
+    Tools, Categories, and Relationships
+  </text>
+
+  <!-- === Category 1: Anthropic Claude (Top Center) === -->
+  <g id="claude-category">
+    <rect x="500" y="120" width="400" height="200" rx="16" fill="#1a1a1a" stroke="url(#grad-cyan-purple)" stroke-width="3" filter="url(#glow)"/>
+    <text x="700" y="155" text-anchor="middle" fill="#00d9ff" font-family="Inter, sans-serif" font-size="20" font-weight="700">🤖 Anthropic Claude</text>
+
+    <!-- Claude Code -->
+    <rect x="530" y="180" width="150" height="60" rx="8" fill="#0a0a0a" stroke="#a855f7" stroke-width="2"/>
+    <text x="605" y="205" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="13" font-weight="600">Claude Code</text>
+    <text x="605" y="225" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Official CLI</text>
+
+    <!-- Plugins -->
+    <rect x="720" y="180" width="150" height="60" rx="8" fill="#0a0a0a" stroke="#a855f7" stroke-width="2"/>
+    <text x="795" y="205" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="13" font-weight="600">MCP Plugins</text>
+    <text x="795" y="225" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Extensible</text>
+
+    <!-- Features -->
+    <text x="700" y="275" text-anchor="middle" fill="#10b981" font-family="Inter, sans-serif" font-size="11">✓ Best reasoning</text>
+    <text x="700" y="295" text-anchor="middle" fill="#10b981" font-family="Inter, sans-serif" font-size="11">✓ Strong coding</text>
+  </g>
+
+  <!-- === Category 2: Open Source (Left) === -->
+  <g id="opensource-category">
+    <rect x="50" y="120" width="400" height="200" rx="16" fill="#1a1a1a" stroke="url(#grad-green-cyan)" stroke-width="2" filter="url(#shadow)"/>
+    <text x="250" y="155" text-anchor="middle" fill="#10b981" font-family="Inter, sans-serif" font-size="20" font-weight="700">🌐 Open Source</text>
+
+    <!-- OpenAI Codex -->
+    <rect x="80" y="180" width="160" height="55" rx="8" fill="#0a0a0a" stroke="#00d9ff" stroke-width="1"/>
+    <text x="160" y="205" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">OpenAI Codex</text>
+    <text x="160" y="223" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="9">Multiple tools</text>
+
+    <!-- Ollama -->
+    <rect x="260" y="180" width="160" height="55" rx="8" fill="#0a0a0a" stroke="#00d9ff" stroke-width="1"/>
+    <text x="340" y="205" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Ollama</text>
+    <text x="340" y="223" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="9">Local models</text>
+
+    <!-- Hugging Face -->
+    <rect x="80" y="255" width="160" height="55" rx="8" fill="#0a0a0a" stroke="#00d9ff" stroke-width="1"/>
+    <text x="160" y="280" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Hugging Face</text>
+    <text x="160" y="298" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="9">Model hub</text>
+
+    <!-- Features -->
+    <text x="250" y="310" text-anchor="middle" fill="#10b981" font-family="Inter, sans-serif" font-size="11">✓ Free & self-hosted</text>
+  </g>
+
+  <!-- === Category 3: IDE-Native (Right) === -->
+  <g id="ide-category">
+    <rect x="950" y="120" width="400" height="200" rx="16" fill="#1a1a1a" stroke="url(#grad-purple-pink)" stroke-width="2" filter="url(#shadow)"/>
+    <text x="1150" y="155" text-anchor="middle" fill="#ec4899" font-family="Inter, sans-serif" font-size="20" font-weight="700">💻 IDE-Native</text>
+
+    <!-- Cursor -->
+    <rect x="980" y="180" width="160" height="55" rx="8" fill="#0a0a0a" stroke="#ec4899" stroke-width="2"/>
+    <text x="1060" y="205" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Cursor</text>
+    <text x="1060" y="223" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="9">Fork of VS Code</text>
+
+    <!-- Windsurf -->
+    <rect x="1160" y="180" width="160" height="55" rx="8" fill="#0a0a0a" stroke="#ec4899" stroke-width="2"/>
+    <text x="1240" y="205" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Windsurf</text>
+    <text x="1240" y="223" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="9">By Codeium</text>
+
+    <!-- Features -->
+    <text x="1150" y="275" text-anchor="middle" fill="#10b981" font-family="Inter, sans-serif" font-size="11">✓ Seamless workflow</text>
+    <text x="1150" y="295" text-anchor="middle" fill="#10b981" font-family="Inter, sans-serif" font-size="11">✓ Integrated AI</text>
+  </g>
+
+  <!-- === Connection Lines === -->
+  <g id="connections" stroke="#333" stroke-width="1" stroke-dasharray="3,3">
+    <!-- Open Source to Claude -->
+    <line x1="450" y1="220" x2="500" y2="220"/>
+    <!-- Claude to IDE -->
+    <line x1="900" y1="220" x2="950" y2="220"/>
+  </g>
+
+  <!-- === Use Cases Section (Middle) === -->
+  <g id="use-cases">
+    <rect x="100" y="370" width="1200" height="180" rx="12" fill="#1a1a1a" stroke="#00d9ff" stroke-width="2" filter="url(#shadow)"/>
+    <text x="700" y="405" text-anchor="middle" fill="#00d9ff" font-family="Inter, sans-serif" font-size="16" font-weight="700">🎯 Common Use Cases</text>
+
+    <!-- Use Case Cards -->
+    <g id="uc-1">
+      <rect x="130" y="430" width="200" height="90" rx="8" fill="#0a0a0a" stroke="#a855f7" stroke-width="1"/>
+      <text x="230" y="455" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Code Generation</text>
+      <text x="230" y="475" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Create features</text>
+      <text x="230" y="490" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">from descriptions</text>
+      <text x="230" y="510" text-anchor="middle" fill="#10b981" font-family="Inter, sans-serif" font-size="9">Best: Claude Code</text>
+    </g>
+
+    <g id="uc-2">
+      <rect x="360" y="430" width="200" height="90" rx="8" fill="#0a0a0a" stroke="#a855f7" stroke-width="1"/>
+      <text x="460" y="455" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Debugging</text>
+      <text x="460" y="475" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Fix errors &</text>
+      <text x="460" y="490" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">understand issues</text>
+      <text x="460" y="510" text-anchor="middle" fill="#10b981" font-family="Inter, sans-serif" font-size="9">Best: Claude Code</text>
+    </g>
+
+    <g id="uc-3">
+      <rect x="590" y="430" width="200" height="90" rx="8" fill="#0a0a0a" stroke="#a855f7" stroke-width="1"/>
+      <text x="690" y="455" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Refactoring</text>
+      <text x="690" y="475" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Improve code</text>
+      <text x="690" y="490" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">quality & structure</text>
+      <text x="690" y="510" text-anchor="middle" fill="#10b981" font-family="Inter, sans-serif" font-size="9">Best: All tools</text>
+    </g>
+
+    <g id="uc-4">
+      <rect x="820" y="430" width="200" height="90" rx="8" fill="#0a0a0a" stroke="#a855f7" stroke-width="1"/>
+      <text x="920" y="455" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Documentation</text>
+      <text x="920" y="475" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Generate docs</text>
+      <text x="920" y="490" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">& comments</text>
+      <text x="920" y="510" text-anchor="middle" fill="#10b981" font-family="Inter, sans-serif" font-size="9">Best: Claude Code</text>
+    </g>
+
+    <g id="uc-5">
+      <rect x="1050" y="430" width="200" height="90" rx="8" fill="#0a0a0a" stroke="#a855f7" stroke-width="1"/>
+      <text x="1150" y="455" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Learning</text>
+      <text x="1150" y="475" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Explain code</text>
+      <text x="1150" y="490" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">& patterns</text>
+      <text x="1150" y="510" text-anchor="middle" fill="#10b981" font-family="Inter, sans-serif" font-size="9">Best: Claude Code</text>
+    </g>
+  </g>
+
+  <!-- === Decision Factors (Bottom) === -->
+  <g id="factors">
+    <rect x="100" y="600" width="1200" height="200" rx="12" fill="#1a1a1a" stroke="#ec4899" stroke-width="2" filter="url(#shadow)"/>
+    <text x="700" y="635" text-anchor="middle" fill="#ec4899" font-family="Inter, sans-serif" font-size="16" font-weight="700">⚖️ Key Decision Factors</text>
+
+    <!-- Factor Columns -->
+    <g id="factor-1">
+      <text x="200" y="675" text-anchor="middle" fill="#00d9ff" font-family="Inter, sans-serif" font-size="13" font-weight="600">Cost</text>
+      <text x="200" y="700" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="11">• Open source: Free</text>
+      <text x="200" y="720" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="11">• Claude: ~$20/mo</text>
+      <text x="200" y="740" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="11">• IDE: Varies</text>
+    </g>
+
+    <g id="factor-2">
+      <text x="450" y="675" text-anchor="middle" fill="#00d9ff" font-family="Inter, sans-serif" font-size="13" font-weight="600">Privacy</text>
+      <text x="450" y="700" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="11">• Local: 100% private</text>
+      <text x="450" y="720" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="11">• Cloud: Data sent</text>
+      <text x="450" y="740" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="11">• Check policies</text>
+    </g>
+
+    <g id="factor-3">
+      <text x="700" y="675" text-anchor="middle" fill="#00d9ff" font-family="Inter, sans-serif" font-size="13" font-weight="600">Capability</text>
+      <text x="700" y="700" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="11">• Claude: Best reasoning</text>
+      <text x="700" y="720" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="11">• IDE: Best integration</text>
+      <text x="700" y="740" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="11">• Open: Flexible</text>
+    </g>
+
+    <g id="factor-4">
+      <text x="950" y="675" text-anchor="middle" fill="#00d9ff" font-family="Inter, sans-serif" font-size="13" font-weight="600">Ease of Use</text>
+      <text x="950" y="700" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="11">• IDE: Easiest</text>
+      <text x="950" y="720" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="11">• Claude CLI: Easy</text>
+      <text x="950" y="740" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="11">• Open source: Setup</text>
+    </g>
+
+    <g id="factor-5">
+      <text x="1200" y="675" text-anchor="middle" fill="#00d9ff" font-family="Inter, sans-serif" font-size="13" font-weight="600">Ecosystem</text>
+      <text x="1200" y="700" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="11">• Claude: MCP plugins</text>
+      <text x="1200" y="720" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="11">• IDE: Built-in tools</text>
+      <text x="1200" y="740" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="11">• Open: Community</text>
+    </g>
+  </g>
+
+  <!-- === Recommendation Banner === -->
+  <g id="recommendation">
+    <rect x="100" y="840" width="1200" height="40" rx="8" fill="#0a0a0a" stroke="url(#grad-cyan-purple)" stroke-width="2"/>
+    <text x="700" y="865" text-anchor="middle" fill="#00d9ff" font-family="Inter, sans-serif" font-size="12" font-weight="600">
+      💡 Recommendation: Start with Claude Code CLI → Add IDE tools → Explore open source as needed
+    </text>
+  </g>
+</svg>

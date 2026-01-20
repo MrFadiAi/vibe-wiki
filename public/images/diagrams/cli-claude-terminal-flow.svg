@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 850" role="img" aria-labelledby="claude-flow-title claude-flow-desc">
+  <title id="claude-flow-title">Claude Code Terminal Workflow</title>
+  <desc id="claude-flow-desc">Step-by-step visual guide showing how to use Claude Code CLI in your terminal</desc>
+
+  <defs>
+    <linearGradient id="grad-cyan-purple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+    </linearGradient>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#00d9ff"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="850" fill="#0a0a0a"/>
+
+  <!-- Title -->
+  <text x="700" y="50" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="28" font-weight="700">
+    Claude Code Terminal Workflow
+  </text>
+
+  <text x="700" y="80" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="14">
+    From installation to your first AI-assisted code change
+  </text>
+
+  <!-- === Step 1: Installation === -->
+  <g id="step-1">
+    <rect x="50" y="120" width="300" height="250" rx="12" fill="#1a1a1a" stroke="#10b981" stroke-width="2" filter="url(#shadow)"/>
+    <circle cx="90" cy="160" r="20" fill="#10b981"/>
+    <text x="90" y="167" text-anchor="middle" fill="#0a0a0a" font-family="Inter, sans-serif" font-size="18" font-weight="700">1</text>
+
+    <text x="200" y="155" text-anchor="middle" fill="#10b981" font-family="Inter, sans-serif" font-size="16" font-weight="700">Installation</text>
+
+    <rect x="70" y="180" width="260" height="90" rx="8" fill="#0a0a0a" stroke="#333" stroke-width="1"/>
+    <text x="85" y="205" fill="#00d9ff" font-family="Fira Code, monospace" font-size="11">$ npm install -g</text>
+    <text x="85" y="225" fill="#ffffff" font-family="Fira Code, monospace" font-size="11">@anthropic-ai/</text>
+    <text x="85" y="245" fill="#ffffff" font-family="Fira Code, monospace" font-size="11">claude-code</text>
+
+    <text x="200" y="300" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">Requires Node.js 18+</text>
+    <text x="200" y="320" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">One-time setup</text>
+    <text x="200" y="355" text-anchor="middle" fill="#10b981" font-family="Inter, sans-serif" font-size="10">✓ Available globally</text>
+  </g>
+
+  <!-- Arrow 1-2 -->
+  <line x1="350" y1="245" x2="410" y2="245" stroke="#00d9ff" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- === Step 2: Authentication === -->
+  <g id="step-2">
+    <rect x="420" y="120" width="300" height="250" rx="12" fill="#1a1a1a" stroke="#a855f7" stroke-width="2" filter="url(#shadow)"/>
+    <circle cx="460" cy="160" r="20" fill="#a855f7"/>
+    <text x="460" y="167" text-anchor="middle" fill="#0a0a0a" font-family="Inter, sans-serif" font-size="18" font-weight="700">2</text>
+
+    <text x="570" y="155" text-anchor="middle" fill="#a855f7" font-family="Inter, sans-serif" font-size="16" font-weight="700">Authentication</text>
+
+    <rect x="440" y="180" width="260" height="90" rx="8" fill="#0a0a0a" stroke="#333" stroke-width="1"/>
+    <text x="455" y="205" fill="#00d9ff" font-family="Fira Code, monospace" font-size="11">$ claude auth login</text>
+    <text x="455" y="230" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Opens browser →</text>
+    <text x="455" y="250" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Sign in with Anthropic</text>
+
+    <text x="570" y="300" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">Uses API key securely</text>
+    <text x="570" y="320" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">Stored locally</text>
+    <text x="570" y="355" text-anchor="middle" fill="#10b981" font-family="Inter, sans-serif" font-size="10">✓ Ready to use</text>
+  </g>
+
+  <!-- Arrow 2-3 -->
+  <line x1="720" y1="245" x2="780" y2="245" stroke="#00d9ff" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- === Step 3: Navigate to Project === -->
+  <g id="step-3">
+    <rect x="790" y="120" width="300" height="250" rx="12" fill="#1a1a1a" stroke="#ec4899" stroke-width="2" filter="url(#shadow)"/>
+    <circle cx="830" cy="160" r="20" fill="#ec4899"/>
+    <text x="830" y="167" text-anchor="middle" fill="#0a0a0a" font-family="Inter, sans-serif" font-size="18" font-weight="700">3</text>
+
+    <text x="940" y="155" text-anchor="middle" fill="#ec4899" font-family="Inter, sans-serif" font-size="16" font-weight="700">Navigate</text>
+
+    <rect x="810" y="180" width="260" height="90" rx="8" fill="#0a0a0a" stroke="#333" stroke-width="1"/>
+    <text x="825" y="205" fill="#00d9ff" font-family="Fira Code, monospace" font-size="11">$ cd my-project</text>
+    <text x="825" y="230" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Go to your project</text>
+    <text x="825" y="250" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">directory</text>
+
+    <text x="940" y="300" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">Any codebase works</text>
+    <text x="940" y="320" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">Claude reads files</text>
+    <text x="940" y="355" text-anchor="middle" fill="#10b981" font-family="Inter, sans-serif" font-size="10">✓ Context loaded</text>
+  </g>
+
+  <!-- Arrow 3-4 -->
+  <line x1="1090" y1="245" x2="1150" y2="245" stroke="#00d9ff" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- === Step 4: Start Claude === -->
+  <g id="step-4">
+    <rect x="1160" y="120" width="200" height="250" rx="12" fill="#1a1a1a" stroke="url(#grad-cyan-purple)" stroke-width="3" filter="url(#glow)"/>
+    <circle cx="1190" cy="160" r="20" fill="#00d9ff"/>
+    <text x="1190" y="167" text-anchor="middle" fill="#0a0a0a" font-family="Inter, sans-serif" font-size="18" font-weight="700">4</text>
+
+    <text x="1260" y="155" text-anchor="middle" fill="#00d9ff" font-family="Inter, sans-serif" font-size="16" font-weight="700">Start</text>
+
+    <rect x="1180" y="180" width="160" height="90" rx="8" fill="#0a0a0a" stroke="#333" stroke-width="1"/>
+    <text x="1190" y="210" fill="#00d9ff" font-family="Fira Code, monospace" font-size="11">$ claude</text>
+    <text x="1190" y="235" fill="#a855f7" font-family="Inter, sans-serif" font-size="20" text-anchor="middle">🤖</text>
+    <text x="1190" y="255" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Interactive mode</text>
+
+    <text x="1260" y="300" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">Or use commands</text>
+    <text x="1260" y="320" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">directly</text>
+    <text x="1260" y="355" text-anchor="middle" fill="#10b981" font-family="Inter, sans-serif" font-size="10">✓ AI ready!</text>
+  </g>
+
+  <!-- === Commands Section === -->
+  <g id="commands">
+    <rect x="50" y="400" width="1300" height="280" rx="12" fill="#1a1a1a" stroke="#00d9ff" stroke-width="2" filter="url(#shadow)"/>
+    <text x="700" y="435" text-anchor="middle" fill="#00d9ff" font-family="Inter, sans-serif" font-size="18" font-weight="700">📝 Common Commands</text>
+
+    <!-- Command 1 -->
+    <g id="cmd-1">
+      <rect x="80" y="460" width="400" height="70" rx="8" fill="#0a0a0a" stroke="#a855f7" stroke-width="1"/>
+      <text x="95" y="485" fill="#00d9ff" font-family="Fira Code, monospace" font-size="12">$ claude ask "add error handling"</text>
+      <text x="95" y="505" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Quick questions & explanations</text>
+      <text x="95" y="520" fill="#10b981" font-family="Inter, sans-serif" font-size="9">Best for: Simple queries</text>
+    </g>
+
+    <!-- Command 2 -->
+    <g id="cmd-2">
+      <rect x="500" y="460" width="400" height="70" rx="8" fill="#0a0a0a" stroke="#ec4899" stroke-width="2"/>
+      <text x="515" y="485" fill="#00d9ff" font-family="Fira Code, monospace" font-size="12">$ claude chat</text>
+      <text x="515" y="505" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Interactive conversation mode</text>
+      <text x="515" y="520" fill="#10b981" font-family="Inter, sans-serif" font-size="9">Best for: Complex tasks</text>
+    </g>
+
+    <!-- Command 3 -->
+    <g id="cmd-3">
+      <rect x="920" y="460" width="400" height="70" rx="8" fill="#0a0a0a" stroke="#10b981" stroke-width="1"/>
+      <text x="935" y="485" fill="#00d9ff" font-family="Fira Code, monospace" font-size="12">$ claude commit</text>
+      <text x="935" y="505" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">AI-generated git commits</text>
+      <text x="935" y="520" fill="#10b981" font-family="Inter, sans-serif" font-size="9">Best for: Better messages</text>
+    </g>
+
+    <!-- Command 4 -->
+    <g id="cmd-4">
+      <rect x="80" y="550" width="400" height="70" rx="8" fill="#0a0a0a" stroke="#f59e0b" stroke-width="1"/>
+      <text x="95" y="575" fill="#00d9ff" font-family="Fira Code, monospace" font-size="12">$ claude test</text>
+      <text x="95" y="595" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Run tests & get AI insights</text>
+      <text x="95" y="610" fill="#10b981" font-family="Inter, sans-serif" font-size="9">Best for: Test debugging</text>
+    </g>
+
+    <!-- Command 5 -->
+    <g id="cmd-5">
+      <rect x="500" y="550" width="400" height="70" rx="8" fill="#0a0a0a" stroke="#f59e0b" stroke-width="1"/>
+      <text x="515" y="575" fill="#00d9ff" font-family="Fira Code, monospace" font-size="12">$ claude plan</text>
+      <text x="515" y="595" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Plan before implementing</text>
+      <text x="515" y="610" fill="#10b981" font-family="Inter, sans-serif" font-size="9">Best for: Large features</text>
+    </g>
+
+    <!-- Command 6 -->
+    <g id="cmd-6">
+      <rect x="920" y="550" width="400" height="70" rx="8" fill="#0a0a0a" stroke="#f59e0b" stroke-width="1"/>
+      <text x="935" y="575" fill="#00d9ff" font-family="Fira Code, monospace" font-size="12">$ claude review</text>
+      <text x="935" y="595" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Get code review suggestions</text>
+      <text x="935" y="610" fill="#10b981" font-family="Inter, sans-serif" font-size="9">Best for: Code quality</text>
+    </g>
+  </g>
+
+  <!-- === Tips Section === -->
+  <g id="tips">
+    <rect x="50" y="710" width="1300" height="100" rx="12" fill="#1a1a1a" stroke="#a855f7" stroke-width="2" filter="url(#shadow)"/>
+    <text x="700" y="740" text-anchor="middle" fill="#a855f7" font-family="Inter, sans-serif" font-size="16" font-weight="700">💡 Pro Tips</text>
+
+    <text x="100" y="770" fill="#ffffff" font-family="Inter, sans-serif" font-size="12">• Use quotes for prompts with spaces: <tspan fill="#00d9ff">claude ask "explain this function"</tspan></text>
+    <text x="100" y="790" fill="#ffffff" font-family="Inter, sans-serif" font-size="12">• Claude automatically reads your files - no manual uploading needed</text>
+
+    <text x="750" y="770" fill="#ffffff" font-family="Inter, sans-serif" font-size="12">• Use <tspan fill="#00d9ff">--help</tspan> to see all available commands</text>
+    <text x="750" y="790" fill="#ffffff" font-family="Inter, sans-serif" font-size="12">• Check <tspan fill="#00d9ff">~/.claude</tspan> for configuration and history</text>
+  </g>
+
+  <!-- === Quick Reference === -->
+  <g id="quick-ref">
+    <rect x="50" y="830" width="1300" height="1" fill="#333"/>
+    <text x="700" y="845" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">
+      Full docs: https://docs.anthropic.com | Quick start: claude --help
+    </text>
+  </g>
+</svg>

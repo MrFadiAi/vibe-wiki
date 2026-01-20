@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="paths-title paths-desc">
+  <title id="paths-title">Learning Paths - What's Next After Your First 15 Minutes</title>
+  <desc id="paths-desc">Visual guide showing different learning paths users can take after completing their first AI coding experience</desc>
+
+  <defs>
+    <linearGradient id="grad-cyan-purple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="grad-purple-pink" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+    </linearGradient>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#00d9ff"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="700" fill="#0a0a0a"/>
+
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="24" font-weight="700">
+    What's Next? Choose Your Learning Path
+  </text>
+
+  <!-- Success Box -->
+  <rect x="450" y="70" width="300" height="60" rx="8" fill="url(#grad-cyan-purple)" filter="url(#shadow)"/>
+  <text x="600" y="105" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="16" font-weight="700">
+    🎉 You completed your first 15 minutes!
+  </text>
+
+  <!-- Path Branching Lines -->
+  <g id="branching-lines">
+    <line x1="600" y1="130" x2="600" y2="170" stroke="#00d9ff" stroke-width="3"/>
+    <line x1="200" y1="170" x2="1000" y2="170" stroke="#00d9ff" stroke-width="2"/>
+
+    <!-- Branch to Path 1 -->
+    <line x1="200" y1="170" x2="200" y2="200" stroke="#00d9ff" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <!-- Branch to Path 2 -->
+    <line x1="400" y1="170" x2="400" y2="200" stroke="#a855f7" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <!-- Branch to Path 3 -->
+    <line x1="600" y1="170" x2="600" y2="200" stroke="#ec4899" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <!-- Branch to Path 4 -->
+    <line x1="800" y1="170" x2="800" y2="200" stroke="#00d9ff" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <!-- Branch to Path 5 -->
+    <line x1="1000" y1="170" x2="1000" y2="200" stroke="#a855f7" stroke-width="2" marker-end="url(#arrowhead)"/>
+  </g>
+
+  <!-- Learning Paths -->
+
+  <!-- Path 1: More Practice -->
+  <g id="path1-practice">
+    <rect x="100" y="200" width="200" height="280" rx="12" fill="#1a1a1a" stroke="#00d9ff" stroke-width="2" filter="url(#shadow)"/>
+    <rect x="100" y="200" width="200" height="50" rx="12" fill="#00d9ff" filter="url(#glow)"/>
+    <text x="200" y="232" text-anchor="middle" fill="#0a0a0a" font-family="Inter, sans-serif" font-size="14" font-weight="700">🎯 More Practice</text>
+
+    <text x="120" y="275" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Build More Projects:</text>
+    <text x="120" y="295" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">• Todo List App</text>
+    <text x="120" y="315" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">• Number Guessing Game</text>
+    <text x="120" y="335" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">• Personal Website</text>
+    <text x="120" y="355" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">• Weather App</text>
+    <text x="120" y="375" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">• Calculator (advanced)</text>
+
+    <rect x="120" y="395" width="160" height="30" rx="6" fill="#0a0a0a" stroke="#00d9ff" stroke-width="1"/>
+    <text x="200" y="415" text-anchor="middle" fill="#00d9ff" font-family="Inter, sans-serif" font-size="10">20-30 min each</text>
+
+    <text x="120" y="455" fill="#00d9ff" font-family="Inter, sans-serif" font-size="10" font-weight="600">Best for:</text>
+    <text x="120" y="470" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Hands-on learners</text>
+  </g>
+
+  <!-- Path 2: Learn Fundamentals -->
+  <g id="path2-fundamentals">
+    <rect x="320" y="200" width="200" height="280" rx="12" fill="#1a1a1a" stroke="#a855f7" stroke-width="2" filter="url(#shadow)"/>
+    <rect x="320" y="200" width="200" height="50" rx="12" fill="#a855f7" filter="url(#glow)"/>
+    <text x="420" y="232" text-anchor="middle" fill="#0a0a0a" font-family="Inter, sans-serif" font-size="14" font-weight="700">📚 Fundamentals</text>
+
+    <text x="340" y="275" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Read Wiki Articles:</text>
+    <text x="340" y="295" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">• What is Vibecoding?</text>
+    <text x="340" y="315" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">• AI Tool Comparison</text>
+    <text x="340" y="335" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">• Prompt Engineering</text>
+    <text x="340" y="355" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">• Code Review Best Practices</text>
+    <text x="340" y="375" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">• Debugging with AI</text>
+
+    <rect x="340" y="395" width="160" height="30" rx="6" fill="#0a0a0a" stroke="#a855f7" stroke-width="1"/>
+    <text x="420" y="415" text-anchor="middle" fill="#a855f7" font-family="Inter, sans-serif" font-size="10">10-15 min each</text>
+
+    <text x="340" y="455" fill="#a855f7" font-family="Inter, sans-serif" font-size="10" font-weight="600">Best for:</text>
+    <text x="340" y="470" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Understanding concepts</text>
+  </g>
+
+  <!-- Path 3: Master Your Tool -->
+  <g id="path3-mastery">
+    <rect x="540" y="200" width="200" height="280" rx="12" fill="#1a1a1a" stroke="#ec4899" stroke-width="3" filter="url(#shadow)"/>
+    <rect x="540" y="200" width="200" height="50" rx="12" fill="url(#grad-purple-pink)" filter="url(#glow)"/>
+    <text x="640" y="232" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="14" font-weight="700">⚡ Tool Mastery</text>
+
+    <text x="560" y="275" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Deep Dive Into:</text>
+    <text x="560" y="295" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">• Keyboard shortcuts</text>
+    <text x="560" y="315" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">• Multi-file editing</text>
+    <text x="560" y="335" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">• Context awareness</text>
+    <text x="560" y="355" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">• Advanced prompting</text>
+    <text x="560" y="375" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">• Agent workflows</text>
+
+    <rect x="560" y="395" width="160" height="30" rx="6" fill="#0a0a0a" stroke="#ec4899" stroke-width="1"/>
+    <text x="640" y="415" text-anchor="middle" fill="#ec4899" font-family="Inter, sans-serif" font-size="10">1-2 hours total</text>
+
+    <text x="560" y="455" fill="#ec4899" font-family="Inter, sans-serif" font-size="10" font-weight="600">Best for:</text>
+    <text x="560" y="470" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Maximize efficiency</text>
+  </g>
+
+  <!-- Path 4: Explore CLI Tools -->
+  <g id="path4-cli">
+    <rect x="760" y="200" width="200" height="280" rx="12" fill="#1a1a1a" stroke="#00d9ff" stroke-width="2" filter="url(#shadow)"/>
+    <rect x="760" y="200" width="200" height="50" rx="12" fill="#00d9ff" filter="url(#glow)"/>
+    <text x="860" y="232" text-anchor="middle" fill="#0a0a0a" font-family="Inter, sans-serif" font-size="14" font-weight="700">💻 CLI Tools</text>
+
+    <text x="780" y="275" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Try Terminal AI:</text>
+    <text x="780" y="295" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">• Claude CLI</text>
+    <text x="780" y="315" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">• GitHub Copilot CLI</text>
+    <text x="780" y="335" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">• OpenCode</text>
+    <text x="780" y="355" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">• Code explanation</text>
+    <text x="780" y="375" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">• Quick refactoring</text>
+
+    <rect x="780" y="395" width="160" height="30" rx="6" fill="#0a0a0a" stroke="#00d9ff" stroke-width="1"/>
+    <text x="860" y="415" text-anchor="middle" fill="#00d9ff" font-family="Inter, sans-serif" font-size="10">30-45 min each</text>
+
+    <text x="780" y="455" fill="#00d9ff" font-family="Inter, sans-serif" font-size="10" font-weight="600">Best for:</text>
+    <text x="780" y="470" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Terminal enthusiasts</text>
+  </g>
+
+  <!-- Path 5: Join Community -->
+  <g id="path5-community">
+    <rect x="980" y="200" width="200" height="280" rx="12" fill="#1a1a1a" stroke="#a855f7" stroke-width="2" filter="url(#shadow)"/>
+    <rect x="980" y="200" width="200" height="50" rx="12" fill="#a855f7" filter="url(#glow)"/>
+    <text x="1080" y="232" text-anchor="middle" fill="#0a0a0a" font-family="Inter, sans-serif" font-size="14" font-weight="700">👥 Community</text>
+
+    <text x="1000" y="275" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Connect & Learn:</text>
+    <text x="1000" y="295" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">• Discord community</text>
+    <text x="1000" y="315" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">• Reddit r/vibecoding</text>
+    <text x="1000" y="335" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">• Share your projects</text>
+    <text x="1000" y="355" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">• Ask questions</text>
+    <text x="1000" y="375" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">• Learn from others</text>
+
+    <rect x="1000" y="395" width="160" height="30" rx="6" fill="#0a0a0a" stroke="#a855f7" stroke-width="1"/>
+    <text x="1080" y="415" text-anchor="middle" fill="#a855f7" font-family="Inter, sans-serif" font-size="10">Ongoing</text>
+
+    <text x="1000" y="455" fill="#a855f7" font-family="Inter, sans-serif" font-size="10" font-weight="600">Best for:</text>
+    <text x="1000" y="470" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Social learners</text>
+  </g>
+
+  <!-- Bottom Recommendation -->
+  <g id="recommendation">
+    <rect x="300" y="520" width="600" height="80" rx="12" fill="#1a1a1a" stroke="url(#grad-cyan-purple)" stroke-width="2" filter="url(#shadow)"/>
+    <text x="600" y="545" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="14" font-weight="700">
+      💡 Recommended Starting Path
+    </text>
+    <text x="600" y="565" text-anchor="middle" fill="#00d9ff" font-family="Inter, sans-serif" font-size="12">
+      Path 1 (More Practice) → Path 2 (Fundamentals) → Path 3 (Tool Mastery)
+    </text>
+    <text x="600" y="585" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">
+      This gives you hands-on experience, theoretical understanding, and practical skills!
+    </text>
+  </g>
+
+  <!-- Mix & Match Tip -->
+  <text x="600" y="650" text-anchor="middle" fill="#a855f7" font-family="Inter, sans-serif" font-size="13" font-weight="600">
+    ✨ You can mix and match paths! There's no wrong answer.
+  </text>
+  <text x="600" y="680" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="11" font-style="italic">
+    Follow your curiosity and build what excites you!
+  </text>
+</svg>

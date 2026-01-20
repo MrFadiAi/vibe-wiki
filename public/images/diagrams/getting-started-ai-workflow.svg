@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 500" role="img" aria-labelledby="workflow-title workflow-desc">
+  <title id="workflow-title">From Prompt to Code - AI Workflow</title>
+  <desc id="workflow-desc">Visual representation of how AI coding tools transform natural language prompts into working code through the AI assistance workflow</desc>
+
+  <defs>
+    <linearGradient id="grad-cyan-purple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="grad-purple-pink" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+    </linearGradient>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#00d9ff"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1100" height="500" fill="#0a0a0a"/>
+
+  <!-- Title -->
+  <text x="550" y="40" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="24" font-weight="700">
+    From Prompt to Code: Your AI Workflow
+  </text>
+
+  <!-- Workflow Steps -->
+  <g id="workflow-steps">
+    <!-- Step 1: User Prompt -->
+    <g id="step1-prompt">
+      <circle cx="150" cy="250" r="50" fill="#0a0a0a" stroke="#00d9ff" stroke-width="3" filter="url(#glow)"/>
+      <text x="150" y="240" text-anchor="middle" fill="#00d9ff" font-family="Inter, sans-serif" font-size="28">💬</text>
+      <text x="150" y="265" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Prompt</text>
+
+      <rect x="60" y="320" width="180" height="100" rx="8" fill="#1a1a1a" stroke="#00d9ff" stroke-width="2" filter="url(#shadow)"/>
+      <text x="150" y="345" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="13" font-weight="600">You write what you want</text>
+      <text x="150" y="365" text-anchor="middle" fill="#00d9ff" font-family="Inter, sans-serif" font-size="11">"Create a calculator"</text>
+      <text x="150" y="385" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Natural language</text>
+      <text x="150" y="400" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">No coding syntax needed</text>
+      <text x="150" y="415" text-anchor="middle" fill="#00d9ff" font-family="Inter, sans-serif" font-size="10">💡 Be specific!</text>
+    </g>
+
+    <!-- Arrow 1 -->
+    <line x1="200" y1="250" x2="280" y2="250" stroke="url(#grad-cyan-purple)" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <text x="240" y="235" text-anchor="middle" fill="#00d9ff" font-family="Inter, sans-serif" font-size="10">Send</text>
+
+    <!-- Step 2: AI Processing -->
+    <g id="step2-ai">
+      <circle cx="350" cy="250" r="50" fill="#0a0a0a" stroke="#a855f7" stroke-width="3" filter="url(#glow)"/>
+      <text x="350" y="240" text-anchor="middle" fill="#a855f7" font-family="Inter, sans-serif" font-size="28">🤖</text>
+      <text x="350" y="265" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">AI Thinks</text>
+
+      <rect x="260" y="320" width="180" height="100" rx="8" fill="#1a1a1a" stroke="#a855f7" stroke-width="2" filter="url(#shadow)"/>
+      <text x="350" y="345" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="13" font-weight="600">AI understands & plans</text>
+      <text x="350" y="365" text-anchor="middle" fill="#a855f7" font-family="Inter, sans-serif" font-size="11">Analyzes your request</text>
+      <text x="350" y="385" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Understands context</text>
+      <text x="350" y="400" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Plans the code structure</text>
+      <text x="350" y="415" text-anchor="middle" fill="#a855f7" font-family="Inter, sans-serif" font-size="10">⚡ Seconds</text>
+    </g>
+
+    <!-- Arrow 2 -->
+    <line x1="400" y1="250" x2="480" y2="250" stroke="url(#grad-purple-pink)" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <text x="440" y="235" text-anchor="middle" fill="#a855f7" font-family="Inter, sans-serif" font-size="10">Generate</text>
+
+    <!-- Step 3: Code Generation -->
+    <g id="step3-code">
+      <circle cx="550" cy="250" r="50" fill="#0a0a0a" stroke="#ec4899" stroke-width="3" filter="url(#glow)"/>
+      <text x="550" y="240" text-anchor="middle" fill="#ec4899" font-family="Inter, sans-serif" font-size="28">⌨️</text>
+      <text x="550" y="265" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Code</text>
+
+      <rect x="460" y="320" width="180" height="100" rx="8" fill="#1a1a1a" stroke="#ec4899" stroke-width="2" filter="url(#shadow)"/>
+      <text x="550" y="345" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="13" font-weight="600">Working code appears</text>
+      <text x="550" y="365" text-anchor="middle" fill="#ec4899" font-family="Inter, sans-serif" font-size="11">Complete with HTML/CSS/JS</text>
+      <text x="550" y="385" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Properly formatted</text>
+      <text x="550" y="400" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Ready to run</text>
+      <text x="550" y="415" text-anchor="middle" fill="#ec4899" font-family="Inter, sans-serif" font-size="10">✨ Magic!</text>
+    </g>
+
+    <!-- Arrow 3 -->
+    <line x1="600" y1="250" x2="680" y2="250" stroke="#00d9ff" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <text x="640" y="235" text-anchor="middle" fill="#ec4899" font-family="Inter, sans-serif" font-size="10">Review</text>
+
+    <!-- Step 4: User Review -->
+    <g id="step4-review">
+      <circle cx="750" cy="250" r="50" fill="#0a0a0a" stroke="#00d9ff" stroke-width="3" filter="url(#glow)"/>
+      <text x="750" y="240" text-anchor="middle" fill="#00d9ff" font-family="Inter, sans-serif" font-size="28">👀</text>
+      <text x="750" y="265" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Review</text>
+
+      <rect x="660" y="320" width="180" height="100" rx="8" fill="#1a1a1a" stroke="#00d9ff" stroke-width="2" filter="url(#shadow)"/>
+      <text x="750" y="345" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="13" font-weight="600">You check the result</text>
+      <text x="750" y="365" text-anchor="middle" fill="#00d9ff" font-family="Inter, sans-serif" font-size="11">Read through the code</text>
+      <text x="750" y="385" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Understand what it does</text>
+      <text x="750" y="400" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Ask AI to explain parts</text>
+      <text x="750" y="415" text-anchor="middle" fill="#00d9ff" font-family="Inter, sans-serif" font-size="10">🎓 Learn!</text>
+    </g>
+
+    <!-- Arrow 4 -->
+    <line x1="800" y1="250" x2="880" y2="250" stroke="#a855f7" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <text x="840" y="235" text-anchor="middle" fill="#a855f7" font-family="Inter, sans-serif" font-size="10">Iterate</text>
+
+    <!-- Step 5: Iterate or Run -->
+    <g id="step5-run">
+      <circle cx="950" cy="250" r="50" fill="#0a0a0a" stroke="url(#grad-purple-pink)" stroke-width="4" filter="url(#glow)"/>
+      <text x="950" y="240" text-anchor="middle" fill="#ec4899" font-family="Inter, sans-serif" font-size="28">🚀</text>
+      <text x="950" y="265" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Run!</text>
+
+      <rect x="860" y="320" width="180" height="100" rx="8" fill="#1a1a1a" stroke="url(#grad-purple-pink)" stroke-width="2" filter="url(#shadow)"/>
+      <text x="950" y="345" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="13" font-weight="600">Run your code</text>
+      <text x="950" y="365" text-anchor="middle" fill="#ec4899" font-family="Inter, sans-serif" font-size="11">See it working!</text>
+      <text x="950" y="385" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Or ask for changes</text>
+      <text x="950" y="400" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Keep iterating until perfect</text>
+      <text x="950" y="415" text-anchor="middle" fill="#ec4899" font-family="Inter, sans-serif" font-size="10">🎉 Success!</text>
+    </g>
+  </g>
+
+  <!-- Loop Back Arrow -->
+  <path d="M 950 190 Q 550 100 150 190" fill="none" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+  <text x="550" y="130" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="11" font-style="italic">
+    Keep refining until you're happy
+  </text>
+
+  <!-- Bottom Tips -->
+  <g id="tips">
+    <rect x="50" y="450" width="200" height="40" rx="8" fill="#1a1a1a" stroke="#00d9ff" stroke-width="1"/>
+    <text x="150" y="467" text-anchor="middle" fill="#00d9ff" font-family="Inter, sans-serif" font-size="10" font-weight="600">💡 Pro Tip</text>
+    <text x="150" y="482" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="9">Be specific in your prompts</text>
+
+    <rect x="270" y="450" width="200" height="40" rx="8" fill="#1a1a1a" stroke="#a855f7" stroke-width="1"/>
+    <text x="370" y="467" text-anchor="middle" fill="#a855f7" font-family="Inter, sans-serif" font-size="10" font-weight="600">🔑 Key</text>
+    <text x="370" y="482" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="9">Always review generated code</text>
+
+    <rect x="490" y="450" width="200" height="40" rx="8" fill="#1a1a1a" stroke="#ec4899" stroke-width="1"/>
+    <text x="590" y="467" text-anchor="middle" fill="#ec4899" font-family="Inter, sans-serif" font-size="10" font-weight="600">⚡ Speed</text>
+    <text x="590" y="482" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="9">Iterate quickly to learn</text>
+  </g>
+</svg>

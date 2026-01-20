@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="install-checklist-title install-checklist-desc">
+  <title id="install-checklist-title">Claude Code Installation Checklist</title>
+  <desc id="install-checklist-desc">Visual checklist for installing and configuring Claude Code CLI with verification steps</desc>
+
+  <defs>
+    <linearGradient id="grad-cyan-purple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+    </linearGradient>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="900" fill="#0a0a0a"/>
+
+  <!-- Title -->
+  <text x="600" y="50" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="28" font-weight="700">
+    Claude Code Installation Checklist
+  </text>
+
+  <text x="600" y="80" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="14">
+    Step-by-step setup with verification commands
+  </text>
+
+  <!-- === Pre-requisites Section === -->
+  <g id="prerequisites">
+    <rect x="50" y="110" width="1100" height="140" rx="12" fill="#1a1a1a" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
+    <text x="600" y="140" text-anchor="middle" fill="#f59e0b" font-family="Inter, sans-serif" font-size="16" font-weight="700">📋 Pre-requisites</text>
+
+    <!-- Node.js check -->
+    <g id="node-check">
+      <rect x="80" y="160" width="330" height="70" rx="8" fill="#0a0a0a" stroke="#10b981" stroke-width="2"/>
+      <text x="95" y="185" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Node.js 18+ installed</text>
+      <text x="95" y="205" fill="#00d9ff" font-family="Fira Code, monospace" font-size="11">$ node --version</text>
+      <text x="95" y="222" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Should show v18.x or higher</text>
+    </g>
+
+    <!-- npm check -->
+    <g id="npm-check">
+      <rect x="435" y="160" width="330" height="70" rx="8" fill="#0a0a0a" stroke="#10b981" stroke-width="2"/>
+      <text x="450" y="185" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">npm available</text>
+      <text x="450" y="205" fill="#00d9ff" font-family="Fira Code, monospace" font-size="11">$ npm --version</text>
+      <text x="450" y="222" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Should show version number</text>
+    </g>
+
+    <!-- Internet check -->
+    <g id="internet-check">
+      <rect x="790" y="160" width="310" height="70" rx="8" fill="#0a0a0a" stroke="#10b981" stroke-width="2"/>
+      <text x="805" y="185" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="600">Internet connection</text>
+      <text x="805" y="205" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">For downloading & API calls</text>
+      <text x="805" y="222" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">Required for auth</text>
+    </g>
+  </g>
+
+  <!-- === Installation Steps === -->
+  <g id="installation">
+    <rect x="50" y="270" width="550" height="480" rx="12" fill="#1a1a1a" stroke="url(#grad-cyan-purple)" stroke-width="3" filter="url(#glow)"/>
+    <text x="325" y="305" text-anchor="middle" fill="#00d9ff" font-family="Inter, sans-serif" font-size="18" font-weight="700">🚀 Installation Steps</text>
+
+    <!-- Step 1 -->
+    <g id="install-1">
+      <circle cx="90" cy="345" r="18" fill="#10b981"/>
+      <text x="90" y="351" text-anchor="middle" fill="#0a0a0a" font-family="Inter, sans-serif" font-size="14" font-weight="700">1</text>
+      <text x="120" y="350" fill="#ffffff" font-family="Inter, sans-serif" font-size="13" font-weight="600">Install globally via npm</text>
+
+      <rect x="80" y="365" width="490" height="50" rx="6" fill="#0a0a0a" stroke="#333" stroke-width="1"/>
+      <text x="95" y="390" fill="#00d9ff" font-family="Fira Code, monospace" font-size="11">$ npm install -g @anthropic-ai/claude-code</text>
+      <text x="95" y="407" fill="#6b7280" font-family="Inter, sans-serif" font-size="9">Takes 10-30 seconds depending on connection</text>
+    </g>
+
+    <!-- Step 2 -->
+    <g id="install-2">
+      <circle cx="90" cy="445" r="18" fill="#a855f7"/>
+      <text x="90" y="451" text-anchor="middle" fill="#0a0a0a" font-family="Inter, sans-serif" font-size="14" font-weight="700">2</text>
+      <text x="120" y="450" fill="#ffffff" font-family="Inter, sans-serif" font-size="13" font-weight="600">Verify installation</text>
+
+      <rect x="80" y="465" width="490" height="50" rx="6" fill="#0a0a0a" stroke="#333" stroke-width="1"/>
+      <text x="95" y="490" fill="#00d9ff" font-family="Fira Code, monospace" font-size="11">$ claude --version</text>
+      <text x="95" y="507" fill="#6b7280" font-family="Inter, sans-serif" font-size="9">Should display Claude Code version number</text>
+    </g>
+
+    <!-- Step 3 -->
+    <g id="install-3">
+      <circle cx="90" cy="545" r="18" fill="#ec4899"/>
+      <text x="90" y="551" text-anchor="middle" fill="#0a0a0a" font-family="Inter, sans-serif" font-size="14" font-weight="700">3</text>
+      <text x="120" y="550" fill="#ffffff" font-family="Inter, sans-serif" font-size="13" font-weight="600">Authenticate with Anthropic</text>
+
+      <rect x="80" y="565" width="490" height="50" rx="6" fill="#0a0a0a" stroke="#333" stroke-width="1"/>
+      <text x="95" y="590" fill="#00d9ff" font-family="Fira Code, monospace" font-size="11">$ claude auth login</text>
+      <text x="95" y="607" fill="#6b7280" font-family="Inter, sans-serif" font-size="9">Opens browser for sign-in</text>
+    </g>
+
+    <!-- Step 4 -->
+    <g id="install-4">
+      <circle cx="90" cy="645" r="18" fill="#00d9ff"/>
+      <text x="90" y="651" text-anchor="middle" fill="#0a0a0a" font-family="Inter, sans-serif" font-size="14" font-weight="700">4</text>
+      <text x="120" y="650" fill="#ffffff" font-family="Inter, sans-serif" font-size="13" font-weight="600">Verify authentication</text>
+
+      <rect x="80" y="665" width="490" height="50" rx="6" fill="#0a0a0a" stroke="#333" stroke-width="1"/>
+      <text x="95" y="690" fill="#00d9ff" font-family="Fira Code, monospace" font-size="11">$ claude auth status</text>
+      <text x="95" y="707" fill="#6b7280" font-family="Inter, sans-serif" font-size="9">Should show "Authenticated as: your@email.com"</text>
+    </g>
+
+    <!-- Step 5 -->
+    <g id="install-5">
+      <circle cx="90" cy="745" r="18" fill="#10b981"/>
+      <text x="90" y="751" text-anchor="middle" fill="#0a0a0a" font-family="Inter, sans-serif" font-size="14" font-weight="700">5</text>
+      <text x="120" y="750" fill="#ffffff" font-family="Inter, sans-serif" font-size="13" font-weight="600">Test with first command</text>
+
+      <rect x="80" y="765" width="490" height="50" rx="6" fill="#0a0a0a" stroke="#333" stroke-width="1"/>
+      <text x="95" y="790" fill="#00d9ff" font-family="Fira Code, monospace" font-size="11">$ claude ask "hello world"</text>
+      <text x="95" y="807" fill="#10b981" font-family="Inter, sans-serif" font-size="9">✓ If Claude responds, you're all set!</text>
+    </g>
+  </g>
+
+  <!-- === Troubleshooting Section === -->
+  <g id="troubleshooting">
+    <rect x="620" y="270" width="530" height="480" rx="12" fill="#1a1a1a" stroke="#ef4444" stroke-width="2" filter="url(#shadow)"/>
+    <text x="885" y="305" text-anchor="middle" fill="#ef4444" font-family="Inter, sans-serif" font-size="18" font-weight="700">🔧 Troubleshooting</text>
+
+    <!-- Issue 1 -->
+    <g id="issue-1">
+      <rect x="650" y="330" width="470" height="75" rx="8" fill="#0a0a0a" stroke="#f59e0b" stroke-width="1"/>
+      <text x="665" y="355" fill="#f59e0b" font-family="Inter, sans-serif" font-size="12" font-weight="600">❌ "command not found: claude"</text>
+      <text x="665" y="375" fill="#ffffff" font-family="Inter, sans-serif" font-size="11">✓ Restart terminal</text>
+      <text x="665" y="392" fill="#ffffff" font-family="Inter, sans-serif" font-size="11">✓ Check npm global bin: <tspan fill="#00d9ff">npm config get prefix</tspan></text>
+    </g>
+
+    <!-- Issue 2 -->
+    <g id="issue-2">
+      <rect x="650" y="420" width="470" height="75" rx="8" fill="#0a0a0a" stroke="#f59e0b" stroke-width="1"/>
+      <text x="665" y="445" fill="#f59e0b" font-family="Inter, sans-serif" font-size="12" font-weight="600">❌ "EACCES: permission denied"</text>
+      <text x="665" y="465" fill="#ffffff" font-family="Inter, sans-serif" font-size="11">✓ Use sudo (macOS/Linux):</text>
+      <text x="665" y="482" fill="#00d9ff" font-family="Fira Code, monospace" font-size="10">$ sudo npm install -g @anthropic-ai/claude-code</text>
+    </g>
+
+    <!-- Issue 3 -->
+    <g id="issue-3">
+      <rect x="650" y="510" width="470" height="75" rx="8" fill="#0a0a0a" stroke="#f59e0b" stroke-width="1"/>
+      <text x="665" y="535" fill="#f59e0b" font-family="Inter, sans-serif" font-size="12" font-weight="600">❌ "Not authenticated" error</text>
+      <text x="665" y="555" fill="#ffffff" font-family="Inter, sans-serif" font-size="11">✓ Run auth login again</text>
+      <text x="665" y="572" fill="#ffffff" font-family="Inter, sans-serif" font-size="11">✓ Check browser popups are allowed</text>
+    </g>
+
+    <!-- Issue 4 -->
+    <g id="issue-4">
+      <rect x="650" y="600" width="470" height="75" rx="8" fill="#0a0a0a" stroke="#f59e0b" stroke-width="1"/>
+      <text x="665" y="625" fill="#f59e0b" font-family="Inter, sans-serif" font-size="12" font-weight="600">❌ API rate limit errors</text>
+      <text x="665" y="645" fill="#ffffff" font-family="Inter, sans-serif" font-size="11">✓ Wait a few minutes between requests</text>
+      <text x="665" y="662" fill="#ffffff" font-family="Inter, sans-serif" font-size="11">✓ Consider upgrading your Anthropic plan</text>
+    </g>
+
+    <!-- Issue 5 -->
+    <g id="issue-5">
+      <rect x="650" y="690" width="470" height="40" rx="8" fill="#0a0a0a" stroke="#f59e0b" stroke-width="1"/>
+      <text x="665" y="715" fill="#f59e0b" font-family="Inter, sans-serif" font-size="12" font-weight="600">Still stuck?</text>
+      <text x="665" y="732" fill="#00d9ff" font-family="Inter, sans-serif" font-size="11">→ https://docs.anthropic.com/en/docs/claude-code</text>
+    </g>
+  </g>
+
+  <!-- === Success Banner === -->
+  <g id="success">
+    <rect x="50" y="770" width="1100" height="60" rx="8" fill="#0a0a0a" stroke="url(#grad-cyan-purple)" stroke-width="2"/>
+    <text x="600" y="800" text-anchor="middle" fill="#10b981" font-family="Inter, sans-serif" font-size="14" font-weight="700">
+      ✅ Installation Complete! You're ready to code with AI.
+    </text>
+    <text x="600" y="820" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="11">
+      Try: <tspan fill="#00d9ff">claude ask "how do I create a React component?"</tspan>
+    </text>
+  </g>
+
+  <!-- === Quick Reference Footer === -->
+  <g id="footer">
+    <rect x="50" y="850" width="1100" height="30" rx="6" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+    <text x="600" y="870" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="10">
+      Config location: ~/.claude | Logs: ~/.claude/logs | Support: support@anthropic.com
+    </text>
+  </g>
+</svg>

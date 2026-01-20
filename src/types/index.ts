@@ -1,3 +1,9 @@
+// SVG Diagram types (re-exported from svg-utils.ts)
+export type {
+  SVGDiagram,
+  SVGMetadata,
+} from './svg-utils';
+
 // Core article types
 export interface WikiArticle {
   slug: string;
@@ -5,6 +11,7 @@ export interface WikiArticle {
   section: string;
   content: string;
   codeBlocks?: CodeBlock[];
+  visualAssets?: string[]; // SVG file references for diagrams
 }
 
 export interface CodeBlock {
