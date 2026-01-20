@@ -1,0 +1,264 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" role="img" aria-labelledby="svg-title svg-desc">
+  <title id="svg-title">Multi-Agent Workflow (OpenCode)</title>
+  <desc id="svg-desc">A flowchart showing the multi-agent workflow in OpenCode: User Request → Planner Agent → Coder Agent → Reviewer Agent → Tester Agent → Final Output</desc>
+
+  <!-- Definitions -->
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="cyan-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0891b2;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="purple-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="green-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="orange-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="pink-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#db2777;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glow filter -->
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Arrow marker -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#6b7280" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#0a0a0a" />
+
+  <!-- Title -->
+  <text x="700" y="50" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="32" fill="#ffffff">
+    🤖 Multi-Agent Workflow (OpenCode)
+  </text>
+
+  <!-- Subtitle -->
+  <text x="700" y="85" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" fill="#9ca3af">
+    Specialized AI agents collaborate to deliver high-quality code
+  </text>
+
+  <!-- User Request Box -->
+  <g transform="translate(550, 120)">
+    <rect width="300" height="80" rx="12" fill="#1f2937" stroke="#6b7280" stroke-width="2" />
+    <text x="150" y="35" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="18" fill="#ffffff">
+      👤 User Request
+    </text>
+    <text x="150" y="60" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#9ca3af">
+      "Build a REST API with auth"
+    </text>
+  </g>
+
+  <!-- Arrow down to Planner -->
+  <line x1="700" y1="200" x2="700" y2="240" stroke="#6b7280" stroke-width="3" marker-end="url(#arrowhead)" />
+
+  <!-- Planner Agent -->
+  <g transform="translate(450, 250)">
+    <rect width="500" height="130" rx="16" fill="url(#cyan-gradient)" stroke="#00d9ff" stroke-width="3" filter="url(#glow)" />
+
+    <!-- Icon -->
+    <circle cx="60" cy="65" r="30" fill="#00d9ff" fill-opacity="0.2" />
+    <text x="60" y="72" text-anchor="middle" font-family="Inter, sans-serif" font-size="24">📋</text>
+
+    <!-- Content -->
+    <text x="110" y="40" font-family="Inter, sans-serif" font-weight="700" font-size="20" fill="#ffffff">
+      Planner Agent
+    </text>
+    <text x="110" y="65" font-family="Inter, sans-serif" font-size="14" fill="#e0f2fe">
+      • Breaks down complex tasks
+    </text>
+    <text x="110" y="85" font-family="Inter, sans-serif" font-size="14" fill="#e0f2fe">
+      • Creates execution plan
+    </text>
+    <text x="110" y="105" font-family="Inter, sans-serif" font-size="14" fill="#e0f2fe">
+      • Identifies dependencies
+    </text>
+  </g>
+
+  <!-- Arrow down to Coder -->
+  <line x1="700" y1="380" x2="700" y2="420" stroke="#6b7280" stroke-width="3" marker-end="url(#arrowhead)" />
+
+  <!-- Coder Agent -->
+  <g transform="translate(450, 430)">
+    <rect width="500" height="130" rx="16" fill="url(#purple-gradient)" stroke="#a855f7" stroke-width="3" filter="url(#glow)" />
+
+    <!-- Icon -->
+    <circle cx="60" cy="65" r="30" fill="#a855f7" fill-opacity="0.2" />
+    <text x="60" y="72" text-anchor="middle" font-family="Inter, sans-serif" font-size="24">⌨️</text>
+
+    <!-- Content -->
+    <text x="110" y="40" font-family="Inter, sans-serif" font-weight="700" font-size="20" fill="#ffffff">
+      Coder Agent
+    </text>
+    <text x="110" y="65" font-family="Inter, sans-serif" font-size="14" fill="#f3e8ff">
+      • Generates implementation code
+    </text>
+    <text x="110" y="85" font-family="Inter, sans-serif" font-size="14" fill="#f3e8ff">
+      • Follows best practices
+    </text>
+    <text x="110" y="105" font-family="Inter, sans-serif" font-size="14" fill="#f3e8ff">
+      • Writes clean, maintainable code
+    </text>
+  </g>
+
+  <!-- Arrow down to Reviewer -->
+  <line x1="700" y1="560" x2="700" y2="600" stroke="#6b7280" stroke-width="3" marker-end="url(#arrowhead)" />
+
+  <!-- Reviewer Agent -->
+  <g transform="translate(450, 610)">
+    <rect width="500" height="130" rx="16" fill="url(#orange-gradient)" stroke="#f59e0b" stroke-width="3" filter="url(#glow)" />
+
+    <!-- Icon -->
+    <circle cx="60" cy="65" r="30" fill="#f59e0b" fill-opacity="0.2" />
+    <text x="60" y="72" text-anchor="middle" font-family="Inter, sans-serif" font-size="24">👁️</text>
+
+    <!-- Content -->
+    <text x="110" y="40" font-family="Inter, sans-serif" font-weight="700" font-size="20" fill="#ffffff">
+      Reviewer Agent
+    </text>
+    <text x="110" y="65" font-family="Inter, sans-serif" font-size="14" fill="#fef3c7">
+      • Analyzes code quality
+    </text>
+    <text x="110" y="85" font-family="Inter, sans-serif" font-size="14" fill="#fef3c7">
+      • Checks for bugs & issues
+    </text>
+    <text x="110" y="105" font-family="Inter, sans-serif" font-size="14" fill="#fef3c7">
+      • Suggests improvements
+    </text>
+  </g>
+
+  <!-- Arrow down to Tester -->
+  <line x1="700" y1="740" x2="700" y2="780" stroke="#6b7280" stroke-width="3" marker-end="url(#arrowhead)" />
+
+  <!-- Tester Agent -->
+  <g transform="translate(450, 790)">
+    <rect width="500" height="130" rx="16" fill="url(#green-gradient)" stroke="#10b981" stroke-width="3" filter="url(#glow)" />
+
+    <!-- Icon -->
+    <circle cx="60" cy="65" r="30" fill="#10b981" fill-opacity="0.2" />
+    <text x="60" y="72" text-anchor="middle" font-family="Inter, sans-serif" font-size="24">🧪</text>
+
+    <!-- Content -->
+    <text x="110" y="40" font-family="Inter, sans-serif" font-weight="700" font-size="20" fill="#ffffff">
+      Tester Agent
+    </text>
+    <text x="110" y="65" font-family="Inter, sans-serif" font-size="14" fill="#d1fae5">
+      • Generates test cases
+    </text>
+    <text x="110" y="85" font-family="Inter, sans-serif" font-size="14" fill="#d1fae5">
+      • Validates functionality
+    </text>
+    <text x="110" y="105" font-family="Inter, sans-serif" font-size="14" fill="#d1fae5">
+      • Ensures edge cases covered
+    </text>
+  </g>
+
+  <!-- Arrow down to Final Output -->
+  <line x1="700" y1="920" x2="700" y2="950" stroke="#10b981" stroke-width="4" marker-end="url(#arrowhead)" />
+
+  <!-- Final Output Banner -->
+  <g transform="translate(350, 950)">
+    <rect width="700" height="45" rx="12" fill="url(#pink-gradient)" stroke="#ec4899" stroke-width="2" filter="url(#glow)" />
+    <text x="350" y="30" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="20" fill="#ffffff">
+      ✅ Final Output: Production-Ready Code
+    </text>
+  </g>
+
+  <!-- Side notes -->
+  <g transform="translate(50, 300)">
+    <text x="0" y="0" font-family="Inter, sans-serif" font-size="13" fill="#00d9ff" font-weight="600">
+      🎯 Task Breakdown
+    </text>
+    <text x="0" y="20" font-family="Inter, sans-serif" font-size="11" fill="#9ca3af">
+      Creates step-by-step
+    </text>
+    <text x="0" y="35" font-family="Inter, sans-serif" font-size="11" fill="#9ca3af">
+      execution plan
+    </text>
+  </g>
+
+  <g transform="translate(50, 480)">
+    <text x="0" y="0" font-family="Inter, sans-serif" font-size="13" fill="#a855f7" font-weight="600">
+      💻 Implementation
+    </text>
+    <text x="0" y="20" font-family="Inter, sans-serif" font-size="11" fill="#9ca3af">
+      Writes actual code
+    </text>
+    <text x="0" y="35" font-family="Inter, sans-serif" font-size="11" fill="#9ca3af">
+      following standards
+    </text>
+  </g>
+
+  <g transform="translate(50, 660)">
+    <text x="0" y="0" font-family="Inter, sans-serif" font-size="13" fill="#f59e0b" font-weight="600">
+      🔍 Quality Check
+    </text>
+    <text x="0" y="20" font-family="Inter, sans-serif" font-size="11" fill="#9ca3af">
+      Reviews for bugs
+    </text>
+    <text x="0" y="35" font-family="Inter, sans-serif" font-size="11" fill="#9ca3af">
+      and improvements
+    </text>
+  </g>
+
+  <g transform="translate(50, 840)">
+    <text x="0" y="0" font-family="Inter, sans-serif" font-size="13" fill="#10b981" font-weight="600">
+      ✅ Validation
+    </text>
+    <text x="0" y="20" font-family="Inter, sans-serif" font-size="11" fill="#9ca3af">
+      Tests ensure
+    </text>
+    <text x="0" y="35" font-family="Inter, sans-serif" font-size="11" fill="#9ca3af">
+      functionality works
+    </text>
+  </g>
+
+  <!-- Right side - Benefits -->
+  <g transform="translate(1000, 300)">
+    <rect x="0" y="0" width="350" height="200" rx="12" fill="#1f2937" stroke="#374151" stroke-width="2" />
+    <text x="175" y="30" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" fill="#ffffff" font-weight="700">
+      🎯 Key Benefits
+    </text>
+    <text x="20" y="65" font-family="Inter, sans-serif" font-size="13" fill="#10b981">✓</text>
+    <text x="40" y="65" font-family="Inter, sans-serif" font-size="12" fill="#e5e7eb">Specialized expertise per task</text>
+    <text x="20" y="90" font-family="Inter, sans-serif" font-size="13" fill="#10b981">✓</text>
+    <text x="40" y="90" font-family="Inter, sans-serif" font-size="12" fill="#e5e7eb">Multiple quality checks</text>
+    <text x="20" y="115" font-family="Inter, sans-serif" font-size="13" fill="#10b981">✓</text>
+    <text x="40" y="115" font-family="Inter, sans-serif" font-size="12" fill="#e5e7eb">Reduces human oversight</text>
+    <text x="20" y="140" font-family="Inter, sans-serif" font-size="13" fill="#10b981">✓</text>
+    <text x="40" y="140" font-family="Inter, sans-serif" font-size="12" fill="#e5e7eb">Faster iteration cycles</text>
+    <text x="20" y="165" font-family="Inter, sans-serif" font-size="13" fill="#10b981">✓</text>
+    <text x="40" y="165" font-family="Inter, sans-serif" font-size="12" fill="#e5e7eb">Production-ready output</text>
+  </g>
+
+  <!-- Time estimate -->
+  <g transform="translate(1000, 530)">
+    <rect x="0" y="0" width="350" height="80" rx="12" fill="#1f2937" stroke="#374151" stroke-width="2" />
+    <text x="175" y="30" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#ffffff" font-weight="600">
+      ⏱️ Typical Duration
+    </text>
+    <text x="175" y="55" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#00d9ff" font-weight="700">
+      2-5 minutes for complex tasks
+    </text>
+  </g>
+</svg>

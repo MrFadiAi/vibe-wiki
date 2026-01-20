@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 600" role="img" aria-labelledby="svg-title svg-desc">
+  <title id="svg-title">Traditional Coding Workflow</title>
+  <desc id="svg-desc">A flowchart showing the traditional coding workflow: Idea → Research Docs → Write Code Manually → Debug → Deploy, with time indicators showing hours for each step</desc>
+
+  <!-- Definitions -->
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="gray-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6b7280;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4b5563;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="dark-gray-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#374151;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1f2937;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glow filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#0a0a0a" />
+
+  <!-- Title -->
+  <text x="700" y="50" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="32" fill="#ffffff">
+    Traditional Coding Workflow
+  </text>
+
+  <!-- Main Flow Boxes -->
+  <!-- Idea Box -->
+  <g transform="translate(80, 150)">
+    <rect width="180" height="100" rx="12" fill="url(#dark-gray-gradient)" stroke="#6b7280" stroke-width="2" />
+    <text x="90" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="18" fill="#ffffff">💡 Idea</text>
+    <text x="90" y="70" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#9ca3af">Your concept</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <g transform="translate(260, 200)">
+    <line x1="0" y1="0" x2="80" y2="0" stroke="#6b7280" stroke-width="3" />
+    <polygon points="80,-6 95,0 80,6" fill="#6b7280" />
+  </g>
+
+  <!-- Research Docs Box -->
+  <g transform="translate(360, 150)">
+    <rect width="220" height="100" rx="12" fill="url(#gray-gradient)" stroke="#6b7280" stroke-width="2" filter="url(#glow)" />
+    <text x="110" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="18" fill="#ffffff">📚 Research Docs</text>
+    <text x="110" y="70" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#e5e7eb">Google, StackOverflow</text>
+  </g>
+
+  <!-- Time Label 1 -->
+  <text x="470" y="280" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#f59e0b" font-weight="600">
+    ⏱️ 2-4 hours
+  </text>
+  <text x="470" y="300" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#9ca3af">
+    Manual Search
+  </text>
+  <line x1="470" y1="250" x2="470" y2="270" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5,5" />
+
+  <!-- Arrow 2 -->
+  <g transform="translate(580, 200)">
+    <line x1="0" y1="0" x2="80" y2="0" stroke="#6b7280" stroke-width="3" />
+    <polygon points="80,-6 95,0 80,6" fill="#6b7280" />
+  </g>
+
+  <!-- Write Code Box -->
+  <g transform="translate(680, 150)">
+    <rect width="220" height="100" rx="12" fill="url(#gray-gradient)" stroke="#6b7280" stroke-width="2" filter="url(#glow)" />
+    <text x="110" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="18" fill="#ffffff">⌨️ Write Code</text>
+    <text x="110" y="70" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#e5e7eb">Manual Implementation</text>
+  </g>
+
+  <!-- Time Label 2 -->
+  <text x="790" y="280" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#f59e0b" font-weight="600">
+    ⏱️ 4-8 hours
+  </text>
+  <text x="790" y="300" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#9ca3af">
+    Manual Typing
+  </text>
+  <line x1="790" y1="250" x2="790" y2="270" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5,5" />
+
+  <!-- Arrow 3 -->
+  <g transform="translate(900, 200)">
+    <line x1="0" y1="0" x2="80" y2="0" stroke="#6b7280" stroke-width="3" />
+    <polygon points="80,-6 95,0 80,6" fill="#6b7280" />
+  </g>
+
+  <!-- Debug Box -->
+  <g transform="translate(1000, 150)">
+    <rect width="220" height="100" rx="12" fill="url(#gray-gradient)" stroke="#6b7280" stroke-width="2" filter="url(#glow)" />
+    <text x="1110" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="18" fill="#ffffff">🐛 Debug</text>
+    <text x="1110" y="70" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#e5e7eb">Fix errors &amp; issues</text>
+  </g>
+
+  <!-- Time Label 3 -->
+  <text x="1110" y="280" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#f59e0b" font-weight="600">
+    ⏱️ 2-6 hours
+  </text>
+  <text x="1110" y="300" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#9ca3af">
+    Manual Fixing
+  </text>
+  <line x1="1110" y1="250" x2="1110" y2="270" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5,5" />
+
+  <!-- Arrow 4 -->
+  <g transform="translate(1220, 200)">
+    <line x1="0" y1="0" x2="60" y2="0" stroke="#10b981" stroke-width="3" />
+    <polygon points="60,-6 75,0 60,6" fill="#10b981" />
+  </g>
+
+  <!-- Deploy Box -->
+  <g transform="translate(1300, 150)">
+    <rect width="80" height="100" rx="12" fill="#10b981" stroke="#059669" stroke-width="2" filter="url(#glow)" />
+    <text x="1340" y="55" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="20" fill="#ffffff" transform="rotate(-90, 1340, 55)">DEPLOY</text>
+  </g>
+
+  <!-- Total Time Banner -->
+  <g transform="translate(300, 400)">
+    <rect width="800" height="80" rx="12" fill="#1f2937" stroke="#374151" stroke-width="2" />
+    <text x="400" y="30" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="18" fill="#ffffff">
+      Total Time: <tspan fill="#f59e0b" font-weight="700">8-18 hours</tspan>
+    </text>
+    <text x="400" y="55" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" fill="#9ca3af">
+      Most time spent on research, coding, and debugging manually
+    </text>
+  </g>
+
+  <!-- Pain Points Section -->
+  <g transform="translate(200, 520)">
+    <text x="0" y="0" font-family="Inter, sans-serif" font-size="14" fill="#ef4444" font-weight="600">
+      ❌ Slow research process
+    </text>
+    <text x="300" y="0" font-family="Inter, sans-serif" font-size="14" fill="#ef4444" font-weight="600">
+      ❌ Error-prone manual coding
+    </text>
+    <text x="650" y="0" font-family="Inter, sans-serif" font-size="14" fill="#ef4444" font-weight="600">
+      ❌ Frustrating debugging
+    </text>
+  </g>
+</svg>
