@@ -2852,3 +2852,122 @@ All implementation tasks are complete. Remaining tasks require:
 - Priority prop can be used for above-the-fold images that should load immediately
 - Responsive sizes attribute ensures optimal image loading for different screen sizes
 
+
+## 2026-01-20: Future Enhancement - Interactive CLI Playground
+
+### Completed Task
+**Section 12.2, Future Enhancements**: Interactive CLI playground (browser-based terminal)
+
+### What Was Done
+Implemented a comprehensive browser-based CLI playground component that simulates four popular AI coding CLI tools: Claude CLI, GitHub Copilot CLI, OpenCode CLI, and Bash terminal.
+
+### Files Created
+1. **`src/components/wiki/CLIPlayground.tsx`** (796 lines)
+   - Main component with full terminal simulation
+   - Support for 4 CLI tools with 28+ pre-configured commands
+   - Keyboard shortcuts: Enter (execute), Tab (autocomplete), Arrow Up/Down (history), Ctrl+C (clear input), Ctrl+L (clear terminal)
+   - Command history navigation
+   - Quick reference sidebar
+   - Maximize/minimize functionality
+   - Copy output to clipboard
+
+2. **`src/components/wiki/CLIPlayground.test.tsx`** (680+ lines)
+   - 100+ test cases covering all functionality
+   - Tests for all 4 CLI tool types
+   - Command execution tests
+   - Keyboard shortcut tests
+   - UI control tests
+   - Autocomplete tests
+   - Special command tests (clear, history, help)
+
+### Implementation Details
+
+**Type Exports:**
+- `CLITool`: Union type for "claude" | "copilot" | "opencode" | "bash"
+- `CLICommand`: Command definition with description, category, response/responseGenerator
+- `CLIPlaygroundConfig`: Component configuration interface
+- `TerminalHistory`: History entry structure
+- `TerminalState`: Complete terminal state interface
+
+**Supported Commands:**
+
+Claude CLI (10 commands):
+- claude ask, claude analyze, claude generate, claude refactor
+- claude debug, claude scan, claude review, claude chat
+- claude config set, claude --help
+
+Copilot CLI (4 commands):
+- gh copilot suggest, gh copilot explain
+- gh copilot suggest -s, gh copilot --help
+
+OpenCode CLI (6 commands):
+- opencode chat, opencode project create, opencode agent
+- opencode refactor, opencode config, opencode --help
+
+Bash Terminal (8 commands):
+- ls, pwd, cat, mkdir, echo, clear, history, help
+
+**Features:**
+- Simulated command execution with dynamic responses via responseGenerator functions
+- Command history navigation (arrow up/down through previous commands)
+- Tab autocomplete with multiple match suggestions
+- Tool-specific color coding (purple for Claude, cyan for Copilot, orange for OpenCode, zinc for Bash)
+- Custom welcome messages for each tool
+- Special commands: clear (clears terminal), history (shows command history)
+- Quick reference sidebar showing all available commands
+- Maximize/minimize toggle for immersive terminal experience
+- Copy all output to clipboard functionality
+
+**Preset Components:**
+- `ClaudeCLIPlayground()`: Pre-configured Claude CLI playground
+- `CopilotCLIPlayground()`: Pre-configured Copilot CLI playground
+- `OpenCodeCLIPlayground()`: Pre-configured OpenCode CLI playground
+- `BashTerminal()`: Pre-configured Bash terminal
+
+**Design Patterns:**
+- Client-side "use client" directive for React hooks
+- Controlled textarea input with keyboard event handling
+- State management with useState for all terminal state
+- useEffect for auto-scrolling to bottom of output
+- React.useRef for DOM manipulation (input focus, scroll management)
+- Response generator pattern for dynamic command output based on arguments
+
+### Test Coverage
+100+ test cases covering:
+- Component rendering for all 4 tool types
+- Custom title, welcome message, prompt, and commands props
+- Preset component exports
+- Command execution with static and dynamic responses
+- Special commands (clear, history, help)
+- Keyboard shortcuts (Enter, Arrow Up/Down, Tab, Ctrl+C, Ctrl+L)
+- UI controls (toggle quick ref, clear terminal, copy output, maximize/minimize, close)
+- Quick reference sidebar functionality
+- Autocomplete with single and multiple matches
+- Command history navigation
+- Empty command handling
+- Multi-word input handling
+
+### PRD Update
+Task "Interactive CLI playground (browser-based terminal)" marked complete in PRD.md Section 12.2.
+
+### Files Modified
+- `PRD.md`: Marked Section 12.2 "Interactive CLI playground" task as complete
+
+### Next Steps
+The CLI playground is ready for use. Future enhancements could include:
+- More CLI tools (Cursor, Windsurf, etc.)
+- Persistent command history across sessions
+- Export terminal session as text/markdown
+- Custom command registration via props
+- Real API integration with actual CLI tools
+- Multi-line command support
+- Command output syntax highlighting
+
+### Notes
+- Component is fully responsive with max-height prop support
+- Terminal automatically scrolls to bottom when new output is added
+- Focus management: Input auto-focuses on mount and when clicking terminal output
+- Browser-only execution (no backend required)
+- All commands are simulated for educational purposes
+- Follows existing project patterns (similar to InteractiveCodeBlock)
+- Uses project's design system (tailwind-merge, custom Button component, lucide-react icons)

@@ -1216,7 +1216,7 @@ interface SVGDiagramProps {
 
 ### 12.2 Future Enhancements (Post-MVP)
 
-- [ ] Interactive CLI playground (browser-based terminal)
+- [x] Interactive CLI playground (browser-based terminal)
 - [ ] AI chatbot for navigating the wiki
 - [ ] Video tutorials for each learning path
 - [ ] Live coding sessions (weekly)
