@@ -1046,7 +1046,7 @@ Day 6-7: Master Advanced Patterns
 - [x] Write Copilot CLI guide
 - [x] Write OpenCode guide
 - [x] Create 25 CLI-specific SVGs
-- [ ] Write brief guides for 10 other tools
+- [x] Write brief guides for 10 other tools
 
 **Week 3: Learning Paths & Comparison**
 - [ ] Write all 4 learning paths

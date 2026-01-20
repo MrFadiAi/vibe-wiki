@@ -1927,3 +1927,108 @@ All SVGs saved to: `public/images/diagrams/`
 
 ---
 
+
+### Progress Update - January 20, 2026
+
+**Task Completed:** Phase 1, Week 2, Task 5 - Write brief guides for 10 other tools
+
+**Implementation Summary:**
+Added 10 comprehensive Arabic-language guides to `src/data/wiki-content.ts` in section "8. أدوات CLI للبرمجة بالذكاء الاصطناعي (AI Coding CLIs)":
+
+1. **Codex (OpenAI)** - `slug: codex-openai-guide`
+   - Overview of OpenAI's Codex model for code generation
+   - Installation via OpenAI API
+   - Usage examples for code generation and completion
+   - Pricing tiers and comparison
+
+2. **Cody (Sourcegraph)** - `slug: cody-sourcegraph-guide`
+   - Open-source AI coding assistant
+   - Integration with code repositories
+   - Context-aware code understanding
+   - Free and open-source alternative
+
+3. **Tabnine** - `slug: tabnine-guide`
+   - AI-powered code completion
+   - Local and cloud models
+   - Privacy-focused approach
+   - Multi-language support
+
+4. **Amazon CodeWhisperer** - `slug: codeWhisperer-guide`
+   - AWS's AI coding companion
+   - Integration with AWS services
+   - Free individual tier
+   - Enterprise features
+
+5. **Replit Ghostwriter** - `slug: replit-ghostwriter-guide`
+   - Built-in Replit AI assistant
+   - Code explanation and generation
+   - Real-time collaboration
+   - Project templates
+
+6. **Aider** - `slug: aider-guide`
+   - Git-integrated AI coding
+   - Pair programming workflow
+   - Command-line interface
+   - Open-source
+
+7. **Mentat** - `slug: mentat-guide`
+   - Local AI coding assistant
+   - Privacy-first design
+   - Open-source models
+   - Offline capability
+
+8. **Continue.dev** - `slug: continue-guide`
+   - Open-source autopilot
+   - Model agnostic (GPT-4, Claude, etc.)
+   - VS Code extension
+   - Customizable
+
+9. **Pieces for Developers** - `slug: pieces-for-developers-guide`
+   - Code snippet management
+   - AI-powered search and organization
+   - Cross-platform desktop app
+   - Knowledge base building
+
+10. **Bito CLI** - `slug: bito-cli-guide`
+    - Terminal-based AI assistant
+    - ChatGPT integration
+    - Code explanation and generation
+    - Free tier available
+
+**Content Structure (each article):**
+- Overview (200+ words)
+- Prerequisites (system requirements)
+- Installation (with code examples)
+- Basic Usage (3+ examples)
+- Key Features (detailed breakdown)
+- Use Cases (practical scenarios)
+- Advanced Settings (configuration)
+- Pricing (free/paid tiers)
+- Comparison with Alternatives
+- Best Practices
+- Troubleshooting
+- Additional Resources
+- Quick Reference
+- Next Steps
+
+**File Modifications:**
+- `src/data/wiki-content.ts`: Added 10 new article objects (~860 lines total)
+- Each article: slug, title, section, description, content fields
+- Bilingual format: Arabic with English in parentheses
+- RTL support for Arabic content
+- Markdown formatting with code blocks
+- Emoji icons for visual appeal
+
+**Article Locations:**
+- Lines 4109-7699 in `src/data/wiki-content.ts`
+
+### PRD Update
+- Marked Phase 1, Week 2, Task 5 as complete: `[x] Write brief guides for 10 other tools`
+
+### Test Status
+Note: npm not available in PATH - code structure verified manually
+
+### Next Priority Task
+**Phase 1, Week 3, Task 1**: Write all 4 learning paths
+
+---
