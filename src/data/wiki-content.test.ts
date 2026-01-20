@@ -1297,4 +1297,162 @@ describe('wiki-content Article Validation', () => {
       expect(article.content).toMatch(/\[.*\]\(\/wiki\/.*\)/);
     });
   });
+
+  describe('cursor-vs-windsurf article', () => {
+    let article: WikiArticle;
+
+    beforeAll(() => {
+      article = findArticle('cursor-vs-windsurf');
+    });
+
+    it('should exist in wiki-content', () => {
+      expect(article).toBeDefined();
+      expect(article).not.toBeNull();
+    });
+
+    it('should have required fields', () => {
+      expect(article.slug).toBe('cursor-vs-windsurf');
+      expect(article.title).toContain('Cursor');
+      expect(article.title).toContain('Windsurf');
+      expect(article.section).toBeDefined();
+      expect(article.content).toBeDefined();
+    });
+
+    it('should pass article validation', () => {
+      const validationResult = validateArticle(article);
+      expect(validationResult).toHaveLength(0);
+    });
+
+    it('should have diagrams array with all 7 comparison diagrams', () => {
+      expect(article.diagrams).toBeDefined();
+      expect(article.diagrams.length).toBe(7);
+    });
+
+    it('should include all expected diagram filenames', () => {
+      const expectedDiagrams = [
+        'comparison-use-case-matrix.svg',
+        'comparison-pricing-visual.svg',
+        'comparison-ux-grid.svg',
+        'comparison-radar-chart.svg',
+        'comparison-quality-barchart.svg',
+        'comparison-feature-matrix.svg',
+        'comparison-decision-tree.svg',
+      ];
+      const actualFilenames = article.diagrams.map(d => d.filename);
+      expectedDiagrams.forEach(filename => {
+        expect(actualFilenames).toContain(filename);
+      });
+    });
+
+    it('should have diagrams with SVG format', () => {
+      article.diagrams.forEach(diagram => {
+        expect(diagram.filename).toMatch(/\.svg$/);
+      });
+    });
+
+    it('should have all required diagram metadata fields', () => {
+      article.diagrams.forEach(diagram => {
+        expect(diagram.filename).toBeDefined();
+        expect(diagram.alt).toBeDefined();
+        expect(diagram.caption).toBeDefined();
+        expect(diagram.position).toBeDefined();
+        expect(typeof diagram.priority).toBe('boolean');
+      });
+    });
+
+    it('should have Arabic alt text for all diagrams', () => {
+      const arabicPattern = /[\u0600-\u06FF]/;
+      article.diagrams.forEach(diagram => {
+        expect(diagram.alt).toMatch(arabicPattern);
+      });
+    });
+
+    it('should have Arabic captions for all diagrams', () => {
+      const arabicPattern = /[\u0600-\u06FF]/;
+      article.diagrams.forEach(diagram => {
+        expect(diagram.caption).toMatch(arabicPattern);
+      });
+    });
+
+    it('should have section headings for all diagrams', () => {
+      article.diagrams.forEach(diagram => {
+        expect(diagram.sectionHeading).toBeDefined();
+        expect(diagram.sectionHeading.length).toBeGreaterThan(0);
+      });
+    });
+
+    it('should use figure number format (الشكل X)', () => {
+      article.diagrams.forEach(diagram => {
+        expect(diagram.caption).toMatch(/الشكل \d/);
+      });
+    });
+
+    it('should have exactly 4 priority diagrams', () => {
+      const priorityDiagrams = article.diagrams.filter(d => d.priority);
+      expect(priorityDiagrams.length).toBe(4);
+    });
+
+    it('should have priority diagrams: use-case-matrix, pricing-visual, feature-matrix, decision-tree', () => {
+      const priorityDiagrams = article.diagrams.filter(d => d.priority);
+      const priorityFilenames = priorityDiagrams.map(d => d.filename);
+      expect(priorityFilenames).toContain('comparison-use-case-matrix.svg');
+      expect(priorityFilenames).toContain('comparison-pricing-visual.svg');
+      expect(priorityFilenames).toContain('comparison-feature-matrix.svg');
+      expect(priorityFilenames).toContain('comparison-decision-tree.svg');
+    });
+
+    it('should have non-priority diagrams: ux-grid, radar-chart, quality-barchart', () => {
+      const nonPriorityDiagrams = article.diagrams.filter(d => !d.priority);
+      const nonPriorityFilenames = nonPriorityDiagrams.map(d => d.filename);
+      expect(nonPriorityFilenames).toContain('comparison-ux-grid.svg');
+      expect(nonPriorityFilenames).toContain('comparison-radar-chart.svg');
+      expect(nonPriorityFilenames).toContain('comparison-quality-barchart.svg');
+    });
+
+    it('should position use-case-matrix diagram at "متى تختار Cursor؟"', () => {
+      const diagram = article.diagrams.find(d => d.filename === 'comparison-use-case-matrix.svg');
+      expect(diagram).toBeDefined();
+      expect(diagram.sectionHeading).toBe('متى تختار Cursor؟');
+      expect(diagram.position).toBe('inline');
+    });
+
+    it('should position pricing-visual diagram at "التسعير والخطط"', () => {
+      const diagram = article.diagrams.find(d => d.filename === 'comparison-pricing-visual.svg');
+      expect(diagram).toBeDefined();
+      expect(diagram.sectionHeading).toBe('التسعير والخطط');
+      expect(diagram.position).toBe('after-section');
+    });
+
+    it('should position decision-tree diagram at "الخلاصة: أيهما الأفضل؟"', () => {
+      const diagram = article.diagrams.find(d => d.filename === 'comparison-decision-tree.svg');
+      expect(diagram).toBeDefined();
+      expect(diagram.sectionHeading).toBe('الخلاصة: أيهما الأفضل؟');
+      expect(diagram.position).toBe('after-section');
+    });
+
+    it('should have unique diagram IDs', () => {
+      const ids = article.diagrams.map(d => d.id);
+      const uniqueIds = new Set(ids);
+      expect(uniqueIds.size).toBe(ids.length);
+    });
+
+    it('should use cursor-vs-windsurf prefix for diagram IDs', () => {
+      article.diagrams.forEach(diagram => {
+        expect(diagram.id).toMatch(/^cursor-vs-windsurf-/);
+      });
+    });
+
+    it('should contain Arabic content', () => {
+      const arabicPattern = /[\u0600-\u06FF]/;
+      expect(article.content).toMatch(arabicPattern);
+    });
+
+    it('should contain comparison terminology', () => {
+      expect(article.content.toLowerCase()).toMatch(/cursor|windsurf|comparison|مقارنة|vs/);
+    });
+
+    it('should link to related articles', () => {
+      expect(article.content).toMatch(/\[.*\]\(\/wiki\/.*\)/);
+    });
+  });
 });
