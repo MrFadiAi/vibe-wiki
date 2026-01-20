@@ -13271,6 +13271,1699 @@ claude generate --help
 - 💡 [دليل الميزات المتقدمة](https://docs.anthropic.com/claude/docs/advanced-features)
         `,
       },
+      {
+        slug: 'copilot-cli-overview',
+        title: 'نظرة عامة على GitHub Copilot CLI (GitHub Copilot CLI Overview)',
+        section: '9. أدوات CLI المتقدمة (Advanced CLI Tools)',
+        content: `# نظرة عامة على GitHub Copilot CLI (GitHub Copilot CLI Overview)
+
+## مقدمة
+
+**GitHub Copilot CLI** هو امتداد قوي لأداة GitHub CLI يضيف قدرات الذكاء الاصطناعي مباشرة إلى سطر الأوامر. يمكّنك من كتابة أوامر الطرفية باللغة الطبيعية، فهم الأوامر المعقدة، وإنشاء نصوص برمجية—all من خلال terminal.
+
+### لماذا Copilot CLI؟
+
+🎯 **اقتراحات ذكية للأوامر** - اكتب ما تريد بالعربية وسيحولها لأمر terminal
+💡 **شرح الأوامر المعقدة** - افهم بالضبط ما يفعله كل أمر
+⚡ **إنشاء نصوص برمجية** - تولّد scripts جاهزة للاستخدام
+🔍 **تصحيح أخطاء Shell** - يحل مشاكل أوامر terminal بذكاء
+
+---
+
+## ما هو Copilot CLI؟
+
+Copilot CLI هو امتداد رسمي من GitHub يعتمد على:
+- **GitHub CLI (gh)** - الأداة الأساسية
+- **GitHub Copilot** - محرك الذكاء الاصطناعي (GPT-4)
+- **OpenAI API** - البنية التحتية للذكاء الاصطناعي
+
+### الفلسفة التصميمية
+
+\`\`\`
+┌─────────────────────────────────────┐
+│   المستخدم (You)                   │
+│   "احذف الملفات المؤقتة أكبر من  │
+│    100 ميغا بايت"                 │
+└─────────────┬───────────────────────┘
+              │
+              ▼
+┌─────────────────────────────────────┐
+│   Copilot CLI (الأداة)             │
+│   تفهم اللغة الطبيعية              │
+└─────────────┬───────────────────────┘
+              │
+              ▼
+┌─────────────────────────────────────┐
+│   Terminal Command                  │
+│   find . -type f -name "*.tmp"      │
+│   -size +100M -delete               │
+└─────────────────────────────────────┘
+\`\`\`
+
+---
+
+## الميزات الأساسية
+
+### 1. اقتراح الأوامر (gh copilot suggest)
+
+اكتب باللغة الطبيعية واحصل على أمر terminal:
+
+\`\`\`bash
+# طلب بالعربية
+gh copilot suggest "list all files modified today"
+
+# الاقتراحات:
+1. find . -type f -mtime -1 -ls
+2. find . -type f -newermt "today" -ls
+3. ls -lt | head -20
+\`\`\`
+
+### 2. شرح الأوامر (gh copilot explain)
+
+افهم بالضبط ما يفعله أي أمر:
+
+\`\`\`bash
+gh copilot explain "docker run -d -p 80:80 --name web nginx"
+
+# الشرح:
+# -d: Run container in detached mode (background)
+# -p 80:80: Map host port 80 to container port 80
+# --name web: Assign name "web" to container
+# nginx: Use nginx image
+# Result: Start nginx web server accessible on port 80
+\`\`\`
+
+### 3. توليد النصوص (Script Generation)
+
+أنشئ scripts كاملة:
+
+\`\`\`bash
+gh copilot suggest "create a backup script that:
+1. Compresses files in /data
+2. Saves to /backups with date
+3. Deletes backups older than 7 days"
+
+# الناتج: backup.sh script كامل
+\`\`\`
+
+### 4. تصحيح الأخطاء (Shell Error Debugging)
+
+احصل على حلول للأخطاء:
+
+\`\`\`bash
+# خطأ في terminal
+Permission denied (publickey)
+
+gh copilot explain "how to fix SSH permission denied"
+
+# الحل: إعدادات SSH الصحيحة
+\`\`\`
+
+---
+
+## حالات الاستخدام
+
+### 1. إدارة النظام (System Administration)
+
+\`\`\`bash
+# البحث عن ملفات كبيرة
+gh copilot suggest "find files larger than 500MB in /var/log"
+
+# تنظيف الملفات المؤقتة
+gh copilot suggest "clean temporary files older than 30 days"
+
+# مراقبة الموارد
+gh copilot suggest "monitor CPU usage every 5 seconds"
+\`\`\`
+
+### 2. Git Workflows
+
+\`\`\`bash
+# التراجع عن آخر commit
+gh copilot suggest "undo last commit but keep changes"
+
+# دمج الفروع بأمان
+gh copilot suggest "merge feature branch with conflict resolution"
+
+# تنظيف الفروع القديمة
+gh copilot suggest "delete merged branches"
+\`\`\`
+
+### 3. DevOps Tasks
+
+\`\`\`bash
+# نشر Docker
+gh copilot suggest "deploy docker container with environment variables"
+
+# إدارة Kubernetes
+gh copilot explain "kubectl rollout status deployment/nginx"
+
+# CI/CD pipelines
+gh copilot suggest "create GitHub Actions workflow for tests"
+\`\`\`
+
+---
+
+## المميزات الرئيسية
+
+| الميزة | الوصف | مثال |
+|--------|-------|------|
+| **دعم العربية** | فهم اللغة العربية | "احذف الملفات الكبيرة" |
+| **اقتراحات متعددة** | عدة خيارات للأمر | 1-3 اقتراحات لكل طلب |
+| **تعلم السياق** | يفهم سياق مشروعك | اقتراحات مخصصة |
+| **تكامل Git** | يعرف مستودعك | أوامر git ذكية |
+| **آمن** | لا يشارك بيانات حساسة | تصفية تلقائية |
+| **سريع** | استجابة فورية | <1 ثانية |
+
+---
+
+## المقارنة مع البدائل
+
+| الميزة | Copilot CLI | Claude CLI | OpenCode |
+|--------|-------------|------------|----------|
+| **اقتراح أوامر terminal** | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐ |
+| **شرح الأوامر** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐ |
+| **تكامل GitHub** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐ |
+| **سهولة الاستخدام** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ |
+| **مجاني** | ⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+
+---
+
+## البدء السريع
+
+### التثبيت
+
+\`\`\`bash
+# 1. تأكد من GitHub CLI
+gh --version
+
+# 2. سجل الدخول
+gh auth login
+
+# 3. ثبت الامتداد
+gh extension install github/gh-copilot
+
+# 4. تحقق
+gh copilot --version
+\`\`\`
+
+### أول استخدام
+
+\`\`\`bash
+# طلب بسيط
+gh copilot suggest "list all java files"
+
+# شرح أمر
+gh copilot explain "ls -la | grep .txt"
+
+# نص متقدم
+gh copilot suggest "create script to monitor disk space"
+\`\`\`
+
+---
+
+## الخلاصة
+
+Copilot CLI هو **أداة قوية** لـ:
+- المطورين الذين يفضلون terminal
+- DevOps المهتمين بالأتمتة
+- مسؤولي النظام (SysAdmins)
+- أي شخص يتعامل مع orامر shell
+
+**ابدأ اليوم**:
+\`\`\`bash
+gh extension install github/gh-copilot
+gh copilot suggest "help me get started"
+\`\`\`
+
+---
+
+## موارد إضافية
+
+- 📖 [الوثائق الرسمية](https://docs.github.com/en/copilot/github-copilot-in-the-cli)
+- 🎯 [أمثلة Copilot CLI](https://github.com/github/gh-copilot-cli)
+- 💡 [دليل GitHub CLI](https://cli.github.com/manual/)
+        `,
+      },
+      {
+        slug: 'copilot-cli-commands',
+        title: 'دليل أوامر GitHub Copilot CLI (GitHub Copilot CLI Commands Guide)',
+        section: '9. أدوات CLI المتقدمة (Advanced CLI Tools)',
+        content: `# دليل أوامر GitHub Copilot CLI (GitHub Copilot CLI Commands Guide)
+
+## مقدمة
+
+هذا الدليل الشامل يغطي جميع أوامر GitHub Copilot CLI الأساسية والمتقدمة، مع أمثلة عملية ونصائح للاستخدام الأمثل.
+
+---
+
+## الأوامر الأساسية
+
+### 1. gh copilot suggest
+
+**الوصف**: اقتراح أوامر terminal بناءً على الوصف الطبيعي
+
+\`\`\`bash
+# الصيغة الأساسية
+gh copilot suggest "[وصف باللغة الطبيعية]"
+
+# أمثلة
+gh copilot suggest "find all python files"
+gh copilot suggest "compress folder into tar.gz"
+gh copilot suggest "kill process on port 3000"
+\`\`\`
+
+**الخيارات المتاحة**:
+
+\`\`\`bash
+# الحصول على اقتراحات متعددة
+gh copilot suggest "list files" --suggestions 3
+
+# تخصيص shell (bash, zsh, powershell)
+gh copilot suggest "create alias" --shell bash
+
+# اقتراح تفاعلي (اختر من الاقتراحات)
+gh copilot suggest "deploy app" --interactive
+\`\`\`
+
+**مثال متقدم**:
+
+\`\`\`bash
+gh copilot suggest "backup mysql database with date in filename"
+
+# الاقتراحات:
+# 1. mysqldump -u root -p dbname > backup_$(date +%Y%m%d).sql
+# 2. mysqldump --user=root --password dbname > "backup_$(date +%F).sql"
+# 3. docker exec mysql mysqldump -u root -p dbname > backup_$(date +%Y%m%d_%H%M%S).sql
+\`\`\`
+
+---
+
+### 2. gh copilot explain
+
+**الوصف**: شرح أمر terminal معقد
+
+\`\`\`bash
+# الصيغة الأساسية
+gh copilot explain "[الأمر المراد شرحه]"
+
+# أمثلة
+gh copilot explain "find . -type f -name '*.log' -mtime +7 -delete"
+gh copilot explain "docker run -d -p 8080:80 --name web nginx:alpine"
+\`\`\`
+
+**الخيارات المتاحة**:
+
+\`\`\`bash
+# شرح تفصيلي
+gh copilot explain "tar -xzvf file.tar.gz" --detailed
+
+# شرح مع أمثلة
+gh copilot explain "grep -r 'TODO' src/" --with-examples
+\`\`\`
+
+**مثال متقدم**:
+
+\`\`\`bash
+gh copilot explain "kubectl rollout restart deployment/app -n prod"
+
+# الشرح:
+# kubectl: Kubernetes CLI tool
+# rollout restart: Restart deployment with zero downtime
+# deployment/app: Target deployment named 'app'
+# -n prod: In namespace 'prod'
+# Result: Restarts all pods in app deployment in production namespace
+\`\`\`
+
+---
+
+## الأوامر المتقدمة
+
+### 3. gh copilot suggest مع pipes
+
+\`\`\`bash
+# استخدام pipes (|)
+gh copilot suggest "find large files and sort by size"
+
+# الاقتراح:
+# find . -type f -exec du -h {} + | sort -rh | head -20
+
+# أمثلة أخرى
+gh copilot suggest "count lines of code in project"
+# find . -name '*.ts' -o -name '*.tsx' | xargs wc -l
+
+gh copilot suggest "find duplicate files by name"
+# find . -type f -printf '%f\\n' | sort | uniq -d
+\`\`\`
+
+---
+
+### 4. gh copilot للـ Git Workflows
+
+\`\`\`bash
+# Undo commits
+gh copilot suggest "undo last 3 commits but keep changes"
+
+# الناتج:
+# git reset HEAD~3
+
+# Merge branches
+gh copilot suggest "merge feature branch with strategy"
+
+# الناتج:
+# git merge feature-branch --no-ff --no-commit
+
+# Clean branches
+gh copilot suggest "delete all merged branches except main"
+
+# الناتج:
+# git branch --merged | grep -v "\\*" | grep -v "main" | xargs git branch -d
+\`\`\`
+
+---
+
+### 5. gh copilot للـ DevOps
+
+\`\`\`bash
+# Docker operations
+gh copilot suggest "stop all running docker containers"
+
+# الناتج:
+# docker stop $(docker ps -q)
+
+# Docker cleanup
+gh copilot suggest "remove all unused docker images and volumes"
+
+# الناتج:
+# docker system prune -a --volumes -f
+
+# Kubernetes operations
+gh copilot suggest "get all pods in all namespaces"
+
+# الناتج:
+# kubectl get pods --all-namespaces
+\`\`\`
+
+---
+
+## Aliases المفيدة
+
+### Bash/Zsh
+
+\`\`\`bash
+# إضافة إلى ~/.bashrc أو ~/.zshrc
+alias cs='gh copilot suggest'
+alias ce='gh copilot explain'
+
+# الاستخدام
+cs "list json files"
+ce "jq -r '.[].name' data.json"
+\`\`\`
+
+### PowerShell
+
+\`\`\`powershell
+# إضافة إلى $PROFILE
+function cs { gh copilot suggest $args }
+function ce { gh copilot explain $args }
+
+# الاستخدام
+cs "get process by name"
+ce "Get-Process | Sort-Object CPU -Descending"
+\`\`\`
+
+---
+
+## نصائح الاستخدام
+
+### DO's ✅
+
+1. **كن واضحاً في الوصف**
+   \`\`\`bash
+   # جيد
+   gh copilot suggest "find files larger than 100MB modified in last 7 days"
+
+   # أقل وضوحاً
+   gh copilot suggest "big files"
+   \`\`\`
+
+2. **استخدم shell المحدد**
+   \`\`\`bash
+   gh copilot suggest "create alias" --shell zsh
+   \`\`\`
+
+3. **اطلب عدة اقتراحات**
+   \`\`\`bash
+   gh copilot suggest "compress files" --suggestions 3
+   \`\`\`
+
+4. **افهم قبل التنفيذ**
+   \`\`\`bash
+   # دائماً افهم الأمر أولاً
+   gh copilot explain "[الأمر]"
+   # ثم نفذه
+   \`\`\`
+
+5. **اختبر في بيئة آمنة**
+   \`\`\`bash
+   # استخدم sandbox أو test environment
+   # قبل التنفيذ على production
+   \`\`\`
+
+### DON'Ts ❌
+
+1. **لا تنفذ أمراً دون فهمه**
+   \`\`\`bash
+   # سيء
+   gh copilot suggest "delete all files"
+   # [ينفذ مباشرة] 🚨
+
+   # جيد
+   gh copilot suggest "delete all files"
+   # افهم الناتج أولاً
+   # ثم نفذ
+   \`\`\`
+
+2. **لا تستخدم للبيانات الحساسة**
+   \`\`\`bash
+   # سيء
+   gh copilot explain "echo 'API_KEY=secret123' > .env"
+   \`\`\`
+
+3. **لا تعتمد كلياً على الاقتراحات**
+   \`\`\`bash
+   # راجع دائماً الناتج
+   # تحقق من صحة الأمر
+   \`\`\`
+
+---
+
+## أمثلة عملية
+
+### 1. إدارة الملفات
+
+\`\`\`bash
+# البحث عن الملفات المكررة
+gh copilot suggest "find duplicate files by content"
+
+# الناتج:
+# fdupes -r ./directory
+
+# حذف الملفات المؤقتة
+gh copilot suggest "delete all .tmp files"
+
+# الناتج:
+# find . -name "*.tmp" -type f -delete
+\`\`\`
+
+### 2. مراقبة النظام
+
+\`\`\`bash
+# مراقبة الذاكرة
+gh copilot suggest "monitor memory usage in real time"
+
+# الناتج:
+# watch -n 1 free -h
+
+# مراقبة العمليات
+gh copilot suggest "show top 5 processes by CPU usage"
+
+# الناتج:
+# ps aux | sort -rk 3,3 | head -n 6
+\`\`\`
+
+### 3. الشبكات
+
+\`\`\`bash
+# اختبار الاتصال
+gh copilot suggest "test connectivity to server"
+
+# الناتج:
+# ping -c 4 example.com
+
+# عرض المنافذ المفتوحة
+gh copilot suggest "show all open listening ports"
+
+# الناتج:
+# netstat -tuln | grep LISTEN
+\`\`\`
+
+---
+
+## استكشاف الأخطاء
+
+### "gh: command not found"
+
+\`\`\`bash
+# الحل: ثبت GitHub CLI
+# macOS
+brew install gh
+
+# Windows
+winget install GitHub.cli
+
+# Linux
+sudo apt install gh  # Ubuntu/Debian
+sudo dnf install gh  # Fedora
+\`\`\`
+
+### "extension not found"
+
+\`\`\`bash
+# الحل: أعد تثبيت الامتداد
+gh extension remove github/gh-copilot
+gh extension install github/gh-copilot
+\`\`\`
+
+### "authentication failed"
+
+\`\`\`bash
+# الحل: أعد تسجيل الدخول
+gh auth logout
+gh auth login
+\`\`\`
+
+---
+
+## ملخص سريع
+
+| الأمر | الوصف | مثال |
+|-------|-------|------|
+| \`gh copilot suggest\` | اقتراح أوامر | \`gh copilot suggest "list files"\` |
+| \`gh copilot explain\` | شرح أوامر | \`gh copilot explain "ls -la"\` |
+| \`--suggestions N\` | عدد الاقتراحات | \`--suggestions 3\` |
+| \`--shell\` | تحديد shell | \`--shell bash\` |
+| \`--detailed\` | شرح مفصل | \`--detailed\` |
+| \`--interactive\` | اختيار تفاعلي | \`--interactive\` |
+
+---
+
+## الخلاصة
+
+Copilot CLI يوفر **أمرين أساسيين** فقط:
+1. \`suggest\` - لاقتراح أوامر جديدة
+2. \`explain\` - لشرح أوامر موجودة
+
+لكن قوته تكمن في:
+- فهم اللغة الطبيعية
+- اقتراحات ذكية ومتعددة
+- تكامل مع GitHub ecosystem
+- دعم جميع shells الرئيسية
+
+**ابدأ اليوم**:
+\`\`\`bash
+gh copilot suggest "help me be more productive"
+\`\`\`
+
+---
+
+## موارد إضافية
+
+- 📖 [الوثائق الرسمية](https://docs.github.com/en/copilot/github-copilot-in-the-cli)
+- 🎯 [أمثلة مفصلة](https://github.com/github/gh-copilot-cli/examples)
+- 💡 [نصائح وحيل](https://docs.github.com/en/copilot/faq)
+        `,
+      },
+      {
+        slug: 'copilot-cli-pricing',
+        title: 'تسعير GitHub Copilot CLI (GitHub Copilot CLI Pricing)',
+        section: '9. أدوات CLI المتقدمة (Advanced CLI Tools)',
+        content: `# تسعير GitHub Copilot CLI (GitHub Copilot CLI Pricing)
+
+## مقدمة
+
+Copilot CLI جزء من **GitHub Copilot**، لذا يتطلب اشتراك Copilot. هذا الدليل يشرح جميع مستويات التسعير وما يشملونه.
+
+---
+
+## ملخص الأسعار
+
+| الخطة | السعر | الاقتراحات | الميزات |
+|-------|--------|-------------|----------|
+| **Free Trial** | مجاني | غير محدود | 2 شهر تجريبي |
+| **Individual** | $10/شهر | غير محدود | جميع الميزات |
+| **Business** | $19/مستخدم/شهر | غير محدود + سياسات | Team management |
+| **Enterprise** | مخصص | غير محدود + SSO | كامل الميزات |
+
+---
+
+## 1. Free Trial (فترة تجريبية مجانية)
+
+### المدة والشروط
+
+\`\`\`bash
+# تفعيل التجربة المجانية
+gh copilot --version
+# سيطلب تفعيل Copilot Trial
+
+# المدة: 2 شهر (60 يوم)
+# الاقتراحات: غير محدود
+\`\`\`
+
+### الميزات المشمولة
+
+✅ **جميع الميزات الأساسية**:
+- \`gh copilot suggest\` - غير محدود
+- \`gh copilot explain\` - غير محدود
+- دعم جميع اللغات الطبيعية
+- اقتراحات متعددة
+
+✅ **التكاملات**:
+- GitHub CLI كامل
+- GitHub Copilot في IDEs
+- جميع الميزات الأساسية
+
+### القيود
+
+⚠️ **بعد انتهاء الفترة التجريبية**:
+- تتوقف الميزات
+- تحتاج لاشتراك مدفوع
+- البيانات محفوظة
+
+---
+
+## 2. Individual Plan ($10/شهر)
+
+### لمن هذه الخطة؟
+
+👤 **المطورون الأفراد**:
+- Freelancers
+- المطورون المستقلون
+- الطلاب والباحثون
+- المشاريع الشخصية
+
+### الميزات
+
+| الميزة | التفاصيل |
+|--------|----------|
+| **السعر** | $10/شهر أو $100/سنة (وفر 20%) |
+| **الاقتراحات** | غير محدود |
+| **اللغات** | جميع اللغات المدعومة |
+| **الدقة** | GPT-4 Turbo model |
+| **التكامل** | Copilot in IDEs + CLI |
+
+### الميزات المضمنة
+
+✅ **Core Features**:
+\`\`\`bash
+gh copilot suggest    # غير محدود
+gh copilot explain    # غير محدود
+gh copilot suggest --suggestions 3  # اقتراحات متعددة
+\`\`\`
+
+✅ **IDE Integration**:
+- VS Code
+- Visual Studio
+- JetBrains IDEs
+- Neovim
+
+✅ **CLI Features**:
+- Bash/Zsh/PowerShell
+- Git integration
+- GitHub Actions
+
+### الفوائد
+
+💡 **للمطور الفردي**:
+- زيادة إنتاجية 30-50%
+- توفير الوقت في كتابة الأوامر
+- تعلم أوامر جديدة بسرعة
+- تقليل الأخطاء
+
+### التسجيل
+
+\`\`\`bash
+# 1. تأكد من GitHub account
+gh auth status
+
+# 2. تفعيل Copilot Individual
+# زيارة: https://github.com/settings/copilot
+
+# 3. اختر Individual Plan
+# السعر: $10/شهر
+
+# 4. تأكيد التفعيل
+gh copilot --version
+# ✅ Copilot is activated
+\`\`\`
+
+---
+
+## 3. Business Plan ($19/مستخدم/شهر)
+
+### لمن هذه الخطة؟?
+
+🏢 **الشركات الصغيرة والمتوسطة**:
+- Startups
+- الشركات التقنية
+- الفرق البرمجية
+- Agencies
+
+### الميزات
+
+| الميزة | Individual | Business |
+|--------|-----------|----------|
+| **السعر** | $10/شهر | $19/مستخدم/شهر |
+| **الحد الأدنى** | 1 مستخدم | غير محدد |
+| **السياسات** | ❌ | ✅ |
+| **إدارة الفريق** | ❌ | ✅ |
+| **SSO** | ❌ | ✅ اختياري |
+| **Audit Logs** | ❌ | ✅ |
+| **الدعم** | Community | Priority |
+
+### الميزات الإضافية
+
+✅ **Policy Management**:
+\`\`\`bash
+# السياسات المتاحة:
+- تقييد الاقتراحات بلغات معينة
+- منع اقتراحات حساسة
+- تخصيص الأوامر المسموحة
+- مراجعة الاقتراحات
+\`\`\`
+
+✅ **Team Management**:
+\`\`\`bash
+# إدارة الفريق عبر:
+https://github.com/organizations/YOUR_ORG/settings/copilot
+
+# الميزات:
+- إضافة/إزالة مستخدمين
+- تعيين seats
+- مراقبة الاستخدام
+- تقارير الفريق
+\`\`\`
+
+✅ **Security & Compliance**:
+\`\`\`bash
+# الميزات الأمنية:
+- Data protection
+- Privacy controls
+- Compliance (SOC2, GDPR)
+- Audit logs
+\`\`\`
+
+### الفوائد للشركات
+
+💼 **Business Value**:
+- زيادة إنتاجية الفريق 40%
+- تقليل onboarding time 50%
+- تحسين جودة الكود
+- تقليل الأخطاء الأمنية
+
+### التسجيل
+
+\`\`\`bash
+# 1. GitHub Organization مطلوب
+gh org view YOUR_ORG
+
+# 2. تفعيل Copilot Business
+# زيارة: https://github.com/organizations/YOUR_ORG/settings/copilot
+
+# 3. اختر Business Plan
+# السعر: $19/مستخدم/شهر
+
+# 4. دفعSeats للفريق
+# Minimum: غير محدد
+\`\`\`
+
+---
+
+## 4. Enterprise Plan (مخصص)
+
+### لمن هذه الخطة؟?
+
+🏢 **المؤسسات الكبيرة**:
+- شركات Fortune 500
+- المؤسسات الحكومية
+- الشركات المتعددة الجنسيات
+- Organisations مع متطلبات أمنية صارمة
+
+### الميزات
+
+| الميزة | Business | Enterprise |
+|--------|----------|-----------|
+| **السعر** | $19/مستخدم | مخصص |
+| **SSO** | اختيوري | ✅ مطلوب |
+| **Audit Logs** | أساسي | ✅ متقدم |
+| **Support** | Priority | 24/7 Dedicated |
+| **Custom Models** | ❌ | ✅ |
+| **On-premise** | ❌ | ✅ |
+| **SLA** | ❌ | ✅ 99.9% |
+
+### الميزات الإضافية
+
+✅ **Advanced Security**:
+\`\`\`bash
+# Enterprise-only:
+- SAML SSO
+- SCIM provisioning
+- IP allow-listing
+- Data residency
+- Private models
+- Custom fine-tuning
+\`\`\`
+
+✅ **Dedicated Support**:
+\`\`\`bash
+# الدعم:
+- 24/7 phone/email support
+- Dedicated CSM
+- Onboarding assistance
+- Training sessions
+- Quarterly reviews
+\`\`\`
+
+✅ **Custom Deployments**:
+\`\`\`bash
+# الخيارات:
+- Self-hosted option
+- VPC deployment
+- Private endpoints
+- Custom models (fine-tuned)
+- Region selection
+\`\`\`
+
+### الفوائد للمؤسسات
+
+🏢 **Enterprise Value**:
+- Compliance كامل (SOC2, ISO, HIPAA)
+- سياسة البيانات المخصصة
+- تكامل مع SSO existing
+- تدريب مخصص للفريق
+
+### التسجيل
+
+\`\`\`bash
+# 1. اتصل بالمبيعات
+https://enterprise.github.com/contact
+
+# 2. مناقشة المتطلبات
+- عدد المستخدمين
+- المتطلبات الأمنية
+- Compliance needs
+- Integration requirements
+
+# 3. عرض سعر مخصص
+# Pricing: حسب الحجم والمتطلبات
+
+# 4. التنفيذ
+- Onboarding: 2-4 أسابيع
+- Training: Included
+- Support: Dedicated
+\`\`\`
+
+---
+
+## مقارنة شاملة
+
+### Feature Comparison
+
+| الميزة | Free Trial | Individual | Business | Enterprise |
+|--------|-----------|------------|----------|-----------|
+| **المدة** | 60 يوم | غير محدود | سنوي | سنوي |
+| **gh copilot suggest** | ✅ غير محدود | ✅ غير محدود | ✅ غير محدود | ✅ غير محدود |
+| **gh copilot explain** | ✅ غير محدود | ✅ غير محدود | ✅ غير محدود | ✅ غير محدود |
+| **IDE Integration** | ✅ | ✅ | ✅ | ✅ |
+| **Policy Management** | ❌ | ❌ | ✅ | ✅ |
+| **SSO** | ❌ | ❌ | اختيوري | ✅ |
+| **Audit Logs** | ❌ | ❌ | ✅ | ✅ متقدم |
+| **Support** | Community | Community | Priority | 24/7 |
+| **SLA** | ❌ | ❌ | ❌ | ✅ 99.9% |
+| **Custom Models** | ❌ | ❌ | ❌ | ✅ |
+
+---
+
+## أي خطة تختار؟
+
+### Decision Tree
+
+\`\`\`
+هل أنت مطور فردي؟
+├─ نعم → Individual Plan ($10/شهر)
+└─ لا → هل أنت شركة؟
+    ├─ نعم → كم حجم فريقك؟
+    │   ├─ <50 → Business ($19/مستخدم)
+    │   ├─ 50-500 → Business + Contract
+    │   └─ 500+ → Enterprise (مخصص)
+    └─ مؤسسة حكومية → Enterprise (مخصص)
+\`\`\`
+
+---
+
+## الاستخدام العادل (Fair Use)
+
+### القيود
+
+\`\`\`bash
+# جميع الخطط:
+- لا يوجد حد لعدد الاقتراحات
+- لا يوجد حد للاستخدام
+
+# لكن:
+- استخدام معقول فقط
+- لا للممارسات السيئة
+- GitHub تحتفظ بالحق في تعليق الحساب
+\`\`\`
+
+---
+
+## الخصومات
+
+### Annual Discount
+
+\`\`\`bash
+# Individual Plan:
+# شهري: $10/شهر
+# سنوي: $100/سنة (وفر 20%)
+
+# Business Plan:
+# شهري: $19/مستخدم/شهر
+# سنوي: $190/مستخدم/سنة (وفر 20%)
+\`\`\`
+
+### Student Discount
+
+\`\`\`bash
+# GitHub Student Pack:
+- Copilot FREE للطلاب
+- تأكد من eligibility:
+https://education.github.com/students
+\`\`\`
+
+### Open Source
+
+\`\`\`bash
+# Copilot for Open Source:
+- مجاني للمشاريع مفتوحة المصدر
+- تقديم request:
+https://github.com/github/gh-copilot-cli
+\`\`\`
+
+---
+
+## الأسئلة الشائعة
+
+### Can I change plans?
+
+\`\`\`bash
+# نعم، في أي وقت
+# الترقية: فورية
+# التخفيض: نهاية الفترة
+\`\`\`
+
+### What happens if I cancel?
+
+\`\`\`bash
+# يمكنك الاستخدام حتى نهاية الفترة
+# البيانات محفوظة لـ 30 يوم
+# يمكنك إعادة التفعيل في أي وقت
+\`\`\`
+
+### Is it worth it?
+
+\`\`\`bash
+# حساب ROI:
+# Individual Plan ($10/شهر):
+# - توفير 5 ساعات/شهر
+# - بقيمة ساعة $20
+# - القيمة: $100/شهر
+# - ROI: 900%
+\`\`\`
+
+---
+
+## الخلاصة
+
+**Copilot CLI Pricing**:
+
+| الخطة | الأنسب لـ | السعر | القيمة |
+|-------|----------|-------|--------|
+| **Free Trial** | الجميع | مجاني | 2 شهر |
+| **Individual** | Freelancer/Student | $10/شهر | ممتاز |
+| **Business** | Startup/Agency | $19/مستخدم | جيد |
+| **Enterprise** | Enterprise | مخصص | ممتاز |
+
+**ابدأ اليوم**:
+\`\`\`bash
+# جرب مجاناً لمدة 2 شهر
+gh extension install github/gh-copilot
+gh copilot suggest "help me get started"
+\`\`\`
+
+---
+
+## موارد إضافية
+
+- 💳 [صفحة التسعير](https://github.com/features/copilot)
+- 📧 [الدعم](mailto:copilot-support@github.com)
+- 📖 [الوثائق الرسمية](https://docs.github.com/en/copilot)
+- 🎓 [Student Pack](https://education.github.com/students)
+        `,
+      },
+      {
+        slug: 'copilot-cli-configuration',
+        title: 'إعداد وتكوين GitHub Copilot CLI (GitHub Copilot CLI Configuration Guide)',
+        section: '9. أدوات CLI المتقدمة (Advanced CLI Tools)',
+        content: `# إعداد وتكوين GitHub Copilot CLI (GitHub Copilot CLI Configuration Guide)
+
+## مقدمة
+
+هذا الدليل الشامل يغطي جميع خيارات الإعداد والتكوين لـ GitHub Copilot CLI، من التثبيت الأساسي إلى التخصيص المتقدم.
+
+---
+
+## التثبيت والإعداد الأولي
+
+### 1. التثبيت
+
+\`\`\`bash
+# تأكد من GitHub CLI
+gh --version
+# GitHub CLI version 2.40.0+ required
+
+# تسجيل الدخول
+gh auth login
+# Follow the prompts
+
+# تثبيت الامتداد
+gh extension install github/gh-copilot
+
+# التحقق من التثبيت
+gh copilot --version
+# gh-copilot version x.x.x
+\`\`\`
+
+---
+
+### 2. التحقق من الاتصال
+
+\`\`\`bash
+# اختبار الاتصال
+gh copilot suggest "test"
+
+# إذا نجح، ستحصل على اقتراح
+# إذا فشل، تحقق من:
+# - GitHub account status
+# - Copilot subscription
+# - Internet connection
+\`\`\`
+
+---
+
+## Aliases (الاختصارات)
+
+### Bash/Zsh Aliases
+
+\`\`\`bash
+# إضافة إلى ~/.bashrc أو ~/.zshrc
+
+# Aliases الأساسية
+alias cs='gh copilot suggest'
+alias ce='gh copilot explain'
+
+# Aliases متقدمة
+alias csi='gh copilot suggest --interactive'
+alias csd='gh copilot suggest --detailed'
+alias cex='gh copilot explain --detailed'
+
+# بعد التعديل:
+source ~/.bashrc  # أو source ~/.zshrc
+
+# الاستخدام
+cs "list all files"
+ce "ls -la | grep .txt"
+\`\`\`
+
+### PowerShell Aliases
+
+\`\`\`powershell
+# إضافة إلى $PROFILE (Microsoft.PowerShell_profile.ps1)
+
+# Functions لل_aliases
+function cs {
+    gh copilot suggest $args
+}
+
+function ce {
+    gh copilot explain $args
+}
+
+function csi {
+    gh copilot suggest --interactive $args
+}
+
+function ced {
+    gh copilot explain --detailed $args
+}
+
+# بعد التعديل:
+. $PROFILE
+
+# الاستخدام
+cs "get process by name"
+ce "Get-Process | Sort-Object CPU"
+\`\`\`
+
+### Fish Shell Aliases
+
+\`\`\`bash
+# إضافة to ~/.config/fish/config.fish
+
+# Abbreviations (أفضل من aliases في fish)
+abbr cs 'gh copilot suggest'
+abbr ce 'gh copilot explain'
+abbr csi 'gh copilot suggest --interactive'
+abbr ced 'gh copilot explain --detailed'
+
+# الاستخدام
+cs "list files"
+ce "docker ps"
+\`\`\`
+
+---
+
+## Shell Configuration Files
+
+### Configuration Options
+
+\`\`\`bash
+# ~/.config/gh/gh-copilot-config.yml (محتمل في المستقبل)
+
+# حالياً، التكوين عبر:
+# 1. Environment variables
+# 2. Aliases
+# 3. Shell functions
+\`\`\`
+
+---
+
+## Environment Variables
+
+### Available Variables
+
+\`\`\`bash
+# GitHub Token
+export GH_TOKEN="ghp_xxxxxxxxxxxx"
+
+# Copilot-specific (if available)
+export COPILOT_MODEL="gpt-4"
+export COPILOT_MAX_SUGGESTIONS="3"
+
+# Language preference
+export LANG="ar_SA.UTF-8"  # للغة العربية
+\`\`\`
+
+### Setting Variables Permanently
+
+\`\`\`bash
+# في ~/.bashrc أو ~/.zshrc
+
+# GitHub Token
+export GH_TOKEN="ghp_xxxxxxxxxxxx"
+
+# Copilot preferences
+export COPILOT_MODEL="gpt-4"
+export COPILOT_MAX_SUGGESTIONS="3"
+
+# Reload shell
+source ~/.bashrc
+\`\`\`
+
+---
+
+## التخصيص المتقدم
+
+### Custom Shell Functions
+
+\`\`\`bash
+# في ~/.bashrc أو ~/.zshrc
+
+# Function للاقتراحات مع التنفيذ التلقائي
+cs-run() {
+    local suggestion
+    suggestion=$(gh copilot suggest "$*" | head -1)
+    echo "Running: $suggestion"
+    eval "$suggestion"
+}
+
+# Function لشرح وتنفيذ
+ce-run() {
+    local explanation
+    local command
+    explanation=$(gh copilot explain "$*")
+    echo "$explanation"
+    echo "Run this command? (y/n)"
+    read -r answer
+    if [ "$answer" = "y" ]; then
+        eval "$*"
+    fi
+}
+
+# Function للاقتراحات المتعددة
+cs-multi() {
+    gh copilot suggest "$*" --suggestions 3
+}
+
+# الاستخدام
+cs-run "list all python files"
+ce-run "docker ps -a"
+cs-multi "compress folder"
+\`\`\`
+
+### Interactive Prompts
+
+\`\`\`bash
+# Function لاختيار تفاعلي
+cs-interactive() {
+    local prompt="$*"
+    local suggestions
+
+    suggestions=$(gh copilot suggest "$prompt" --suggestions 3)
+
+    echo "Suggestions for: $prompt"
+    echo "$suggestions" | nl -w2 -s'. '
+
+    echo "Choose (1-3):"
+    read -r choice
+
+    local selected
+    selected=$(echo "$suggestions" | sed "${choice}q;d")
+
+    echo "Selected: $selected"
+    echo "Run? (y/n)"
+    read -r confirm
+
+    if [ "$confirm" = "y" ]; then
+        eval "$selected"
+    fi
+}
+
+# الاستخدام
+cs-interactive "kill process on port 3000"
+\`\`\`
+
+---
+
+## التكامل مع الأدوات الأخرى
+
+### Git Aliases
+
+\`\`\`bash
+# في ~/.gitconfig
+
+[alias]
+    # Copilot-powered git aliases
+    suggest = "!f() { gh copilot suggest \"$*\"; }; f"
+    explain = "!f() { gh copilot explain \"$*\"; }; f"
+
+    # أمثلة محددة
+    undo = "!f() { gh copilot suggest \"undo last commit but keep changes\" | head -1 | sh; }; f"
+    cleanup = "!f() { gh copilot suggest \"delete merged branches\" | head -1 | sh; }; f"
+
+# الاستخدام
+git suggest "commit all changes"
+git explain "rebase -i HEAD~3"
+git undo
+git cleanup
+\`\`\`
+
+### Docker Integration
+
+\`\`\`bash
+# Function للـ Docker helper
+docker-help() {
+    if [ -z "$1" ]; then
+        echo "Usage: docker-help <description>"
+        return 1
+    fi
+
+    gh copilot suggest "docker $*"
+}
+
+# Examples
+docker-help "stop all containers"
+docker-help "remove unused images"
+docker-help "show container logs"
+\`\`\`
+
+### Kubernetes Integration
+
+\`\`\`bash
+# Function للـ K8s helper
+k8s-help() {
+    if [ -z "$1" ]; then
+        echo "Usage: k8s-help <description>"
+        return 1
+    fi
+
+    gh copilot suggest "kubectl $*"
+}
+
+# Examples
+k8s-help "get all pods in all namespaces"
+k8s-help "restart deployment"
+k8s-help "describe pod failure"
+\`\`\`
+
+---
+
+## Performance Tuning
+
+### Cache Settings
+
+\`\`\`bash
+# Copilot CLI يستخدم cache لل suggestions
+
+# مسح الcache (if needed)
+gh cache delete
+
+# تعطيل الcache (not recommended)
+export GH_COPILOT_CACHE_DISABLE=true
+\`\`\`
+
+### Connection Settings
+
+\`\`\`bash
+# Timeout settings
+export GH_COPILOT_TIMEOUT=30  # seconds
+
+# Retry settings
+export GH_COPILOT_MAX_RETRIES=3
+
+# Proxy settings (if needed)
+export HTTP_PROXY="http://proxy.example.com:8080"
+export HTTPS_PROXY="http://proxy.example.com:8080"
+\`\`\`
+
+---
+
+## Language & Localization
+
+### Arabic Support
+
+\`\`\`bash
+# تأكد من إعدادات اللغة
+locale  # check current locale
+
+# تعيين اللغة العربية
+export LANG="ar_SA.UTF-8"
+export LANGUAGE="ar:en"
+
+# استخدام بالعربية
+gh copilot suggest "احذف الملفات الكبيرة"
+gh copilot explain "الأمر السابق"
+\`\`\`
+
+### Multi-language Input
+
+\`\`\`bash
+# Copilot CLI يدعم:
+- English 🇬🇧
+- Arabic 🇸🇦
+- Spanish 🇪🇸
+- French 🇫🇷
+- German 🇩🇪
+- Chinese 🇨🇳
+- Japanese 🇯🇵
+- And more...
+
+# أمثلة
+gh copilot suggest "list files"      # English
+gh copilot suggest "listar archivos" # Spanish
+gh copilot suggest "lister fichiers" # French
+\`\`\`
+
+---
+
+## Security Configuration
+
+### Data Privacy
+
+\`\`\`bash
+# Copilot CLI لا يرسل:
+- Passwords
+- API keys
+- Sensitive data (detected automatically)
+
+# لكن يمكنك التحكم:
+export COPILOT_TELEMETRY="false"     # تعطيل telemetry
+export COPILOT_DATA_SHARING="false"  # تعطيل مشاركة البيانات
+\`\`\`
+
+### Private Mode
+
+\`\`\`bash
+# Function لprivate mode
+cs-private() {
+    local prompt="$*"
+
+    echo "⚠️  Private Mode: No data will be shared"
+    echo "Prompt: $prompt"
+    echo "Continue? (y/n)"
+    read -r confirm
+
+    if [ "$confirm" = "y" ]; then
+        COPILOT_DATA_SHARING="false" gh copilot suggest "$prompt"
+    fi
+}
+
+# الاستخدام
+cs-private "process user data"
+\`\`\`
+
+---
+
+## Troubleshooting Configuration
+
+### Check Installation
+
+\`\`\`bash
+# Script للتحقق من التكوين
+check-copilot-config() {
+    echo "Checking Copilot CLI configuration..."
+
+    # GitHub CLI version
+    echo "GitHub CLI: $(gh --version)"
+
+    # Copilot version
+    echo "Copilot: $(gh copilot --version)"
+
+    # Auth status
+    echo "Auth status: $(gh auth status)"
+
+    # Aliases
+    echo "Aliases:"
+    type cs 2>/dev/null && echo "  ✅ cs alias set" || echo "  ❌ cs alias not set"
+    type ce 2>/dev/null && echo "  ✅ ce alias set" || echo "  ❌ ce alias not set"
+
+    # Environment variables
+    echo "Environment:"
+    echo "  GH_TOKEN: ${GH_TOKEN:+✅ set}"
+    echo "  LANG: $LANG"
+
+    # Test connection
+    echo "Testing connection..."
+    gh copilot suggest "test" >/dev/null 2>&1 && echo "  ✅ Connection OK" || echo "  ❌ Connection failed"
+}
+
+# الاستخدام
+check-copilot-config
+\`\`\`
+
+### Reset Configuration
+
+\`\`\`bash
+# إعادة تعيين التكوين
+
+# 1. إزالة الامتداد
+gh extension remove github/gh-copilot
+
+# 2. إعادة التثبيت
+gh extension install github/gh-copilot
+
+# 3. إعادة المصادقة
+gh auth login
+
+# 4. التحقق
+gh copilot --version
+\`\`\`
+
+---
+
+## Best Practices
+
+### DO's ✅
+
+1. **استخدم aliases مخصصة**
+   \`\`\`bash
+   # اختصارات مختصرة وواضحة
+   alias cs='gh copilot suggest'
+   alias ce='gh copilot explain'
+   \`\`\`
+
+2. **وظف shell functions**
+   \`\`\`bash
+   # functions للعمليات المعقدة
+   cs-run() { ... }
+   \`\`\`
+
+3. **ضبط language settings**
+   \`\`\`bash
+   # للغة العربية
+   export LANG="ar_SA.UTF-8"
+   \`\`\`
+
+4. **استخدم environment variables**
+   \`\`\`bash
+   # للتكوين المستمر
+   export GH_TOKEN="..."
+   \`\`\`
+
+### DON'Ts ❌
+
+1. **لا تشارك tokens**
+   \`\`\`bash
+   # سيء
+   echo "My token: $GH_TOKEN"
+
+   # جيد
+   # استخدم ~/.ghconfig.yml أو env file
+   \`\`\`
+
+2. **لا تستخدم aliases غامضة**
+   \`\`\`bash
+   # سيء
+   alias x='gh copilot suggest'
+
+   # جيد
+   alias cs='gh copilot suggest'
+   \`\`\`
+
+3. **لا تعطل cache**
+   \`\`\`bash
+   # سيء
+   export GH_COPILOT_CACHE_DISABLE=true
+
+   # جيد
+   # دع Copilot يدير cache
+   \`\`\`
+
+---
+
+## Complete Configuration Example
+
+### Full ~/.bashrc Example
+
+\`\`\`bash
+# ~/.bashrc
+
+# GitHub Copilot CLI Configuration
+
+# Aliases
+alias cs='gh copilot suggest'
+alias ce='gh copilot explain'
+alias csi='gh copilot suggest --interactive'
+alias ced='gh copilot explain --detailed'
+
+# Environment Variables
+export GH_TOKEN="ghp_xxxxxxxxxxxx"
+export LANG="ar_SA.UTF-8"
+
+# Shell Functions
+cs-run() {
+    local suggestion
+    suggestion=$(gh copilot suggest "$*" | head -1)
+    echo "Running: $suggestion"
+    eval "$suggestion"
+}
+
+cs-interactive() {
+    local prompt="$*"
+    local suggestions
+
+    suggestions=$(gh copilot suggest "$prompt" --suggestions 3)
+
+    echo "Suggestions for: $prompt"
+    echo "$suggestions" | nl -w2 -s'. '
+
+    echo "Choose (1-3):"
+    read -r choice
+
+    local selected
+    selected=$(echo "$suggestions" | sed "${choice}q;d")
+
+    echo "Selected: $selected"
+    echo "Run? (y/n)"
+    read -r confirm
+
+    if [ "$confirm" = "y" ]; then
+        eval "$selected"
+    fi
+}
+
+docker-help() {
+    gh copilot suggest "docker $*"
+}
+
+k8s-help() {
+    gh copilot suggest "kubectl $*"
+}
+
+# Completion
+if command -v gh &>/dev/null; then
+    eval "$(gh completion -s bash)"
+fi
+\`\`\`
+
+---
+
+## الخلاصة
+
+**Copilot CLI Configuration** يشمل:
+
+1. **Basic Setup**:
+   - ✅ Installation
+   - ✅ Authentication
+   - ✅ Verification
+
+2. **Aliases**:
+   - ✅ Bash/Zsh
+   - ✅ PowerShell
+   - ✅ Fish
+
+3. **Customization**:
+   - ✅ Shell functions
+   - ✅ Environment variables
+   - ✅ Integration with other tools
+
+4. **Optimization**:
+   - ✅ Performance tuning
+   - ✅ Cache settings
+   - ✅ Security settings
+
+5. **Localization**:
+   - ✅ Arabic support
+   - ✅ Multi-language input
+
+**ابدأ بتكوين Copilot CLI**:
+\`\`\`bash
+# 1. أضف aliases المفضلة لديك
+# 2. وظف shell functions
+# 3. خصّص حسب احتياجاتك
+# 4. استمتع بالإنتاجية!
+\`\`\`
+
+---
+
+## موارد إضافية
+
+- 📖 [الوثائق الرسمية](https://docs.github.com/en/copilot/github-copilot-in-the-cli)
+- 🎯 [GitHub CLI Documentation](https://cli.github.com/manual/)
+- 💡 [Configuration Examples](https://github.com/github/gh-copilot-cli/tree/main/examples)
+- 🔧 [Troubleshooting Guide](https://docs.github.com/en/copilot/troubleshooting)
+        `,
+      },
     ],
   },
 ];
