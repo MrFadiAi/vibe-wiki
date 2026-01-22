@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <!-- Gradient for main shape -->
+    <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+
+    <!-- Gradient for glow effect -->
+    <radialGradient id="glowGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Filter for glow effect -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background glow -->
+  <circle cx="100" cy="100" r="90" fill="url(#glowGradient)"/>
+
+  <!-- Outer rounded square (book/encyclopedia concept) -->
+  <rect x="30" y="30" width="140" height="140" rx="20" fill="none" stroke="url(#mainGradient)" stroke-width="3" filter="url(#glow)"/>
+
+  <!-- Code brackets - left -->
+  <path d="M 70 70 L 55 100 L 70 130" fill="none" stroke="url(#mainGradient)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+
+  <!-- Code brackets - right -->
+  <path d="M 130 70 L 145 100 L 130 130" fill="none" stroke="url(#mainGradient)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+
+  <!-- AI Brain / Neural Network nodes in center -->
+  <g filter="url(#glow)">
+    <!-- Center node -->
+    <circle cx="100" cy="100" r="12" fill="#00f0ff"/>
+
+    <!-- Top left node -->
+    <circle cx="75" cy="80" r="8" fill="#8b5cf6"/>
+    <!-- Top right node -->
+    <circle cx="125" cy="80" r="8" fill="#8b5cf6"/>
+    <!-- Bottom left node -->
+    <circle cx="75" cy="120" r="8" fill="#ec4899"/>
+    <!-- Bottom right node -->
+    <circle cx="125" cy="120" r="8" fill="#ec4899"/>
+  </g>
+
+  <!-- Neural connections -->
+  <g stroke="url(#mainGradient)" stroke-width="2" opacity="0.8">
+    <line x1="100" y1="100" x2="75" y2="80"/>
+    <line x1="100" y1="100" x2="125" y2="80"/>
+    <line x1="100" y1="100" x2="75" y2="120"/>
+    <line x1="100" y1="100" x2="125" y2="120"/>
+    <line x1="75" y1="80" x2="125" y2="80" opacity="0.5"/>
+    <line x1="75" y1="120" x2="125" y2="120" opacity="0.5"/>
+  </g>
+
+  <!-- Sparkles (AI magic) -->
+  <g fill="#00f0ff" filter="url(#glow)">
+    <circle cx="50" cy="55" r="3"/>
+    <circle cx="150" cy="55" r="3"/>
+    <circle cx="50" cy="145" r="3"/>
+    <circle cx="150" cy="145" r="3"/>
+  </g>
+
+  <!-- Forward slash inside (code element) -->
+  <line x1="95" y1="90" x2="105" y2="110" stroke="url(#mainGradient)" stroke-width="3" stroke-linecap="round" filter="url(#glow)"/>
+</svg>

@@ -31,15 +31,15 @@ export function SidebarContent({ onLinkClick }: { onLinkClick?: () => void }) {
         <Link href="/" className="group flex items-center gap-3" onClick={onLinkClick}>
           <div className="relative h-10 w-10 overflow-hidden rounded-xl bg-gradient-to-br from-neon-cyan via-blue-600 to-neon-purple p-[1px] transition-transform duration-300 group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(0,240,255,0.3)]">
             <div className="flex h-full w-full items-center justify-center rounded-[11px] bg-slate-950 backface-hidden">
-              <Sparkles className="h-5 w-5 text-neon-cyan transition-colors group-hover:text-white" />
+              <img src="/logo.svg" alt="Logo" className="h-6 w-6" />
             </div>
           </div>
           <div className="flex flex-col">
             <span className="text-lg font-bold tracking-tight text-white group-hover:text-neon-cyan transition-colors">
-              Vibe Coding
+              موسوعة البرمجة
             </span>
             <span className="text-[10px] uppercase tracking-widest text-muted-foreground/80">
-              Wiki & Guide
+              بالذكاء الاصطناعي
             </span>
           </div>
         </Link>
@@ -59,7 +59,7 @@ export function SidebarContent({ onLinkClick }: { onLinkClick?: () => void }) {
                   <span className="flex h-5 w-5 items-center justify-center rounded-md bg-white/5 text-[10px] font-bold text-muted-foreground transition-colors group-hover:bg-neon-cyan/10 group-hover:text-neon-cyan">
                     {index + 1}
                   </span>
-                  <span className="uppercase tracking-wider text-xs font-bold">{section.name.split(':')[0]}</span>
+                  <span className="uppercase tracking-wider text-xs font-bold" dir="rtl">{section.name.split(':')[0]}</span>
                 </div>
                 <ChevronDown
                   className={cn(
@@ -103,7 +103,7 @@ export function SidebarContent({ onLinkClick }: { onLinkClick?: () => void }) {
                                   "h-1.5 w-1.5 rounded-full transition-all duration-300",
                                   isActive ? "bg-neon-cyan shadow-[0_0_8px_rgba(0,240,255,0.8)]" : "bg-white/20 group-hover/item:bg-white/50"
                                 )} />
-                                <span className="truncate">{article.title}</span>
+                                                <span className="truncate">{article.title}</span>
                               </div>
                               
                               {isActive && (
@@ -133,7 +133,7 @@ export function SidebarContent({ onLinkClick }: { onLinkClick?: () => void }) {
           <div className="absolute inset-0 bg-gradient-to-br from-neon-purple/10 via-transparent to-neon-cyan/5 opacity-50" />
           <div className="relative flex flex-col gap-2">
             <p className="text-xs font-medium text-muted-foreground">
-              مبني للإبداع <span className="mx-1 text-neon-purple">♥</span>
+              صنع بواسطة <span className="mx-1 text-neon-purple">♥</span>
             </p>
             <a 
               href="https://x.com/Mr_CryptoYT" 

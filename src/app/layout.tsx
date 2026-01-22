@@ -29,11 +29,15 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "دليل البرمجة بالإحساس | Vibe Coding",
-    template: "%s | Vibe Coding",
+    default: "موسوعة البرمجة بالذكاء الاصطناعي",
+    template: "%s | موسوعة البرمجة",
   },
-  description: "الدليل الشامل للبرمجة مع الذكاء الاصطناعي والتدفق الإبداعي.",
+  description: "الدليل الشامل للبرمجة مع الذكاء الاصطناعي.",
   keywords: ["برمجة", "ذكاء اصطناعي", "Next.js", "Cursor", "Windsurf"],
+  icons: {
+    icon: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
