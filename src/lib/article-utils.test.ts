@@ -21,7 +21,7 @@ describe('Article Utils', () => {
     });
 
     it('should handle Arabic titles', () => {
-      const slug = generateSlug('ما هي البرمجة بالإحساس');
+      const slug = generateSlug('ما هو الـ Vibecoding');
       expect(slug).toContain('-');
       expect(slug.length).toBeGreaterThan(0);
     });
@@ -302,7 +302,7 @@ More text here.
 
     it('should append number when slug exists', () => {
       // Test with a title that likely exists in the content
-      const slug = generateUniqueSlug('ما هي البرمجة بالإحساس');
+      const slug = generateUniqueSlug('ما هو الـ Vibecoding');
       // The slug should be generated (may contain Arabic characters converted to hyphens)
       expect(typeof slug).toBe('string');
       expect(slug.length).toBeGreaterThan(0);
