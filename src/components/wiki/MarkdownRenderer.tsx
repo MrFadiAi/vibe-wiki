@@ -8,13 +8,17 @@ import remarkGfm from "remark-gfm";
 import { cn } from "@/lib/utils";
 import { InteractiveCodeBlock } from "./InteractiveCodeBlock";
 
-interface MarkdownRendererProps {
+export interface MarkdownRendererProps {
   content: string;
+  className?: string;
 }
 
-export function MarkdownRenderer({ content }: MarkdownRendererProps) {
+export function MarkdownRenderer({ content, className }: MarkdownRendererProps) {
   return (
-    <article className="prose prose-invert prose-lg max-w-none prose-headings:font-bold prose-h1:text-4xl prose-h1:text-transparent prose-h1:bg-clip-text prose-h1:bg-gradient-to-r prose-h1:from-neon-cyan prose-h1:to-neon-purple prose-a:text-neon-cyan prose-a:no-underline hover:prose-a:underline prose-pre:bg-transparent prose-pre:border-0 prose-pre:p-0">
+    <article className={cn(
+      "prose prose-invert prose-lg max-w-none prose-headings:font-bold prose-h1:text-4xl prose-h1:text-transparent prose-h1:bg-clip-text prose-h1:bg-gradient-to-r prose-h1:from-neon-cyan prose-h1:to-neon-purple prose-a:text-neon-cyan prose-a:no-underline hover:prose-a:underline prose-pre:bg-transparent prose-pre:border-0 prose-pre:p-0",
+      className
+    )}>
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeHighlight, rehypeSlug]}
