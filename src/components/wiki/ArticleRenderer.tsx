@@ -22,37 +22,35 @@ interface DiagramPosition {
 /**
  * Parse markdown content and identify headings for diagram placement
  */
-function parseMarkdownWithHeadings(content: string): Array<{
+type Section = {
   type: "heading" | "content";
   level: number;
   text: string;
   content?: string;
   startIndex: number;
   endIndex: number;
-}> {
-  const lines = content.split("\n");
-  const sections: Array<{
-    type: "heading" | "content";
-    level: number;
-    text: string;
-    content?: string;
-    startIndex: number;
-    endIndex: number;
-  }> = [];
+};
 
-  let currentSection: typeof sections[0] | null = null;
+function parseMarkdownWithHeadings(content: string): Section[] {
+  const lines = content.split("\n");
+  const sections: Section[] = [];
+
+  let currentSection: Section | null = null;
   let currentContent = "";
   let startIndex = 0;
 
-  lines.forEach((line, index) => {
+  for (let index = 0; index < lines.length; index++) {
+    const line = lines[index];
     const headingMatch = line.match(/^(#{1,6})\s+(.+)$/);
 
     if (headingMatch) {
       // Save previous section
       if (currentSection) {
-        currentSection.endIndex = index - 1;
-        currentSection.content = currentContent.trim();
-        sections.push(currentSection);
+        sections.push({
+          ...currentSection,
+          endIndex: index - 1,
+          content: currentContent.trim(),
+        });
       }
 
       // Start new section
@@ -79,13 +77,15 @@ function parseMarkdownWithHeadings(content: string): Array<{
         currentContent = line + "\n";
       }
     }
-  });
+  }
 
   // Save last section
   if (currentSection) {
-    currentSection.endIndex = lines.length - 1;
-    currentSection.content = currentContent.trim();
-    sections.push(currentSection);
+    sections.push({
+      ...currentSection,
+      endIndex: lines.length - 1,
+      content: currentContent.trim(),
+    });
   }
 
   return sections;
